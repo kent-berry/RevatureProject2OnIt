@@ -1,8 +1,13 @@
 package com.revature.model;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +26,32 @@ import lombok.NoArgsConstructor;
 
 public class Task {
 	
-	@Column(name = "name")
+	@Column(name = "ID")
 	@Id
-	int id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int ID;
 
+	@Column(name = "fkuserid")
+	@JoinColumn(name = "userid")
+	String userID;
+	
+	String taskName;
+	
+	String notes;
+	
+	Timestamp dueDate;
+	
+	@Column(name = "fklabelid")
+	@JoinColumn(name = "labelid")
+	int labelId;
+	
+	Timestamp dateCreated;
+	
+	Timestamp dateCompleted;
+	
+	int reminder;
+	
+	boolean repeatable; 
 
 
 

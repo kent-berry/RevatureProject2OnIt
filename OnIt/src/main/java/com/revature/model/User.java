@@ -19,17 +19,24 @@ import org.springframework.stereotype.Component;
 public class User {
 
 	@Id
-	@Column(name = "employee_id")
+	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int employeeID;
+	private int ID;
 	
-	@Column(name = "amount")
+	//@Column(name = "first_name")
+	String firstName;
+	
+	@Column(name = "lastName")
 	String lastName;
 	
+	@Column(name = "email")
+	String email;
 	
+	@Column(name = "password")
+	String password;
 	
-	
-	
+	@Column(name = "dailyTaskGoal")
+	int dailyTaskGoal;
 	
 
 	public String getLastName() {

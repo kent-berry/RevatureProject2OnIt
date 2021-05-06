@@ -3,6 +3,8 @@ package com.revature.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,6 +18,10 @@ import org.springframework.stereotype.Component;
 public class Label {
 
 	@Id
-	@Column(name = "amount")
-	private double amount;
+	@Column(name = "ID")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int ID;
+	
+	@Column(name = "labelText")
+	String labelText;
 }

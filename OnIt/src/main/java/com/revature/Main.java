@@ -1,7 +1,5 @@
 package com.revature;
-import java.sql.SQLException;
-
-import org.hibernate.SessionFactory;
+import java.sql.SQLException;import org.hibernate.SessionFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
@@ -20,10 +18,10 @@ public class Main {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
 		User u = appContext.getBean("User", User.class);
+		
 		UserDao ud = appContext.getBean("UserDao",UserDao.class);
-		SessionFactory sessionFactory = appContext.getBean("sessionFactory",SessionFactory.class);
-		System.out.println(sessionFactory);
-		ud.saveUser(u, sessionFactory);
+		//SessionFactory sessionFactory = appContext.getBean("sessionFactory",SessionFactory.class);
+		ud.saveUser(u);
 //		ConnectionUtil connectionUtil = new ConnectionUtil();
 //		connectionUtil.getConnection();
 

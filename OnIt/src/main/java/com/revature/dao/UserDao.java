@@ -20,24 +20,14 @@ import com.revature.model.User;
 @Repository("UserDao")
 public class UserDao implements IUserDao {
 
-	
-	//private SessionFactory sessionFactory = app
+	@Autowired
+	private SessionFactory sessionFactory;
 	
 	@Transactional
-	public void saveUser(User u, SessionFactory sessionFactory)
+	public void saveUser(User u)
 	{
 		
-		Session s = sessionFactory.openSession();
-		
-		Transaction tx = s.beginTransaction();
-		System.out.println(sessionFactory.getStatistics());
-		s.save(u);
-		tx.commit();
-		s.close();
-	
-		System.out.println(sessionFactory.getStatistics());
-		
-		//sessionFactory.getCurrentSession().save(u);
+		sessionFactory.getCurrentSession().save(u);
 	}
 	
 }
