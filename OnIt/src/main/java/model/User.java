@@ -13,15 +13,9 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name= "user_table")
 public class User {
-	
-<<<<<<< HEAD
+
 	String firstName;
 	String lastName;
-	
-	
-=======
-	String temp = "";
->>>>>>> hshallal
-	
+
 
 }
