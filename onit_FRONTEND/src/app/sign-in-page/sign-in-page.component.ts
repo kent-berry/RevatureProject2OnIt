@@ -22,20 +22,21 @@ export class SignInPageComponent implements OnInit {
     private signedInUserService: SignedInUserService,
     private sampleUsersService: SAMPLEUSERSService
   ) { 
+      
+      router.events
+    .pipe(filter(event => event instanceof NavigationEnd))
+    .subscribe((event: NavigationEnd) => {
+      console.log('prev:', event.url);
+      this.previousUrl = event.url;
+    });
 
-    
-    router.events
-  .pipe(filter(event => event instanceof NavigationEnd))
-  .subscribe((event: NavigationEnd) => {
-    console.log('prev:', event.url);
-    this.previousUrl = event.url;
-  });
 
-
-    // If already signed in, redirect to User Home
-    if (signedInUserService.signedInUser) {
-      this.router.navigate(['/userhome']);
-    }
+      // If already signed in, redirect to User Home
+      console.log("SIGNINPAGE CONSTRUCTOR: this.signedInUserService.signedInUser = "+this.signedInUserService.signedInUser);
+      if (signedInUserService.signedInUser) {
+        this.router.navigate(['/tasks']);
+      }
+      
   }
 
   ngOnInit(): void {
@@ -44,14 +45,19 @@ export class SignInPageComponent implements OnInit {
   submitLogIn(): void {
 
     console.log("HOME-PAGE: log in button pressed.");
+
+
     console.log("Test printing all sample users: ");
     this.sampleUsersService.getUserList().forEach(function(value) {
       console.log(value.username);
       console.log(value.password);
     })
 
+
+    
     this.signedInUserService.signedInUser = new User("bob10", "pw");
 
+    console.log("SIGNIN IN: this.signedInUserService.signedInUser = "+this.signedInUserService.signedInUser);
     this.router.navigate(['/tasks'])
 
   }
