@@ -1,0 +1,1266 @@
+Logging Provider: org.jboss.logging.Log4jLoggerProvider
+Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+HHH000412: Hibernate ORM core version 5.4.30.Final
+HHH000206: hibernate.properties not found
+Building session factory using internal StandardServiceRegistryBuilder
+Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+Building session factory using provided StandardServiceRegistry
+Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+Adding type registration boolean -> org.hibernate.type.BooleanType@7eeb38b2
+Adding type registration boolean -> org.hibernate.type.BooleanType@7eeb38b2
+Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@7eeb38b2
+Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@58eac00e
+Adding type registration true_false -> org.hibernate.type.TrueFalseType@30aec673
+Adding type registration yes_no -> org.hibernate.type.YesNoType@58f31629
+Adding type registration byte -> org.hibernate.type.ByteType@52831a73
+Adding type registration byte -> org.hibernate.type.ByteType@52831a73
+Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@52831a73
+Adding type registration character -> org.hibernate.type.CharacterType@48581a3b
+Adding type registration char -> org.hibernate.type.CharacterType@48581a3b
+Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@48581a3b
+Adding type registration short -> org.hibernate.type.ShortType@db99785
+Adding type registration short -> org.hibernate.type.ShortType@db99785
+Adding type registration java.lang.Short -> org.hibernate.type.ShortType@db99785
+Adding type registration integer -> org.hibernate.type.IntegerType@1b4872bc
+Adding type registration int -> org.hibernate.type.IntegerType@1b4872bc
+Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@1b4872bc
+Adding type registration long -> org.hibernate.type.LongType@74667e6a
+Adding type registration long -> org.hibernate.type.LongType@74667e6a
+Adding type registration java.lang.Long -> org.hibernate.type.LongType@74667e6a
+Adding type registration float -> org.hibernate.type.FloatType@a54acec
+Adding type registration float -> org.hibernate.type.FloatType@a54acec
+Adding type registration java.lang.Float -> org.hibernate.type.FloatType@a54acec
+Adding type registration double -> org.hibernate.type.DoubleType@60e1d87c
+Adding type registration double -> org.hibernate.type.DoubleType@60e1d87c
+Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@60e1d87c
+Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@59303963
+Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@59303963
+Adding type registration big_integer -> org.hibernate.type.BigIntegerType@52d0f583
+Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@52d0f583
+Adding type registration string -> org.hibernate.type.StringType@7af0affa
+Adding type registration java.lang.String -> org.hibernate.type.StringType@7af0affa
+Adding type registration nstring -> org.hibernate.type.StringNVarcharType@5b251fb9
+Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@7f97bc14
+Adding type registration url -> org.hibernate.type.UrlType@25a1a012
+Adding type registration java.net.URL -> org.hibernate.type.UrlType@25a1a012
+Adding type registration Duration -> org.hibernate.type.DurationType@5bf9ea6b
+Adding type registration java.time.Duration -> org.hibernate.type.DurationType@5bf9ea6b
+Adding type registration Instant -> org.hibernate.type.InstantType@bc09d57
+Adding type registration java.time.Instant -> org.hibernate.type.InstantType@bc09d57
+Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@7015ebef
+Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@7015ebef
+Adding type registration LocalDate -> org.hibernate.type.LocalDateType@1df5c7e3
+Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@1df5c7e3
+Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@15c6027d
+Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@15c6027d
+Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@46c10083
+Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@46c10083
+Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@35eee641
+Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@35eee641
+Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2a8f6e6
+Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2a8f6e6
+Adding type registration date -> org.hibernate.type.DateType@36359723
+Adding type registration java.sql.Date -> org.hibernate.type.DateType@36359723
+Adding type registration time -> org.hibernate.type.TimeType@5f08fe00
+Adding type registration java.sql.Time -> org.hibernate.type.TimeType@5f08fe00
+Adding type registration timestamp -> org.hibernate.type.TimestampType@724bf25f
+Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@724bf25f
+Adding type registration java.util.Date -> org.hibernate.type.TimestampType@724bf25f
+Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@26582ca
+Adding type registration calendar -> org.hibernate.type.CalendarType@2f3928ac
+Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@2f3928ac
+Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@2f3928ac
+Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@44e4cb76
+Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@4aebee4b
+Adding type registration locale -> org.hibernate.type.LocaleType@1c297897
+Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@1c297897
+Adding type registration currency -> org.hibernate.type.CurrencyType@7889b4b9
+Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@7889b4b9
+Adding type registration timezone -> org.hibernate.type.TimeZoneType@7f5614f9
+Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@7f5614f9
+Adding type registration class -> org.hibernate.type.ClassType@71a4f441
+Adding type registration java.lang.Class -> org.hibernate.type.ClassType@71a4f441
+Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@5f6b53ed
+Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@5f6b53ed
+Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@5c48b72c
+Adding type registration binary -> org.hibernate.type.BinaryType@6282b9f5
+Adding type registration byte[] -> org.hibernate.type.BinaryType@6282b9f5
+Adding type registration [B -> org.hibernate.type.BinaryType@6282b9f5
+Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@632b305d
+Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@632b305d
+Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@632b305d
+Adding type registration row_version -> org.hibernate.type.RowVersionType@739831a4
+Adding type registration image -> org.hibernate.type.ImageType@38883a31
+Adding type registration characters -> org.hibernate.type.CharArrayType@118acf70
+Adding type registration char[] -> org.hibernate.type.CharArrayType@118acf70
+Adding type registration [C -> org.hibernate.type.CharArrayType@118acf70
+Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@31efacad
+Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@31efacad
+Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@31efacad
+Adding type registration text -> org.hibernate.type.TextType@6e24ce51
+Adding type registration ntext -> org.hibernate.type.NTextType@4001d8c1
+Adding type registration blob -> org.hibernate.type.BlobType@21390938
+Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@21390938
+Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@4e4162bc
+Adding type registration clob -> org.hibernate.type.ClobType@26d5a317
+Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@26d5a317
+Adding type registration nclob -> org.hibernate.type.NClobType@113f9078
+Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@113f9078
+Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@7e52a26b
+Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@224c7de4
+Adding type registration serializable -> org.hibernate.type.SerializableType@191c6e13
+Adding type registration object -> org.hibernate.type.ObjectType@78c262ba
+Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@78c262ba
+Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@7d2c345d
+Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@217dc48e
+Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@5db948c9
+Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@296edc75
+Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@357c9bd9
+Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@7aea704c
+Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@6d0290d8
+Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@32507479
+Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+Database ->
+       name : PostgreSQL
+    version : 12.5
+      major : 12
+      minor : 5
+Driver ->
+       name : PostgreSQL JDBC Driver
+    version : 42.2.10
+      major : 42
+      minor : 2
+JDBC version : 4.2
+HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+JDBC driver metadata reported database stores quoted identifiers in neither upper, lower nor mixed case
+Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@11069eac
+Adding type registration java.util.UUID -> org.hibernate.type.PostgresUUIDType@11069eac
+HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5f6b53ed
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@77ec9fdb] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@35af1558]
+Building session factory
+SessionFactory name : null
+Automatic flush during beforeCompletion(): enabled
+Automatic session close at end of transaction: disabled
+Statistics: disabled
+Deleted entity synthetic identifier rollback: disabled
+Default entity-mode: pojo
+Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+Allow initialization of lazy state outside session : disabled
+Using BatchFetchStyle : LEGACY
+Default batch fetch size: -1
+Maximum outer join fetch depth: null
+Default null ordering: NONE
+Order SQL updates by primary key: disabled
+Order SQL inserts for batching: disabled
+multi-tenancy strategy : NONE
+JTA Track by Thread: enabled
+Query language substitutions: {}
+Named query checking : enabled
+Second-level cache: disabled
+Second-level query cache: disabled
+Second-level query cache factory: null
+Second-level cache region prefix: null
+Optimize second-level cache for minimal puts: disabled
+Structured second-level cache entries: disabled
+Second-level cache direct-reference entries: disabled
+Automatic eviction of collection cache: disabled
+JDBC batch size: 15
+JDBC batch updates for versioned data: enabled
+Scrollable result sets: enabled
+Wrap result sets: disabled
+JDBC3 getGeneratedKeys(): enabled
+JDBC result set fetch size: null
+Connection release mode: ON_CLOSE
+Generate SQL with comments: disabled
+JPA compliance - query : disabled
+JPA compliance - closed-handling : disabled
+JPA compliance - lists : disabled
+JPA compliance - transactions : disabled
+Session factory constructed with filter configurations : {}
+Instantiating session factory with properties: {hibernate.format_sql=false, java.specification.version=16, sun.cpu.isalist=amd64, hibernate.resource.beans.container=org.springframework.orm.hibernate5.SpringBeanContainer@6b6c0b7c, hibernate.connection.handling_mode=DELAYED_ACQUISITION_AND_HOLD, sun.jnu.encoding=Cp1252, hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect, java.class.path=C:\JavaPrograms\Revature\OnIt\OnIt\target\classes;C:\Users\Jacob\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\Jacob\.m2\repository\javax\servlet\javax.servlet-api\4.0.1\javax.servlet-api-4.0.1.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-jdbc\5.3.5\spring-jdbc-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-core\5.3.5\spring-core-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-jcl\5.3.5\spring-jcl-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-tx\5.3.5\spring-tx-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-context\5.3.5\spring-context-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-aop\5.3.5\spring-aop-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-expression\5.3.5\spring-expression-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-beans\5.3.5\spring-beans-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-aspects\5.3.5\spring-aspects-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\aspectj\aspectjweaver\1.9.6\aspectjweaver-1.9.6.jar;C:\Users\Jacob\.m2\repository\org\projectlombok\lombok\1.18.16\lombok-1.18.16.jar;C:\Users\Jacob\.m2\repository\org\postgresql\postgresql\42.2.10\postgresql-42.2.10.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.1\jackson-databind-2.12.1.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.12.1\jackson-annotations-2.12.1.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.12.1\jackson-core-2.12.1.jar;C:\Users\Jacob\.m2\repository\org\hibernate\hibernate-core\5.4.30.Final\hibernate-core-5.4.30.Final.jar;C:\Users\Jacob\.m2\repository\org\jboss\logging\jboss-logging\3.4.1.Final\jboss-logging-3.4.1.Final.jar;C:\Users\Jacob\.m2\repository\javax\persistence\javax.persistence-api\2.2\javax.persistence-api-2.2.jar;C:\Users\Jacob\.m2\repository\org\javassist\javassist\3.27.0-GA\javassist-3.27.0-GA.jar;C:\Users\Jacob\.m2\repository\net\bytebuddy\byte-buddy\1.10.21\byte-buddy-1.10.21.jar;C:\Users\Jacob\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\Jacob\.m2\repository\org\jboss\spec\javax\transaction\jboss-transaction-api_1.2_spec\1.1.1.Final\jboss-transaction-api_1.2_spec-1.1.1.Final.jar;C:\Users\Jacob\.m2\repository\org\jboss\jandex\2.2.3.Final\jandex-2.2.3.Final.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Jacob\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\Jacob\.m2\repository\org\dom4j\dom4j\2.1.3\dom4j-2.1.3.jar;C:\Users\Jacob\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;C:\Users\Jacob\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\Jacob\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.1\jaxb-runtime-2.3.1.jar;C:\Users\Jacob\.m2\repository\org\glassfish\jaxb\txw2\2.3.1\txw2-2.3.1.jar;C:\Users\Jacob\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.7\istack-commons-runtime-3.0.7.jar;C:\Users\Jacob\.m2\repository\org\jvnet\staxex\stax-ex\1.8\stax-ex-1.8.jar;C:\Users\Jacob\.m2\repository\com\sun\xml\fastinfoset\FastInfoset\1.2.15\FastInfoset-1.2.15.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-orm\5.3.5\spring-orm-5.3.5.jar, java.vm.vendor=Oracle Corporation, sun.arch.data.model=64, user.variant=, java.vendor.url=https://java.oracle.com/, user.timezone=America/Chicago, java.vm.specification.version=16, os.name=Windows 10, sun.java.launcher=SUN_STANDARD, user.country=US, sun.boot.library.path=C:\Program Files\Java\jdk-16\bin, sun.java.command=Main, jdk.debug=release, sun.cpu.endian=little, user.home=C:\Users\Jacob, user.language=en, java.specification.vendor=Oracle Corporation, java.version.date=2021-03-16, java.home=C:\Program Files\Java\jdk-16, file.separator=\, java.vm.compressedOopsMode=Zero based, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, java.specification.name=Java Platform API Specification, hibernate.hbm2ddl.auto=create, user.script=, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=16+36-2231, user.name=Jacob, path.separator=;, os.version=10.0, java.runtime.name=Java(TM) SE Runtime Environment, file.encoding=Cp1252, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, hibernate.show_sql=false, hibernate.classLoaders=[jdk.internal.loader.ClassLoaders$AppClassLoader@5e2de80c], hibernate.current_session_context_class=org.springframework.orm.hibernate5.SpringSessionContext, java.vendor.url.bug=https://bugreport.java.com/bugreport/, java.io.tmpdir=C:\Users\Jacob\AppData\Local\Temp\, java.version=16, user.dir=C:\JavaPrograms\Revature\OnIt\OnIt, os.arch=amd64, java.vm.specification.name=Java Virtual Machine Specification, sun.os.patch.level=, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.cfgxml.spi.LoadedConfig@5b1f0f26, java.library.path=C:\Program Files\Java\jdk-16\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jdk-16/bin/server;C:/Program Files/Java/jdk-16/bin;C:\Python39\Scripts\;C:\Python39\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Jacob\AppData\Local\Microsoft\WindowsApps;C:\Program Files\dotnet\;C:\Program Files (x86)\Brackets\command;C:\ProgramData\chocolatey\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\Jacob\scoop\apps\ojdkbuild8-full\current\bin;C:\Users\Jacob\scoop\apps\maven\current\bin;C:\Users\Jacob\scoop\shims;C:\Users\Jacob\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Jacob\AppData\Local\Programs\Python\Python38-32\;C:\Users\Jacob\AppData\Local\Microsoft\WindowsApps;C:\Users\Jacob\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2019.3.1\bin;C:\Users\Jacob\AppData\Local\GitHubDesktop\bin;C:\Users\Jacob\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.3\bin;;C:\Users\Jacob\AppData\Roaming\npm;C:\Users\Jacob\Desktop;;., java.vendor=Oracle Corporation, java.vm.info=mixed mode, sharing, java.vm.version=16+36-2231, hibernate.bytecode.use_reflection_optimizer=false, sun.io.unicode.encoding=UnicodeLittle, hibernate.connection.datasource=org.springframework.jdbc.datasource.DriverManagerDataSource@58516c91, java.class.version=60.0}
+Skipping JACC integration as it was not enabled
+Instantiated session factory
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@77ec9fdb] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@61648dd2]
+No JtaPlatform was specified, checking resolver
+No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Checking 0 named HQL queries
+Checking 0 named SQL queries
+Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@69f24965
+Registering SessionFactory: 78521175-23d4-42d4-8f68-29149117d440 (<unnamed>)
+Not binding SessionFactory to JNDI, no JNDI name configured
+Logging Provider: org.jboss.logging.Log4jLoggerProvider
+Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+HHH000412: Hibernate ORM core version 5.4.30.Final
+HHH000206: hibernate.properties not found
+Building session factory using internal StandardServiceRegistryBuilder
+Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+Building session factory using provided StandardServiceRegistry
+Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+Adding type registration boolean -> org.hibernate.type.BooleanType@7eeb38b2
+Adding type registration boolean -> org.hibernate.type.BooleanType@7eeb38b2
+Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@7eeb38b2
+Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@58eac00e
+Adding type registration true_false -> org.hibernate.type.TrueFalseType@30aec673
+Adding type registration yes_no -> org.hibernate.type.YesNoType@58f31629
+Adding type registration byte -> org.hibernate.type.ByteType@52831a73
+Adding type registration byte -> org.hibernate.type.ByteType@52831a73
+Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@52831a73
+Adding type registration character -> org.hibernate.type.CharacterType@48581a3b
+Adding type registration char -> org.hibernate.type.CharacterType@48581a3b
+Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@48581a3b
+Adding type registration short -> org.hibernate.type.ShortType@db99785
+Adding type registration short -> org.hibernate.type.ShortType@db99785
+Adding type registration java.lang.Short -> org.hibernate.type.ShortType@db99785
+Adding type registration integer -> org.hibernate.type.IntegerType@1b4872bc
+Adding type registration int -> org.hibernate.type.IntegerType@1b4872bc
+Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@1b4872bc
+Adding type registration long -> org.hibernate.type.LongType@74667e6a
+Adding type registration long -> org.hibernate.type.LongType@74667e6a
+Adding type registration java.lang.Long -> org.hibernate.type.LongType@74667e6a
+Adding type registration float -> org.hibernate.type.FloatType@a54acec
+Adding type registration float -> org.hibernate.type.FloatType@a54acec
+Adding type registration java.lang.Float -> org.hibernate.type.FloatType@a54acec
+Adding type registration double -> org.hibernate.type.DoubleType@60e1d87c
+Adding type registration double -> org.hibernate.type.DoubleType@60e1d87c
+Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@60e1d87c
+Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@59303963
+Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@59303963
+Adding type registration big_integer -> org.hibernate.type.BigIntegerType@52d0f583
+Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@52d0f583
+Adding type registration string -> org.hibernate.type.StringType@7af0affa
+Adding type registration java.lang.String -> org.hibernate.type.StringType@7af0affa
+Adding type registration nstring -> org.hibernate.type.StringNVarcharType@5b251fb9
+Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@7f97bc14
+Adding type registration url -> org.hibernate.type.UrlType@25a1a012
+Adding type registration java.net.URL -> org.hibernate.type.UrlType@25a1a012
+Adding type registration Duration -> org.hibernate.type.DurationType@5bf9ea6b
+Adding type registration java.time.Duration -> org.hibernate.type.DurationType@5bf9ea6b
+Adding type registration Instant -> org.hibernate.type.InstantType@bc09d57
+Adding type registration java.time.Instant -> org.hibernate.type.InstantType@bc09d57
+Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@7015ebef
+Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@7015ebef
+Adding type registration LocalDate -> org.hibernate.type.LocalDateType@1df5c7e3
+Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@1df5c7e3
+Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@15c6027d
+Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@15c6027d
+Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@46c10083
+Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@46c10083
+Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@35eee641
+Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@35eee641
+Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2a8f6e6
+Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2a8f6e6
+Adding type registration date -> org.hibernate.type.DateType@36359723
+Adding type registration java.sql.Date -> org.hibernate.type.DateType@36359723
+Adding type registration time -> org.hibernate.type.TimeType@5f08fe00
+Adding type registration java.sql.Time -> org.hibernate.type.TimeType@5f08fe00
+Adding type registration timestamp -> org.hibernate.type.TimestampType@724bf25f
+Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@724bf25f
+Adding type registration java.util.Date -> org.hibernate.type.TimestampType@724bf25f
+Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@26582ca
+Adding type registration calendar -> org.hibernate.type.CalendarType@2f3928ac
+Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@2f3928ac
+Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@2f3928ac
+Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@44e4cb76
+Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@4aebee4b
+Adding type registration locale -> org.hibernate.type.LocaleType@1c297897
+Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@1c297897
+Adding type registration currency -> org.hibernate.type.CurrencyType@7889b4b9
+Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@7889b4b9
+Adding type registration timezone -> org.hibernate.type.TimeZoneType@7f5614f9
+Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@7f5614f9
+Adding type registration class -> org.hibernate.type.ClassType@71a4f441
+Adding type registration java.lang.Class -> org.hibernate.type.ClassType@71a4f441
+Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@5f6b53ed
+Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@5f6b53ed
+Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@5c48b72c
+Adding type registration binary -> org.hibernate.type.BinaryType@6282b9f5
+Adding type registration byte[] -> org.hibernate.type.BinaryType@6282b9f5
+Adding type registration [B -> org.hibernate.type.BinaryType@6282b9f5
+Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@632b305d
+Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@632b305d
+Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@632b305d
+Adding type registration row_version -> org.hibernate.type.RowVersionType@739831a4
+Adding type registration image -> org.hibernate.type.ImageType@38883a31
+Adding type registration characters -> org.hibernate.type.CharArrayType@118acf70
+Adding type registration char[] -> org.hibernate.type.CharArrayType@118acf70
+Adding type registration [C -> org.hibernate.type.CharArrayType@118acf70
+Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@31efacad
+Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@31efacad
+Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@31efacad
+Adding type registration text -> org.hibernate.type.TextType@6e24ce51
+Adding type registration ntext -> org.hibernate.type.NTextType@4001d8c1
+Adding type registration blob -> org.hibernate.type.BlobType@21390938
+Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@21390938
+Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@4e4162bc
+Adding type registration clob -> org.hibernate.type.ClobType@26d5a317
+Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@26d5a317
+Adding type registration nclob -> org.hibernate.type.NClobType@113f9078
+Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@113f9078
+Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@7e52a26b
+Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@224c7de4
+Adding type registration serializable -> org.hibernate.type.SerializableType@191c6e13
+Adding type registration object -> org.hibernate.type.ObjectType@78c262ba
+Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@78c262ba
+Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@7d2c345d
+Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@217dc48e
+Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@5db948c9
+Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@296edc75
+Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@357c9bd9
+Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@7aea704c
+Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@6d0290d8
+Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@32507479
+Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+Database ->
+       name : PostgreSQL
+    version : 12.5
+      major : 12
+      minor : 5
+Driver ->
+       name : PostgreSQL JDBC Driver
+    version : 42.2.10
+      major : 42
+      minor : 2
+JDBC version : 4.2
+HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+JDBC driver metadata reported database stores quoted identifiers in neither upper, lower nor mixed case
+Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@11069eac
+Adding type registration java.util.UUID -> org.hibernate.type.PostgresUUIDType@11069eac
+HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5f6b53ed
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@77ec9fdb] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@35af1558]
+Building session factory
+SessionFactory name : null
+Automatic flush during beforeCompletion(): enabled
+Automatic session close at end of transaction: disabled
+Statistics: disabled
+Deleted entity synthetic identifier rollback: disabled
+Default entity-mode: pojo
+Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+Allow initialization of lazy state outside session : disabled
+Using BatchFetchStyle : LEGACY
+Default batch fetch size: -1
+Maximum outer join fetch depth: null
+Default null ordering: NONE
+Order SQL updates by primary key: disabled
+Order SQL inserts for batching: disabled
+multi-tenancy strategy : NONE
+JTA Track by Thread: enabled
+Query language substitutions: {}
+Named query checking : enabled
+Second-level cache: disabled
+Second-level query cache: disabled
+Second-level query cache factory: null
+Second-level cache region prefix: null
+Optimize second-level cache for minimal puts: disabled
+Structured second-level cache entries: disabled
+Second-level cache direct-reference entries: disabled
+Automatic eviction of collection cache: disabled
+JDBC batch size: 15
+JDBC batch updates for versioned data: enabled
+Scrollable result sets: enabled
+Wrap result sets: disabled
+JDBC3 getGeneratedKeys(): enabled
+JDBC result set fetch size: null
+Connection release mode: ON_CLOSE
+Generate SQL with comments: disabled
+JPA compliance - query : disabled
+JPA compliance - closed-handling : disabled
+JPA compliance - lists : disabled
+JPA compliance - transactions : disabled
+Session factory constructed with filter configurations : {}
+Instantiating session factory with properties: {hibernate.format_sql=false, java.specification.version=16, sun.cpu.isalist=amd64, hibernate.resource.beans.container=org.springframework.orm.hibernate5.SpringBeanContainer@6b6c0b7c, hibernate.connection.handling_mode=DELAYED_ACQUISITION_AND_HOLD, sun.jnu.encoding=Cp1252, hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect, java.class.path=C:\JavaPrograms\Revature\OnIt\OnIt\target\classes;C:\Users\Jacob\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\Jacob\.m2\repository\javax\servlet\javax.servlet-api\4.0.1\javax.servlet-api-4.0.1.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-jdbc\5.3.5\spring-jdbc-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-core\5.3.5\spring-core-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-jcl\5.3.5\spring-jcl-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-tx\5.3.5\spring-tx-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-context\5.3.5\spring-context-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-aop\5.3.5\spring-aop-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-expression\5.3.5\spring-expression-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-beans\5.3.5\spring-beans-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-aspects\5.3.5\spring-aspects-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\aspectj\aspectjweaver\1.9.6\aspectjweaver-1.9.6.jar;C:\Users\Jacob\.m2\repository\org\projectlombok\lombok\1.18.16\lombok-1.18.16.jar;C:\Users\Jacob\.m2\repository\org\postgresql\postgresql\42.2.10\postgresql-42.2.10.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.1\jackson-databind-2.12.1.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.12.1\jackson-annotations-2.12.1.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.12.1\jackson-core-2.12.1.jar;C:\Users\Jacob\.m2\repository\org\hibernate\hibernate-core\5.4.30.Final\hibernate-core-5.4.30.Final.jar;C:\Users\Jacob\.m2\repository\org\jboss\logging\jboss-logging\3.4.1.Final\jboss-logging-3.4.1.Final.jar;C:\Users\Jacob\.m2\repository\javax\persistence\javax.persistence-api\2.2\javax.persistence-api-2.2.jar;C:\Users\Jacob\.m2\repository\org\javassist\javassist\3.27.0-GA\javassist-3.27.0-GA.jar;C:\Users\Jacob\.m2\repository\net\bytebuddy\byte-buddy\1.10.21\byte-buddy-1.10.21.jar;C:\Users\Jacob\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\Jacob\.m2\repository\org\jboss\spec\javax\transaction\jboss-transaction-api_1.2_spec\1.1.1.Final\jboss-transaction-api_1.2_spec-1.1.1.Final.jar;C:\Users\Jacob\.m2\repository\org\jboss\jandex\2.2.3.Final\jandex-2.2.3.Final.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Jacob\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\Jacob\.m2\repository\org\dom4j\dom4j\2.1.3\dom4j-2.1.3.jar;C:\Users\Jacob\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;C:\Users\Jacob\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\Jacob\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.1\jaxb-runtime-2.3.1.jar;C:\Users\Jacob\.m2\repository\org\glassfish\jaxb\txw2\2.3.1\txw2-2.3.1.jar;C:\Users\Jacob\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.7\istack-commons-runtime-3.0.7.jar;C:\Users\Jacob\.m2\repository\org\jvnet\staxex\stax-ex\1.8\stax-ex-1.8.jar;C:\Users\Jacob\.m2\repository\com\sun\xml\fastinfoset\FastInfoset\1.2.15\FastInfoset-1.2.15.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-orm\5.3.5\spring-orm-5.3.5.jar, java.vm.vendor=Oracle Corporation, sun.arch.data.model=64, user.variant=, java.vendor.url=https://java.oracle.com/, user.timezone=America/Chicago, java.vm.specification.version=16, os.name=Windows 10, sun.java.launcher=SUN_STANDARD, user.country=US, sun.boot.library.path=C:\Program Files\Java\jdk-16\bin, sun.java.command=Main, jdk.debug=release, sun.cpu.endian=little, user.home=C:\Users\Jacob, user.language=en, java.specification.vendor=Oracle Corporation, java.version.date=2021-03-16, java.home=C:\Program Files\Java\jdk-16, file.separator=\, java.vm.compressedOopsMode=Zero based, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, java.specification.name=Java Platform API Specification, hibernate.hbm2ddl.auto=create, user.script=, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=16+36-2231, user.name=Jacob, path.separator=;, os.version=10.0, java.runtime.name=Java(TM) SE Runtime Environment, file.encoding=Cp1252, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, hibernate.show_sql=false, hibernate.classLoaders=[jdk.internal.loader.ClassLoaders$AppClassLoader@5e2de80c], hibernate.current_session_context_class=org.springframework.orm.hibernate5.SpringSessionContext, java.vendor.url.bug=https://bugreport.java.com/bugreport/, java.io.tmpdir=C:\Users\Jacob\AppData\Local\Temp\, java.version=16, user.dir=C:\JavaPrograms\Revature\OnIt\OnIt, os.arch=amd64, java.vm.specification.name=Java Virtual Machine Specification, sun.os.patch.level=, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.cfgxml.spi.LoadedConfig@5b1f0f26, java.library.path=C:\Program Files\Java\jdk-16\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jdk-16/bin/server;C:/Program Files/Java/jdk-16/bin;C:\Python39\Scripts\;C:\Python39\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Jacob\AppData\Local\Microsoft\WindowsApps;C:\Program Files\dotnet\;C:\Program Files (x86)\Brackets\command;C:\ProgramData\chocolatey\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\Jacob\scoop\apps\ojdkbuild8-full\current\bin;C:\Users\Jacob\scoop\apps\maven\current\bin;C:\Users\Jacob\scoop\shims;C:\Users\Jacob\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Jacob\AppData\Local\Programs\Python\Python38-32\;C:\Users\Jacob\AppData\Local\Microsoft\WindowsApps;C:\Users\Jacob\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2019.3.1\bin;C:\Users\Jacob\AppData\Local\GitHubDesktop\bin;C:\Users\Jacob\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.3\bin;;C:\Users\Jacob\AppData\Roaming\npm;C:\Users\Jacob\Desktop;;., java.vendor=Oracle Corporation, java.vm.info=mixed mode, sharing, java.vm.version=16+36-2231, hibernate.bytecode.use_reflection_optimizer=false, sun.io.unicode.encoding=UnicodeLittle, hibernate.connection.datasource=org.springframework.jdbc.datasource.DriverManagerDataSource@58516c91, java.class.version=60.0}
+Skipping JACC integration as it was not enabled
+Instantiated session factory
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@77ec9fdb] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@61648dd2]
+No JtaPlatform was specified, checking resolver
+No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Checking 0 named HQL queries
+Checking 0 named SQL queries
+Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@69f24965
+Registering SessionFactory: ccb7a394-e5cf-42ce-b51b-02257c0e40ba (<unnamed>)
+Not binding SessionFactory to JNDI, no JNDI name configured
+Logging Provider: org.jboss.logging.Log4jLoggerProvider
+Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+HHH000412: Hibernate ORM core version 5.4.30.Final
+HHH000206: hibernate.properties not found
+Building session factory using internal StandardServiceRegistryBuilder
+Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+Building session factory using provided StandardServiceRegistry
+Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+Adding type registration boolean -> org.hibernate.type.BooleanType@7eeb38b2
+Adding type registration boolean -> org.hibernate.type.BooleanType@7eeb38b2
+Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@7eeb38b2
+Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@58eac00e
+Adding type registration true_false -> org.hibernate.type.TrueFalseType@30aec673
+Adding type registration yes_no -> org.hibernate.type.YesNoType@58f31629
+Adding type registration byte -> org.hibernate.type.ByteType@52831a73
+Adding type registration byte -> org.hibernate.type.ByteType@52831a73
+Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@52831a73
+Adding type registration character -> org.hibernate.type.CharacterType@48581a3b
+Adding type registration char -> org.hibernate.type.CharacterType@48581a3b
+Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@48581a3b
+Adding type registration short -> org.hibernate.type.ShortType@db99785
+Adding type registration short -> org.hibernate.type.ShortType@db99785
+Adding type registration java.lang.Short -> org.hibernate.type.ShortType@db99785
+Adding type registration integer -> org.hibernate.type.IntegerType@1b4872bc
+Adding type registration int -> org.hibernate.type.IntegerType@1b4872bc
+Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@1b4872bc
+Adding type registration long -> org.hibernate.type.LongType@74667e6a
+Adding type registration long -> org.hibernate.type.LongType@74667e6a
+Adding type registration java.lang.Long -> org.hibernate.type.LongType@74667e6a
+Adding type registration float -> org.hibernate.type.FloatType@a54acec
+Adding type registration float -> org.hibernate.type.FloatType@a54acec
+Adding type registration java.lang.Float -> org.hibernate.type.FloatType@a54acec
+Adding type registration double -> org.hibernate.type.DoubleType@60e1d87c
+Adding type registration double -> org.hibernate.type.DoubleType@60e1d87c
+Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@60e1d87c
+Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@59303963
+Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@59303963
+Adding type registration big_integer -> org.hibernate.type.BigIntegerType@52d0f583
+Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@52d0f583
+Adding type registration string -> org.hibernate.type.StringType@7af0affa
+Adding type registration java.lang.String -> org.hibernate.type.StringType@7af0affa
+Adding type registration nstring -> org.hibernate.type.StringNVarcharType@5b251fb9
+Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@7f97bc14
+Adding type registration url -> org.hibernate.type.UrlType@25a1a012
+Adding type registration java.net.URL -> org.hibernate.type.UrlType@25a1a012
+Adding type registration Duration -> org.hibernate.type.DurationType@5bf9ea6b
+Adding type registration java.time.Duration -> org.hibernate.type.DurationType@5bf9ea6b
+Adding type registration Instant -> org.hibernate.type.InstantType@bc09d57
+Adding type registration java.time.Instant -> org.hibernate.type.InstantType@bc09d57
+Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@7015ebef
+Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@7015ebef
+Adding type registration LocalDate -> org.hibernate.type.LocalDateType@1df5c7e3
+Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@1df5c7e3
+Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@15c6027d
+Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@15c6027d
+Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@46c10083
+Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@46c10083
+Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@35eee641
+Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@35eee641
+Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2a8f6e6
+Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2a8f6e6
+Adding type registration date -> org.hibernate.type.DateType@36359723
+Adding type registration java.sql.Date -> org.hibernate.type.DateType@36359723
+Adding type registration time -> org.hibernate.type.TimeType@5f08fe00
+Adding type registration java.sql.Time -> org.hibernate.type.TimeType@5f08fe00
+Adding type registration timestamp -> org.hibernate.type.TimestampType@724bf25f
+Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@724bf25f
+Adding type registration java.util.Date -> org.hibernate.type.TimestampType@724bf25f
+Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@26582ca
+Adding type registration calendar -> org.hibernate.type.CalendarType@2f3928ac
+Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@2f3928ac
+Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@2f3928ac
+Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@44e4cb76
+Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@4aebee4b
+Adding type registration locale -> org.hibernate.type.LocaleType@1c297897
+Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@1c297897
+Adding type registration currency -> org.hibernate.type.CurrencyType@7889b4b9
+Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@7889b4b9
+Adding type registration timezone -> org.hibernate.type.TimeZoneType@7f5614f9
+Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@7f5614f9
+Adding type registration class -> org.hibernate.type.ClassType@71a4f441
+Adding type registration java.lang.Class -> org.hibernate.type.ClassType@71a4f441
+Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@5f6b53ed
+Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@5f6b53ed
+Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@5c48b72c
+Adding type registration binary -> org.hibernate.type.BinaryType@6282b9f5
+Adding type registration byte[] -> org.hibernate.type.BinaryType@6282b9f5
+Adding type registration [B -> org.hibernate.type.BinaryType@6282b9f5
+Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@632b305d
+Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@632b305d
+Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@632b305d
+Adding type registration row_version -> org.hibernate.type.RowVersionType@739831a4
+Adding type registration image -> org.hibernate.type.ImageType@38883a31
+Adding type registration characters -> org.hibernate.type.CharArrayType@118acf70
+Adding type registration char[] -> org.hibernate.type.CharArrayType@118acf70
+Adding type registration [C -> org.hibernate.type.CharArrayType@118acf70
+Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@31efacad
+Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@31efacad
+Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@31efacad
+Adding type registration text -> org.hibernate.type.TextType@6e24ce51
+Adding type registration ntext -> org.hibernate.type.NTextType@4001d8c1
+Adding type registration blob -> org.hibernate.type.BlobType@21390938
+Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@21390938
+Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@4e4162bc
+Adding type registration clob -> org.hibernate.type.ClobType@26d5a317
+Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@26d5a317
+Adding type registration nclob -> org.hibernate.type.NClobType@113f9078
+Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@113f9078
+Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@7e52a26b
+Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@224c7de4
+Adding type registration serializable -> org.hibernate.type.SerializableType@191c6e13
+Adding type registration object -> org.hibernate.type.ObjectType@78c262ba
+Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@78c262ba
+Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@7d2c345d
+Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@217dc48e
+Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@5db948c9
+Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@296edc75
+Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@357c9bd9
+Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@7aea704c
+Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@6d0290d8
+Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@32507479
+Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+Database ->
+       name : PostgreSQL
+    version : 12.5
+      major : 12
+      minor : 5
+Driver ->
+       name : PostgreSQL JDBC Driver
+    version : 42.2.10
+      major : 42
+      minor : 2
+JDBC version : 4.2
+HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+JDBC driver metadata reported database stores quoted identifiers in neither upper, lower nor mixed case
+Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@11069eac
+Adding type registration java.util.UUID -> org.hibernate.type.PostgresUUIDType@11069eac
+HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5f6b53ed
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@77ec9fdb] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@35af1558]
+Building session factory
+SessionFactory name : null
+Automatic flush during beforeCompletion(): enabled
+Automatic session close at end of transaction: disabled
+Statistics: disabled
+Deleted entity synthetic identifier rollback: disabled
+Default entity-mode: pojo
+Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+Allow initialization of lazy state outside session : disabled
+Using BatchFetchStyle : LEGACY
+Default batch fetch size: -1
+Maximum outer join fetch depth: null
+Default null ordering: NONE
+Order SQL updates by primary key: disabled
+Order SQL inserts for batching: disabled
+multi-tenancy strategy : NONE
+JTA Track by Thread: enabled
+Query language substitutions: {}
+Named query checking : enabled
+Second-level cache: disabled
+Second-level query cache: disabled
+Second-level query cache factory: null
+Second-level cache region prefix: null
+Optimize second-level cache for minimal puts: disabled
+Structured second-level cache entries: disabled
+Second-level cache direct-reference entries: disabled
+Automatic eviction of collection cache: disabled
+JDBC batch size: 15
+JDBC batch updates for versioned data: enabled
+Scrollable result sets: enabled
+Wrap result sets: disabled
+JDBC3 getGeneratedKeys(): enabled
+JDBC result set fetch size: null
+Connection release mode: ON_CLOSE
+Generate SQL with comments: disabled
+JPA compliance - query : disabled
+JPA compliance - closed-handling : disabled
+JPA compliance - lists : disabled
+JPA compliance - transactions : disabled
+Session factory constructed with filter configurations : {}
+Instantiating session factory with properties: {hibernate.format_sql=false, java.specification.version=16, sun.cpu.isalist=amd64, hibernate.resource.beans.container=org.springframework.orm.hibernate5.SpringBeanContainer@6b6c0b7c, hibernate.connection.handling_mode=DELAYED_ACQUISITION_AND_HOLD, sun.jnu.encoding=Cp1252, hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect, java.class.path=C:\JavaPrograms\Revature\OnIt\OnIt\target\classes;C:\Users\Jacob\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\Jacob\.m2\repository\javax\servlet\javax.servlet-api\4.0.1\javax.servlet-api-4.0.1.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-jdbc\5.3.5\spring-jdbc-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-core\5.3.5\spring-core-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-jcl\5.3.5\spring-jcl-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-tx\5.3.5\spring-tx-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-context\5.3.5\spring-context-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-aop\5.3.5\spring-aop-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-expression\5.3.5\spring-expression-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-beans\5.3.5\spring-beans-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-aspects\5.3.5\spring-aspects-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\aspectj\aspectjweaver\1.9.6\aspectjweaver-1.9.6.jar;C:\Users\Jacob\.m2\repository\org\projectlombok\lombok\1.18.16\lombok-1.18.16.jar;C:\Users\Jacob\.m2\repository\org\postgresql\postgresql\42.2.10\postgresql-42.2.10.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.1\jackson-databind-2.12.1.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.12.1\jackson-annotations-2.12.1.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.12.1\jackson-core-2.12.1.jar;C:\Users\Jacob\.m2\repository\org\hibernate\hibernate-core\5.4.30.Final\hibernate-core-5.4.30.Final.jar;C:\Users\Jacob\.m2\repository\org\jboss\logging\jboss-logging\3.4.1.Final\jboss-logging-3.4.1.Final.jar;C:\Users\Jacob\.m2\repository\javax\persistence\javax.persistence-api\2.2\javax.persistence-api-2.2.jar;C:\Users\Jacob\.m2\repository\org\javassist\javassist\3.27.0-GA\javassist-3.27.0-GA.jar;C:\Users\Jacob\.m2\repository\net\bytebuddy\byte-buddy\1.10.21\byte-buddy-1.10.21.jar;C:\Users\Jacob\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\Jacob\.m2\repository\org\jboss\spec\javax\transaction\jboss-transaction-api_1.2_spec\1.1.1.Final\jboss-transaction-api_1.2_spec-1.1.1.Final.jar;C:\Users\Jacob\.m2\repository\org\jboss\jandex\2.2.3.Final\jandex-2.2.3.Final.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Jacob\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\Jacob\.m2\repository\org\dom4j\dom4j\2.1.3\dom4j-2.1.3.jar;C:\Users\Jacob\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;C:\Users\Jacob\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\Jacob\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.1\jaxb-runtime-2.3.1.jar;C:\Users\Jacob\.m2\repository\org\glassfish\jaxb\txw2\2.3.1\txw2-2.3.1.jar;C:\Users\Jacob\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.7\istack-commons-runtime-3.0.7.jar;C:\Users\Jacob\.m2\repository\org\jvnet\staxex\stax-ex\1.8\stax-ex-1.8.jar;C:\Users\Jacob\.m2\repository\com\sun\xml\fastinfoset\FastInfoset\1.2.15\FastInfoset-1.2.15.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-orm\5.3.5\spring-orm-5.3.5.jar, java.vm.vendor=Oracle Corporation, sun.arch.data.model=64, user.variant=, java.vendor.url=https://java.oracle.com/, user.timezone=America/Chicago, java.vm.specification.version=16, os.name=Windows 10, sun.java.launcher=SUN_STANDARD, user.country=US, sun.boot.library.path=C:\Program Files\Java\jdk-16\bin, sun.java.command=Main, jdk.debug=release, sun.cpu.endian=little, user.home=C:\Users\Jacob, user.language=en, java.specification.vendor=Oracle Corporation, java.version.date=2021-03-16, java.home=C:\Program Files\Java\jdk-16, file.separator=\, java.vm.compressedOopsMode=Zero based, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, java.specification.name=Java Platform API Specification, hibernate.hbm2ddl.auto=create, user.script=, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=16+36-2231, user.name=Jacob, path.separator=;, os.version=10.0, java.runtime.name=Java(TM) SE Runtime Environment, file.encoding=Cp1252, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, hibernate.show_sql=false, hibernate.classLoaders=[jdk.internal.loader.ClassLoaders$AppClassLoader@5e2de80c], hibernate.current_session_context_class=org.springframework.orm.hibernate5.SpringSessionContext, java.vendor.url.bug=https://bugreport.java.com/bugreport/, java.io.tmpdir=C:\Users\Jacob\AppData\Local\Temp\, java.version=16, user.dir=C:\JavaPrograms\Revature\OnIt\OnIt, os.arch=amd64, java.vm.specification.name=Java Virtual Machine Specification, sun.os.patch.level=, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.cfgxml.spi.LoadedConfig@5b1f0f26, java.library.path=C:\Program Files\Java\jdk-16\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jdk-16/bin/server;C:/Program Files/Java/jdk-16/bin;C:\Python39\Scripts\;C:\Python39\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Jacob\AppData\Local\Microsoft\WindowsApps;C:\Program Files\dotnet\;C:\Program Files (x86)\Brackets\command;C:\ProgramData\chocolatey\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\Jacob\scoop\apps\ojdkbuild8-full\current\bin;C:\Users\Jacob\scoop\apps\maven\current\bin;C:\Users\Jacob\scoop\shims;C:\Users\Jacob\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Jacob\AppData\Local\Programs\Python\Python38-32\;C:\Users\Jacob\AppData\Local\Microsoft\WindowsApps;C:\Users\Jacob\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2019.3.1\bin;C:\Users\Jacob\AppData\Local\GitHubDesktop\bin;C:\Users\Jacob\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.3\bin;;C:\Users\Jacob\AppData\Roaming\npm;C:\Users\Jacob\Desktop;;., java.vendor=Oracle Corporation, java.vm.info=mixed mode, sharing, java.vm.version=16+36-2231, hibernate.bytecode.use_reflection_optimizer=false, sun.io.unicode.encoding=UnicodeLittle, hibernate.connection.datasource=org.springframework.jdbc.datasource.DriverManagerDataSource@58516c91, java.class.version=60.0}
+Skipping JACC integration as it was not enabled
+Instantiated session factory
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@77ec9fdb] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@61648dd2]
+No JtaPlatform was specified, checking resolver
+No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Checking 0 named HQL queries
+Checking 0 named SQL queries
+Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@69f24965
+Registering SessionFactory: 060fba33-d9d8-49fc-92e9-954ef36267d6 (<unnamed>)
+Not binding SessionFactory to JNDI, no JNDI name configured
+Logging Provider: org.jboss.logging.Log4jLoggerProvider
+Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+HHH000412: Hibernate ORM core version 5.4.30.Final
+HHH000206: hibernate.properties not found
+Building session factory using internal StandardServiceRegistryBuilder
+Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+Building session factory using provided StandardServiceRegistry
+Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+Adding type registration boolean -> org.hibernate.type.BooleanType@7eeb38b2
+Adding type registration boolean -> org.hibernate.type.BooleanType@7eeb38b2
+Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@7eeb38b2
+Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@58eac00e
+Adding type registration true_false -> org.hibernate.type.TrueFalseType@30aec673
+Adding type registration yes_no -> org.hibernate.type.YesNoType@58f31629
+Adding type registration byte -> org.hibernate.type.ByteType@52831a73
+Adding type registration byte -> org.hibernate.type.ByteType@52831a73
+Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@52831a73
+Adding type registration character -> org.hibernate.type.CharacterType@48581a3b
+Adding type registration char -> org.hibernate.type.CharacterType@48581a3b
+Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@48581a3b
+Adding type registration short -> org.hibernate.type.ShortType@db99785
+Adding type registration short -> org.hibernate.type.ShortType@db99785
+Adding type registration java.lang.Short -> org.hibernate.type.ShortType@db99785
+Adding type registration integer -> org.hibernate.type.IntegerType@1b4872bc
+Adding type registration int -> org.hibernate.type.IntegerType@1b4872bc
+Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@1b4872bc
+Adding type registration long -> org.hibernate.type.LongType@74667e6a
+Adding type registration long -> org.hibernate.type.LongType@74667e6a
+Adding type registration java.lang.Long -> org.hibernate.type.LongType@74667e6a
+Adding type registration float -> org.hibernate.type.FloatType@a54acec
+Adding type registration float -> org.hibernate.type.FloatType@a54acec
+Adding type registration java.lang.Float -> org.hibernate.type.FloatType@a54acec
+Adding type registration double -> org.hibernate.type.DoubleType@60e1d87c
+Adding type registration double -> org.hibernate.type.DoubleType@60e1d87c
+Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@60e1d87c
+Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@59303963
+Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@59303963
+Adding type registration big_integer -> org.hibernate.type.BigIntegerType@52d0f583
+Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@52d0f583
+Adding type registration string -> org.hibernate.type.StringType@7af0affa
+Adding type registration java.lang.String -> org.hibernate.type.StringType@7af0affa
+Adding type registration nstring -> org.hibernate.type.StringNVarcharType@5b251fb9
+Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@7f97bc14
+Adding type registration url -> org.hibernate.type.UrlType@25a1a012
+Adding type registration java.net.URL -> org.hibernate.type.UrlType@25a1a012
+Adding type registration Duration -> org.hibernate.type.DurationType@5bf9ea6b
+Adding type registration java.time.Duration -> org.hibernate.type.DurationType@5bf9ea6b
+Adding type registration Instant -> org.hibernate.type.InstantType@bc09d57
+Adding type registration java.time.Instant -> org.hibernate.type.InstantType@bc09d57
+Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@7015ebef
+Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@7015ebef
+Adding type registration LocalDate -> org.hibernate.type.LocalDateType@1df5c7e3
+Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@1df5c7e3
+Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@15c6027d
+Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@15c6027d
+Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@46c10083
+Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@46c10083
+Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@35eee641
+Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@35eee641
+Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2a8f6e6
+Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2a8f6e6
+Adding type registration date -> org.hibernate.type.DateType@36359723
+Adding type registration java.sql.Date -> org.hibernate.type.DateType@36359723
+Adding type registration time -> org.hibernate.type.TimeType@5f08fe00
+Adding type registration java.sql.Time -> org.hibernate.type.TimeType@5f08fe00
+Adding type registration timestamp -> org.hibernate.type.TimestampType@724bf25f
+Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@724bf25f
+Adding type registration java.util.Date -> org.hibernate.type.TimestampType@724bf25f
+Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@26582ca
+Adding type registration calendar -> org.hibernate.type.CalendarType@2f3928ac
+Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@2f3928ac
+Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@2f3928ac
+Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@44e4cb76
+Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@4aebee4b
+Adding type registration locale -> org.hibernate.type.LocaleType@1c297897
+Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@1c297897
+Adding type registration currency -> org.hibernate.type.CurrencyType@7889b4b9
+Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@7889b4b9
+Adding type registration timezone -> org.hibernate.type.TimeZoneType@7f5614f9
+Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@7f5614f9
+Adding type registration class -> org.hibernate.type.ClassType@71a4f441
+Adding type registration java.lang.Class -> org.hibernate.type.ClassType@71a4f441
+Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@5f6b53ed
+Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@5f6b53ed
+Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@5c48b72c
+Adding type registration binary -> org.hibernate.type.BinaryType@6282b9f5
+Adding type registration byte[] -> org.hibernate.type.BinaryType@6282b9f5
+Adding type registration [B -> org.hibernate.type.BinaryType@6282b9f5
+Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@632b305d
+Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@632b305d
+Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@632b305d
+Adding type registration row_version -> org.hibernate.type.RowVersionType@739831a4
+Adding type registration image -> org.hibernate.type.ImageType@38883a31
+Adding type registration characters -> org.hibernate.type.CharArrayType@118acf70
+Adding type registration char[] -> org.hibernate.type.CharArrayType@118acf70
+Adding type registration [C -> org.hibernate.type.CharArrayType@118acf70
+Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@31efacad
+Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@31efacad
+Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@31efacad
+Adding type registration text -> org.hibernate.type.TextType@6e24ce51
+Adding type registration ntext -> org.hibernate.type.NTextType@4001d8c1
+Adding type registration blob -> org.hibernate.type.BlobType@21390938
+Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@21390938
+Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@4e4162bc
+Adding type registration clob -> org.hibernate.type.ClobType@26d5a317
+Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@26d5a317
+Adding type registration nclob -> org.hibernate.type.NClobType@113f9078
+Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@113f9078
+Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@7e52a26b
+Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@224c7de4
+Adding type registration serializable -> org.hibernate.type.SerializableType@191c6e13
+Adding type registration object -> org.hibernate.type.ObjectType@78c262ba
+Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@78c262ba
+Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@7d2c345d
+Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@217dc48e
+Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@5db948c9
+Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@296edc75
+Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@357c9bd9
+Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@7aea704c
+Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@6d0290d8
+Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@32507479
+Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+Database ->
+       name : PostgreSQL
+    version : 12.5
+      major : 12
+      minor : 5
+Driver ->
+       name : PostgreSQL JDBC Driver
+    version : 42.2.10
+      major : 42
+      minor : 2
+JDBC version : 4.2
+HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+JDBC driver metadata reported database stores quoted identifiers in neither upper, lower nor mixed case
+Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@11069eac
+Adding type registration java.util.UUID -> org.hibernate.type.PostgresUUIDType@11069eac
+HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5f6b53ed
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@77ec9fdb] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@35af1558]
+Building session factory
+SessionFactory name : null
+Automatic flush during beforeCompletion(): enabled
+Automatic session close at end of transaction: disabled
+Statistics: disabled
+Deleted entity synthetic identifier rollback: disabled
+Default entity-mode: pojo
+Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+Allow initialization of lazy state outside session : disabled
+Using BatchFetchStyle : LEGACY
+Default batch fetch size: -1
+Maximum outer join fetch depth: null
+Default null ordering: NONE
+Order SQL updates by primary key: disabled
+Order SQL inserts for batching: disabled
+multi-tenancy strategy : NONE
+JTA Track by Thread: enabled
+Query language substitutions: {}
+Named query checking : enabled
+Second-level cache: disabled
+Second-level query cache: disabled
+Second-level query cache factory: null
+Second-level cache region prefix: null
+Optimize second-level cache for minimal puts: disabled
+Structured second-level cache entries: disabled
+Second-level cache direct-reference entries: disabled
+Automatic eviction of collection cache: disabled
+JDBC batch size: 15
+JDBC batch updates for versioned data: enabled
+Scrollable result sets: enabled
+Wrap result sets: disabled
+JDBC3 getGeneratedKeys(): enabled
+JDBC result set fetch size: null
+Connection release mode: ON_CLOSE
+Generate SQL with comments: disabled
+JPA compliance - query : disabled
+JPA compliance - closed-handling : disabled
+JPA compliance - lists : disabled
+JPA compliance - transactions : disabled
+Session factory constructed with filter configurations : {}
+Instantiating session factory with properties: {hibernate.format_sql=false, java.specification.version=16, sun.cpu.isalist=amd64, hibernate.resource.beans.container=org.springframework.orm.hibernate5.SpringBeanContainer@6b6c0b7c, hibernate.connection.handling_mode=DELAYED_ACQUISITION_AND_HOLD, sun.jnu.encoding=Cp1252, hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect, java.class.path=C:\JavaPrograms\Revature\OnIt\OnIt\target\classes;C:\Users\Jacob\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\Jacob\.m2\repository\javax\servlet\javax.servlet-api\4.0.1\javax.servlet-api-4.0.1.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-jdbc\5.3.5\spring-jdbc-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-core\5.3.5\spring-core-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-jcl\5.3.5\spring-jcl-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-tx\5.3.5\spring-tx-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-context\5.3.5\spring-context-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-aop\5.3.5\spring-aop-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-expression\5.3.5\spring-expression-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-beans\5.3.5\spring-beans-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-aspects\5.3.5\spring-aspects-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\aspectj\aspectjweaver\1.9.6\aspectjweaver-1.9.6.jar;C:\Users\Jacob\.m2\repository\org\projectlombok\lombok\1.18.16\lombok-1.18.16.jar;C:\Users\Jacob\.m2\repository\org\postgresql\postgresql\42.2.10\postgresql-42.2.10.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.1\jackson-databind-2.12.1.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.12.1\jackson-annotations-2.12.1.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.12.1\jackson-core-2.12.1.jar;C:\Users\Jacob\.m2\repository\org\hibernate\hibernate-core\5.4.30.Final\hibernate-core-5.4.30.Final.jar;C:\Users\Jacob\.m2\repository\org\jboss\logging\jboss-logging\3.4.1.Final\jboss-logging-3.4.1.Final.jar;C:\Users\Jacob\.m2\repository\javax\persistence\javax.persistence-api\2.2\javax.persistence-api-2.2.jar;C:\Users\Jacob\.m2\repository\org\javassist\javassist\3.27.0-GA\javassist-3.27.0-GA.jar;C:\Users\Jacob\.m2\repository\net\bytebuddy\byte-buddy\1.10.21\byte-buddy-1.10.21.jar;C:\Users\Jacob\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\Jacob\.m2\repository\org\jboss\spec\javax\transaction\jboss-transaction-api_1.2_spec\1.1.1.Final\jboss-transaction-api_1.2_spec-1.1.1.Final.jar;C:\Users\Jacob\.m2\repository\org\jboss\jandex\2.2.3.Final\jandex-2.2.3.Final.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Jacob\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\Jacob\.m2\repository\org\dom4j\dom4j\2.1.3\dom4j-2.1.3.jar;C:\Users\Jacob\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;C:\Users\Jacob\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\Jacob\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.1\jaxb-runtime-2.3.1.jar;C:\Users\Jacob\.m2\repository\org\glassfish\jaxb\txw2\2.3.1\txw2-2.3.1.jar;C:\Users\Jacob\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.7\istack-commons-runtime-3.0.7.jar;C:\Users\Jacob\.m2\repository\org\jvnet\staxex\stax-ex\1.8\stax-ex-1.8.jar;C:\Users\Jacob\.m2\repository\com\sun\xml\fastinfoset\FastInfoset\1.2.15\FastInfoset-1.2.15.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-orm\5.3.5\spring-orm-5.3.5.jar, java.vm.vendor=Oracle Corporation, sun.arch.data.model=64, user.variant=, java.vendor.url=https://java.oracle.com/, user.timezone=America/Chicago, java.vm.specification.version=16, os.name=Windows 10, sun.java.launcher=SUN_STANDARD, user.country=US, sun.boot.library.path=C:\Program Files\Java\jdk-16\bin, sun.java.command=Main, jdk.debug=release, sun.cpu.endian=little, user.home=C:\Users\Jacob, user.language=en, java.specification.vendor=Oracle Corporation, java.version.date=2021-03-16, java.home=C:\Program Files\Java\jdk-16, file.separator=\, java.vm.compressedOopsMode=Zero based, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, java.specification.name=Java Platform API Specification, hibernate.hbm2ddl.auto=create, user.script=, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=16+36-2231, user.name=Jacob, path.separator=;, os.version=10.0, java.runtime.name=Java(TM) SE Runtime Environment, file.encoding=Cp1252, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, hibernate.show_sql=false, hibernate.classLoaders=[jdk.internal.loader.ClassLoaders$AppClassLoader@5e2de80c], hibernate.current_session_context_class=org.springframework.orm.hibernate5.SpringSessionContext, java.vendor.url.bug=https://bugreport.java.com/bugreport/, java.io.tmpdir=C:\Users\Jacob\AppData\Local\Temp\, java.version=16, user.dir=C:\JavaPrograms\Revature\OnIt\OnIt, os.arch=amd64, java.vm.specification.name=Java Virtual Machine Specification, sun.os.patch.level=, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.cfgxml.spi.LoadedConfig@5b1f0f26, java.library.path=C:\Program Files\Java\jdk-16\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jdk-16/bin/server;C:/Program Files/Java/jdk-16/bin;C:\Python39\Scripts\;C:\Python39\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Jacob\AppData\Local\Microsoft\WindowsApps;C:\Program Files\dotnet\;C:\Program Files (x86)\Brackets\command;C:\ProgramData\chocolatey\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\Jacob\scoop\apps\ojdkbuild8-full\current\bin;C:\Users\Jacob\scoop\apps\maven\current\bin;C:\Users\Jacob\scoop\shims;C:\Users\Jacob\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Jacob\AppData\Local\Programs\Python\Python38-32\;C:\Users\Jacob\AppData\Local\Microsoft\WindowsApps;C:\Users\Jacob\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2019.3.1\bin;C:\Users\Jacob\AppData\Local\GitHubDesktop\bin;C:\Users\Jacob\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.3\bin;;C:\Users\Jacob\AppData\Roaming\npm;C:\Users\Jacob\Desktop;;., java.vendor=Oracle Corporation, java.vm.info=mixed mode, sharing, java.vm.version=16+36-2231, hibernate.bytecode.use_reflection_optimizer=false, sun.io.unicode.encoding=UnicodeLittle, hibernate.connection.datasource=org.springframework.jdbc.datasource.DriverManagerDataSource@58516c91, java.class.version=60.0}
+Skipping JACC integration as it was not enabled
+Instantiated session factory
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@77ec9fdb] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@61648dd2]
+No JtaPlatform was specified, checking resolver
+No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Checking 0 named HQL queries
+Checking 0 named SQL queries
+Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@69f24965
+Registering SessionFactory: 0c3e9810-51e4-4059-bbf5-62ec68cd0222 (<unnamed>)
+Not binding SessionFactory to JNDI, no JNDI name configured
+Logging Provider: org.jboss.logging.Log4jLoggerProvider
+Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+HHH000412: Hibernate ORM core version 5.4.30.Final
+HHH000206: hibernate.properties not found
+Building session factory using internal StandardServiceRegistryBuilder
+Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+Building session factory using provided StandardServiceRegistry
+Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+Adding type registration boolean -> org.hibernate.type.BooleanType@2313052e
+Adding type registration boolean -> org.hibernate.type.BooleanType@2313052e
+Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@2313052e
+Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@6cfcd46d
+Adding type registration true_false -> org.hibernate.type.TrueFalseType@1698fc68
+Adding type registration yes_no -> org.hibernate.type.YesNoType@34997338
+Adding type registration byte -> org.hibernate.type.ByteType@7e928e2f
+Adding type registration byte -> org.hibernate.type.ByteType@7e928e2f
+Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@7e928e2f
+Adding type registration character -> org.hibernate.type.CharacterType@2fc0cc3
+Adding type registration char -> org.hibernate.type.CharacterType@2fc0cc3
+Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@2fc0cc3
+Adding type registration short -> org.hibernate.type.ShortType@45efc20d
+Adding type registration short -> org.hibernate.type.ShortType@45efc20d
+Adding type registration java.lang.Short -> org.hibernate.type.ShortType@45efc20d
+Adding type registration integer -> org.hibernate.type.IntegerType@5b444398
+Adding type registration int -> org.hibernate.type.IntegerType@5b444398
+Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@5b444398
+Adding type registration long -> org.hibernate.type.LongType@4c4d27c8
+Adding type registration long -> org.hibernate.type.LongType@4c4d27c8
+Adding type registration java.lang.Long -> org.hibernate.type.LongType@4c4d27c8
+Adding type registration float -> org.hibernate.type.FloatType@19ae6bb
+Adding type registration float -> org.hibernate.type.FloatType@19ae6bb
+Adding type registration java.lang.Float -> org.hibernate.type.FloatType@19ae6bb
+Adding type registration double -> org.hibernate.type.DoubleType@4ee37ca3
+Adding type registration double -> org.hibernate.type.DoubleType@4ee37ca3
+Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@4ee37ca3
+Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@d8305c2
+Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@d8305c2
+Adding type registration big_integer -> org.hibernate.type.BigIntegerType@1fcb4808
+Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@1fcb4808
+Adding type registration string -> org.hibernate.type.StringType@7c2b6087
+Adding type registration java.lang.String -> org.hibernate.type.StringType@7c2b6087
+Adding type registration nstring -> org.hibernate.type.StringNVarcharType@3b77a04f
+Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@662f5666
+Adding type registration url -> org.hibernate.type.UrlType@75c9e76b
+Adding type registration java.net.URL -> org.hibernate.type.UrlType@75c9e76b
+Adding type registration Duration -> org.hibernate.type.DurationType@12bcd0c0
+Adding type registration java.time.Duration -> org.hibernate.type.DurationType@12bcd0c0
+Adding type registration Instant -> org.hibernate.type.InstantType@6d304f9d
+Adding type registration java.time.Instant -> org.hibernate.type.InstantType@6d304f9d
+Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@4cc6fa2a
+Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@4cc6fa2a
+Adding type registration LocalDate -> org.hibernate.type.LocalDateType@61884cb1
+Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@61884cb1
+Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@192d74fb
+Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@192d74fb
+Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@5bfa8cc5
+Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@5bfa8cc5
+Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@4a3329b9
+Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@4a3329b9
+Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@3f053c80
+Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@3f053c80
+Adding type registration date -> org.hibernate.type.DateType@3918c187
+Adding type registration java.sql.Date -> org.hibernate.type.DateType@3918c187
+Adding type registration time -> org.hibernate.type.TimeType@3d484181
+Adding type registration java.sql.Time -> org.hibernate.type.TimeType@3d484181
+Adding type registration timestamp -> org.hibernate.type.TimestampType@4721d212
+Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@4721d212
+Adding type registration java.util.Date -> org.hibernate.type.TimestampType@4721d212
+Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@4bff1903
+Adding type registration calendar -> org.hibernate.type.CalendarType@14f5da2c
+Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@14f5da2c
+Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@14f5da2c
+Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@1eb6749b
+Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@4f2c9ba6
+Adding type registration locale -> org.hibernate.type.LocaleType@71b3bc45
+Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@71b3bc45
+Adding type registration currency -> org.hibernate.type.CurrencyType@5ce33a58
+Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@5ce33a58
+Adding type registration timezone -> org.hibernate.type.TimeZoneType@25748410
+Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@25748410
+Adding type registration class -> org.hibernate.type.ClassType@75e01201
+Adding type registration java.lang.Class -> org.hibernate.type.ClassType@75e01201
+Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@1bb1fde8
+Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@1bb1fde8
+Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@2453f95d
+Adding type registration binary -> org.hibernate.type.BinaryType@4de41af9
+Adding type registration byte[] -> org.hibernate.type.BinaryType@4de41af9
+Adding type registration [B -> org.hibernate.type.BinaryType@4de41af9
+Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@62435e70
+Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@62435e70
+Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@62435e70
+Adding type registration row_version -> org.hibernate.type.RowVersionType@275fe372
+Adding type registration image -> org.hibernate.type.ImageType@7e38a7fe
+Adding type registration characters -> org.hibernate.type.CharArrayType@73ff4fae
+Adding type registration char[] -> org.hibernate.type.CharArrayType@73ff4fae
+Adding type registration [C -> org.hibernate.type.CharArrayType@73ff4fae
+Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@1433046b
+Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@1433046b
+Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@1433046b
+Adding type registration text -> org.hibernate.type.TextType@5b64c4b7
+Adding type registration ntext -> org.hibernate.type.NTextType@1c80e49b
+Adding type registration blob -> org.hibernate.type.BlobType@4d098f9b
+Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@4d098f9b
+Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@7e3060d8
+Adding type registration clob -> org.hibernate.type.ClobType@6d24ffa1
+Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@6d24ffa1
+Adding type registration nclob -> org.hibernate.type.NClobType@6b54655f
+Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@6b54655f
+Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@2756c0a7
+Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@165b2f7f
+Adding type registration serializable -> org.hibernate.type.SerializableType@1c55f277
+Adding type registration object -> org.hibernate.type.ObjectType@7c56e013
+Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@7c56e013
+Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@6731787b
+Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@16f7b4af
+Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@7adf16aa
+Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@34a1d21f
+Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@58bf8650
+Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@73c60324
+Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@71ae31b0
+Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@4ba534b0
+Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+Database ->
+       name : PostgreSQL
+    version : 12.5
+      major : 12
+      minor : 5
+Driver ->
+       name : PostgreSQL JDBC Driver
+    version : 42.2.10
+      major : 42
+      minor : 2
+JDBC version : 4.2
+HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+JDBC driver metadata reported database stores quoted identifiers in neither upper, lower nor mixed case
+Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@6dd91637
+Adding type registration java.util.UUID -> org.hibernate.type.PostgresUUIDType@6dd91637
+HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1bb1fde8
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@6e1f8469] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@2e380628]
+Building session factory
+SessionFactory name : null
+Automatic flush during beforeCompletion(): enabled
+Automatic session close at end of transaction: disabled
+Statistics: disabled
+Deleted entity synthetic identifier rollback: disabled
+Default entity-mode: pojo
+Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+Allow initialization of lazy state outside session : disabled
+Using BatchFetchStyle : LEGACY
+Default batch fetch size: -1
+Maximum outer join fetch depth: null
+Default null ordering: NONE
+Order SQL updates by primary key: disabled
+Order SQL inserts for batching: disabled
+multi-tenancy strategy : NONE
+JTA Track by Thread: enabled
+Query language substitutions: {}
+Named query checking : enabled
+Second-level cache: disabled
+Second-level query cache: disabled
+Second-level query cache factory: null
+Second-level cache region prefix: null
+Optimize second-level cache for minimal puts: disabled
+Structured second-level cache entries: disabled
+Second-level cache direct-reference entries: disabled
+Automatic eviction of collection cache: disabled
+JDBC batch size: 15
+JDBC batch updates for versioned data: enabled
+Scrollable result sets: enabled
+Wrap result sets: disabled
+JDBC3 getGeneratedKeys(): enabled
+JDBC result set fetch size: null
+Connection release mode: ON_CLOSE
+Generate SQL with comments: disabled
+JPA compliance - query : disabled
+JPA compliance - closed-handling : disabled
+JPA compliance - lists : disabled
+JPA compliance - transactions : disabled
+Session factory constructed with filter configurations : {}
+Instantiating session factory with properties: {hibernate.format_sql=false, java.specification.version=16, sun.cpu.isalist=amd64, hibernate.resource.beans.container=org.springframework.orm.hibernate5.SpringBeanContainer@1a480135, hibernate.connection.handling_mode=DELAYED_ACQUISITION_AND_HOLD, sun.jnu.encoding=Cp1252, hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect, java.class.path=C:\JavaPrograms\Revature\OnIt\OnIt\target\classes;C:\Users\Jacob\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\Jacob\.m2\repository\javax\servlet\javax.servlet-api\4.0.1\javax.servlet-api-4.0.1.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-jdbc\5.3.5\spring-jdbc-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-core\5.3.5\spring-core-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-jcl\5.3.5\spring-jcl-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-tx\5.3.5\spring-tx-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-context\5.3.5\spring-context-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-aop\5.3.5\spring-aop-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-expression\5.3.5\spring-expression-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-beans\5.3.5\spring-beans-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-aspects\5.3.5\spring-aspects-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\aspectj\aspectjweaver\1.9.6\aspectjweaver-1.9.6.jar;C:\Users\Jacob\.m2\repository\org\projectlombok\lombok\1.18.16\lombok-1.18.16.jar;C:\Users\Jacob\.m2\repository\org\postgresql\postgresql\42.2.10\postgresql-42.2.10.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.1\jackson-databind-2.12.1.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.12.1\jackson-annotations-2.12.1.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.12.1\jackson-core-2.12.1.jar;C:\Users\Jacob\.m2\repository\org\hibernate\hibernate-core\5.4.30.Final\hibernate-core-5.4.30.Final.jar;C:\Users\Jacob\.m2\repository\org\jboss\logging\jboss-logging\3.4.1.Final\jboss-logging-3.4.1.Final.jar;C:\Users\Jacob\.m2\repository\javax\persistence\javax.persistence-api\2.2\javax.persistence-api-2.2.jar;C:\Users\Jacob\.m2\repository\org\javassist\javassist\3.27.0-GA\javassist-3.27.0-GA.jar;C:\Users\Jacob\.m2\repository\net\bytebuddy\byte-buddy\1.10.21\byte-buddy-1.10.21.jar;C:\Users\Jacob\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\Jacob\.m2\repository\org\jboss\spec\javax\transaction\jboss-transaction-api_1.2_spec\1.1.1.Final\jboss-transaction-api_1.2_spec-1.1.1.Final.jar;C:\Users\Jacob\.m2\repository\org\jboss\jandex\2.2.3.Final\jandex-2.2.3.Final.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Jacob\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\Jacob\.m2\repository\org\dom4j\dom4j\2.1.3\dom4j-2.1.3.jar;C:\Users\Jacob\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;C:\Users\Jacob\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\Jacob\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.1\jaxb-runtime-2.3.1.jar;C:\Users\Jacob\.m2\repository\org\glassfish\jaxb\txw2\2.3.1\txw2-2.3.1.jar;C:\Users\Jacob\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.7\istack-commons-runtime-3.0.7.jar;C:\Users\Jacob\.m2\repository\org\jvnet\staxex\stax-ex\1.8\stax-ex-1.8.jar;C:\Users\Jacob\.m2\repository\com\sun\xml\fastinfoset\FastInfoset\1.2.15\FastInfoset-1.2.15.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-orm\5.3.5\spring-orm-5.3.5.jar, java.vm.vendor=Oracle Corporation, sun.arch.data.model=64, user.variant=, java.vendor.url=https://java.oracle.com/, user.timezone=America/Chicago, java.vm.specification.version=16, os.name=Windows 10, sun.java.launcher=SUN_STANDARD, user.country=US, sun.boot.library.path=C:\Program Files\Java\jdk-16\bin, sun.java.command=Main, jdk.debug=release, sun.cpu.endian=little, user.home=C:\Users\Jacob, user.language=en, java.specification.vendor=Oracle Corporation, java.version.date=2021-03-16, java.home=C:\Program Files\Java\jdk-16, file.separator=\, java.vm.compressedOopsMode=Zero based, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, java.specification.name=Java Platform API Specification, hibernate.hbm2ddl.auto=create, user.script=, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=16+36-2231, user.name=Jacob, path.separator=;, os.version=10.0, java.runtime.name=Java(TM) SE Runtime Environment, file.encoding=Cp1252, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, hibernate.show_sql=false, hibernate.classLoaders=[jdk.internal.loader.ClassLoaders$AppClassLoader@73d16e93], hibernate.current_session_context_class=org.springframework.orm.hibernate5.SpringSessionContext, java.vendor.url.bug=https://bugreport.java.com/bugreport/, java.io.tmpdir=C:\Users\Jacob\AppData\Local\Temp\, java.version=16, user.dir=C:\JavaPrograms\Revature\OnIt\OnIt, os.arch=amd64, java.vm.specification.name=Java Virtual Machine Specification, sun.os.patch.level=, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.cfgxml.spi.LoadedConfig@778db7c5, java.library.path=C:\Program Files\Java\jdk-16\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jdk-16/bin/server;C:/Program Files/Java/jdk-16/bin;C:\Python39\Scripts\;C:\Python39\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Jacob\AppData\Local\Microsoft\WindowsApps;C:\Program Files\dotnet\;C:\Program Files (x86)\Brackets\command;C:\ProgramData\chocolatey\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\Jacob\scoop\apps\ojdkbuild8-full\current\bin;C:\Users\Jacob\scoop\apps\maven\current\bin;C:\Users\Jacob\scoop\shims;C:\Users\Jacob\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Jacob\AppData\Local\Programs\Python\Python38-32\;C:\Users\Jacob\AppData\Local\Microsoft\WindowsApps;C:\Users\Jacob\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2019.3.1\bin;C:\Users\Jacob\AppData\Local\GitHubDesktop\bin;C:\Users\Jacob\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.3\bin;;C:\Users\Jacob\AppData\Roaming\npm;C:\Users\Jacob\Desktop;;., java.vendor=Oracle Corporation, java.vm.info=mixed mode, sharing, java.vm.version=16+36-2231, hibernate.bytecode.use_reflection_optimizer=false, sun.io.unicode.encoding=UnicodeLittle, hibernate.connection.datasource=org.springframework.jdbc.datasource.DriverManagerDataSource@609db43b, java.class.version=60.0}
+Skipping JACC integration as it was not enabled
+Instantiated session factory
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@6e1f8469] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@422b8438]
+No JtaPlatform was specified, checking resolver
+No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Checking 0 named HQL queries
+Checking 0 named SQL queries
+Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@23f3dbf0
+Registering SessionFactory: 61627271-0c9f-490f-a8d8-64f67e288ad9 (<unnamed>)
+Not binding SessionFactory to JNDI, no JNDI name configured
+Logging Provider: org.jboss.logging.Log4jLoggerProvider
+Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+HHH000412: Hibernate ORM core version 5.4.30.Final
+HHH000206: hibernate.properties not found
+Building session factory using internal StandardServiceRegistryBuilder
+Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+Building session factory using provided StandardServiceRegistry
+Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+Adding type registration boolean -> org.hibernate.type.BooleanType@7eeb38b2
+Adding type registration boolean -> org.hibernate.type.BooleanType@7eeb38b2
+Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@7eeb38b2
+Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@58eac00e
+Adding type registration true_false -> org.hibernate.type.TrueFalseType@30aec673
+Adding type registration yes_no -> org.hibernate.type.YesNoType@58f31629
+Adding type registration byte -> org.hibernate.type.ByteType@52831a73
+Adding type registration byte -> org.hibernate.type.ByteType@52831a73
+Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@52831a73
+Adding type registration character -> org.hibernate.type.CharacterType@48581a3b
+Adding type registration char -> org.hibernate.type.CharacterType@48581a3b
+Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@48581a3b
+Adding type registration short -> org.hibernate.type.ShortType@db99785
+Adding type registration short -> org.hibernate.type.ShortType@db99785
+Adding type registration java.lang.Short -> org.hibernate.type.ShortType@db99785
+Adding type registration integer -> org.hibernate.type.IntegerType@1b4872bc
+Adding type registration int -> org.hibernate.type.IntegerType@1b4872bc
+Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@1b4872bc
+Adding type registration long -> org.hibernate.type.LongType@74667e6a
+Adding type registration long -> org.hibernate.type.LongType@74667e6a
+Adding type registration java.lang.Long -> org.hibernate.type.LongType@74667e6a
+Adding type registration float -> org.hibernate.type.FloatType@a54acec
+Adding type registration float -> org.hibernate.type.FloatType@a54acec
+Adding type registration java.lang.Float -> org.hibernate.type.FloatType@a54acec
+Adding type registration double -> org.hibernate.type.DoubleType@60e1d87c
+Adding type registration double -> org.hibernate.type.DoubleType@60e1d87c
+Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@60e1d87c
+Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@59303963
+Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@59303963
+Adding type registration big_integer -> org.hibernate.type.BigIntegerType@52d0f583
+Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@52d0f583
+Adding type registration string -> org.hibernate.type.StringType@7af0affa
+Adding type registration java.lang.String -> org.hibernate.type.StringType@7af0affa
+Adding type registration nstring -> org.hibernate.type.StringNVarcharType@5b251fb9
+Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@7f97bc14
+Adding type registration url -> org.hibernate.type.UrlType@25a1a012
+Adding type registration java.net.URL -> org.hibernate.type.UrlType@25a1a012
+Adding type registration Duration -> org.hibernate.type.DurationType@5bf9ea6b
+Adding type registration java.time.Duration -> org.hibernate.type.DurationType@5bf9ea6b
+Adding type registration Instant -> org.hibernate.type.InstantType@bc09d57
+Adding type registration java.time.Instant -> org.hibernate.type.InstantType@bc09d57
+Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@7015ebef
+Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@7015ebef
+Adding type registration LocalDate -> org.hibernate.type.LocalDateType@1df5c7e3
+Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@1df5c7e3
+Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@15c6027d
+Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@15c6027d
+Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@46c10083
+Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@46c10083
+Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@35eee641
+Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@35eee641
+Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2a8f6e6
+Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2a8f6e6
+Adding type registration date -> org.hibernate.type.DateType@36359723
+Adding type registration java.sql.Date -> org.hibernate.type.DateType@36359723
+Adding type registration time -> org.hibernate.type.TimeType@5f08fe00
+Adding type registration java.sql.Time -> org.hibernate.type.TimeType@5f08fe00
+Adding type registration timestamp -> org.hibernate.type.TimestampType@724bf25f
+Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@724bf25f
+Adding type registration java.util.Date -> org.hibernate.type.TimestampType@724bf25f
+Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@26582ca
+Adding type registration calendar -> org.hibernate.type.CalendarType@2f3928ac
+Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@2f3928ac
+Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@2f3928ac
+Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@44e4cb76
+Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@4aebee4b
+Adding type registration locale -> org.hibernate.type.LocaleType@1c297897
+Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@1c297897
+Adding type registration currency -> org.hibernate.type.CurrencyType@7889b4b9
+Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@7889b4b9
+Adding type registration timezone -> org.hibernate.type.TimeZoneType@7f5614f9
+Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@7f5614f9
+Adding type registration class -> org.hibernate.type.ClassType@71a4f441
+Adding type registration java.lang.Class -> org.hibernate.type.ClassType@71a4f441
+Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@5f6b53ed
+Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@5f6b53ed
+Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@5c48b72c
+Adding type registration binary -> org.hibernate.type.BinaryType@6282b9f5
+Adding type registration byte[] -> org.hibernate.type.BinaryType@6282b9f5
+Adding type registration [B -> org.hibernate.type.BinaryType@6282b9f5
+Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@632b305d
+Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@632b305d
+Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@632b305d
+Adding type registration row_version -> org.hibernate.type.RowVersionType@739831a4
+Adding type registration image -> org.hibernate.type.ImageType@38883a31
+Adding type registration characters -> org.hibernate.type.CharArrayType@118acf70
+Adding type registration char[] -> org.hibernate.type.CharArrayType@118acf70
+Adding type registration [C -> org.hibernate.type.CharArrayType@118acf70
+Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@31efacad
+Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@31efacad
+Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@31efacad
+Adding type registration text -> org.hibernate.type.TextType@6e24ce51
+Adding type registration ntext -> org.hibernate.type.NTextType@4001d8c1
+Adding type registration blob -> org.hibernate.type.BlobType@21390938
+Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@21390938
+Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@4e4162bc
+Adding type registration clob -> org.hibernate.type.ClobType@26d5a317
+Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@26d5a317
+Adding type registration nclob -> org.hibernate.type.NClobType@113f9078
+Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@113f9078
+Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@7e52a26b
+Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@224c7de4
+Adding type registration serializable -> org.hibernate.type.SerializableType@191c6e13
+Adding type registration object -> org.hibernate.type.ObjectType@78c262ba
+Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@78c262ba
+Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@7d2c345d
+Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@217dc48e
+Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@5db948c9
+Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@296edc75
+Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@357c9bd9
+Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@7aea704c
+Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@6d0290d8
+Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@32507479
+Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+Database ->
+       name : PostgreSQL
+    version : 12.5
+      major : 12
+      minor : 5
+Driver ->
+       name : PostgreSQL JDBC Driver
+    version : 42.2.10
+      major : 42
+      minor : 2
+JDBC version : 4.2
+HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+JDBC driver metadata reported database stores quoted identifiers in neither upper, lower nor mixed case
+Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@11069eac
+Adding type registration java.util.UUID -> org.hibernate.type.PostgresUUIDType@11069eac
+HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5f6b53ed
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@77ec9fdb] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@35af1558]
+Building session factory
+SessionFactory name : null
+Automatic flush during beforeCompletion(): enabled
+Automatic session close at end of transaction: disabled
+Statistics: disabled
+Deleted entity synthetic identifier rollback: disabled
+Default entity-mode: pojo
+Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+Allow initialization of lazy state outside session : disabled
+Using BatchFetchStyle : LEGACY
+Default batch fetch size: -1
+Maximum outer join fetch depth: null
+Default null ordering: NONE
+Order SQL updates by primary key: disabled
+Order SQL inserts for batching: disabled
+multi-tenancy strategy : NONE
+JTA Track by Thread: enabled
+Query language substitutions: {}
+Named query checking : enabled
+Second-level cache: disabled
+Second-level query cache: disabled
+Second-level query cache factory: null
+Second-level cache region prefix: null
+Optimize second-level cache for minimal puts: disabled
+Structured second-level cache entries: disabled
+Second-level cache direct-reference entries: disabled
+Automatic eviction of collection cache: disabled
+JDBC batch size: 15
+JDBC batch updates for versioned data: enabled
+Scrollable result sets: enabled
+Wrap result sets: disabled
+JDBC3 getGeneratedKeys(): enabled
+JDBC result set fetch size: null
+Connection release mode: ON_CLOSE
+Generate SQL with comments: disabled
+JPA compliance - query : disabled
+JPA compliance - closed-handling : disabled
+JPA compliance - lists : disabled
+JPA compliance - transactions : disabled
+Session factory constructed with filter configurations : {}
+Instantiating session factory with properties: {hibernate.format_sql=false, java.specification.version=16, sun.cpu.isalist=amd64, hibernate.resource.beans.container=org.springframework.orm.hibernate5.SpringBeanContainer@6b6c0b7c, hibernate.connection.handling_mode=DELAYED_ACQUISITION_AND_HOLD, sun.jnu.encoding=Cp1252, hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect, java.class.path=C:\JavaPrograms\Revature\OnIt\OnIt\target\classes;C:\Users\Jacob\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\Jacob\.m2\repository\javax\servlet\javax.servlet-api\4.0.1\javax.servlet-api-4.0.1.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-jdbc\5.3.5\spring-jdbc-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-core\5.3.5\spring-core-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-jcl\5.3.5\spring-jcl-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-tx\5.3.5\spring-tx-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-context\5.3.5\spring-context-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-aop\5.3.5\spring-aop-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-expression\5.3.5\spring-expression-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-beans\5.3.5\spring-beans-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-aspects\5.3.5\spring-aspects-5.3.5.jar;C:\Users\Jacob\.m2\repository\org\aspectj\aspectjweaver\1.9.6\aspectjweaver-1.9.6.jar;C:\Users\Jacob\.m2\repository\org\projectlombok\lombok\1.18.16\lombok-1.18.16.jar;C:\Users\Jacob\.m2\repository\org\postgresql\postgresql\42.2.10\postgresql-42.2.10.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.1\jackson-databind-2.12.1.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.12.1\jackson-annotations-2.12.1.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.12.1\jackson-core-2.12.1.jar;C:\Users\Jacob\.m2\repository\org\hibernate\hibernate-core\5.4.30.Final\hibernate-core-5.4.30.Final.jar;C:\Users\Jacob\.m2\repository\org\jboss\logging\jboss-logging\3.4.1.Final\jboss-logging-3.4.1.Final.jar;C:\Users\Jacob\.m2\repository\javax\persistence\javax.persistence-api\2.2\javax.persistence-api-2.2.jar;C:\Users\Jacob\.m2\repository\org\javassist\javassist\3.27.0-GA\javassist-3.27.0-GA.jar;C:\Users\Jacob\.m2\repository\net\bytebuddy\byte-buddy\1.10.21\byte-buddy-1.10.21.jar;C:\Users\Jacob\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\Jacob\.m2\repository\org\jboss\spec\javax\transaction\jboss-transaction-api_1.2_spec\1.1.1.Final\jboss-transaction-api_1.2_spec-1.1.1.Final.jar;C:\Users\Jacob\.m2\repository\org\jboss\jandex\2.2.3.Final\jandex-2.2.3.Final.jar;C:\Users\Jacob\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\Jacob\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\Jacob\.m2\repository\org\dom4j\dom4j\2.1.3\dom4j-2.1.3.jar;C:\Users\Jacob\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;C:\Users\Jacob\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\Jacob\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.1\jaxb-runtime-2.3.1.jar;C:\Users\Jacob\.m2\repository\org\glassfish\jaxb\txw2\2.3.1\txw2-2.3.1.jar;C:\Users\Jacob\.m2\repository\com\sun\istack\istack-commons-runtime\3.0.7\istack-commons-runtime-3.0.7.jar;C:\Users\Jacob\.m2\repository\org\jvnet\staxex\stax-ex\1.8\stax-ex-1.8.jar;C:\Users\Jacob\.m2\repository\com\sun\xml\fastinfoset\FastInfoset\1.2.15\FastInfoset-1.2.15.jar;C:\Users\Jacob\.m2\repository\org\springframework\spring-orm\5.3.5\spring-orm-5.3.5.jar, java.vm.vendor=Oracle Corporation, sun.arch.data.model=64, user.variant=, java.vendor.url=https://java.oracle.com/, user.timezone=America/Chicago, java.vm.specification.version=16, os.name=Windows 10, sun.java.launcher=SUN_STANDARD, user.country=US, sun.boot.library.path=C:\Program Files\Java\jdk-16\bin, sun.java.command=Main, jdk.debug=release, sun.cpu.endian=little, user.home=C:\Users\Jacob, user.language=en, java.specification.vendor=Oracle Corporation, java.version.date=2021-03-16, java.home=C:\Program Files\Java\jdk-16, file.separator=\, java.vm.compressedOopsMode=Zero based, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, java.specification.name=Java Platform API Specification, hibernate.hbm2ddl.auto=create, user.script=, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=16+36-2231, user.name=Jacob, path.separator=;, os.version=10.0, java.runtime.name=Java(TM) SE Runtime Environment, file.encoding=Cp1252, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, hibernate.show_sql=false, hibernate.classLoaders=[jdk.internal.loader.ClassLoaders$AppClassLoader@5e2de80c], hibernate.current_session_context_class=org.springframework.orm.hibernate5.SpringSessionContext, java.vendor.url.bug=https://bugreport.java.com/bugreport/, java.io.tmpdir=C:\Users\Jacob\AppData\Local\Temp\, java.version=16, user.dir=C:\JavaPrograms\Revature\OnIt\OnIt, os.arch=amd64, java.vm.specification.name=Java Virtual Machine Specification, sun.os.patch.level=, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.cfgxml.spi.LoadedConfig@5b1f0f26, java.library.path=C:\Program Files\Java\jdk-16\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jdk-16/bin/server;C:/Program Files/Java/jdk-16/bin;C:\Python39\Scripts\;C:\Python39\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Jacob\AppData\Local\Microsoft\WindowsApps;C:\Program Files\dotnet\;C:\Program Files (x86)\Brackets\command;C:\ProgramData\chocolatey\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\Jacob\scoop\apps\ojdkbuild8-full\current\bin;C:\Users\Jacob\scoop\apps\maven\current\bin;C:\Users\Jacob\scoop\shims;C:\Users\Jacob\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Jacob\AppData\Local\Programs\Python\Python38-32\;C:\Users\Jacob\AppData\Local\Microsoft\WindowsApps;C:\Users\Jacob\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2019.3.1\bin;C:\Users\Jacob\AppData\Local\GitHubDesktop\bin;C:\Users\Jacob\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.3\bin;;C:\Users\Jacob\AppData\Roaming\npm;C:\Users\Jacob\Desktop;;., java.vendor=Oracle Corporation, java.vm.info=mixed mode, sharing, java.vm.version=16+36-2231, hibernate.bytecode.use_reflection_optimizer=false, sun.io.unicode.encoding=UnicodeLittle, hibernate.connection.datasource=org.springframework.jdbc.datasource.DriverManagerDataSource@58516c91, java.class.version=60.0}
+Skipping JACC integration as it was not enabled
+Instantiated session factory
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@77ec9fdb] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@61648dd2]
+No JtaPlatform was specified, checking resolver
+No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Checking 0 named HQL queries
+Checking 0 named SQL queries
+Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@69f24965
+Registering SessionFactory: 674c6c9b-3b02-4f41-ad0a-d36afbaa2c52 (<unnamed>)
+Not binding SessionFactory to JNDI, no JNDI name configured
