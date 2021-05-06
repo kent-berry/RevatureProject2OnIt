@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SignedInUserService } from './SignedInUserService/signed-in-user.service';
+import { SignedInUserService } from './USER_RELATED_SERVICES/signed-in-user.service';
 
 @Component({
   selector: 'app-root',

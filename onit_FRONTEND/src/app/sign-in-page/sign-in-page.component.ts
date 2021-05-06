@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
-import { SignedInUserService } from '../SignedInUserService/signed-in-user.service';
-import { SignedInUser } from '../SignedInUserService/SignedInUser';
+import { SignedInUserService } from '../USER_RELATED_SERVICES/signed-in-user.service';
+import { User } from '../USER_RELATED_SERVICES/User';
 import { filter } from 'rxjs/operators';
+import { SAMPLEUSERSService } from '../USER_RELATED_SERVICES/sampleusers.service';
 
 
 
@@ -18,7 +19,8 @@ export class SignInPageComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private signedInUserService: SignedInUserService
+    private signedInUserService: SignedInUserService,
+    private sampleUsersService: SAMPLEUSERSService
   ) { 
 
     
@@ -42,8 +44,13 @@ export class SignInPageComponent implements OnInit {
   submitLogIn(): void {
 
     console.log("HOME-PAGE: log in button pressed.");
+    console.log("Test printing all sample users: ");
+    this.sampleUsersService.getUserList().forEach(function(value) {
+      console.log(value.username);
+      console.log(value.password);
+    })
 
-     this.signedInUserService.signedInUser = new SignedInUser("bob10", "pw");
+    this.signedInUserService.signedInUser = new User("bob10", "pw");
 
     this.router.navigate(['/tasks'])
 

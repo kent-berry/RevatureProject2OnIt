@@ -1,5 +1,5 @@
 
-export class SignedInUser {
+export class User {
 
     private _username: string;
     private _password: string;

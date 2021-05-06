@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { SignedInUser } from './SignedInUser';
+import { User } from './User';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SignedInUserService {
 
-  private _signedInUser : SignedInUser;
+  private _signedInUser : User;
 
   constructor() {
 
@@ -16,7 +16,7 @@ export class SignedInUserService {
    get signedInUser() {
      return this._signedInUser
    }
-   set signedInUser(signedInUser: SignedInUser) {
+   set signedInUser(signedInUser: User) {
      this._signedInUser = signedInUser;
    }
   

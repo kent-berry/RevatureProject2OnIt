@@ -9,6 +9,7 @@ import { RegisterPageComponent } from './register-page/register-page.component';
 import { AccountManagementPageComponent } from './account-management-page/account-management-page.component';
 import { CreateTaskPageComponent } from './create-task-page/create-task-page.component';
 import { EditTaskPageComponent } from './edit-task-page/edit-task-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EditTaskPageComponent } from './edit-task-page/edit-task-page.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
