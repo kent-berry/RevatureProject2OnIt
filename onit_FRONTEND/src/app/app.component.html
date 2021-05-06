@@ -1,0 +1,21 @@
+
+<nav class="navbar navbar-dark bg-dark" *ngIf="getSignedInUser()">
+  <a class="nav-item nav-link" routerLink="/tasks">Tasks</a>
+  <a class="nav-item nav-link" routerLink="/accountmanagement">Account management</a>
+  <a class="nav-item nav-link" routerLink="/home" (click)="signUserOut()">Sign out</a>
+</nav>
+<!-- This is the main display area of the site -->
+
+<!-- Clicking links and what not will route to
+      the appropriate URL/Component pair and display
+      that component within <router-outlet></router-outlet>
+    -->
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
