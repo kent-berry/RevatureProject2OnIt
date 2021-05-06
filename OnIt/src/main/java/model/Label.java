@@ -11,17 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name= "user_table")
-public class User {
-	
-<<<<<<< HEAD
-	String firstName;
-	String lastName;
-	
-	
-=======
-	String temp = "";
->>>>>>> hshallal
-	
+@Table(name= "label_table")
+public class Label {
 
 }

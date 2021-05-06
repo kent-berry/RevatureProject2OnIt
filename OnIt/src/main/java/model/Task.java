@@ -20,6 +20,9 @@ public class Task {
 	
 	@Column(name = "name")
 	String name = "";
+<<<<<<< HEAD
 	
+=======
+>>>>>>> hshallal
 
 }
