@@ -7,6 +7,8 @@ import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { UserHomePageComponent } from './user-home-page/user-home-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { AccountManagementPageComponent } from './account-management-page/account-management-page.component';
+import { CreateTaskPageComponent } from './create-task-page/create-task-page.component';
+import { EditTaskPageComponent } from './edit-task-page/edit-task-page.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { AccountManagementPageComponent } from './account-management-page/accoun
     SignInPageComponent,
     UserHomePageComponent,
     RegisterPageComponent,
-    AccountManagementPageComponent
+    AccountManagementPageComponent,
+    CreateTaskPageComponent,
+    EditTaskPageComponent
   ],
   imports: [
     BrowserModule,

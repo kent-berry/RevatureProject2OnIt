@@ -1,0 +1,11 @@
+----------------
+    Routes
+----------------
+1) src/app-routing.module.ts
+This is the place to be if you want to see all of the URL mappings to components for the entire site
+
+2) src/app.component.html
+This is the HTML file which contains:
+   a) The main Nav bar ("Tasks", "Account Management", "Sign Out") that is there only when a user is logged in.
+   b) The main "view" of the site: <router-outlet> is the content panel for the result of navigating to different URLs
+
