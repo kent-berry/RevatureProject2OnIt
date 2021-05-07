@@ -12,41 +12,42 @@ public interface IUserController {
 	// Authentication, deletion, download
     boolean register(User incomingUser);
 	User login(User incomingUser);
-	User logout(User user);
+	//User logout(User user);
 	boolean unregister(HttpServletRequest request); //account deletion
 	String downloadMyData(HttpServletRequest request);
+	boolean updateUser(User user);
 	
 	
 	// Creating, deleteing, and viewing tasks
-	boolean createTask(Task task);
-	boolean updateTask(HttpServletRequest request);
-	boolean deleteTask(HttpServletRequest request);
-	List<Task> viewTasks (HttpServletRequest request);
+	//boolean createTask(Task task);
+	//boolean updateTask(HttpServletRequest request);
+	//boolean deleteTask(HttpServletRequest request);
+	//List<Task> viewTasks (HttpServletRequest request);
 	
 	// Completing a task, filtering based of completion
-	boolean completeTask(HttpServletRequest request);
-	List<Task> viewCompleted(HttpServletRequest request);
+	//boolean completeTask(HttpServletRequest request);
+	//List<Task> viewCompleted(HttpServletRequest request);
 	
 	
 	// Labelling, filtering based on label
-	boolean labelTask(HttpServletRequest request);
-	List<Task> viewLabel(HttpServletRequest request);
+	//boolean labelTask(HttpServletRequest request);
+	//List<Task> viewLabel(HttpServletRequest request);
 	
 	// Adding due date, filtering based on duedate
-	boolean duedateTask(HttpServletRequest request);
-	boolean viewDuedate(HttpServletRequest request);
+	//boolean duedateTask(HttpServletRequest request);
+	//boolean viewDuedate(HttpServletRequest request);
 	
 	// receiving email reminders
-	boolean receiveEmailReminders(HttpServletRequest request);
+//	boolean receiveEmailReminders(HttpServletRequest request);
 	
 	// Assign repeatable/non repeatable
-	boolean setRepeatableTask(HttpServletRequest request);
+	//boolean setRepeatableTask(HttpServletRequest request);
 
 	
-	//Setting daily goals
-	boolean setDailyGoals(HttpServletRequest request);
-	Object viewProgress(HttpServletRequest request);
-	
-	//viewing graph
-	Object viewPastProgressGraph(HttpServletRequest request);
+//	//Setting daily goals
+//	boolean setDailyGoals(HttpServletRequest request);
+//	Object viewProgress(HttpServletRequest request);
+//	
+//	//viewing graph
+//	Object viewPastProgressGraph(HttpServletRequest request);
 }

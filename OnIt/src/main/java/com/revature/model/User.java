@@ -1,6 +1,7 @@
 package com.revature.model;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
 
@@ -36,6 +38,17 @@ public class User {
 	@Column(name = "dailyTaskGoal")
 	private int dailyTaskGoal;
 	
+	@Transient
+	private List<Task> tasks = null;
+	
+	
+	
+	public List<Task> getTasks() {
+		return tasks;
+	}
+	public void setTasks(List<Task> tasks) {
+		this.tasks = tasks;
+	}
 	public int getID() {
 		return ID;
 	}
