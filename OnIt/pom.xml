@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.revature</groupId>
   <artifactId>OnIt</artifactId>
-  <version>null</version>
+  <version>0.0</version>
   <name>OnIt</name>
   <description>Project-2</description>
   <packaging>war</packaging> 
@@ -17,6 +17,7 @@
 			    <configuration>
 			        <url>http://localhost:8090/manager/text</url>
 			        <server>tomcatserver</server>
+			        <fileNameMapping>no-version</fileNameMapping>
 			        <path>/OnIt</path>
 			        <username>admin</username>
 			        <password>admin</password>
