@@ -7,6 +7,7 @@
   <name>OnIt</name>
   <description>Project-2</description>
   <build>
+  		<finalName>OnIt</finalName>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
