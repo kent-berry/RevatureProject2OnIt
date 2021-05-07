@@ -97,11 +97,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-<<<<<<< HEAD
 				+ ", password=" + password + ", daily task goal=" + goal + "]";
-=======
-				+ ", daily task goal=" + goal + "]";
->>>>>>> ac3fb1dea0d84bc47ce529831e4cb1464af44dc1
 	}
 
 
