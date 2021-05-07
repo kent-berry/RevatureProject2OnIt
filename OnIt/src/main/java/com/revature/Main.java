@@ -8,13 +8,13 @@ import com.revature.connection.ConnectionUtil;
 import com.revature.dao.UserDao;
 import com.revature.model.Task;
 import com.revature.model.User;
-import com.revature.servlet.MasterServlet;
 
 
 // This main is for testing purposes, this is a WAR and no main class is needed at the end
 public class Main {
 
 	public final static ApplicationContext appContext = new ClassPathXmlApplicationContext("beans-annotations.xml");
+	
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
 		User u = appContext.getBean("User", User.class);

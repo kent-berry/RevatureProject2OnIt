@@ -16,6 +16,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.model.User;
+
+
+
 @EnableTransactionManagement
 @Repository("UserDao")
 public class UserDao implements IUserDao {
@@ -28,6 +31,36 @@ public class UserDao implements IUserDao {
 	{
 		
 		sessionFactory.getCurrentSession().save(u);
+	}
+
+	@Override
+	public boolean insert(String firstName, String lastName, String email, String password) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public User select(String email, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean delete(String email, String password) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateEmailReminders(int reminderPeriod) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateGoal(int numDesired) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 }

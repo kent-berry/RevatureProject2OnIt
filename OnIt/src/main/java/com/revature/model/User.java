@@ -1,5 +1,7 @@
 package com.revature.model;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,11 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 import org.springframework.stereotype.Component;
-
-
-
 
 @Component("User")
 @Entity
@@ -38,6 +36,11 @@ public class User {
 	@Column(name = "dailyTaskGoal")
 	int dailyTaskGoal;
 	
+	@Column(name = "accountCreated")
+	private Timestamp accountCreated;
+	
+	@Column(name = "receiveEmailReminders")
+	private int receiveEmailReminders;  
 
 	public String getLastName() {
 		return lastName;
