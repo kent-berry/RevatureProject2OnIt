@@ -25,13 +25,13 @@ public class UserService implements IUserService {
 	private ITaskDao taskdao = new TaskDao();
 	
 	@Override
-	public boolean register(String firstName, String lastName, String email, String password) {
-		return userdao.insert(firstName, lastName, email, password);
+	public boolean register(User user) {
+		return userdao.insert(user);
 	}
 
 	@Override
-	public User login(String email, String password) {
-		return userdao.select(email, password);
+	public User login(User user) {
+		return userdao.select(user);
 	}
 
 
@@ -42,7 +42,8 @@ public class UserService implements IUserService {
 
 	@Override
 	public String downloadMyData(String email , String password) {
-		return userdao.select(email, password).toString();
+		User user = null;
+		return userdao.select(user).toString();
 	}
 
 	@Override

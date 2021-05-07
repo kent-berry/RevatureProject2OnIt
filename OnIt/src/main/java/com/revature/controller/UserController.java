@@ -3,11 +3,23 @@ package com.revature.controller;
 import java.time.LocalDate;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.revature.model.Task;
 import com.revature.model.User;
@@ -15,39 +27,68 @@ import com.revature.service.IUserService;
 import com.revature.service.UserService;
 
 @Controller
-@RequestMapping(value = "/test")
+//@RequestMapping(value = "/user")
+@SessionAttributes("user")
 public class UserController implements IUserController {
 
 	@Autowired
 	private IUserService userservice = new UserService();
 	
+	@Autowired
+	private HttpSession httpsesh; 
+	
 	//this method made by kent to begin testing MVC
-	@RequestMapping(value = "/test2")
-	public @ResponseBody String test() {
-		return "test";
+	@RequestMapping(method = RequestMethod.GET, value ="/test2")
+	public  @ResponseBody User test() {
+		User user = new User();
+		System.out.println("inside test mvc");
+		return user;
 	}
 	
+	
 	@Override
-	public boolean register(HttpServletRequest request) {
-		return userservice.register(request.getParameter("firstname"), 
-				request.getParameter("lastName"), 
-				request.getParameter("email"), 
-				request.getParameter("password"));
+	@PostMapping(value="/register")
+	public  @ResponseBody boolean register(@RequestBody User incomingUser) {
+//		return userservice.register(request.getParameter("firstname"), 
+//				request.getParameter("lastName"), 
+//				request.getParameter("email"), 
+//				request.getParameter("password"));
+		
+		return userservice.register(incomingUser);
 	}
 
 	@Override
-	public User login(HttpServletRequest request) {
-		return userservice.login(request.getParameter("email"), 
-								 request.getParameter("password"));
+	@ResponseStatus(code = HttpStatus.ACCEPTED)
+	@PostMapping(value="/login")
+	@ModelAttribute("user") //THIS SHOULD BE DOING OUR SESSION STORING FOR US NOW
+	public User login(@RequestBody User incomingUser) {
+//		return userservice.login(request.getParameter("email"), 
+//								 request.getParameter("password"));
+		
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("LoggedIn", "True");
+		User loggedIn = userservice.login(incomingUser);
+		httpsesh.setAttribute("user", loggedIn); //setting session user to logged in user
+		return loggedIn;
+		
+		
+		//we should also create our HTTP SESSION inside here too
 	}
 
 	@Override
-	public boolean logout(HttpServletRequest request) { //done using httpsession
-		// TODO Auto-generated method stub
-		return false;
+	@RequestMapping(value = "/logout")
+	@ModelAttribute("user")
+	public User logout(@SessionAttribute("user") User user) { //done using httpsession
+		
+		httpsesh.setAttribute("user", null);
+		user = null;
+		
+		return user;
 	}
 
 	@Override
+	@DeleteMapping(value = "/Delete")
 	public boolean unregister(HttpServletRequest request) {
 		return userservice.unregister(request.getParameter("email"), request.getParameter("password"));
 	}
@@ -59,7 +100,8 @@ public class UserController implements IUserController {
 	}
 
 	@Override
-	public boolean createTask(HttpServletRequest request) {
+	@PostMapping(value = "/task/create")
+	public @ResponseBody boolean createTask(@RequestBody Task task){
 		// Create task out of the request
 //		Task newTask = new Task(request.getParameter("userId"), 
 //								request.getParameter("labelId"),

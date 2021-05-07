@@ -10,15 +10,15 @@ import com.revature.model.User;
 public interface IUserController {
 	
 	// Authentication, deletion, download
-    boolean register(HttpServletRequest request);
-	User login(HttpServletRequest request);
-	boolean logout(HttpServletRequest request);
+    boolean register(User incomingUser);
+	User login(User incomingUser);
+	User logout(User user);
 	boolean unregister(HttpServletRequest request); //account deletion
 	String downloadMyData(HttpServletRequest request);
 	
 	
 	// Creating, deleteing, and viewing tasks
-	boolean createTask(HttpServletRequest request);
+	boolean createTask(Task task);
 	boolean updateTask(HttpServletRequest request);
 	boolean deleteTask(HttpServletRequest request);
 	List<Task> viewTasks (HttpServletRequest request);

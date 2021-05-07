@@ -9,6 +9,7 @@ import java.sql.Statement;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.postgresql.util.PSQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -34,15 +35,18 @@ public class UserDao implements IUserDao {
 	}
 
 	@Override
-	public boolean insert(String firstName, String lastName, String email, String password) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean insert(User user) {
+		
+		sessionFactory.getCurrentSession().save(user);
+			
+		return true;
 	}
 
 	@Override
-	public User select(String email, String password) {
-		// TODO Auto-generated method stub
-		return null;
+	public User select(User user) {
+		
+		User returned = sessionFactory.getCurrentSession().get(User.class, user.getID());
+		return returned;
 	}
 
 	@Override

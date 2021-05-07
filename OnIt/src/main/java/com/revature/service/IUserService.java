@@ -8,8 +8,8 @@ import com.revature.model.User;
 public interface IUserService {
 	
 	// Authentication, deletion, download
-    boolean register(String firstName, String lastName, String email, String password);
-	User login(String email, String password);
+    boolean register(User user);
+	User login(User user);
 
 	boolean unregister(String email, String password); //account deletion, requires providing password to delete
 	String downloadMyData(String email, String password);
