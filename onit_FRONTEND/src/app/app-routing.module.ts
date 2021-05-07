@@ -15,8 +15,8 @@ const routes: Routes = [
   { path: 'tasks', component: UserHomePageComponent, canActivate: [AuthorizationGuard] },    // the '/tasks' url will have 2+ table views of to-do items
   { path: 'accountmanagement', component: AccountManagementPageComponent, canActivate: [AuthorizationGuard] },
   { path: 'createtask', component: CreateTaskPageComponent, canActivate: [AuthorizationGuard] },
-  { path: 'editviewtask', component: EditTaskPageComponent, canActivate: [AuthorizationGuard] } 
-  
+  { path: 'editviewtask', component: EditTaskPageComponent, canActivate: [AuthorizationGuard] }
+
 ];
 
 @NgModule({
