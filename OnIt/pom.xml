@@ -2,10 +2,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.revature</groupId>
   <artifactId>OnIt</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <version>0.0</version>
   <name>OnIt</name>
   <description>Project-2</description>
+<<<<<<< HEAD
+=======
+  <packaging>war</packaging> 
+>>>>>>> ac3fb1dea0d84bc47ce529831e4cb1464af44dc1
   <build>
   		<finalName>OnIt</finalName>
 		<sourceDirectory>src</sourceDirectory>
@@ -17,6 +20,10 @@
 			    <configuration>
 			        <url>http://localhost:8090/manager/text</url>
 			        <server>tomcatserver</server>
+<<<<<<< HEAD
+=======
+			        <fileNameMapping>no-version</fileNameMapping>
+>>>>>>> ac3fb1dea0d84bc47ce529831e4cb1464af44dc1
 			        <path>/OnIt</path>
 			        <username>admin</username>
 			        <password>admin</password>
@@ -39,7 +46,11 @@
 				</configuration>
 			</plugin>
 		</plugins>
+<<<<<<< HEAD
   </build>
+=======
+	</build>
+>>>>>>> ac3fb1dea0d84bc47ce529831e4cb1464af44dc1
   <properties>
 	<maven.compiler.source>1.8</maven.compiler.source>
 	<maven.compiler.target>1.8</maven.compiler.target>
@@ -49,6 +60,28 @@
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-core</artifactId>
 		    <version>5.3.5</version>
+<<<<<<< HEAD
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-beans</artifactId>
+		    <version>5.3.5</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context</artifactId>
+		    <version>5.3.5</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-aspects</artifactId>
+		    <version>5.3.5</version>
+		</dependency>
+  		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>5.3.5</version>
+=======
 		</dependency>
 		<dependency>
 		    <groupId>org.springframework</groupId>
@@ -86,6 +119,39 @@
 	      <version>5.3.5</version>
 	    </dependency>
 	    <dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>javax.servlet-api</artifactId>
+		    <version>4.0.1</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <version>4.12</version>
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>1.2.17</version>
+>>>>>>> ac3fb1dea0d84bc47ce529831e4cb1464af44dc1
+		</dependency>
+		<dependency>
+	      <groupId>org.springframework</groupId>
+	      <artifactId>spring-web</artifactId>
+	      <version>5.3.5</version>
+	    </dependency>
+	    <dependency>
+	      <groupId>org.springframework</groupId>
+	      <artifactId>spring-webmvc</artifactId>
+	      <version>5.3.5</version>
+	    </dependency>
+	    <dependency>
+	      <groupId>org.springframework</groupId>
+	      <artifactId>spring-test</artifactId>
+	      <version>5.3.5</version>
+	    </dependency>
+	    <dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-orm</artifactId>
 		    <version>5.3.5</version>
@@ -100,6 +166,7 @@
 		  <artifactId>postgresql</artifactId>
 		  <version>42.2.10</version>
 		</dependency>
+<<<<<<< HEAD
 	    <dependency>
 		    <groupId>javax.servlet</groupId>
 		    <artifactId>javax.servlet-api</artifactId>
@@ -123,6 +190,8 @@
 		    <version>1.18.16</version>
 		    <scope>provided</scope>
 		</dependency>
+=======
+>>>>>>> ac3fb1dea0d84bc47ce529831e4cb1464af44dc1
 	</dependencies>
 
 	
