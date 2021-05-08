@@ -22,7 +22,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.server.ResponseStatusException;
 
+import com.revature.exceptions.InsertFailedException;
+import com.revature.exceptions.NoKnownUserException;
+import com.revature.exceptions.PasswordIncorrectExecption;
+import com.revature.exceptions.UsernameInUseException;
 import com.revature.model.Task;
 import com.revature.model.User;
 import com.revature.service.IUserService;
@@ -31,59 +36,101 @@ import com.revature.service.UserService;
 @Controller
 //@RequestMapping(value = "/user")
 //@SessionAttributes("user")
-public class UserController implements IUserController {
+public class UserController  {
 
 	@Autowired
-	private IUserService userservice = new UserService();
-	
-	//@Autowired
-	//private HttpSession httpsesh; 
+	private UserService userservice = new UserService();
 	
 	
-	@PutMapping(value ="/task/create")
-	public  @ResponseBody boolean createTask(@RequestBody Task incomingTask) {
-		return userservice.createTask(incomingTask);
-	}
-	
-	
-	@Override
-	@PutMapping(value="/register")
+	@ResponseStatus(code = HttpStatus.CREATED)
+	@PostMapping(value="/register")
 	public  @ResponseBody boolean register(@RequestBody User incomingUser) {
-//		return userservice.register(request.getParameter("firstname"), 
-//				request.getParameter("lastName"), 
-//				request.getParameter("email"), 
-//				request.getParameter("password"));
+
 		
-		return userservice.register(incomingUser);
+			try 
+			{
+				return userservice.register(incomingUser);
+			} 
+			catch (UsernameInUseException e)
+			{
+				{
+				e.printStackTrace();
+				throw new ResponseStatusException(
+				          HttpStatus.NOT_FOUND, "Registration Failed", e);
+				}
+				
+			} 
+			catch (PasswordIncorrectExecption e) 
+			{
+				e.printStackTrace();
+				throw new ResponseStatusException(
+				          HttpStatus.NOT_FOUND, "Registration Failed", e);
+				    }
+			
+	    	 catch (InsertFailedException e) 
+			{
+	    		e.printStackTrace();
+	        throw new ResponseStatusException(
+	          HttpStatus.NOT_FOUND, "Registration Failed", e);
+			}
+		
 	}
 
-	@Override
 	@ResponseStatus(code = HttpStatus.ACCEPTED)
 	@PostMapping(value="/login")
 	//@ModelAttribute("user") //THIS SHOULD BE DOING OUR SESSION STORING FOR US NOW
 	public @ResponseBody User login(@RequestBody User incomingUser) {
-//		return userservice.login(request.getParameter("email"), 
-//								 request.getParameter("password"));
+
 		
-		
+		System.out.println(incomingUser);
 		HttpHeaders responseHeaders = new HttpHeaders();
 		responseHeaders.add("LoggedIn", "True");
-		User loggedIn = userservice.login(incomingUser);
-		System.out.println(loggedIn);
-		//httpsesh.setAttribute("user", loggedIn); //setting session user to logged in user
-		return loggedIn;
+		User loggedIn;
+		try {
+			
+			
+			loggedIn = userservice.login(incomingUser);
+			
+			return loggedIn;
+			
+		} catch (NoKnownUserException e) {
+			
+			e.printStackTrace();
+			throw new ResponseStatusException(
+			          HttpStatus.NOT_FOUND, "No known user with this username", e);
+		} catch (PasswordIncorrectExecption e) {
+			
+			e.printStackTrace();
+			throw new ResponseStatusException(
+			          HttpStatus.BAD_REQUEST, "Password Incorrect", e);
+		}
+		
+
+		
 		
 		
 		//we should also create our HTTP SESSION inside here too
 	}
-	@Override
-	@ResponseStatus(code = HttpStatus.ACCEPTED)
+
+	@ResponseStatus(code = HttpStatus.OK)
 	@PostMapping(value="/user")
 	public @ResponseBody boolean updateUser(@RequestBody User user) {
 	
 		System.out.println("Inside endpoint /User");
-		return userservice.register(user); // REGISTER USER DOES THE SAME THING AS MAKING A NEW METHOD TO SAVE A USER
+		
+			try {
+				return userservice.update(user);
+			
+		} catch (InsertFailedException e) {
+			e.printStackTrace();
+			throw new ResponseStatusException(
+			          HttpStatus.CONFLICT, "Update Failed", e);
+			
+			
+		}
+	// REGISTER USER DOES THE SAME THING AS MAKING A NEW METHOD TO SAVE A USER
 	}
+	
 
 //	@Override
 //	@RequestMapping(value = "/logout")
@@ -96,13 +143,13 @@ public class UserController implements IUserController {
 //		return user;
 //	}
 
-	@Override
+
 	@DeleteMapping(value = "/Delete")
-	public boolean unregister(HttpServletRequest request) {
-		return userservice.unregister(request.getParameter("email"), request.getParameter("password"));
+	public boolean unregister(@RequestBody User user) {
+		return userservice.unregister(user);
 	}
 
-	@Override
+	
 	public String downloadMyData(HttpServletRequest request) {
 		return userservice.downloadMyData(request.getParameter("email"),
 										  request.getParameter("password"));

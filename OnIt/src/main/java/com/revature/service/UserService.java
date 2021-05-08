@@ -11,6 +11,10 @@ import com.revature.dao.ITaskDao;
 import com.revature.dao.IUserDao;
 import com.revature.dao.TaskDao;
 import com.revature.dao.UserDao;
+import com.revature.exceptions.InsertFailedException;
+import com.revature.exceptions.NoKnownUserException;
+import com.revature.exceptions.PasswordIncorrectExecption;
+import com.revature.exceptions.UsernameInUseException;
 import com.revature.model.Task;
 import com.revature.model.User;
 
@@ -19,105 +23,79 @@ import com.revature.model.User;
 public class UserService implements IUserService {
 
 	@Autowired
-	private IUserDao userdao = new UserDao();
+	private UserDao userdao = new UserDao();
 	
-	@Autowired
-	private ITaskDao taskdao = new TaskDao();
+
+
+	public boolean register(User user) throws InsertFailedException, UsernameInUseException, PasswordIncorrectExecption{
+		User temp = userdao.insert(user);
+		
+		if(temp!= null)
+		{
+			return true;
+		}
+		else
+		{
+			throw new InsertFailedException(null, null);
+		}
+		
+	}
+
+
+	public User login(User user) throws NoKnownUserException,PasswordIncorrectExecption {
 	
-	@Override
-	public boolean register(User user) {
-		return userdao.insert(user);
+	
+		
+		User temp = userdao.login(user);
+		
+		
+		
+		if(temp!= null)
+		{
+			return temp;
+		}
+		else
+		{
+			throw new NoKnownUserException(null, null);
+		}
+		
+	}
+	
+	public boolean update(User user) throws InsertFailedException{
+		User temp = userdao.insert(user);
+		
+		if(temp!= null)
+		{
+			return true;
+		}
+		else
+		{
+			throw new InsertFailedException(null, null);
+		}
 	}
 
-	@Override
-	public User login(User user) {
-		return userdao.select(user);
+
+	public boolean unregister(User user) {
+		return userdao.delete(user);
 	}
 
-
-	@Override
-	public boolean unregister(String email, String password) {
-		return userdao.delete(email, password);
-	}
-
-	@Override
 	public String downloadMyData(String email , String password) {
 		User user = null;
 		return userdao.select(user).toString();
 	}
 
-	@Override
-	public boolean createTask(Task task) {
-		return taskdao.insert(task);
-	}
 
-	@Override
-	public boolean updateTask(Task task) {
-		return taskdao.update(task);
-	}
-
-	@Override
-	public boolean deleteTask(String taskId) {
-		return taskdao.delete(taskId);
-	}
-
-	@Override
-	public List<Task> viewTasks() {
-		return taskdao.selectTasks();
-	}
-
-	@Override
-	public boolean completeTask(String taskId) {
-		return taskdao.updateCompleteTask(taskId);
-	}
-
-	@Override
-	public List<Task> viewCompleted() {
-		return taskdao.selectCompleted();
-	}
-
-	@Override
-	public boolean labelTask(String taskId, String labelId) {
-		return taskdao.updateLabelTask(taskId, labelId);
-	}
-
-	@Override
-	public List<Task> viewLabel(String labelId) {
-		return taskdao.selectLabel(labelId);
-	}
-
-	@Override
-	public boolean duedateTask(String taskId, LocalDate dueDate) {
-		return taskdao.duedateTask(taskId, dueDate);
-	}
-
-	@Override
-	public boolean viewDuedate(LocalDate dueDate) {
-		return taskdao.selectDuedate(dueDate);
-	}
-
-	@Override
-	public boolean receiveEmailReminders(int reminderPeriod) {
-		return userdao.updateEmailReminders(reminderPeriod);
-	}
-
-	@Override
-	public boolean SetRepeatableTask(String taskId, boolean repeatable) {
-		return taskdao.updateRepeatableTask(taskId, repeatable);
-	}
-
-	@Override
 	public boolean setDailyGoals(int numDesired) {
 		return userdao.updateGoal(numDesired);
 	}
 
-	@Override
+	
 	public Object viewProgress() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+
 	public Object viewPastProgressGraph() {
 		// TODO Auto-generated method stub
 		return null;

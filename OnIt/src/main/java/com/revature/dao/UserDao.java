@@ -2,6 +2,7 @@ package com.revature.dao;
 
 
 
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -11,9 +12,11 @@ import java.util.List;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import org.postgresql.util.PSQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -27,12 +30,13 @@ import com.revature.model.Task;
 import com.revature.model.User;
 
 
+
 @Configuration
 
 @ImportResource({"classpath:beans-annotations.xml"})
 @EnableTransactionManagement
 @Repository("UserDao")
-public class UserDao implements IUserDao {
+public class UserDao {
 
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -44,52 +48,59 @@ public class UserDao implements IUserDao {
 		sessionFactory.getCurrentSession().save(u);
 	}
 
-	@Override
+	
 	@Transactional
-	public boolean insert(User user) {
+	public User insert(User user) {
 		
 		sessionFactory.getCurrentSession().save(user);
-			
-		return true;
+		User user2 = select(user);
+		
+		return user2;
 	}
 
-	@Override
+	
 	@Transactional
 	public User select(User user) {
-		List<Task> temp = new ArrayList<Task>();
-		Task t = new Task();
-		Task t1 = new Task();
-		Task t2 = new Task();
-		Task t3 = new Task();
-		Task t4 = new Task();
-		temp.add(t);
-		temp.add(t2);
-		temp.add(t3);
-		temp.add(t4);
-		User returned = sessionFactory.getCurrentSession().get(User.class, user.getID());
-		//List<Task> temp = (List<Task>) sessionFactory.getCurrentSession().get(Task.class, user.getID());
 		
-//		CriteriaBuilder cb = sessionFactory.getCurrentSession().getCriteriaBuilder();
-//		CriteriaQuery<Task> c = cb.createQuery(Task.class);
-//		c.add()
-		returned.setTasks(temp);
+		System.out.println(user.getID());
+		User returned = sessionFactory.getCurrentSession().get(User.class, user.getID());
+		Criteria cr = sessionFactory.getCurrentSession().createCriteria(Task.class);
+		cr.add(Restrictions.ilike("userID", user.getID()));
+		List<Task> l = cr.list();
+		returned.setTasks(l);
+		return returned;
+	}
+	@Transactional
+	public User login(User user) {
+		
+		Criteria c = sessionFactory.getCurrentSession().createCriteria(User.class);
+		c.add(Restrictions.eq("email", user.getEmail()));
+		c.add(Restrictions.eq("password", user.getPassword()));
+		//c.add(Restrictions.eq("ID", user.getID()));
+		
+		User returned =  (User) c.uniqueResult();
+		
+		Criteria cr = sessionFactory.getCurrentSession().createCriteria(Task.class);
+		cr.add(Restrictions.ilike("userID", user.getID()));
+		List<Task> l = cr.list();
+		returned.setTasks(l);
 		return returned;
 	}
 
-	@Override
+	
 	@Transactional
-	public boolean delete(String email, String password) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean delete(User user) {
+		sessionFactory.getCurrentSession().delete(user);
+		return true;
 	}
 
-	@Override
+	
 	public boolean updateEmailReminders(int reminderPeriod) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
+	
 	public boolean updateGoal(int numDesired) {
 		// TODO Auto-generated method stub
 		return false;
