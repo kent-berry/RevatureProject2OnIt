@@ -38,6 +38,9 @@ public class User {
 	@Column(name = "dailyTaskGoal")
 	private int dailyTaskGoal;
 	
+	@Column(name = "accountCreated")
+	private Timestamp accountCreated;
+	
 	@Transient
 	private List<Task> tasks = null;
 	
@@ -85,17 +88,6 @@ public class User {
 	public void setAccountCreated(Timestamp accountCreated) {
 		this.accountCreated = accountCreated;
 	}
-	public int getReceiveEmailReminders() {
-		return receiveEmailReminders;
-	}
-	public void setReceiveEmailReminders(int receiveEmailReminders) {
-		this.receiveEmailReminders = receiveEmailReminders;
-	}
-	@Column(name = "accountCreated")
-	private Timestamp accountCreated;
-	
-	@Column(name = "receiveEmailReminders")
-	private int receiveEmailReminders;  
 
 	public String getLastName() {
 		return lastName;

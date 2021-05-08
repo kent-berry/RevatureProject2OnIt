@@ -3,16 +3,31 @@ package com.revature.dao;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.model.Task;
 
-@Component
+@Configuration
+
+@ImportResource({"classpath:beans-annotations.xml"})
+@EnableTransactionManagement
+@Repository("TaskDao")
 public class TaskDao implements ITaskDao {
+	
+	@Autowired
+	private SessionFactory sessionFactory;
 
 	@Override
+	@Transactional
 	public boolean insert(Task task) {
-		// TODO Auto-generated method stub
+		sessionFactory.getCurrentSession().save(task);
 		return false;
 	}
 

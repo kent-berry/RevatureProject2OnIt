@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,17 +39,15 @@ public class UserController implements IUserController {
 	//@Autowired
 	//private HttpSession httpsesh; 
 	
-	//this method made by kent to begin testing MVC
-	@RequestMapping(method = RequestMethod.GET, value ="/test")
-	public  @ResponseBody User test() {
-		User user = new User();
-		System.out.println("inside test mvc");
-		return user;
+	
+	@PutMapping(value ="/task/create")
+	public  @ResponseBody boolean createTask(@RequestBody Task incomingTask) {
+		return userservice.createTask(incomingTask);
 	}
 	
 	
 	@Override
-	@PostMapping(value="/register")
+	@PutMapping(value="/register")
 	public  @ResponseBody boolean register(@RequestBody User incomingUser) {
 //		return userservice.register(request.getParameter("firstname"), 
 //				request.getParameter("lastName"), 
