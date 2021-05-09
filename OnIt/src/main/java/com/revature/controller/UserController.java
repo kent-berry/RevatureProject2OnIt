@@ -26,7 +26,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.revature.exceptions.InsertFailedException;
 import com.revature.exceptions.NoKnownUserException;
-import com.revature.exceptions.PasswordIncorrectExecption;
+import com.revature.exceptions.PasswordIncorrectException;
 import com.revature.exceptions.UsernameInUseException;
 import com.revature.model.Task;
 import com.revature.model.User;
@@ -60,7 +60,7 @@ public class UserController  {
 				}
 				
 			} 
-			catch (PasswordIncorrectExecption e) 
+			catch (PasswordIncorrectException e) 
 			{
 				e.printStackTrace();
 				throw new ResponseStatusException(
@@ -98,7 +98,7 @@ public class UserController  {
 			e.printStackTrace();
 			throw new ResponseStatusException(
 			          HttpStatus.NOT_FOUND, "No known user with this username", e);
-		} catch (PasswordIncorrectExecption e) {
+		} catch (PasswordIncorrectException e) {
 			
 			e.printStackTrace();
 			throw new ResponseStatusException(

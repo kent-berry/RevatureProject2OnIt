@@ -1,6 +1,7 @@
 package com.revature.model;
 
 import java.sql.Timestamp;
+import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,38 +27,38 @@ import lombok.NoArgsConstructor;
 
 public class Task {
 	
-	@Column(name = "ID")
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int ID;
 
-	@Column(name = "fkuserid")
+	@Column(name = "fkuserid", nullable = false)
 	@JoinColumn(name = "userid")
 	String userID;
 	
+	@Column(nullable = false)
 	String taskName;
 	
 	String notes;
 	
 	Timestamp dueDate;
 	
-	@Column(name = "fklabelid")
-	@JoinColumn(name = "labelid")
-	int labelID;
+	String labelName;
 	
-	Timestamp dateCreated;
+	@Column(nullable = false)
+	Timestamp dateCreated = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
 	
 	Timestamp dateCompleted;
 	
 	int reminder;
 	
+	@Column(nullable = false, columnDefinition = "boolean default false")
 	boolean repeatable;
 
 	
 	@Override
 	public String toString() {
 		return "Task [ID=" + ID + ", userID=" + userID + ", taskName=" + taskName + ", notes=" + notes + ", dueDate="
-				+ dueDate + ", labelId=" + labelID + ", dateCreated=" + dateCreated + ", dateCompleted=" + dateCompleted
+				+ dueDate + ", labelId=" + labelName + ", dateCreated=" + dateCreated + ", dateCompleted=" + dateCompleted
 				+ ", reminder=" + reminder + ", repeatable=" + repeatable + "]";
 	}
 
@@ -112,13 +113,13 @@ public class Task {
 	}
 
 
-	public int getLabelID() {
-		return labelID;
+	public String getLabelID() {
+		return labelName;
 	}
 
 
-	public void setLabelID(int labelID) {
-		this.labelID = labelID;
+	public void setLabelID(String labelName) {
+		this.labelName = labelName;
 	}
 
 

@@ -13,7 +13,7 @@ import com.revature.dao.TaskDao;
 import com.revature.dao.UserDao;
 import com.revature.exceptions.InsertFailedException;
 import com.revature.exceptions.NoKnownUserException;
-import com.revature.exceptions.PasswordIncorrectExecption;
+import com.revature.exceptions.PasswordIncorrectException;
 import com.revature.exceptions.UsernameInUseException;
 import com.revature.model.Task;
 import com.revature.model.User;
@@ -27,7 +27,7 @@ public class UserService implements IUserService {
 	
 
 
-	public boolean register(User user) throws InsertFailedException, UsernameInUseException, PasswordIncorrectExecption{
+	public boolean register(User user) throws InsertFailedException, UsernameInUseException, PasswordIncorrectException{
 		User temp = userdao.insert(user);
 		
 		if(temp!= null)
@@ -42,7 +42,7 @@ public class UserService implements IUserService {
 	}
 
 
-	public User login(User user) throws NoKnownUserException,PasswordIncorrectExecption {
+	public User login(User user) throws NoKnownUserException,PasswordIncorrectException {
 	
 	
 		

@@ -1,6 +1,7 @@
 package com.revature.model;
 
 import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -19,33 +20,28 @@ import org.springframework.stereotype.Component;
 public class User {
 
 	@Id
-	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int ID;
 	
-	//@Column(name = "first_name")
+	@Column(nullable = false)
 	private String firstName;
 	
-	@Column(name = "lastName")
+	@Column(nullable = false)
 	private String lastName;
 	
-	@Column(name = "email", unique = true)
-	
+	@Column(nullable = false, unique = true)
 	private String email;
 	
-	@Column(name = "password")
+	@Column(nullable = false)
 	private String password;
 	
-	@Column(name = "dailyTaskGoal")
 	private int dailyTaskGoal;
 	
-	@Column(name = "accountCreated")
-	private Timestamp accountCreated;
+	@Column(nullable = false) 
+	private Timestamp accountCreated = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
 	
 	@Transient
 	private List<Task> tasks = null;
-	
-	
 	
 	public List<Task> getTasks() {
 		return tasks;
