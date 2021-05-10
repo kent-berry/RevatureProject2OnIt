@@ -37,4 +37,9 @@
   <user username="both" password="<must-be-changed>" roles="tomcat,role1"/>
   <user username="role1" password="<must-be-changed>" roles="role1"/>
 -->
+
+<role rolename="manager-script"/>
+<role rolename="manager-gui"/>
+<user password="admin" roles="manager-script, manager-gui" username="admin"/>
+
 </tomcat-users>
