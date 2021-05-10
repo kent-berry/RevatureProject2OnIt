@@ -19,11 +19,12 @@ export class AppComponent {
 
 
   getSignedInUser() {
-    return this.signedInUserService.signedInUser;
+    return this.signedInUserService.signedInUsername;
   }
 
   signUserOut() {
-    this.signedInUserService.signedInUser = null;
+    this.signedInUserService.signedInUsername = null;
+    localStorage.clear()
   }
 
 }

@@ -6,18 +6,18 @@ import { User } from './User';
 })
 export class SignedInUserService {
 
-  private _signedInUser : User;
+  private _signedInUsername : string;
 
   constructor() {
 
    }
 
 
-   get signedInUser() {
-     return this._signedInUser
+   get signedInUsername() {
+     return localStorage.getItem("signedInUsername");
    }
-   set signedInUser(signedInUser: User) {
-     this._signedInUser = signedInUser;
+   set signedInUsername(signedInUsername: string) {
+     this._signedInUsername = signedInUsername;
    }
   
 }
