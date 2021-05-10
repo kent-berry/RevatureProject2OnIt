@@ -23,8 +23,7 @@ export class AppComponent {
   }
 
   signUserOut() {
-    this.signedInUserService.signedInUsername = null;
-    localStorage.clear()
+    this.signedInUserService.clear();
   }
 
 }

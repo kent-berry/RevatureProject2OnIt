@@ -17,7 +17,9 @@ export class SignedInUserService {
      return localStorage.getItem("signedInUsername");
    }
    set signedInUsername(signedInUsername: string) {
-     this._signedInUsername = signedInUsername;
+     localStorage.setItem("signedInUsername",signedInUsername);
    }
-  
+  clear() : void {
+    localStorage.clear();
+  }
 }
