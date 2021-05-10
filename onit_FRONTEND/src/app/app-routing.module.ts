@@ -12,11 +12,11 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: SignInPageComponent },
   { path: 'register', component: RegisterPageComponent },
-  { path: 'tasks', component: UserHomePageComponent, canActivate: [AuthorizationGuard] },    // the '/tasks' url will have 2+ table views of to-do items
+  { path: 'tasks', component: UserHomePageComponent, canActivate: [AuthorizationGuard] },
   { path: 'accountmanagement', component: AccountManagementPageComponent, canActivate: [AuthorizationGuard] },
   { path: 'createtask', component: CreateTaskPageComponent, canActivate: [AuthorizationGuard] },
-  { path: 'editviewtask', component: EditTaskPageComponent, canActivate: [AuthorizationGuard] }
-
+  { path: 'editviewtask/:taskId', component: EditTaskPageComponent, canActivate: [AuthorizationGuard] } 
+  
 ];
 
 @NgModule({

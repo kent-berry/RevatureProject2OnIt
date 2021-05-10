@@ -11,14 +11,25 @@ import { AccountManagementPageComponent } from './account-management-page/accoun
 import { CreateTaskPageComponent } from './create-task-page/create-task-page.component';
 import { EditTaskPageComponent } from './edit-task-page/edit-task-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+
 import { MatIconModule } from '@angular/material/icon';
-import { MatSelectModule } from '@angular/material/select';
+
 import { MatCheckboxModule } from '@angular/material/checkbox';
+
+import { MatCardModule} from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { PageGuideComponent } from './page-guide/page-guide.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +39,8 @@ import { MatButtonModule } from '@angular/material/button';
     RegisterPageComponent,
     AccountManagementPageComponent,
     CreateTaskPageComponent,
-    EditTaskPageComponent
+    EditTaskPageComponent,
+    PageGuideComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,9 +56,21 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     MatButtonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    MatPaginatorModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
