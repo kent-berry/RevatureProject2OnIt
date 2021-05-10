@@ -7,9 +7,12 @@
   <name>OnIt</name>
   <description>Project-2</description>
   <distributionManagement>
-    <downloadUrl>http://142.93.205.142:8090/OnIt</downloadUrl>
-    <status>deployed</status>
-  </distributionManagement>
+       <repository>
+         <id>internal.repo</id>
+         <name>Internal repo</name>
+         <url>file:///home</url>
+       </repository>
+   </distributionManagement>
   <build>
   		<finalName>OnIt</finalName>
 		<sourceDirectory>src</sourceDirectory>
