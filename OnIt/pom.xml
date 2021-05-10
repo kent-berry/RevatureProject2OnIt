@@ -10,9 +10,9 @@
        <repository>
          <id>internal.repo</id>
          <name>Internal repo</name>
-         <url>file:///home</url>
          <url>file:/opt/tomcat/latest/webapps</url>
-         <!-- <url>file:///home</url>  -->
+         
+         <!-- <url>file:///home</url> -->
        </repository>
    </distributionManagement>
   <build>
