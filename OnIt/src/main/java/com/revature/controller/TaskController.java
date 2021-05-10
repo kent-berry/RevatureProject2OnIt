@@ -34,7 +34,7 @@ import com.revature.service.TaskService;
 import com.revature.service.UserService;
 
 @Controller
-@CrossOrigin(origins = {"http://localhost:4200"}, allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:4200", "http://142.93.205.142:8090/OnIt/"}, allowCredentials = "true")
 public class TaskController {
 
 	@Autowired
