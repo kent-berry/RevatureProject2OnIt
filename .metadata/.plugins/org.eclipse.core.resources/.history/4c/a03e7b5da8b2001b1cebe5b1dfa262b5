@@ -5,7 +5,7 @@
   <artifactId>OnIt</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>OnIt Maven Webapp JSON receiving backend</name>
+  <name>OnIt Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <distributionManagement>
        <repository>

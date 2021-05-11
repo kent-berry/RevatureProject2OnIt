@@ -2390,3 +2390,19 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact com.fasterxml
 2021-05-11 16:11:08,697 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2021-05-11 16:11:08,698 [Worker-59: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2021-05-11 16:11:08,699 [Worker-59: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\12092\OneDrive\Desktop\revature\OnIt\OnIt\src\test\resources
+2021-05-11 16:16:25,682 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-05-11 16:17:12,238 [Worker-5: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+2021-05-11 16:17:12,604 [Worker-5: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-05-11 16:17:12,610 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-05-11 16:17:12,616 [Worker-5: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-05-11 16:17:12,617 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\12092\OneDrive\Desktop\revature\OnIt\OnIt\src\test\resources
+2021-05-11 16:29:37,236 [Worker-17: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.revature:OnIt:0.0.1-SNAPSHOT @ C:\Users\12092\OneDrive\Desktop\revature\OnIt\OnIt\pom.xml.
+2021-05-11 16:29:37,439 [Worker-17: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+2021-05-11 16:29:37,638 [Worker-17: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+2021-05-11 16:29:37,937 [Worker-17: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+2021-05-11 16:29:38,223 [Worker-17: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-05-11 16:29:38,225 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-05-11 16:29:38,227 [Worker-17: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2021-05-11 16:29:38,229 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\12092\OneDrive\Desktop\revature\OnIt\OnIt\src\test\resources
+2021-05-11 16:29:38,230 [Worker-17: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of OnIt
+2021-05-11 16:29:38,231 [Worker-17: Building] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for OnIt
