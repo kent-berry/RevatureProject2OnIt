@@ -2,27 +2,33 @@ import { Task } from "../TASK_SERVICE/Task";
 
 export class User {
 
-    private _username: string;
+    private _id: number;
+    private _firstName: string;
+    private _lastName: string;
+    private _email: string;
     private _password: string;
+    private _goal: number;
+    private _reminder: number;
     private _tasks : Task[];
 
-    constructor(username: string, password: string) {
-        this._username = username;
+    constructor(id: number, firstName: string, lastName: string, email: string, password: string,
+        goal: number, reminder: number, tasks: Task[]) {
+        
+        this._id = id;
+        this._firstName = firstName;
+        this._lastName = lastName;
+        this._email = email;
         this._password = password;
+        this._goal = goal;
+        this._tasks = tasks;
 
     }
-    /*
-    constructor(username: string, password: string, tasks : Task[]) {
-        this._username = username;
-        this._password = password;
-        this._tasks = tasks;
-    }
-*/
+    
     get username() {
-        return this._username;
+        return this._email;
     }
     set username(username: string) {
-        this._username = username;
+        this._email = username;
     }
     
     get password() {

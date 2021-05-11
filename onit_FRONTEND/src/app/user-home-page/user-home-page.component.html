@@ -7,15 +7,16 @@
 -->
 
 
-<mat-toolbar color="primary">
-    <p class="condensedText">
-        Tasks
-    </p>
-  </mat-toolbar>
+
 
   <br>
+  <br>
 
-  
+  <div style="display: flex; justify-content: center;">
+    <button type="button" routerLink="/createtask" class="btn btn-secondary btn-lg" style="background-color: blueviolet;">Create Task</button>
+  </div>
+<br>
+
   <!-- Main horizontal flex -->
 <div class="content" style="text-align: center;  display: flex; flex-direction:row; justify-content: center;">
 
@@ -27,7 +28,7 @@
 
         <mat-form-field appearance="fill" style=" width:70%;">
             <mat-label>Category</mat-label>
-            <mat-select style="">
+            <mat-select >
               <mat-option *ngFor="let label of labels" [value]="label">
                 {{label}}
               </mat-option>
@@ -39,7 +40,7 @@
     
 
     <!-- COLUMN: Task grid table + Page selector-->
-    <div style="width:800px; height:800px; display:flex; flex-direction: column;">
+    <div style="width:800px; display:flex; flex-direction: column; background-color: aqua;">
     <!-- Horizontal flex item 1-->
     <div fxLayoutGap="10px grid" fxLayout="row wrap" style="  display:flex; flex-direction:row; align-content:flex-start; background-color: aliceblue;">
            

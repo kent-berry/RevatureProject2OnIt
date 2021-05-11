@@ -23,10 +23,10 @@ export class AuthorizationGuard implements CanActivate {
       //  signedInUser != null --> AUTHORIZED
       // where signedInUser is assigned when logging in with valid info., and cleared when logging out
 
-      console.log("----> AUTHORIZATION GUARD: localStorage.getItem(signedInUsername) = "+localStorage.getItem("signedInUsername"));
-      console.log("----> AUTHORIZATION GUARD: localStorage.getItem(signedInUsername) = "+localStorage.getItem("signedInUsername"));
+      console.log("----> AUTHORIZATION GUARD: localStorage.getItem(signedInUsername) = "+sessionStorage.getItem("signedInUsername"));
+      console.log("----> AUTHORIZATION GUARD: localStorage.getItem(signedInUsername) = "+sessionStorage.getItem("signedInUsername"));
       console.log(localStorage.getItem("signedInUsername"));
-      if (localStorage.getItem("signedInUsername")) {
+      if (sessionStorage.getItem("signedInUsername")) {
         // A user is currently signed in
         console.log("   User currently signed in!");
         return true;

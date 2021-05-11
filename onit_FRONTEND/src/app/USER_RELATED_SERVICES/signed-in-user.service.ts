@@ -7,6 +7,7 @@ import { User } from './User';
 export class SignedInUserService {
 
   private _signedInUsername : string;
+  private _signedInPassword : string;
 
   constructor() {
 
@@ -14,12 +15,19 @@ export class SignedInUserService {
 
 
    get signedInUsername() {
-     return localStorage.getItem("signedInUsername");
+     return sessionStorage.getItem("signedInUsername");
    }
    set signedInUsername(signedInUsername: string) {
-     localStorage.setItem("signedInUsername",signedInUsername);
+     sessionStorage.setItem("signedInUsername",signedInUsername);
    }
+
+   get signedInPassword() {
+    return sessionStorage.getItem("signedInPassword");
+  }
+   set signedInPassword(signedInPassword: string) {
+    sessionStorage.setItem("signedInPassword",signedInPassword);
+  }
   clear() : void {
-    localStorage.clear();
+    sessionStorage.clear();
   }
 }

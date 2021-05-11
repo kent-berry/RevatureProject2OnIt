@@ -29,6 +29,9 @@ import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import { TaskStatsPageComponent } from './task-stats-page/task-stats-page.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -41,6 +44,7 @@ import {MatSelectModule} from '@angular/material/select';
     CreateTaskPageComponent,
     EditTaskPageComponent,
     PageGuideComponent,
+    TaskStatsPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +70,8 @@ import {MatSelectModule} from '@angular/material/select';
     ReactiveFormsModule,
     MatNativeDateModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }
