@@ -8,10 +8,10 @@ export class SAMPLEUSERSService {
 
 
   userList : User[] = [
-    new User("bob23", "1212"),
-    new User("sarah23", "1212"),
-    new User("ben23", "1212"),
-    new User("david23", "1212")
+    new User(1, "Bob", "Jenkins", "bob23", "1212", 2, 1, null),
+    new User(2, "Sarah", "Jenkins", "sarah23", "1212", 2, 1, null),
+    new User(3, "Tim", "Jenkins", "tim23", "1212", 2, 1, null),
+    new User(4, "Marge", "Jenkins", "marge23", "1212", 2, 1, null),
   ];
 
   constructor() { 
