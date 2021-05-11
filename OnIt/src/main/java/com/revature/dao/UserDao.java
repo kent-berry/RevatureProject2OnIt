@@ -73,6 +73,8 @@ public class UserDao {
 	@Transactional
 	public User login(User user) {
 		
+		
+		System.out.println(user);
 		Criteria c = sessionFactory.getCurrentSession().createCriteria(User.class);
 		c.add(Restrictions.eq("email", user.getEmail()));
 		c.add(Restrictions.eq("password", user.getPassword()));

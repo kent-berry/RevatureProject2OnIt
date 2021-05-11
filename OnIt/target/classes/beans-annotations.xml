@@ -25,9 +25,9 @@
 	
 	
 	  <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-	  	<property name="url" value ="jdbc:postgresql://database-1.cmeyun7styyj.us-east-2.rds.amazonaws.com/database-1"></property>
-	  	<property name="username" value="postgres"></property>
-	  	<property name="password" value="Je060700"></property>
+	  <property name="url" value ="jdbc:postgresql://database-1.cmeyun7styyj.us-east-2.rds.amazonaws.com/postgres"></property>
+          <property name="username" value="postgres"></property>
+          <property name="password" value="Je060700"></property>
 	  	<property name="driverClassName" value="org.postgresql.Driver"></property>
 	  </bean>
 

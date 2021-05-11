@@ -54,6 +54,7 @@ public class UserController  {
 	
 		System.out.println("Inside endpoint /User");
 		
+		System.out.println(sessionUser);
 		if(user.getPassword() == sessionUser.getPassword())
 		{
 			try {

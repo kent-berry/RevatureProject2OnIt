@@ -38,7 +38,7 @@ public class User {
 	private int dailyTaskGoal;
 	
 	@Column(nullable = false) 
-	private Timestamp accountCreated = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+	private Timestamp accountCreated;
 	
 	@Transient
 	private List<Task> tasks = null;
@@ -80,10 +80,16 @@ public class User {
 		this.dailyTaskGoal = dailyTaskGoal;
 	}
 	public Timestamp getAccountCreated() {
+		
 		return accountCreated;
 	}
-	public void setAccountCreated(Timestamp accountCreated) {
-		this.accountCreated = accountCreated;
+	public void setAccountCreated() {
+		
+		if(this.accountCreated == null)
+		{
+			this.accountCreated = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+		}
+		
 	}
 
 	public String getLastName() {
@@ -91,6 +97,12 @@ public class User {
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	@Override
+	public String toString() {
+		return "User [ID=" + ID + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", password=" + password + ", dailyTaskGoal=" + dailyTaskGoal + ", accountCreated=" + accountCreated
+				+ ", tasks="  + "]";
 	}
 	
 

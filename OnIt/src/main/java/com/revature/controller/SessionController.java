@@ -1,5 +1,7 @@
 package com.revature.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -22,19 +25,22 @@ import com.revature.exceptions.UsernameInUseException;
 import com.revature.model.User;
 import com.revature.service.UserService;
 
-@Controller
+@RestController
 @CrossOrigin(origins = {"http://localhost:4200"}, allowCredentials = "true")
-@SessionAttributes("user")
-@ControllerAdvice
+
+
 public class SessionController {
 
 	@Autowired
 	private UserService userservice = new UserService();
+	
+	@Autowired
+	HttpSession sess;
 
 	@ResponseStatus(code = HttpStatus.ACCEPTED)
 	@PostMapping(value="/login")
-	@ModelAttribute("user") //THIS SHOULD BE DOING OUR SESSION STORING FOR US NOW
-	public @ResponseBody User login(@ModelAttribute("session") User incomingUser, ModelMap model) {
+	
+	public @ResponseBody User login(@RequestBody  User incomingUser, ModelMap model) {
 
 		
 		System.out.println(incomingUser);
@@ -46,8 +52,8 @@ public class SessionController {
 			
 			loggedIn = userservice.login(incomingUser);
 			
-		//	model.addAttribute("UserName", loggedIn.getEmail());
-		//	model.addAttribute("password", loggedIn.getPassword());
+			model.addAttribute("UserName", loggedIn.getEmail());
+			model.addAttribute("password", loggedIn.getPassword());
 			return loggedIn;
 			
 		} catch (NoKnownUserException e) {
