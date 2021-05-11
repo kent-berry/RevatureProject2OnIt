@@ -1,0 +1,69 @@
+package com.revature.dao;
+
+import com.revature.model.User;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.Query;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ImportResource;
+
+@EnableTransactionManagement
+@ImportResource({"classpath:beans-annotations.xml"})
+@Repository
+public class UserDao implements IUserDao {
+
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	@Transactional
+	@Override
+	public Serializable insert(String firstName, String lastName, String email, String password) {
+		User newUser = new User(firstName, lastName, email, password);
+		System.out.println(newUser.toString());
+		Serializable identifier = sessionFactory.getCurrentSession().save(newUser);
+		return identifier;
+	}
+
+	@Transactional
+	@Override
+	public User select(String email, String password) {
+
+		Session session = sessionFactory.openSession();
+		String hql = "FROM Users E WHERE E.email = email AND E.password = password";
+		Query query = session.createQuery(hql);
+		List results = ((org.hibernate.Query) query).list();
+		
+		return (results.isEmpty() ? null : ((User) results.get(0)));
+	}
+
+	@Override
+	public boolean delete(String email, String password) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateEmailReminders(int reminderPeriod) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateGoal(int numDesired) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

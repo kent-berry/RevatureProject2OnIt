@@ -1,35 +1,83 @@
 package com.revature.controller;
 
+import java.io.Serializable;
 import java.time.LocalDate;
+
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.KeySpec;
+
+import java.util.Base64;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
 
 import com.revature.model.*;
 import com.revature.service.*;
 
 
-@Controller
+// https://dzone.com/articles/using-http-session-spring
+
+@Configuration
+@RestController
 public class UserController implements IUserController {
 
-
+	//Method for Hashing password
+	protected String hashPass(String pass) throws NoSuchAlgorithmException, InvalidKeySpecException {
+		byte[] salt = new byte[16];
+		KeySpec spec = new PBEKeySpec(pass.toCharArray(), salt, 65536, 128);
+		SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
+		byte[] hash = f.generateSecret(spec).getEncoded();
+		Base64.Encoder enc = Base64.getEncoder();
+		return enc.encodeToString(hash);
+	}
+		
+	@Autowired
+	private HttpSession httpsession;
+	
 	@Autowired
 	private IUserService userservice = new UserService();
 	
-	@Override
-	public boolean register(HttpServletRequest request) {
-		return userservice.register(request.getParameter("firstname"), 
-				request.getParameter("lastName"), 
-				request.getParameter("email"), 
-				request.getParameter("password"));
+	@PostMapping(value = "/register")
+	public  @ResponseBody Serializable register(@RequestBody RegisterUser registerUser) {
+		String hashedPass = "";
+		try {
+			hashedPass = hashPass(registerUser.getPassword());
+		} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+		//Check if user is already registered by trying to login
+		if(userservice.login(registerUser.getEmail(), hashedPass) == null) {
+			return userservice.register(registerUser.getFirstname(), registerUser.getLastname(), registerUser.getEmail(), hashedPass);
+		} else {
+			System.out.println("This email is already registred.");
+			return null;
+		}
 	}
 
-	@Override
-	public User login(HttpServletRequest request) {
-		return userservice.login(request.getParameter("email"), 
-								 request.getParameter("password"));
+	@PostMapping(value = "/login")
+	public @ResponseBody User login(@RequestBody LoginUser loginUser) {
+		String hashedPass = "";
+		try {
+			hashedPass = hashPass(loginUser.getPassword());
+		} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+			e.printStackTrace();
+			return null;
+		}
+		return userservice.login(loginUser.getEmail(), hashedPass);
 	}
 
 	@Override

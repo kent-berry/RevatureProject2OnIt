@@ -1,18 +1,16 @@
 package com.revature.service;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.revature.dao.*;
 import com.revature.model.*;
+import com.revature.dao.*;
 
-
-@Service
-@Component
+@Service("UserService")
 public class UserService implements IUserService {
 
 	@Autowired
@@ -22,7 +20,7 @@ public class UserService implements IUserService {
 	private ITaskDao taskdao = new TaskDao();
 	
 	@Override
-	public boolean register(String firstName, String lastName, String email, String password) {
+	public Serializable register(String firstName, String lastName, String email, String password) {
 		return userdao.insert(firstName, lastName, email, password);
 	}
 
@@ -30,7 +28,6 @@ public class UserService implements IUserService {
 	public User login(String email, String password) {
 		return userdao.select(email, password);
 	}
-
 
 	@Override
 	public boolean unregister(String email, String password) {

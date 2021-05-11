@@ -1,5 +1,6 @@
 package com.revature.controller;
 
+
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,8 +11,8 @@ public interface IUserController {
 
 
 	// Authentication, deletion, download
-    boolean register(HttpServletRequest request);
-	User login(HttpServletRequest request);
+	//Serializable register(HttpServletRequest request);
+	//User login(HttpServletRequest request);
 	boolean logout(HttpServletRequest request);
 	boolean unregister(HttpServletRequest request); //account deletion
 	String downloadMyData(HttpServletRequest request);

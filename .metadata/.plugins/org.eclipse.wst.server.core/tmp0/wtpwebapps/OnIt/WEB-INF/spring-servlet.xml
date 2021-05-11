@@ -16,8 +16,10 @@
 
 	<!--Add support for conversion, formatting and validation -->
 	<mvc:annotation-driven/>
-<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<mvc:default-servlet-handler />
+	
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"></property>
         <property name="suffix" value=".jsp"></property>        
-     </bean>
+    </bean>
 </beans>

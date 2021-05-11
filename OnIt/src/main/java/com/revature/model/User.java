@@ -1,9 +1,22 @@
 package com.revature.model;
+
 import java.time.LocalDate;
 import java.util.UUID;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+
+@Entity
+@Table(name = "users")
 public class User {
+	
+	@Id
 	private String id;
+	
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -13,6 +26,10 @@ public class User {
 	private int goal;
 	
 	//constructors
+	public User() {
+		super();
+	}
+	
 	public User(String firstName, String lastName, String email, String password) {
 		super();
 		
@@ -26,6 +43,9 @@ public class User {
 	}
 	
 	
+	
+
+
 	//Getters and setters
 	public String getId() {
 		return id;
@@ -92,13 +112,12 @@ public class User {
 	public void setReceiveEmailReminders(int receiveEmailReminders) {
 		this.receiveEmailReminders = receiveEmailReminders;
 	}
-	
-	//toString
+
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", password=" + password + ", daily task goal=" + goal + "]";
+				+ ", accountCreated=" + accountCreated + ", receiveEmailReminders=" + receiveEmailReminders + ", goal="
+				+ goal + "]";
 	}
-
-
 }

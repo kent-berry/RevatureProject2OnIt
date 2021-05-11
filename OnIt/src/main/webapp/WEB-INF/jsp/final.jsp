@@ -1,5 +1,5 @@
 <html>
 <body>
-<p>Welcome to Spring MVC Tutorial</p>
+<h2>here we are</h2>
 </body>
 </html>

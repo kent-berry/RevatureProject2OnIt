@@ -1,0 +1,36 @@
+
+<html>
+   <head>
+      <title>Registration handling</title>
+   </head>
+
+   <body>
+      <h2>Student Information</h2>
+      <form method = "POST" action = "/OnIt/register" modelAttribute="registerUser">
+         <table>
+            <tr>
+               <td><label "firstname">firstname</label></td>
+               <td><input "firstname" /></td>
+            </tr>
+            <tr>
+               <td><label "lastname">lastname</label></td>
+               <td><input "lastname" /></td>
+            </tr>
+             <tr>
+               <td><label "email">email</label></td>
+               <td><input "email" /></td>
+            </tr>
+            <tr>
+               <td><label "password">password</label></td>
+               <td><input "password" /></td>
+            </tr>
+            <tr>
+               <td colspan = "2">
+                  <input type = "submit" value = "Submit"/>
+               </td>
+            </tr>
+         </table>  
+      </form>
+   </body>
+   
+</html>
