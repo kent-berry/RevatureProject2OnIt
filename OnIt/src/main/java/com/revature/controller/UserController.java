@@ -45,82 +45,17 @@ public class UserController  {
 	private UserService userservice = new UserService();
 	
 	
-	@ResponseStatus(code = HttpStatus.CREATED)
-	@PostMapping(value="/register")
-	public  @ResponseBody boolean register(@RequestBody User incomingUser) {
+	
 
-		
-			try 
-			{
-				return userservice.register(incomingUser);
-			} 
-			catch (UsernameInUseException e)
-			{
-				{
-				e.printStackTrace();
-				throw new ResponseStatusException(
-				          HttpStatus.NOT_FOUND, "Registration Failed", e);
-				}
-				
-			} 
-			catch (PasswordIncorrectException e) 
-			{
-				e.printStackTrace();
-				throw new ResponseStatusException(
-				          HttpStatus.NOT_FOUND, "Registration Failed", e);
-				    }
-			
-	    	 catch (InsertFailedException e) 
-			{
-	    		e.printStackTrace();
-	        throw new ResponseStatusException(
-	          HttpStatus.NOT_FOUND, "Registration Failed", e);
-			}
-		
-	}
-
-	@ResponseStatus(code = HttpStatus.ACCEPTED)
-	@PostMapping(value="/login")
-	//@ModelAttribute("user") //THIS SHOULD BE DOING OUR SESSION STORING FOR US NOW
-	public @ResponseBody User login(@RequestBody User incomingUser) {
-
-		
-		System.out.println(incomingUser);
-		HttpHeaders responseHeaders = new HttpHeaders();
-		responseHeaders.add("LoggedIn", "True");
-		User loggedIn;
-		try {
-			
-			
-			loggedIn = userservice.login(incomingUser);
-			
-			return loggedIn;
-			
-		} catch (NoKnownUserException e) {
-			
-			e.printStackTrace();
-			throw new ResponseStatusException(
-			          HttpStatus.NOT_FOUND, "No known user with this username", e);
-		} catch (PasswordIncorrectException e) {
-			
-			e.printStackTrace();
-			throw new ResponseStatusException(
-			          HttpStatus.BAD_REQUEST, "Password Incorrect", e);
-		}
-		
-
-		
-		
-		
-		//we should also create our HTTP SESSION inside here too
-	}
 
 	@ResponseStatus(code = HttpStatus.OK)
 	@PostMapping(value="/user")
-	public @ResponseBody boolean updateUser(@RequestBody User user) {
+	public @ResponseBody boolean updateUser(@RequestBody User user,@ModelAttribute("user") User sessionUser) {
 	
 		System.out.println("Inside endpoint /User");
 		
+		if(user.getPassword() == sessionUser.getPassword())
+		{
 			try {
 				return userservice.update(user);
 			
@@ -130,25 +65,19 @@ public class UserController  {
 			          HttpStatus.CONFLICT, "Update Failed", e);
 			
 			
+			}
 		}
+		else
+			return false;
+			
 	// REGISTER USER DOES THE SAME THING AS MAKING A NEW METHOD TO SAVE A USER
 	}
-	
 
-//	@Override
-//	@RequestMapping(value = "/logout")
-//	//@ModelAttribute("user")
-//	public User logout(@SessionAttribute("user") User user) { //done using httpsession
-//		
-//		httpsesh.setAttribute("user", null);
-//		user = null;
-//		
-//		return user;
-//	}
 
 
 	@DeleteMapping(value = "/Delete")
-	public boolean unregister(@RequestBody User user) {
+	public boolean unregister(@RequestBody User user,@ModelAttribute("user") User sessionUser) {
+		
 		return userservice.unregister(user);
 	}
 
