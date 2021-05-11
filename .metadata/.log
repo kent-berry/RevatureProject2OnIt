@@ -7599,3 +7599,15 @@ java.lang.NullPointerException
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-11 16:29:38.236
 !MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-11 17:06:13.190
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.NvthMjNM
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-11 17:06:13.191
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.NvthMjNM
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-11 17:06:13.192
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-11 17:06:13.193
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.NvthMjNM => OK
