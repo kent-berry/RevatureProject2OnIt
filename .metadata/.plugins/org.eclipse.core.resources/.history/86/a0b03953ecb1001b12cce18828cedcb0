@@ -7,15 +7,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>OnIt Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  <distributionManagement>
-       <repository>
-         <id>internal.repo</id>
-         <name>Internal repo</name>
-         <url>file:/opt/tomcat/latest/webapps</url>
-         
-         <!-- <url>file:///home</url> -->
-       </repository>
-   </distributionManagement>
+  
   <build>
     <finalName>OnIt</finalName>
   </build>
