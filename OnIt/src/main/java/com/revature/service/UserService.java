@@ -1,6 +1,8 @@
 package com.revature.service;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import com.revature.dao.ITaskDao;
 import com.revature.dao.IUserDao;
 import com.revature.dao.TaskDao;
 import com.revature.dao.UserDao;
+import com.revature.exceptions.DeleteFailedException;
 import com.revature.exceptions.InsertFailedException;
 import com.revature.exceptions.NoKnownUserException;
 import com.revature.exceptions.PasswordIncorrectException;
@@ -28,11 +31,16 @@ public class UserService implements IUserService {
 
 
 	public boolean register(User user) throws InsertFailedException, UsernameInUseException, PasswordIncorrectException{
-		User temp = userdao.insert(user);
+		
+		
+		user.setAccountCreated();
+		User temp = userdao.create(user);
 		
 		if(temp!= null)
 		{
+			System.out.println(user);
 			return true;
+			
 		}
 		else
 		{
@@ -61,12 +69,12 @@ public class UserService implements IUserService {
 		
 	}
 	
-	public boolean update(User user) throws InsertFailedException{
-		User temp = userdao.insert(user);
+	public User update(User user) throws InsertFailedException{
+		User temp = userdao.update(user);
 		
 		if(temp!= null)
 		{
-			return true;
+			return user;
 		}
 		else
 		{
@@ -75,8 +83,13 @@ public class UserService implements IUserService {
 	}
 
 
-	public boolean unregister(User user) {
-		return userdao.delete(user);
+	public boolean unregister(User user) throws DeleteFailedException {
+		if(userdao.delete(user))
+			{
+				return true;
+			}
+		else
+			throw new DeleteFailedException();
 	}
 
 	public String downloadMyData(String email , String password) {

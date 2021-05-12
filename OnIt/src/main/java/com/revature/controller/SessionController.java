@@ -5,10 +5,9 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ControllerAdvice;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,26 +33,30 @@ public class SessionController {
 	@Autowired
 	private UserService userservice = new UserService();
 	
-	@Autowired
-	HttpSession sess;
 
-	@ResponseStatus(code = HttpStatus.ACCEPTED)
+	@ResponseStatus(code = HttpStatus.OK)
 	@PostMapping(value="/login")
 	
-	public @ResponseBody User login(@RequestBody  User incomingUser, ModelMap model) {
+	public @ResponseBody User login(@RequestBody  User incomingUser,HttpSession session) {
 
 		
 		System.out.println(incomingUser);
-		HttpHeaders responseHeaders = new HttpHeaders();
-		responseHeaders.add("LoggedIn", "True");
+		
 		User loggedIn;
 		try {
 			
 			
 			loggedIn = userservice.login(incomingUser);
 			
-			model.addAttribute("UserName", loggedIn.getEmail());
-			model.addAttribute("password", loggedIn.getPassword());
+			
+			session.setAttribute("email", loggedIn.getEmail());
+			session.setAttribute("password", loggedIn.getPassword());
+			session.setAttribute("firstName", loggedIn.getFirstName());
+			session.setAttribute("lastName", loggedIn.getLastName());
+			
+			HttpHeaders responseHeaders = new HttpHeaders();
+			responseHeaders.add("LoggedIn", "True");
+			
 			return loggedIn;
 			
 		} catch (NoKnownUserException e) {
@@ -74,12 +77,31 @@ public class SessionController {
 		
 		//we should also create our HTTP SESSION inside here too
 	}
+	@ResponseStatus(code = HttpStatus.OK)
+	@GetMapping(value = "/login")
+	public User checkSession(HttpSession session) {
+		User user = new User();
+		
+		user.setEmail((String) session.getAttribute("email"));
+		user.setPassword((String) session.getAttribute("password"));
+		user.setFirstName((String) session.getAttribute("fireName"));
+		user.setLastName((String) session.getAttribute("lastNAme"));
+		
+		
+		
+//		session.setAttribute("email", loggedIn.getEmail());
+//		session.setAttribute("password", loggedIn.getPassword());
+//		session.setAttribute("firstName", loggedIn.getFirstName());
+//		session.setAttribute("lastName", loggedIn.getLastName());
+		return user;
+		
+	}
 	
-	@PostMapping(value="/logout")
-	@ResponseStatus(code = HttpStatus.ACCEPTED)
-	@ModelAttribute("user") 
-	public void logout(@RequestBody User incomingUser)
+	@GetMapping(value="/logout")
+	@ResponseStatus(code = HttpStatus.ACCEPTED) 
+	public void logout(HttpSession session)
 	{
+		session.invalidate();
 		
 	}
 	

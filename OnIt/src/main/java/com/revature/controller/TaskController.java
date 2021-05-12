@@ -43,7 +43,7 @@ public class TaskController {
 	
 	@PostMapping(value ="/task")
 	@ResponseStatus(code = HttpStatus.ACCEPTED)
-	public  @ResponseBody boolean createTask(@RequestBody Task incomingTask) {
+	public  @ResponseBody List<Task> createTask(@RequestBody Task incomingTask) {
 		System.out.println(incomingTask);
 		try {
 			return taskservice.createTask(incomingTask);
@@ -69,25 +69,24 @@ public class TaskController {
 		}
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value ="/task/{id}")
-	@ResponseStatus(code = HttpStatus.ACCEPTED)
-	public  @ResponseBody Task GetTask(@PathVariable("id") int id) {
-		System.out.println("GETTING TASK");
+	@GetMapping(value ="/task/{id}/{mode}")
+	@ResponseStatus(code = HttpStatus.OK)
+	public  @ResponseBody List<Task> GetTask(@PathVariable int id, @PathVariable String mode) {
 		try {
-			return taskservice.getTask(id);
+			return taskservice.getTask(id, mode);
 		} catch (NoKnownUserException e) {
 			e.printStackTrace();
 			throw new ResponseStatusException(
 			          HttpStatus.CONFLICT, "No user matching Task's userID", e);
 		}
 	}
-//	
-//	@ResponseStatus(code = HttpStatus.ACCEPTED)
-//	@PostMapping(value="/ticket/update")
-//	public @ResponseBody boolean updateTicket(@RequestBody Task task) {
-//	
-//		System.out.println("Inside endpoint /task/update");
-//		return taskservice.updateTask(task); // REGISTER USER DOES THE SAME THING AS MAKING A NEW METHOD TO SAVE A USER
-//	}
+	
+	@ResponseStatus(code = HttpStatus.ACCEPTED)
+	@PutMapping(value="/task")
+	public @ResponseBody List<Task> updateTicket(@RequestBody Task task) {
+	
+		
+		return taskservice.updateTask(task); 
+	}
 
 }

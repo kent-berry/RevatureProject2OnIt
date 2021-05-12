@@ -2,6 +2,7 @@ package com.revature.model;
 
 import java.sql.Timestamp;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -11,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Min;
 
 import org.springframework.stereotype.Component;
 
@@ -35,6 +37,7 @@ public class User {
 	@Column(nullable = false)
 	private String password;
 	
+	@Min(0)
 	private int dailyTaskGoal;
 	
 	@Column(nullable = false) 
@@ -87,11 +90,12 @@ public class User {
 		
 		if(this.accountCreated == null)
 		{
-			this.accountCreated = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
-		}
+			Date date = new Date();
+			this.accountCreated = new Timestamp(date.getTime());
 		
-	}
+		}
 
+	}
 	public String getLastName() {
 		return lastName;
 	}

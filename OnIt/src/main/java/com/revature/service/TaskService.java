@@ -20,25 +20,55 @@ public class TaskService {
 	private TaskDao taskdao = new TaskDao();
 	
 
-	public boolean createTask(Task task) throws NoKnownUserException {
-		return taskdao.insert(task);
+	public List<Task> createTask(Task task) throws NoKnownUserException {
+		if(taskdao.insert(task))
+		{
+			return taskdao.selectTasks(task.getUserID());
+		}
+		else
+			return null;
+		 
+		
 	}
 
 	public boolean deleteTask(Task incomingTask)  throws NoKnownUserException{
-		return taskdao.delete(incomingTask);
+		
+		
+		if(taskdao.delete(incomingTask))
+		{
+			return true;
+		}
+		
+		throw new NoKnownUserException(null , null);
 	}
 
-	public Task getTask(int id)  throws NoKnownUserException{
-		return taskdao.get(id);
+	public List<Task> getTask(int id, String mode)  throws NoKnownUserException{
+		List<Task> temp = null;
+		if(mode.contains("all"))
+		{
+			return taskdao.selectTasks(id);
+		}
+		else
+		{
+			temp.add(taskdao.get(id));
+			return temp;
+		}
+		
 
 	}
-	public List<Task> viewTasks() {
-		return taskdao.selectTasks();
+	public List<Task> viewTasks(int userID) {
+		return taskdao.selectTasks(userID);
 	}
 
 
-	public List<Task> viewCompleted() {
-		return taskdao.selectCompleted();
+	public List<Task> updateTask(Task task) {
+		if(taskdao.updateTask(task))
+		{
+			return taskdao.selectTasks(task.getUserID());
+		}
+		else
+			return null;
+	
 	}
 
 

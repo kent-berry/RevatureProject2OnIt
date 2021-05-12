@@ -14,6 +14,8 @@ import javax.persistence.Table;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+
+import javax.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,7 +35,7 @@ public class Task {
 
 	@Column(name = "fkuserid", nullable = false)
 	@JoinColumn(name = "userid")
-	String userID;
+	int userID;
 	
 	@Column(nullable = false)
 	String taskName;
@@ -49,6 +51,7 @@ public class Task {
 	
 	Timestamp dateCompleted;
 	
+	@Min(0)
 	int reminder;
 	
 	@Column(nullable = false, columnDefinition = "boolean default false")
@@ -73,12 +76,12 @@ public class Task {
 	}
 
 
-	public String getUserID() {
+	public int getUserID() {
 		return userID;
 	}
 
 
-	public void setUserID(String userID) {
+	public void setUserID(int userID) {
 		this.userID = userID;
 	}
 

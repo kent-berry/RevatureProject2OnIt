@@ -18,6 +18,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.postgresql.util.PSQLException;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
@@ -41,31 +42,44 @@ public class UserDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
+
+	
 	@Transactional
-	public void saveUser(User u)
-	{
+	public User create(User user) {
 		
-		sessionFactory.getCurrentSession().save(u);
+		System.out.println(user);
+		
+
+		int id = (int) sessionFactory.getCurrentSession().save(user);
+		if(id == user.getID())
+		{
+			return user;
+		}
+		else
+			return null;
+
 	}
 
 	
 	@Transactional
-	public User insert(User user) {
+	public User update(User user) {
 		
-		sessionFactory.getCurrentSession().save(user);
-		User user2 = select(user);
+		System.out.println(user);
+		
+		User storedUser = select(user);
+		BeanUtils.copyProperties(user, storedUser);
+		sessionFactory.getCurrentSession().merge(storedUser);
+		User user2 = select(storedUser);
 		
 		return user2;
 	}
-
-	
 	@Transactional
 	public User select(User user) {
 		
 		System.out.println(user.getID());
 		User returned = sessionFactory.getCurrentSession().get(User.class, user.getID());
 		Criteria cr = sessionFactory.getCurrentSession().createCriteria(Task.class);
-		cr.add(Restrictions.ilike("userID", user.getID()));
+		cr.add(Restrictions.eq("userID", user.getID()));
 		List<Task> l = cr.list();
 		returned.setTasks(l);
 		return returned;
@@ -82,9 +96,14 @@ public class UserDao {
 		
 		User returned =  (User) c.uniqueResult();
 		
+		if(returned == null)
+		{
+			return null;
+		}
 		Criteria cr = sessionFactory.getCurrentSession().createCriteria(Task.class);
-		cr.add(Restrictions.ilike("userID", user.getID()));
+		cr.add(Restrictions.eq("userID", user.getID()));
 		List<Task> l = cr.list();
+		
 		returned.setTasks(l);
 		return returned;
 	}
@@ -92,8 +111,17 @@ public class UserDao {
 	
 	@Transactional
 	public boolean delete(User user) {
-		sessionFactory.getCurrentSession().delete(user);
-		return true;
+		User u = select(user);
+		if(u == null)
+		{
+			return false;
+		}
+		else
+		{
+			sessionFactory.getCurrentSession().delete(user);
+			return true;
+		}
+		
 	}
 
 	

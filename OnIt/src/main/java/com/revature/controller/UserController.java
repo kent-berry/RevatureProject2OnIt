@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.revature.exceptions.DeleteFailedException;
 import com.revature.exceptions.InsertFailedException;
 import com.revature.exceptions.NoKnownUserException;
 import com.revature.exceptions.PasswordIncorrectException;
@@ -44,19 +45,17 @@ public class UserController  {
 	@Autowired
 	private UserService userservice = new UserService();
 	
-	
-	
+
 
 
 	@ResponseStatus(code = HttpStatus.OK)
 	@PostMapping(value="/user")
-	public @ResponseBody boolean updateUser(@RequestBody User user,@ModelAttribute("user") User sessionUser) {
+	public @ResponseBody User updateUser(@RequestBody User user) {
 	
 		System.out.println("Inside endpoint /User");
 		
-		System.out.println(sessionUser);
-		if(user.getPassword() == sessionUser.getPassword())
-		{
+	
+		
 			try {
 				return userservice.update(user);
 			
@@ -66,20 +65,36 @@ public class UserController  {
 			          HttpStatus.CONFLICT, "Update Failed", e);
 			
 			
-			}
+			
 		}
-		else
-			return false;
+		
 			
 	// REGISTER USER DOES THE SAME THING AS MAKING A NEW METHOD TO SAVE A USER
 	}
 
 
-
-	@DeleteMapping(value = "/Delete")
-	public boolean unregister(@RequestBody User user,@ModelAttribute("user") User sessionUser) {
+	
 		
-		return userservice.unregister(user);
+	
+	
+	@ResponseStatus(code = HttpStatus.OK)
+	@DeleteMapping(value = "/Delete")
+	public boolean unregister(@RequestBody User user,HttpSession session) {
+		
+		try {
+			userservice.unregister(user);
+			session.invalidate();
+			return true;
+		
+	} catch (DeleteFailedException e) {
+		e.printStackTrace();
+		throw new ResponseStatusException(
+		          HttpStatus.CONFLICT, "Update Failed", e);
+		
+		
+		
+	}
+		
 	}
 
 	
@@ -89,112 +104,6 @@ public class UserController  {
 	}
 
 
-
-//	@Override
-//	@PostMapping(value = "/task/create")
-//	public @ResponseBody boolean createTask(@RequestBody Task task){
-//		// Create task out of the request
-////		Task newTask = new Task(request.getParameter("userId"), 
-////								request.getParameter("labelId"),
-////								request.getParameter("taskName"),
-////								request.getParameter("notes"),
-////								LocalDate.parse(request.getParameter("dueDate")),
-////								Integer.parseInt(request.getParameter("reminder")),
-////								Boolean.parseBoolean(request.getParameter("repeatable")));
-//		
-//		return true; //userservice.createTask(newTask);
-//	}
-//
-//	@Override
-//	public boolean updateTask(HttpServletRequest request) {
-//		// Create task out of the request
-////		Task newTask = new Task(request.getParameter("userId"), 
-////								request.getParameter("labelId"),
-////								request.getParameter("taskName"),
-////								request.getParameter("notes"),
-////								LocalDate.parse(request.getParameter("dueDate")),
-////								Integer.parseInt(request.getParameter("reminder")),
-////								Boolean.parseBoolean(request.getParameter("repeatable")));
-//
-//		return true; //userservice.updateTask(newTask);
-//	}
-//
-//	@Override
-//	public boolean deleteTask(HttpServletRequest request) {
-//		return userservice.deleteTask(request.getParameter("taskId"));
-//	}
-//
-//	@Override
-//	public List<Task> viewTasks(HttpServletRequest request) {
-//		return userservice.viewTasks();
-//	}
-//
-//	@Override
-//	public boolean completeTask(HttpServletRequest request) {
-//		return userservice.completeTask(request.getParameter("taskId"));
-//	}
-//
-//	@Override
-//	public List<Task> viewCompleted(HttpServletRequest request) {
-//		return userservice.viewCompleted();
-//	}
-//
-//	@Override
-//	public boolean labelTask(HttpServletRequest request) {
-//		return userservice.labelTask(request.getParameter("taskId"), request.getParameter("labelId"));
-//	}
-//
-//	@Override
-//	public List<Task> viewLabel(HttpServletRequest request) {
-//		return userservice.viewLabel(request.getParameter("labelId"));
-//	}
-//
-//	@Override
-//	public boolean duedateTask(HttpServletRequest request) {
-//		return userservice.duedateTask(request.getParameter("taskId"), 
-//				                       LocalDate.parse(request.getParameter("dueDate")));
-//	}
-//
-//	@Override
-//	public boolean viewDuedate(HttpServletRequest request) {
-//		return userservice.viewDuedate(LocalDate.parse(request.getParameter("dueDate")));
-//	}
-//
-//	@Override
-//	public boolean receiveEmailReminders(HttpServletRequest request) {
-//		return userservice.receiveEmailReminders(Integer.parseInt(request.getParameter("receiveEmailReminders")));
-//	}
-//
-//	@Override
-//	public boolean setRepeatableTask(HttpServletRequest request) {
-//		return userservice.SetRepeatableTask(request.getParameter("taskId"),
-//				                             Boolean.parseBoolean(request.getParameter("repeatable")));
-//	}
-//
-//	@Override
-//	public boolean setDailyGoals(HttpServletRequest request) {
-//		return userservice.setDailyGoals(Integer.parseInt(request.getParameter("numDesired")));
-//	}
-//
-//	@Override
-//	public Object viewProgress(HttpServletRequest request) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public Object viewPastProgressGraph(HttpServletRequest request) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//
-//	@Override
-//	public User logout(User user) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
 
 	
 
