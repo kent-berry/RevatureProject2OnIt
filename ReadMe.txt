@@ -1,4 +1,10 @@
-The json based backend is currently deployed on the server for receiving post requests on /register or /login endpoints.
+
+
+The json based backend is currently deployed on the server for receiving post requests on the following endpoints:
+ /register 
+ /login
+
+Awaiting test on the server: logout
 
 How to test using postman?
 

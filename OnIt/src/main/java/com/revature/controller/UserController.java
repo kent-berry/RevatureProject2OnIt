@@ -1,5 +1,6 @@
 package com.revature.controller;
 
+
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -17,6 +18,7 @@ import javax.crypto.spec.PBEKeySpec;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -77,13 +79,20 @@ public class UserController implements IUserController {
 			e.printStackTrace();
 			return null;
 		}
-		return userservice.login(loginUser.getEmail(), hashedPass);
+		
+		
+		User loggingUser = userservice.login(loginUser.getEmail(), hashedPass);
+		if (loggingUser != null) {
+			httpsession.setAttribute("loggedinUser", loggingUser);
+		}
+		return loggingUser;
 	}
 
-	@Override
-	public boolean logout(HttpServletRequest request) { //done using httpsession
-		// TODO Auto-generated method stub
-		return false;
+	@GetMapping(value = "/logout")
+	public @ResponseBody String logout(HttpServletRequest request) { 
+		httpsession.setAttribute("loggedinUser", null);
+		httpsession.invalidate();
+		return "redirect:hello"; //redirect to main page of app
 	}
 
 	@Override
