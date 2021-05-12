@@ -1,5 +1,110 @@
+<!-- 
 <p>user-home-page works!</p>
 <br>
 <a routerLink="/createtask">Click here to create a to-do item</a>
 <br>
 <a routerLink="/editviewtask">Click here to view and edit a task</a>
+-->
+
+
+
+
+  <br>
+  <br>
+
+  <div style="display: flex; justify-content: center;">
+    <button type="button" routerLink="/createtask" class="btn btn-secondary btn-lg" style="background-color: blueviolet;">Create Task</button>
+  </div>
+<br>
+
+  <!-- Main horizontal flex -->
+<div class="content" style="text-align: center;  display: flex; flex-direction:row; justify-content: center;">
+
+    <!-- COLUMN: Filter -->
+    <div  style=" margin-right:10px; width:160px; text-align:left;"  >
+        <br>
+        <p>Filter by:</p>
+
+
+        <mat-form-field appearance="fill" style=" width:70%;">
+            <mat-label>Category</mat-label>
+            <mat-select >
+              <mat-option *ngFor="let label of labels" [value]="label">
+                {{label}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </div>
+    
+    
+
+    <!-- COLUMN: Task grid table + Page selector-->
+    <div style="width:800px; display:flex; flex-direction: column; background-color: aqua;">
+    <!-- Horizontal flex item 1-->
+    <div fxLayoutGap="10px grid" fxLayout="row wrap" style="  display:flex; flex-direction:row; align-content:flex-start; background-color: aliceblue;">
+           
+            <!-- The card-->
+            <div fxFlex="24%" *ngFor="let task of tasksFiltered" >
+                <mat-card class="mat-elevation-z4" style="background-image: url('../assets/images/notepad_bg_1.jpg');">
+                    
+                    <!-- <img mat-card-image src="./../assets/images/completed_check_1.jpg" style="width:20%; height:20%;"> -->
+                    <mat-card-header style="margin-top: 2.10em;" class="condensedText">
+                        <mat-card-title (click)="selectTask(task)">Grocery store</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p class="condensedText" (click)="selectTask(task)">
+                        Get some food and drinks at the store tomorrow!
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button style="background-color: rgb(22, 175, 22); color:aliceblue">DONE</button>
+                    </mat-card-actions>
+
+                </mat-card>
+            </div>
+                
+        
+    </div>
+
+    <div >
+        <mat-paginator [length]="tasks.length"
+        [pageSize]="size"
+        [pageIndex]="page"
+        [pageSizeOptions]="[8, 12, 16]"
+        (page)="getData($event)"   
+        style="margin-top: 10px;">
+        </mat-paginator>
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+    <!-- COLUMN: Task quick view-->
+    <!--
+    <div  style=" margin-left:2px; width:360px; height:650px;;             
+                display:flex; ; justify-content: center;">
+        
+        <p *ngIf="!taskSelected" style="margin-top: 30px;">Click on a task to view it here! </p>
+
+        <div *ngIf="taskSelected" style="margin-top: 30px;">
+            
+                
+                <br>
+                <p>{{taskBeingViewed.taskName}}</p>
+                <p>{{taskBeingViewed.Notes}}</p>
+                <p>{{taskBeingViewed.dateCompleted}}</p>
+            
+        </div>
+    </div>
+    -->
+
+  </div>
+

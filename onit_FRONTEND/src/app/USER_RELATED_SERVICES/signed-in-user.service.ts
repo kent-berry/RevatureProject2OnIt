@@ -6,18 +6,28 @@ import { User } from './User';
 })
 export class SignedInUserService {
 
-  private _signedInUser : User;
+  private _signedInUsername : string;
+  private _signedInPassword : string;
 
   constructor() {
 
    }
 
 
-   get signedInUser() {
-     return this._signedInUser
+   get signedInUsername() {
+     return sessionStorage.getItem("signedInUsername");
    }
-   set signedInUser(signedInUser: User) {
-     this._signedInUser = signedInUser;
+   set signedInUsername(signedInUsername: string) {
+     sessionStorage.setItem("signedInUsername",signedInUsername);
    }
-  
+
+   get signedInPassword() {
+    return sessionStorage.getItem("signedInPassword");
+  }
+   set signedInPassword(signedInPassword: string) {
+    sessionStorage.setItem("signedInPassword",signedInPassword);
+  }
+  clear() : void {
+    sessionStorage.clear();
+  }
 }

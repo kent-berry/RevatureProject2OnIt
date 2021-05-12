@@ -1,0 +1,37 @@
+.content {
+    padding: 16px;
+}
+
+.content > mat-card {
+    /**width: 200px;*/
+}
+
+.content mat-card.mat-elevation-z4 {
+    /** background-color: rgb(240,255,240);     */
+     
+}
+
+
+
+.content mat-card.mat-elevation-z4 mat-card-header mat-card-title{
+    cursor: pointer;
+}
+
+.content mat-card.mat-elevation-z4 mat-card-content p{
+    cursor: pointer;
+}
+
+
+.mat-paginator {
+    display: flex;
+    justify-content: left;
+  } 
+
+  .condensedText {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+
+  }

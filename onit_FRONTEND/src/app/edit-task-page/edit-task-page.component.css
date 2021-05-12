@@ -1,0 +1,54 @@
+.create-textarea-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.create-date-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.textarea-field {
+  width: 600px;
+  height: 200px;
+}
+
+.date-field {
+  width: 12em;
+  margin-top: 0.4em;
+}
+
+#create-textarea {
+  background: #F8F3FA;
+  resize: none;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+  margin-top: 0.25em;
+  display: inline-block;
+}
+
+.select-field {
+  width: 12em;
+}
+
+.select-mat {
+  height: 0.8em;
+}
+
+.checkbox-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+}
+
+.update-button {
+  margin-right: 3em;
+}

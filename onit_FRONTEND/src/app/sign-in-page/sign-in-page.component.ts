@@ -35,8 +35,14 @@ export class SignInPageComponent implements OnInit {
 
     const fromValue = this.form.value;
     console.log(fromValue);
+    this.signedInUserService.signedInUsername = "bob23";
+    localStorage.setItem("signedInUsername","bob23");
+    localStorage.setItem("signedInPassword","pw");
+    this.router.navigate(['/tasks']);
+
 
    }
+
    ngOnInit(): void{
 
     this.form= this.formbuilder.group({
@@ -50,10 +56,12 @@ export class SignInPageComponent implements OnInit {
       this.previousUrl = event.url;
     });
       // If already signed in, redirect to User Home
-      console.log("SIGNINPAGE CONSTRUCTOR: this.signedInUserService.signedInUser = "+this.signedInUserService.signedInUser);
-      if (this.signedInUserService.signedInUser) {
+      console.log("SIGNINPAGE CONSTRUCTOR: this.signedInUserService.signedInUser = "+this.signedInUserService.signedInUsername);
+      if (this.signedInUserService.signedInUsername) {
         this.router.navigate(['/tasks']);
       }
+
+      
       
   }
 

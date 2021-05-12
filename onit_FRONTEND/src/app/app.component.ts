@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { SignedInUserService } from './USER_RELATED_SERVICES/signed-in-user.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { SignedInUserService } from './USER_RELATED_SERVICES/signed-in-user.serv
 })
 export class AppComponent {
   
+ 
   title = 'onit';
   
   constructor(
@@ -19,11 +20,11 @@ export class AppComponent {
 
 
   getSignedInUser() {
-    return this.signedInUserService.signedInUser;
+    return this.signedInUserService.signedInUsername;
   }
 
   signUserOut() {
-    this.signedInUserService.signedInUser = null;
+    this.signedInUserService.clear();
   }
 
 }

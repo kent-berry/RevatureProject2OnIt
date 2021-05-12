@@ -1,9 +1,67 @@
 
+<!-- 
 <nav class="navbar navbar-dark bg-dark" *ngIf="getSignedInUser()">
   <a class="nav-item nav-link" routerLink="/tasks">Tasks</a>
   <a class="nav-item nav-link" routerLink="/accountmanagement">Account management</a>
   <a class="nav-item nav-link" routerLink="/home" (click)="signUserOut()">Sign out</a>
 </nav>
+-->
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light " *ngIf="getSignedInUser()" style="background-image:url('../assets/images/navbar_bg_2.jpg'); height:70px;"  >
+
+  <div class="container-fluid" >
+    
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <ul class="navbar-nav" display="inline">
+      <li class="nav-item" style="display: inline; margin-left: 0px; color:blueviolet; font-weight: bold; font-size: 27px;">
+        <p >
+          OnIt!
+        </p>
+      </li>
+      </ul>
+
+    <span class="collapse navbar-collapse" id="navbarNavDropdown" style=" display: flex; flex-direction: row; justify-content: center;">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/tasks">Tasks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/taskstats">Task Stats</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/accountmanagement">Account</a>
+        </li>
+        
+
+      </ul>
+    </span>
+
+    <ul class="navbar-nav" display="inline">
+    <li class="nav-item" style="display: inline;">
+      <a class="nav-link" routerLink="/home" (click)="signUserOut()" style="font-size: smaller;">
+        Sign Out
+      </a>
+    </li>
+    </ul>
+    
+
+  </div>
+
+</nav>
+
+<!-- purple bar underneath nav bar-->
+<mat-toolbar color="primary" style="height: 1px;" *ngIf="getSignedInUser()">
+  <p class="condensedText" style="margin: 0 auto;">
+      
+  </p>
+</mat-toolbar>
+
 <!-- This is the main display area of the site -->
 
 <!-- Clicking links and what not will route to
@@ -11,11 +69,7 @@
       that component within <router-outlet></router-outlet>
     -->
 <div class="jumbotron">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 offset-sm-3">
+
         <router-outlet></router-outlet>
-      </div>
-    </div>
-  </div>
+
 </div>
