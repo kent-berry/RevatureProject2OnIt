@@ -5,7 +5,22 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-05-11T17:57:00Z</updated>
+  <updated>2021-05-12T06:21:00Z</updated>
+  <entry>
+    <title>Spring Framework 5.3.7 and 5.2.15 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/05/11/spring-framework-5-3-7-and-5-2-15-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Stéphane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2021-05-12:4435</id>
+    <updated>2021-05-12T06:21:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that Spring Framework &lt;code&gt;5.3.7&lt;/code&gt; and &lt;code&gt;5.2.15&lt;/code&gt; are available now.&lt;/p&gt;
+&lt;p&gt;Spring Framework &lt;code&gt;5.3.7&lt;/code&gt; includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.3.7"&gt;45 fixes and improvements&lt;/a&gt;. Spring Framework &lt;code&gt;5.2.15&lt;/code&gt; includes &lt;a href="https://github.com/spring-projects/spring-framework/releases/tag/v5.2.15.RELEASE"&gt;9 selected fixes and improvements&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Stay tuned for follow-up Spring Boot releases later this week.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/5.3.7/spring-framework-reference"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>This Week in Spring - May 11th, 2021</title>
     <link rel="alternate" href="https://spring.io/blog/2021/05/11/this-week-in-spring-may-11th-2021" />
@@ -1171,59 +1186,6 @@ Artem&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/issues"&gt;GitHub Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring for Apache Kafka 2.7.0 Available</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/04/14/spring-for-apache-kafka-2-7-0-available" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Gary Russell</name>
-    </author>
-    <id>tag:spring.io,2021-04-14:4414</id>
-    <updated>2021-04-14T17:00:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;I am pleased to announce that Spring for Apache Kafka 2.7.0 is now available.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This release contains a significant enhancement, which is a community contribution.
-Failed deliveries can be forwarded to a series of topics for delayed redelivery.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;It is best described with an example:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code data-lang="java"&gt;@RetryableTopic(attempts = "5", backoff = @Backoff(delay = 1000, multiplier = 2.0))
-@KafkaListener(id = "sk270", topics = "sk270")
-public void listen(String in, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) {
-    LOG.info(in + " from " + topic);
-    throw new RuntimeException("test");
-}
-
-@DltHandler
-public void dlt(String in, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) {
-    LOG.info(in + " from " + topic);
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;With this configuration, the first delivery attempt fails and the record is sent to a topic configured for a 1-second delay. When that delivery fails, the record is sent to a topic with a 2-second delay. When that delivery fails, it goes to a topic with a 4-second delay, then an 8 second delay, and, finally, to a dead letter topic with an (optional) &lt;code&gt;@DltHandler&lt;/code&gt; method.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This allows processing of subsequent records from the same partition while retrying the failed record.
-Of course, if strict ordering is needed, then traditional retries should be used.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The framework takes care of provisioning the main and delayed topics.
-The consumers on the delayed topics are paused until the current time exceeds the record timestamp plus the delay.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;For information about all changes in this release, see &lt;a href="https://docs.spring.io/spring-kafka/docs/current/reference/html/#whats-new-part"&gt;What&amp;#8217;s New&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-kafka/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-kafka"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-kafka/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-kafka/docs/2.7.0/reference/html/"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-kafka"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-kafka"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
