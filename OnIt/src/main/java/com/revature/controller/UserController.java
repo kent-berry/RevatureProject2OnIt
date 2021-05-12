@@ -110,20 +110,33 @@ public class UserController implements IUserController {
 				}
 			} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
 				e.printStackTrace();
-				System.out.println("false deleteAccount exception");
 				return false;
 			}
 		}
-		System.out.println("false deleteAccount");
 		return false;
 	}
 
-	@Override
-	public String downloadMyData(HttpServletRequest request) {
-		return userservice.downloadMyData(request.getParameter("email"),
-										  request.getParameter("password"));
+	@GetMapping(value = "/downloadMyData")
+	public @ResponseBody String downloadMyData() {
+		if(httpsession.getAttribute("loggedinUser") != null) {
+			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+			return userservice.downloadMyData(loggedinUser.getEmail(), loggedinUser.getPassword());
+		} else {
+			return "redirect:hello"; //redirect to main page of app
+		}
 	}
 
+	@Override
+	public boolean receiveEmailReminders(HttpServletRequest request) {
+		return userservice.receiveEmailReminders(Integer.parseInt(request.getParameter("receiveEmailReminders")));
+	}
+	
+	@Override
+	public boolean setDailyGoals(HttpServletRequest request) {
+		return userservice.setDailyGoals(Integer.parseInt(request.getParameter("numDesired")));
+	}
+
+	
 	@Override
 	public boolean createTask(HttpServletRequest request) {
 		// Create task out of the request
@@ -151,7 +164,7 @@ public class UserController implements IUserController {
 
 		return userservice.updateTask(newTask);
 	}
-
+	
 	@Override
 	public boolean deleteTask(HttpServletRequest request) {
 		return userservice.deleteTask(request.getParameter("taskId"));
@@ -194,19 +207,9 @@ public class UserController implements IUserController {
 	}
 
 	@Override
-	public boolean receiveEmailReminders(HttpServletRequest request) {
-		return userservice.receiveEmailReminders(Integer.parseInt(request.getParameter("receiveEmailReminders")));
-	}
-
-	@Override
 	public boolean setRepeatableTask(HttpServletRequest request) {
 		return userservice.SetRepeatableTask(request.getParameter("taskId"),
 				                             Boolean.parseBoolean(request.getParameter("repeatable")));
-	}
-
-	@Override
-	public boolean setDailyGoals(HttpServletRequest request) {
-		return userservice.setDailyGoals(Integer.parseInt(request.getParameter("numDesired")));
 	}
 
 	@Override

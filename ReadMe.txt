@@ -5,6 +5,7 @@ The json based backend is currently deployed on the server for receiving post re
  /login
  /logout
  /deleteAccount
+ /downloadMyData
 
 How to test using postman?
 
@@ -40,7 +41,7 @@ Different scenarios:
 3) Test /logout endpoint?
 GET url: http://142.93.205.142:8090/OnItJson/logout
 GET
-                Successful logging out should redirect tot homepage, it invalidates the httpsession
+                Successful logging out should redirect to homepage after it invalidates the httpsession
 
 
 4) Test /deleteAccount endpoint? When a logged in user decides to delete his/her account, they are prompted to provide their
@@ -57,5 +58,11 @@ Different scenarios:
 		1) Deleting a loggedin user after he/she successfully provide the correct password: return 200 ok, true
 		2) Any other issue such as providing the wrong password: returns 200 ok, false
 
+
+5) Test /downloadMyData endpoint? 
+GET url: http://142.93.205.142:8090/OnItJson/downloadMyData 
+GET
+                Successful download my data request by a logged in user returns 200 ok user data except id and password (stored in hashed format)
+		
 
 

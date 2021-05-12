@@ -31,7 +31,6 @@ public class UserService implements IUserService {
 
 	@Override
 	public boolean unregister(String email, String password) {
-		System.out.println("deleteAccount from service to dao");
 		return userdao.delete(email, password);
 	}
 
