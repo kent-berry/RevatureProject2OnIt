@@ -15,7 +15,7 @@
        </repository>
    </distributionManagement>
   <build>
-    <finalName>OnIt</finalName>
+    <finalName>OnItJson</finalName>
   </build>
   <properties>
 	<maven.compiler.source>1.8</maven.compiler.source>
