@@ -18,9 +18,9 @@
 	
    
 	  <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-	  	<property name="url" value ="jdbc:postgresql://onit.csdlvyc8g6b3.us-west-2.rds.amazonaws.com/ers"></property>
-	  	<property name="username" value="postgres"></property>
-	  	<property name="password" value="password123"></property>
+	  	<property name="url" value="#{systemEnvironment['onitdb_url']}"></property>
+	  	<property name="username" value="#{systemEnvironment['onitdb_username']}"></property>
+	  	<property name="password" value="#{systemEnvironment['onitdb_password']}"></property>
 	  	<property name="driverClassName" value="org.postgresql.Driver"></property>
 	  </bean>
 

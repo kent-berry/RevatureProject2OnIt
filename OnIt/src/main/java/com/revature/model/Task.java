@@ -3,12 +3,19 @@ package com.revature.model;
 import java.time.LocalDate;
 import java.util.UUID;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tasks")
 public class Task {
 	
+	@Id
 	private String id;
 	
+	//Label as a foreign key
 	private String userId;
-	private String labelId;
 	
 	private String taskName;
 	private String notes;
@@ -21,25 +28,29 @@ public class Task {
 	private boolean repeatable;
 	
 	//Constructor
-	public Task(String userId, String labelId, String taskName, String notes, LocalDate dueDate, int reminder,
+	
+	public Task() {
+		super();
+	}
+	
+	public Task(String userId, String taskName, String notes, int reminder,
 			boolean repeatable) {
 		super();
 		
 		this.id = UUID.randomUUID().toString();
 		
 		this.userId = userId;
-		this.labelId = labelId;
 		this.taskName = taskName;
 		this.notes = notes;
 		
-		this.dueDate = dueDate;
 		
 		this.dateCreated = LocalDate.now(); 
-		
 		
 		this.reminder = reminder;
 		this.repeatable = repeatable;
 	}
+
+	
 
 	//Getters and setters
 	public String getId() {
@@ -56,14 +67,6 @@ public class Task {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
-	}
-
-	public String getLabelId() {
-		return labelId;
-	}
-
-	public void setLabelId(String labelId) {
-		this.labelId = labelId;
 	}
 
 	public String getTaskName() {
@@ -125,9 +128,8 @@ public class Task {
 	//toString
 	@Override
 	public String toString() {
-		return "Task [id=" + id + ", userId=" + userId + ", labelId=" + labelId + ", taskName=" + taskName + ", notes="
-				+ notes + ", dueDate=" + dueDate + ", dateCreated=" + dateCreated + ", dateCompleted=" + dateCompleted
-				+ ", reminder=" + reminder + ", repeatable=" + repeatable + "]";
+		return "Task [taskName=" + taskName + ", notes=" + notes + ", dueDate=" + dueDate + ", dateCompleted="
+				+ dateCompleted + ", reminder=" + reminder + ", repeatable=" + repeatable + "]";
 	}
 		
 }

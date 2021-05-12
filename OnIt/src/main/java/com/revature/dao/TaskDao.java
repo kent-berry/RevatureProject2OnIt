@@ -1,19 +1,32 @@
 package com.revature.dao;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.model.Task;
 
-@Component
+@EnableTransactionManagement
+@ImportResource({"classpath:beans-annotations.xml"})
+@Repository
 public class TaskDao implements ITaskDao {
 
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	@Transactional
 	@Override
-	public boolean insert(Task task) {
-		// TODO Auto-generated method stub
-		return false;
+	public Serializable insert(Task task) {
+		Serializable identifier = sessionFactory.getCurrentSession().save(task);
+		return identifier;
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import com.revature.model.Task;
 
 public interface ITaskDao {
 	// Creating, deleteing, and viewing tasks
-	boolean insert(Task task);
+	Serializable insert(Task task);
 	boolean update(Task task);
 	boolean delete(String taskId);
 	List<Task> selectTasks (); //view all  

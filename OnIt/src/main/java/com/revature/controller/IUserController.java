@@ -21,7 +21,7 @@ public interface IUserController {
 	//boolean setDailyGoals(DtoInteger dtoInteger);
 	
 	// Creating, deleteing, and viewing tasks
-	boolean createTask(HttpServletRequest request);
+	//Serializable createTask(DtoTask dtoTask);
 	boolean updateTask(HttpServletRequest request);
 	boolean deleteTask(HttpServletRequest request);
 	List<Task> viewTasks (HttpServletRequest request);

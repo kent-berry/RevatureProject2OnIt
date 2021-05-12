@@ -29,7 +29,6 @@ public class UserDao implements IUserDao {
 	@Override
 	public Serializable insert(String firstName, String lastName, String email, String password) {
 		User newUser = new User(firstName, lastName, email, password);
-		System.out.println(newUser.toString());
 		Serializable identifier = sessionFactory.getCurrentSession().save(newUser);
 		return identifier;
 	}

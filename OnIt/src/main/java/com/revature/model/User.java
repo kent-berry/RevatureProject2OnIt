@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
-
 @Entity
 @Table(name = "users")
 public class User {
@@ -41,10 +39,6 @@ public class User {
 		this.accountCreated = LocalDate.now();
 	}
 	
-	
-	
-
-
 	//Getters and setters
 	public String getId() {
 		return id;

@@ -1,4 +1,4 @@
-
+This backend targets users, tasks tables on the rds using raw json body in the case of post requests
 
 The json based backend is currently deployed on the server for receiving post requests on the following endpoints:
  /register 
@@ -8,6 +8,7 @@ The json based backend is currently deployed on the server for receiving post re
  /downloadMyData
  /updateEmailReminders
  /updateDailyGoals
+ /addTask
 
 All the above endpoints persist data on rds in cases of record CRUD.
 
@@ -88,5 +89,23 @@ Body-raw-json:
 		}
 	
 		Successful update by a logged in user returns 200 ok and true
+
+
+8) Test /addTask endpoint?
+Post url: http://142.93.205.142:8090/OnItJson/addTask 
+POST
+Body-raw-json: Please change the values for taskName, notes, reminder, repeatable
+                  {
+		    "taskName":"visit friends in CA",
+		    "notes": "",
+		    "reminder": "2",
+		    "repeatable": "false"
+		  }
+
+		A successful task insertion returns 200 ok and a serializable, of course adding a task requires
+                an authenticated user (loggedin user) and uses the user id as a foreign key on the database tasks table
+
+
+
 
 

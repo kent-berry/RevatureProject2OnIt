@@ -105,14 +105,17 @@ public class UserController implements IUserController {
 				if(hashedPass.equals(loggedinUser.getPassword())) {
 					return userservice.unregister(loggedinUser.getEmail(), hashedPass);
 				} else {
+					System.out.println("1");
 					//js alert! telling the user that the provided password is not correct
 					return false;
 				}
 			} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+				System.out.println("2");
 				e.printStackTrace();
 				return false;
 			}
 		}
+		System.out.println("3");
 		return false;
 	}
 
@@ -150,29 +153,26 @@ public class UserController implements IUserController {
 		}
 	}
 
-	
-	@Override
-	public boolean createTask(HttpServletRequest request) {
+	//String userId, String taskName, String notes, LocalDate dueDate, int reminder, boolean repeatable
+
+	@PostMapping(value = "/addTask")
+	public @ResponseBody Serializable createTask(@RequestBody DtoTask dtoTask) {
 		// Create task out of the request
-		Task newTask = new Task(request.getParameter("userId"), 
-								request.getParameter("labelId"),
-								request.getParameter("taskName"),
-								request.getParameter("notes"),
-								LocalDate.parse(request.getParameter("dueDate")),
-								Integer.parseInt(request.getParameter("reminder")),
-								Boolean.parseBoolean(request.getParameter("repeatable")));
-		
-		return userservice.createTask(newTask);
+		if(httpsession.getAttribute("loggedinUser") != null) {
+			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+			Task newTask = new Task(loggedinUser.getId(), dtoTask.getTaskName(), dtoTask.getNotes(), dtoTask.getReminder(), dtoTask.isRepeatable());
+			return userservice.createTask(newTask);
+		} else {
+			return null;
+		}
 	}
 
 	@Override
 	public boolean updateTask(HttpServletRequest request) {
 		// Create task out of the request
 		Task newTask = new Task(request.getParameter("userId"), 
-								request.getParameter("labelId"),
 								request.getParameter("taskName"),
 								request.getParameter("notes"),
-								LocalDate.parse(request.getParameter("dueDate")),
 								Integer.parseInt(request.getParameter("reminder")),
 								Boolean.parseBoolean(request.getParameter("repeatable")));
 

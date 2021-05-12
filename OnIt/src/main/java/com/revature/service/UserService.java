@@ -50,7 +50,7 @@ public class UserService implements IUserService {
 	}
 	
 	@Override
-	public boolean createTask(Task task) {
+	public Serializable createTask(Task task) {
 		return taskdao.insert(task);
 	}
 
