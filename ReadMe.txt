@@ -3,8 +3,8 @@
 The json based backend is currently deployed on the server for receiving post requests on the following endpoints:
  /register 
  /login
-
-Awaiting test on the server: logout
+ /logout
+ /deleteAccount
 
 How to test using postman?
 
@@ -35,3 +35,27 @@ Body-raw-json:
 Different scenarios:
  		1) Logging in a registered user (email/password are in the db) using correct email and password: returns 200 ok and a user object
 		2) Loggin in a non registered user returns 200 ok and 1, not a user object
+
+
+3) Test /logout endpoint?
+GET url: http://142.93.205.142:8090/OnItJson/logout
+GET
+                Successful logging out should redirect tot homepage, it invalidates the httpsession
+
+
+4) Test /deleteAccount endpoint? When a logged in user decides to delete his/her account, they are prompted to provide their
+password as a means of confirming their account, they provide the pwssword account and hit a delete my account button, this
+leads to a post request on the /deleteAccount endpoint.
+
+Post url: http://142.93.205.142:8090/OnItJson/deleteAccount
+POST
+Body-raw-json:
+		{
+		    "password": "c"
+		}
+Different scenarios:
+		1) Deleting a loggedin user after he/she successfully provide the correct password: return 200 ok, true
+		2) Any other issue such as providing the wrong password: returns 200 ok, false
+
+
+

@@ -45,10 +45,19 @@ public class UserDao implements IUserDao {
 		return (results.isEmpty() ? null : results.get(0));
 	}
 
+	@Transactional
 	@Override
 	public boolean delete(String email, String password) {
-		// TODO Auto-generated method stub
-		return false;
+		System.out.println("deleteAccount in dao");
+		User user = select(email, password);
+		if(user != null) {
+			System.out.println("deleteAccount in dao, user is logged in httpsession");
+			sessionFactory.getCurrentSession().delete(user);
+			return true;
+		} else {
+			System.out.println("deleteAccount in dao, user is null");
+			return false;
+		}
 	}
 
 	@Override

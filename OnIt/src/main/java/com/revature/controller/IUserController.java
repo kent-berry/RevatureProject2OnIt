@@ -13,8 +13,8 @@ public interface IUserController {
 	// Authentication, deletion, download
 	//Serializable register(HttpServletRequest request);
 	//User login(HttpServletRequest request);
-	//String logout(HttpServletRequest request);
-	boolean unregister(HttpServletRequest request); //account deletion
+	//String logout();
+	//boolean unregister(HttpServletRequest request); //account deletion
 	String downloadMyData(HttpServletRequest request);
 	
 	

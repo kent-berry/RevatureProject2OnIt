@@ -89,15 +89,33 @@ public class UserController implements IUserController {
 	}
 
 	@GetMapping(value = "/logout")
-	public @ResponseBody String logout(HttpServletRequest request) { 
+	public @ResponseBody String logout() { 
 		httpsession.setAttribute("loggedinUser", null);
 		httpsession.invalidate();
 		return "redirect:hello"; //redirect to main page of app
 	}
 
-	@Override
-	public boolean unregister(HttpServletRequest request) {
-		return userservice.unregister(request.getParameter("email"), request.getParameter("password"));
+	@PostMapping(value = "/deleteAccount")
+	public boolean unregister(@RequestBody Password password) {
+		if(httpsession.getAttribute("loggedinUser") != null) {
+			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+			String hashedPass = "";
+			try {
+				hashedPass = hashPass(password.getPassword());
+				if(hashedPass.equals(loggedinUser.getPassword())) {
+					return userservice.unregister(loggedinUser.getEmail(), hashedPass);
+				} else {
+					//js alert! telling the user that the provided password is not correct
+					return false;
+				}
+			} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+				e.printStackTrace();
+				System.out.println("false deleteAccount exception");
+				return false;
+			}
+		}
+		System.out.println("false deleteAccount");
+		return false;
 	}
 
 	@Override
