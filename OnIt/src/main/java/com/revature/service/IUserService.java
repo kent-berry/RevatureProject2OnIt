@@ -15,7 +15,12 @@ public interface IUserService {
 	boolean unregister(String email, String password); //account deletion, requires providing password to delete
 	String downloadMyData(String email, String password);
 	
+	// receiving email reminders
+	boolean receiveEmailReminders(User loggedinUser); 
 	
+	//Setting daily goals
+	boolean setDailyGoals(User loggedinUser);
+		
 	// Creating, deleteing, and viewing tasks
 	boolean createTask(Task task);
 	boolean updateTask(Task task);
@@ -34,15 +39,11 @@ public interface IUserService {
 	// Adding due date, filtering based on duedate
 	boolean duedateTask(String taskId, LocalDate dueDate);
 	boolean viewDuedate(LocalDate dueDate);
-	
-	// receiving email reminders
-	boolean receiveEmailReminders(int reminderPeriod); //0, 1, 2 days before
-	
+			
 	// Assign repeatable/non repeatable
 	boolean SetRepeatableTask(String taskId, boolean repeatable); //true or false
 	
-	//Setting daily goals
-	boolean setDailyGoals(int numDesired);
+	
 	Object viewProgress();
 	
 	//viewing graph

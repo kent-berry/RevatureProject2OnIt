@@ -6,6 +6,10 @@ The json based backend is currently deployed on the server for receiving post re
  /logout
  /deleteAccount
  /downloadMyData
+ /updateEmailReminders
+ /updateDailyGoals
+
+All the above endpoints persist data on rds in cases of record CRUD.
 
 How to test using postman?
 
@@ -64,5 +68,25 @@ GET url: http://142.93.205.142:8090/OnItJson/downloadMyData
 GET
                 Successful download my data request by a logged in user returns 200 ok user data except id and password (stored in hashed format)
 		
+
+6) Test /updateEmailReminders endpoint? 
+Post url: http://142.93.205.142:8090/OnItJson/updateEmailReminders 
+POST
+Body-raw-json:
+		{
+		    formInteger: "2"
+		}
+	
+		Successful update by a logged in user returns 200 ok and true
+
+7) Test /updateDailyGoals endpoint? 
+Post url: http://142.93.205.142:8090/OnItJson/updateDailyGoals
+POST
+Body-raw-json:
+		{
+		    formInteger: "2"
+		}
+	
+		Successful update by a logged in user returns 200 ok and true
 
 

@@ -3,7 +3,7 @@ package com.revature.model;
 import org.springframework.stereotype.Component;
 
 @Component
-public class RegisterUser {
+public class DtoRegisterUser {
 
 	private String firstname;
 	private String lastname;
@@ -11,11 +11,11 @@ public class RegisterUser {
 	private String password;
 	
 	
-	public RegisterUser() {
+	public DtoRegisterUser() {
 		super();
 	}
 	
-	public RegisterUser(String firstname, String lastname, String email, String password) {
+	public DtoRegisterUser(String firstname, String lastname, String email, String password) {
 		super();
 		this.firstname = firstname;
 		this.lastname = lastname;

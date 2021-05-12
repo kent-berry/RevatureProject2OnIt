@@ -12,9 +12,9 @@ public interface IUserDao {
 	
 	
 	// receiving email reminders
-	boolean updateEmailReminders(int reminderPeriod); //0, 1, 2 days before
+	boolean updateEmailReminders(User loggedinUser); //0, 1, 2 days before
 	
 	//Setting daily goals
-	boolean updateGoal(int numDesired);
+	boolean updateGoal(User loggedinUser);
 
 }

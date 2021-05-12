@@ -3,18 +3,18 @@ package com.revature.model;
 import org.springframework.stereotype.Component;
 
 @Component
-public class LoginUser {
+public class DtoLoginUser {
 	
 	private String email;
 	private String password;
 	
 	
-	public LoginUser() {
+	public DtoLoginUser() {
 		super();
 	}
 
 
-	public LoginUser(String email, String password) {
+	public DtoLoginUser(String email, String password) {
 		super();
 		this.email = email;
 		this.password = password;

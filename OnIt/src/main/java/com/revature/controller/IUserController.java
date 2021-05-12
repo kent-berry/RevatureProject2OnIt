@@ -10,15 +10,15 @@ import com.revature.model.*;
 public interface IUserController {
 
 	// Authentication, deletion, download
-	//Serializable register(HttpServletRequest request);
-	//User login(HttpServletRequest request);
+	//Serializable register(DtoRegisterUser dtoRegisterUser);
+	//User login(DtoLoginUser dtoLoginUser);
 	//String logout();
-	//boolean unregister(Password password); //account deletion
+	//boolean unregister(DtoPassword dtoPassword); //account deletion
 	//String downloadMyData();
 	// receiving email reminders
-	boolean receiveEmailReminders(HttpServletRequest request);
+	//boolean receiveEmailReminders(DtoInteger dtoInteger);
 	//Setting daily goals
-	boolean setDailyGoals(HttpServletRequest request);
+	//boolean setDailyGoals(DtoInteger dtoInteger);
 	
 	// Creating, deleteing, and viewing tasks
 	boolean createTask(HttpServletRequest request);

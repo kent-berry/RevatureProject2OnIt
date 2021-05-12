@@ -57,16 +57,18 @@ public class UserDao implements IUserDao {
 		}
 	}
 
+	@Transactional
 	@Override
-	public boolean updateEmailReminders(int reminderPeriod) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean updateEmailReminders(User loggedinUser) {
+		sessionFactory.getCurrentSession().saveOrUpdate(loggedinUser);
+		return true;
 	}
 
+	@Transactional
 	@Override
-	public boolean updateGoal(int numDesired) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean updateGoal(User loggedinUser) {
+		sessionFactory.getCurrentSession().saveOrUpdate(loggedinUser);
+		return true;
 	}
 
 }

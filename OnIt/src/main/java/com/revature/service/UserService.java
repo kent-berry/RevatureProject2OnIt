@@ -40,6 +40,16 @@ public class UserService implements IUserService {
 	}
 
 	@Override
+	public boolean receiveEmailReminders(User loggedinUser) {
+		return userdao.updateEmailReminders(loggedinUser);
+	}
+
+	@Override
+	public boolean setDailyGoals(User loggedinUser) {
+		return userdao.updateGoal(loggedinUser);
+	}
+	
+	@Override
 	public boolean createTask(Task task) {
 		return taskdao.insert(task);
 	}
@@ -88,22 +98,13 @@ public class UserService implements IUserService {
 	public boolean viewDuedate(LocalDate dueDate) {
 		return taskdao.selectDuedate(dueDate);
 	}
-
-	@Override
-	public boolean receiveEmailReminders(int reminderPeriod) {
-		return userdao.updateEmailReminders(reminderPeriod);
-	}
-
+	
 	@Override
 	public boolean SetRepeatableTask(String taskId, boolean repeatable) {
 		return taskdao.updateRepeatableTask(taskId, repeatable);
 	}
 
-	@Override
-	public boolean setDailyGoals(int numDesired) {
-		return userdao.updateGoal(numDesired);
-	}
-
+	
 	@Override
 	public Object viewProgress() {
 		// TODO Auto-generated method stub

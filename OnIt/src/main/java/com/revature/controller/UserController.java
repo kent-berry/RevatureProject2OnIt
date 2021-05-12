@@ -52,18 +52,18 @@ public class UserController implements IUserController {
 	private IUserService userservice = new UserService();
 	
 	@PostMapping(value = "/register")
-	public  @ResponseBody Serializable register(@RequestBody RegisterUser registerUser) {
+	public  @ResponseBody Serializable register(@RequestBody DtoRegisterUser dtoRegisterUser) {
 		String hashedPass = "";
 		try {
-			hashedPass = hashPass(registerUser.getPassword());
+			hashedPass = hashPass(dtoRegisterUser.getPassword());
 		} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
 			e.printStackTrace();
 			return false;
 		}
 		
 		//Check if user is already registered by trying to login
-		if(userservice.login(registerUser.getEmail(), hashedPass) == null) {
-			return userservice.register(registerUser.getFirstname(), registerUser.getLastname(), registerUser.getEmail(), hashedPass);
+		if(userservice.login(dtoRegisterUser.getEmail(), hashedPass) == null) {
+			return userservice.register(dtoRegisterUser.getFirstname(), dtoRegisterUser.getLastname(), dtoRegisterUser.getEmail(), hashedPass);
 		} else {
 			System.out.println("This email is already registred.");
 			return null;
@@ -71,17 +71,17 @@ public class UserController implements IUserController {
 	}
 
 	@PostMapping(value = "/login")
-	public @ResponseBody User login(@RequestBody LoginUser loginUser) {
+	public @ResponseBody User login(@RequestBody DtoLoginUser dtoLoginUser) {
 		String hashedPass = "";
 		try {
-			hashedPass = hashPass(loginUser.getPassword());
+			hashedPass = hashPass(dtoLoginUser.getPassword());
 		} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
 			e.printStackTrace();
 			return null;
 		}
 		
 		
-		User loggingUser = userservice.login(loginUser.getEmail(), hashedPass);
+		User loggingUser = userservice.login(dtoLoginUser.getEmail(), hashedPass);
 		if (loggingUser != null) {
 			httpsession.setAttribute("loggedinUser", loggingUser);
 		}
@@ -96,12 +96,12 @@ public class UserController implements IUserController {
 	}
 
 	@PostMapping(value = "/deleteAccount")
-	public boolean unregister(@RequestBody Password password) {
+	public boolean unregister(@RequestBody DtoPassword dtoPassword) {
 		if(httpsession.getAttribute("loggedinUser") != null) {
 			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
 			String hashedPass = "";
 			try {
-				hashedPass = hashPass(password.getPassword());
+				hashedPass = hashPass(dtoPassword.getPassword());
 				if(hashedPass.equals(loggedinUser.getPassword())) {
 					return userservice.unregister(loggedinUser.getEmail(), hashedPass);
 				} else {
@@ -126,14 +126,28 @@ public class UserController implements IUserController {
 		}
 	}
 
-	@Override
-	public boolean receiveEmailReminders(HttpServletRequest request) {
-		return userservice.receiveEmailReminders(Integer.parseInt(request.getParameter("receiveEmailReminders")));
+	
+	@PostMapping(value = "/updateEmailReminders")
+	public @ResponseBody boolean receiveEmailReminders(@RequestBody DtoInteger dtoInteger) {
+		if(httpsession.getAttribute("loggedinUser") != null) {
+			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+			System.out.println("dtoInteger.getFormInteger(): " + dtoInteger.getFormInteger());
+			loggedinUser.setReceiveEmailReminders(dtoInteger.getFormInteger());
+			return userservice.receiveEmailReminders(loggedinUser);
+		} else {
+			return false; //redirect to main page of app
+		}
 	}
 	
-	@Override
-	public boolean setDailyGoals(HttpServletRequest request) {
-		return userservice.setDailyGoals(Integer.parseInt(request.getParameter("numDesired")));
+	@PostMapping(value = "/updateDailyGoals")
+	public @ResponseBody boolean setDailyGoals(@RequestBody DtoInteger dtoInteger) {
+		if(httpsession.getAttribute("loggedinUser") != null) {
+			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+			loggedinUser.setGoal(dtoInteger.getFormInteger());
+			return userservice.setDailyGoals(loggedinUser);
+		} else {
+			return false; //redirect to main page of app
+		}
 	}
 
 	

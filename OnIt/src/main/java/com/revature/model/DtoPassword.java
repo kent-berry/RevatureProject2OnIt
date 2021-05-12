@@ -1,10 +1,10 @@
 package com.revature.model;
 
-public class Password {
+public class DtoPassword {
 	
 	private String password;
 
-	public Password() {
+	public DtoPassword() {
 		super();
 	}
 
