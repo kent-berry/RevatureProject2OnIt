@@ -21,7 +21,7 @@ public class Main {
 		
 		UserDao ud = appContext.getBean("UserDao",UserDao.class);
 		//SessionFactory sessionFactory = appContext.getBean("sessionFactory",SessionFactory.class);
-		ud.saveUser(u);
+		//ud.saveUser(u);
 //		ConnectionUtil connectionUtil = new ConnectionUtil();
 //		connectionUtil.getConnection();
 

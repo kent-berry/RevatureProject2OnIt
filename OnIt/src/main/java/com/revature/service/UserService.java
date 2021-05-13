@@ -27,7 +27,10 @@ public class UserService implements IUserService {
 
 	@Autowired
 	private UserDao userdao = new UserDao();
-	
+
+	public void setUserdao(UserDao userdao) {
+		this.userdao = userdao;
+	}
 
 
 	public boolean register(User user) throws InsertFailedException, UsernameInUseException, PasswordIncorrectException{

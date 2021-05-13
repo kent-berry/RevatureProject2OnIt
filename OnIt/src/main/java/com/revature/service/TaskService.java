@@ -1,6 +1,7 @@
 package com.revature.service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.revature.dao.ITaskDao;
 import com.revature.dao.TaskDao;
+import com.revature.dao.UserDao;
 import com.revature.exceptions.NoKnownUserException;
 
 import com.revature.model.Task;
@@ -18,6 +20,10 @@ public class TaskService {
 
 	@Autowired
 	private TaskDao taskdao = new TaskDao();
+	
+	public void setTaskDao(TaskDao taskDao) {
+		this.taskdao = taskDao;
+	}
 	
 
 	public List<Task> createTask(Task task) throws NoKnownUserException {
@@ -43,7 +49,7 @@ public class TaskService {
 	}
 
 	public List<Task> getTask(int id, String mode)  throws NoKnownUserException{
-		List<Task> temp = null;
+		List<Task> temp = new ArrayList<Task>(); //Kent changed this to "= new ArrayList<Task>();" from "= null;" cause you cant add to a null list homie
 		if(mode.contains("all"))
 		{
 			return taskdao.selectTasks(id);
@@ -70,10 +76,5 @@ public class TaskService {
 			return null;
 	
 	}
-
-
-
-	
-
 
 }
