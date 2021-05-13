@@ -1,6 +1,7 @@
 This backend targets users, tasks tables on the rds using raw json body in the case of post requests
 
 The json based backend is currently deployed on the server for receiving post requests on the following endpoints:
+ /checkActiveSession
  /register 
  /login
  /logout
@@ -17,6 +18,13 @@ The json based backend is currently deployed on the server for receiving post re
 All the above endpoints persist data on rds in cases of record CRUD.
 
 How to test using postman?
+
+0) Test /checkActiveSession endpoint?
+GET url: http://142.93.205.142:8090/OnItJson/checkActiveSession
+GET
+	If user is logged in, this returns the User instance of that user
+	If user in not logged in, this returns null
+
 
 1) Test /register endpoint?
 Post url: http://142.93.205.142:8090/OnItJson/register
@@ -50,7 +58,7 @@ Different scenarios:
 3) Test /logout endpoint?
 GET url: http://142.93.205.142:8090/OnItJson/logout
 GET
-                Successful logging out should redirect to homepage after it invalidates the httpsession
+                Successful logging out should return true
 
 4) Test /updateUserInfo endpoint?
 Post url: http://142.93.205.142:8090/OnItJson/updateUserInfo 

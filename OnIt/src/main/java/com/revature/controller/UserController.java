@@ -48,6 +48,18 @@ public class UserController implements IUserController {
 	@Autowired
 	private IUserService userservice = new UserService();
 	
+	
+	@GetMapping(value = "/checkActiveSession")
+	public  @ResponseBody User checkActiveSession() {
+		if(httpsession.getAttribute("loggedinUser") != null) {
+			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+			return loggedinUser;
+		} else {
+			return null;
+		}
+	}
+	
+	
 	@PostMapping(value = "/register")
 	public  @ResponseBody Serializable register(@RequestBody DtoRegisterUser dtoRegisterUser) {
 		String hashedPass = "";
