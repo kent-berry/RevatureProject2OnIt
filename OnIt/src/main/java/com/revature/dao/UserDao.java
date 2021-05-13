@@ -67,4 +67,11 @@ public class UserDao implements IUserDao {
 		return true;
 	}
 
+	@Transactional
+	@Override
+	public boolean updateUserInfo(User updatedUser) {
+		sessionFactory.getCurrentSession().saveOrUpdate(updatedUser);
+		return true;
+	}
+
 }

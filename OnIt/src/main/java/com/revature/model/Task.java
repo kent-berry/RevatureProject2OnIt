@@ -20,20 +20,20 @@ public class Task {
 	private String taskName;
 	private String notes;
 	
-	private LocalDate dueDate;
 	private LocalDate dateCreated;
+	private LocalDate dueDate;
 	private LocalDate dateCompleted;
 	
 	private int reminder;
 	private boolean repeatable;
 	
-	//Constructor
+	//Constructors
 	
 	public Task() {
 		super();
 	}
 	
-	public Task(String userId, String taskName, String notes, int reminder,
+	public Task(String userId, String taskName, String notes, LocalDate dueDate, int reminder,
 			boolean repeatable) {
 		super();
 		
@@ -45,12 +45,27 @@ public class Task {
 		
 		
 		this.dateCreated = LocalDate.now(); 
+		this.dueDate = dueDate;
 		
 		this.reminder = reminder;
 		this.repeatable = repeatable;
 	}
 
 	
+	
+	public Task(String id, String userId, String taskName, String notes, LocalDate dateCreated, LocalDate dueDate,
+			LocalDate dateCompleted, int reminder, boolean repeatable) {
+		super();
+		this.id = id;
+		this.userId = userId;
+		this.taskName = taskName;
+		this.notes = notes;
+		this.dateCreated = dateCreated;
+		this.dueDate = dueDate;
+		this.dateCompleted = dateCompleted;
+		this.reminder = reminder;
+		this.repeatable = repeatable;
+	}
 
 	//Getters and setters
 	public String getId() {

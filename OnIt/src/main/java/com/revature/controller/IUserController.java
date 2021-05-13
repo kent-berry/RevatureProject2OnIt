@@ -12,7 +12,8 @@ public interface IUserController {
 	// Authentication, deletion, download
 	//Serializable register(DtoRegisterUser dtoRegisterUser);
 	//User login(DtoLoginUser dtoLoginUser);
-	//String logout();
+	//Boolean logout();
+	//boolean updateUserInfo(DtoUpdatedUser dtoUpdatedUser)
 	//boolean unregister(DtoPassword dtoPassword); //account deletion
 	//String downloadMyData();
 	// receiving email reminders
@@ -22,9 +23,9 @@ public interface IUserController {
 	
 	// Creating, deleteing, and viewing tasks
 	//Serializable createTask(DtoTask dtoTask);
-	boolean updateTask(HttpServletRequest request);
-	boolean deleteTask(HttpServletRequest request);
-	List<Task> viewTasks (HttpServletRequest request);
+	//boolean updateTask(DtoUpdatedTask dtoUpdatedTask);
+	//boolean deleteTask(DtoString dtoString); 
+	//List<Task> viewTasks ();
 	
 	// Completing a task, filtering based of completion
 	boolean completeTask(HttpServletRequest request);

@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.stereotype.Component;
@@ -13,6 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.model.Task;
+import com.revature.model.User;
 
 @EnableTransactionManagement
 @ImportResource({"classpath:beans-annotations.xml"})
@@ -29,22 +32,42 @@ public class TaskDao implements ITaskDao {
 		return identifier;
 	}
 
+	@Transactional
 	@Override
 	public boolean update(Task task) {
-		// TODO Auto-generated method stub
-		return false;
+		sessionFactory.getCurrentSession().saveOrUpdate(task);
+		return true;
 	}
 
+	@Transactional
 	@Override
 	public boolean delete(String taskId) {
-		// TODO Auto-generated method stub
-		return false;
+		// Find your task
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);
+		criteria.add(Restrictions.eq("id", taskId));
+		List<Task> results = criteria.list();
+				
+		// Now delete
+		if(results.isEmpty()) {
+			return false;
+		} else {
+			sessionFactory.getCurrentSession().delete(results.get(0));
+			return true;
+		}
 	}
 
+	@Transactional
 	@Override
-	public List<Task> selectTasks() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Task> selectTasks(String userId) {
+		// Find your tasks
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);
+		criteria.add(Restrictions.eq("userId", userId));
+		List<Task> results = criteria.list();
+		if(results.isEmpty()) {
+			return null;
+		} else {
+			return results;
+		}
 	}
 
 	@Override

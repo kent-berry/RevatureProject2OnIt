@@ -16,5 +16,8 @@ public interface IUserDao {
 	
 	//Setting daily goals
 	boolean updateGoal(User loggedinUser);
+	
+	//update all user info
+	boolean updateUserInfo(User updatedUser);
 
 }

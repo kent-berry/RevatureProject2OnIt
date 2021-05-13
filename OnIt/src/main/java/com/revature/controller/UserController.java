@@ -24,16 +24,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.revature.dto.DtoInteger;
-import com.revature.dto.DtoLoginUser;
-import com.revature.dto.DtoPassword;
-import com.revature.dto.DtoRegisterUser;
-import com.revature.dto.DtoTask;
+import com.revature.dto.*;
 import com.revature.model.*;
 import com.revature.service.*;
-
-
-// https://dzone.com/articles/using-http-session-spring
 
 @Configuration
 @RestController
@@ -70,7 +63,6 @@ public class UserController implements IUserController {
 			User newUser = new User(dtoRegisterUser.getFirstname(), dtoRegisterUser.getLastname(), dtoRegisterUser.getEmail(), hashedPass);
 			return userservice.register(newUser);
 		} else {
-			System.out.println("This email is already registred.");
 			return null;
 		}
 	}
@@ -94,10 +86,10 @@ public class UserController implements IUserController {
 	}
 
 	@GetMapping(value = "/logout")
-	public @ResponseBody String logout() { 
+	public @ResponseBody boolean logout() { 
 		httpsession.setAttribute("loggedinUser", null);
 		httpsession.invalidate();
-		return "redirect:hello"; //redirect to main page of app
+		return true;
 	}
 
 	@PostMapping(value = "/deleteAccount")
@@ -110,17 +102,14 @@ public class UserController implements IUserController {
 				if(hashedPass.equals(loggedinUser.getPassword())) {
 					return userservice.unregister(loggedinUser.getEmail(), hashedPass);
 				} else {
-					System.out.println("1");
 					//js alert! telling the user that the provided password is not correct
 					return false;
 				}
 			} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
-				System.out.println("2");
 				e.printStackTrace();
 				return false;
 			}
 		}
-		System.out.println("3");
 		return false;
 	}
 
@@ -130,7 +119,7 @@ public class UserController implements IUserController {
 			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
 			return userservice.downloadMyData(loggedinUser.getEmail(), loggedinUser.getPassword());
 		} else {
-			return "redirect:hello"; //redirect to main page of app
+			return "No user data can be retreived, make sure user is registered and loggedin"; 
 		}
 	}
 
@@ -139,11 +128,10 @@ public class UserController implements IUserController {
 	public @ResponseBody boolean receiveEmailReminders(@RequestBody DtoInteger dtoInteger) {
 		if(httpsession.getAttribute("loggedinUser") != null) {
 			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
-			System.out.println("dtoInteger.getFormInteger(): " + dtoInteger.getFormInteger());
 			loggedinUser.setReceiveEmailReminders(dtoInteger.getFormInteger());
 			return userservice.receiveEmailReminders(loggedinUser);
 		} else {
-			return false; //redirect to main page of app
+			return false;
 		}
 	}
 	
@@ -154,44 +142,88 @@ public class UserController implements IUserController {
 			loggedinUser.setGoal(dtoInteger.getFormInteger());
 			return userservice.setDailyGoals(loggedinUser);
 		} else {
-			return false; //redirect to main page of app
+			return false;
 		}
 	}
 
-	//String userId, String taskName, String notes, LocalDate dueDate, int reminder, boolean repeatable
+	@PostMapping(value = "/updateUserInfo")
+	public @ResponseBody boolean updateUserInfo(@RequestBody DtoUpdatedUser dtoUpdatedUser) {
+		if(httpsession.getAttribute("loggedinUser") != null) {
+			//We convert from DtoUpdatedUser to User
+			
+			//First convert password into hashed password only is isPasswordChanging.equals("y")
+			if(dtoUpdatedUser.getIsPasswordChanging().equals("y")) {
+				String hashedPass = "";
+				try {
+					hashedPass = hashPass(dtoUpdatedUser.getPassword());
+				} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+					e.printStackTrace();
+					return false;
+				}
+				
+				User updatedUser = new User(dtoUpdatedUser.getId(), dtoUpdatedUser.getFirstname(), dtoUpdatedUser.getLastname(),
+						dtoUpdatedUser.getEmail(), hashedPass, LocalDate.parse(dtoUpdatedUser.getAccountCreated()), 
+						dtoUpdatedUser.getReceiveEmailReminders(), dtoUpdatedUser.getGoal());
+				
+				return userservice.updateUserInfo(updatedUser);
+			} else {
+				User updatedUser = new User(dtoUpdatedUser.getId(), dtoUpdatedUser.getFirstname(), dtoUpdatedUser.getLastname(),
+						dtoUpdatedUser.getEmail(), dtoUpdatedUser.getPassword(), LocalDate.parse(dtoUpdatedUser.getAccountCreated()), 
+						dtoUpdatedUser.getReceiveEmailReminders(), dtoUpdatedUser.getGoal());
+				
 
+				return userservice.updateUserInfo(updatedUser);
+			}
+		} else {
+			return false;
+		}
+	}
+	
+	
 	@PostMapping(value = "/addTask")
 	public @ResponseBody Serializable createTask(@RequestBody DtoTask dtoTask) {
-		// Create task out of the request
+		// Create task out of the request, will use save() in dao
 		if(httpsession.getAttribute("loggedinUser") != null) {
 			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
-			Task newTask = new Task(loggedinUser.getId(), dtoTask.getTaskName(), dtoTask.getNotes(), dtoTask.getReminder(), dtoTask.isRepeatable());
+			Task newTask = new Task(loggedinUser.getId(), dtoTask.getTaskName(), dtoTask.getNotes(), LocalDate.parse(dtoTask.getDueDate()), dtoTask.getReminder(), dtoTask.isRepeatable());
 			return userservice.createTask(newTask);
 		} else {
 			return null;
 		}
 	}
 
-	@Override
-	public boolean updateTask(HttpServletRequest request) {
-		// Create task out of the request
-		Task newTask = new Task(request.getParameter("userId"), 
-								request.getParameter("taskName"),
-								request.getParameter("notes"),
-								Integer.parseInt(request.getParameter("reminder")),
-								Boolean.parseBoolean(request.getParameter("repeatable")));
-
-		return userservice.updateTask(newTask);
+	@PostMapping(value = "/updateTask")
+	public @ResponseBody boolean updateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
+		// we receive an updated task from the frontend, it should have the id of the task
+		if(httpsession.getAttribute("loggedinUser") != null) {
+			//We convert from DtoUpdatedTask to Task
+			LocalDate dueDate = dtoUpdatedTask.getDueDate().equals("") ? null : LocalDate.parse(dtoUpdatedTask.getDueDate());
+			LocalDate dateCompleted = dtoUpdatedTask.getDateCompleted().equals("") ? null : LocalDate.parse(dtoUpdatedTask.getDateCompleted());
+			
+			Task updatedTask = new Task(dtoUpdatedTask.getId(), dtoUpdatedTask.getUserId(),
+										dtoUpdatedTask.getTaskName(), dtoUpdatedTask.getNotes(),
+										LocalDate.parse(dtoUpdatedTask.getDateCreated()), dueDate, dateCompleted,
+										dtoUpdatedTask.getReminder(), dtoUpdatedTask.isRepeatable());
+			return userservice.updateTask(updatedTask);
+		} else {
+			return false;
+		}
 	}
 	
-	@Override
-	public boolean deleteTask(HttpServletRequest request) {
-		return userservice.deleteTask(request.getParameter("taskId"));
+	@PostMapping(value = "/deleteTask")
+	public @ResponseBody boolean deleteTask(@RequestBody DtoString dtoString) { //dtoString is taskId from the frontend
+		return userservice.deleteTask(dtoString.getFormString());
 	}
 
-	@Override
-	public List<Task> viewTasks(HttpServletRequest request) {
-		return userservice.viewTasks();
+	@GetMapping(value = "/viewTasks")
+	public List<Task> viewTasks() { 
+		if(httpsession.getAttribute("loggedinUser") != null) {
+			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+			return userservice.viewTasks(loggedinUser.getId());
+		} else {
+			return null;
+		}
+		
 	}
 
 	@Override

@@ -1,16 +1,39 @@
 package com.revature.dto;
 
 
-public class DtoTask {
+public class DtoUpdatedTask {
+
+	private String id;
+	private String userId;
 	
 	private String taskName;
 	private String notes;
-	private String dueDate; //"2016-08-16"
+	
+	private String dateCreated;
+	private String dueDate;
+	private String dateCompleted;
+	
 	private int reminder;
 	private boolean repeatable;
 	
-	public DtoTask() {
+	public DtoUpdatedTask() {
 		super();
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public String getTaskName() {
@@ -29,6 +52,14 @@ public class DtoTask {
 		this.notes = notes;
 	}
 
+	public String getDateCreated() {
+		return dateCreated;
+	}
+
+	public void setDateCreated(String dateCreated) {
+		this.dateCreated = dateCreated;
+	}
+
 	public String getDueDate() {
 		return dueDate;
 	}
@@ -36,7 +67,15 @@ public class DtoTask {
 	public void setDueDate(String dueDate) {
 		this.dueDate = dueDate;
 	}
-	
+
+	public String getDateCompleted() {
+		return dateCompleted;
+	}
+
+	public void setDateCompleted(String dateCompleted) {
+		this.dateCompleted = dateCompleted;
+	}
+
 	public int getReminder() {
 		return reminder;
 	}
@@ -52,12 +91,5 @@ public class DtoTask {
 	public void setRepeatable(boolean repeatable) {
 		this.repeatable = repeatable;
 	}
-
-	@Override
-	public String toString() {
-		return "DtoTask [taskName=" + taskName + ", notes=" + notes + ", dueDate=" + dueDate + ", reminder=" + reminder
-				+ ", repeatable=" + repeatable + "]";
-	}
-
 	
 }

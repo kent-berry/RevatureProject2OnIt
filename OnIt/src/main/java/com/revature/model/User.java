@@ -39,6 +39,20 @@ public class User {
 		this.accountCreated = LocalDate.now();
 	}
 	
+	
+	public User(String id, String firstName, String lastName, String email, String password, LocalDate accountCreated,
+			int receiveEmailReminders, int goal) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+		this.accountCreated = accountCreated;
+		this.receiveEmailReminders = receiveEmailReminders;
+		this.goal = goal;
+	}
+
 	//Getters and setters
 	public String getId() {
 		return id;

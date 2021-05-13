@@ -21,11 +21,14 @@ public interface IUserService {
 	//Setting daily goals
 	boolean setDailyGoals(User loggedinUser);
 		
+	//Update any of the user info
+	boolean updateUserInfo(User updatedUser);
+	
 	// Creating, deleteing, and viewing tasks
 	Serializable createTask(Task task);
 	boolean updateTask(Task task);
 	boolean deleteTask(String taskId);
-	List<Task> viewTasks (); //view all  
+	List<Task> viewTasks (String userId); //view all  
 	
 	// Completing a task, filtering based of completion
 	boolean completeTask(String taskId);

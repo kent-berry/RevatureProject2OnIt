@@ -11,7 +11,7 @@ public interface ITaskDao {
 	Serializable insert(Task task);
 	boolean update(Task task);
 	boolean delete(String taskId);
-	List<Task> selectTasks (); //view all  
+	List<Task> selectTasks (String userId); //view all  
 	
 	// Completing a task, filtering based of completion
 	boolean updateCompleteTask(String taskId);

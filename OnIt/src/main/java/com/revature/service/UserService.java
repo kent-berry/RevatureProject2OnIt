@@ -50,6 +50,11 @@ public class UserService implements IUserService {
 	}
 	
 	@Override
+	public boolean updateUserInfo(User updatedUser) {
+		return userdao.updateUserInfo(updatedUser);
+	}
+	
+	@Override
 	public Serializable createTask(Task task) {
 		return taskdao.insert(task);
 	}
@@ -65,8 +70,8 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public List<Task> viewTasks() {
-		return taskdao.selectTasks();
+	public List<Task> viewTasks(String userId) {
+		return taskdao.selectTasks(userId);
 	}
 
 	@Override
@@ -116,5 +121,5 @@ public class UserService implements IUserService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 }
