@@ -31,8 +31,7 @@ public interface IUserService {
 	List<Task> viewTasks (String userId); //view all  
 	
 	// Completing a task, filtering based of completion
-	boolean completeTask(String taskId);
-	List<Task> viewCompleted(); //view completed
+	List<Task> viewCompleted(String userId); //view completed
 	
 	
 	// Labelling, filtering based on label

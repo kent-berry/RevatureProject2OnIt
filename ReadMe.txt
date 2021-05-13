@@ -14,6 +14,8 @@ The json based backend is currently deployed on the server for receiving post re
  /updateTask
  /deleteTask
  /viewTasks
+ /completeTask
+ /viewCompleted
 
 All the above endpoints persist data on rds in cases of record CRUD.
 
@@ -187,3 +189,29 @@ GET url: http://142.93.205.142:8090/OnItJson/viewTasks
 GET
 	If user has any tasks, this returns a json of all the tasks
 	If user doesn't have any task, this returns null
+
+
+13) Test /completeTask endpoint?
+Post url: http://142.93.205.142:8090/OnItJson/completeTask
+POST
+Body-raw-json: here, we expect to receive a task object from the frontend, we update a task that is already in the system
+using saveOrUpdate() at the dao layer. We note the current date/time and change the dateCompleted field of that task accordingly
+Any modifiable date is a string in the format "yyyy-mm-dd"
+		{
+			"id": unmodifiable_the_id_of_an_existing_task_to_be_updates,
+			"userId": unmodifiable_the_id_of_the_user_owning_this_Task,
+			"taskName": modifiable_original_or_new_value,
+			"notes": modifiable_original_or_new_value,
+			"dateCreated": unmodifiable
+			"dueDate": modifiable_original_or_new_value,
+			"dateCompleted": modifiable_original_or_new_value,
+			"reminder": modifiable_original_or_new_value,
+			"repeatable": modifiable_original_or_new_value
+		}
+
+
+14) Test /viewCompleted endpoint?
+GET url: http://142.93.205.142:8090/OnItJson/viewCompleted
+GET
+	If user has any completed tasks, this returns a json of only the completed tasks
+	If user doesn't have any completed tasks, this returns null

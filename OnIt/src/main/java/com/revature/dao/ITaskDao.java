@@ -14,8 +14,7 @@ public interface ITaskDao {
 	List<Task> selectTasks (String userId); //view all  
 	
 	// Completing a task, filtering based of completion
-	boolean updateCompleteTask(String taskId);
-	List<Task> selectCompleted(); //view completed
+	List<Task> selectCompleted(String userId); //view completed
 	
 	// Labelling, filtering based on label
 	boolean updateLabelTask(String taskId, String labelId);

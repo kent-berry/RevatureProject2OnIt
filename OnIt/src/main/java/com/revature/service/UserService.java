@@ -75,13 +75,8 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public boolean completeTask(String taskId) {
-		return taskdao.updateCompleteTask(taskId);
-	}
-
-	@Override
-	public List<Task> viewCompleted() {
-		return taskdao.selectCompleted();
+	public List<Task> viewCompleted(String userId) {
+		return taskdao.selectCompleted(userId);
 	}
 
 	@Override

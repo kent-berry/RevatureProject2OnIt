@@ -238,25 +238,23 @@ public class UserController implements IUserController {
 		
 	}
 
-	@Override
-	public boolean completeTask(HttpServletRequest request) {
-		return userservice.completeTask(request.getParameter("taskId"));
+	@PostMapping(value = "/completeTask")
+	public @ResponseBody boolean completeTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {  
+		dtoUpdatedTask.setDateCompleted(LocalDate.now().toString());
+		return updateTask(dtoUpdatedTask);
 	}
 
-	@Override
-	public List<Task> viewCompleted(HttpServletRequest request) {
-		return userservice.viewCompleted();
+	@GetMapping(value = "/viewCompleted")
+	public List<Task> viewCompleted() {
+		if(httpsession.getAttribute("loggedinUser") != null) {
+			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+			return userservice.viewCompleted(loggedinUser.getId());
+		} else {
+			return null;
+		}
 	}
 
-	@Override
-	public boolean labelTask(HttpServletRequest request) {
-		return userservice.labelTask(request.getParameter("taskId"), request.getParameter("labelId"));
-	}
-
-	@Override
-	public List<Task> viewLabel(HttpServletRequest request) {
-		return userservice.viewLabel(request.getParameter("labelId"));
-	}
+	
 
 	@Override
 	public boolean duedateTask(HttpServletRequest request) {

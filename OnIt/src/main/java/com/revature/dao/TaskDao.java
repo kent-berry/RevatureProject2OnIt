@@ -59,7 +59,7 @@ public class TaskDao implements ITaskDao {
 	@Transactional
 	@Override
 	public List<Task> selectTasks(String userId) {
-		// Find your tasks
+		// Find all user tasks
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);
 		criteria.add(Restrictions.eq("userId", userId));
 		List<Task> results = criteria.list();
@@ -70,16 +70,19 @@ public class TaskDao implements ITaskDao {
 		}
 	}
 
+	@Transactional
 	@Override
-	public boolean updateCompleteTask(String taskId) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public List<Task> selectCompleted() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Task> selectCompleted(String userId) {
+		// Find user completed tasks
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);
+		criteria.add(Restrictions.eq("userId", userId));
+		criteria.add(Restrictions.isNotNull("dateCompleted"));
+		List<Task> results = criteria.list();
+		if(results.isEmpty()) {
+			return null;
+		} else {
+			return results;
+		}
 	}
 
 	@Override
