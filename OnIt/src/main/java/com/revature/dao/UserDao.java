@@ -16,7 +16,7 @@ import org.springframework.context.annotation.ImportResource;
 import com.revature.model.User;
 
 @EnableTransactionManagement
-@ImportResource({"classpath:beans-annotations.xml"})
+@ImportResource({"classpath*:beans-annotations.xml"})
 @Repository
 public class UserDao implements IUserDao {
 
