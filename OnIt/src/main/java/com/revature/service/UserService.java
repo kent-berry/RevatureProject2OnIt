@@ -74,6 +74,21 @@ public class UserService implements IUserService {
 	}
 
 	@Override
+	public boolean completeTask(String taskId) {
+		return taskdao.updateCompleteTask(taskId);
+	}
+
+	@Override
+	public List<Task> viewCompleted() {
+		return taskdao.selectCompleted();
+	}
+
+	@Override
+	public boolean labelTask(String taskId, String labelId) {
+		return taskdao.updateLabelTask(taskId, labelId);
+	}
+
+	@Override
 	public List<Task> viewCompleted(String userId) {
 		return taskdao.selectCompleted(userId);
 	}
@@ -83,5 +98,5 @@ public class UserService implements IUserService {
 	public List<Task> viewDuedate(String userId, String upperBoundDate) {
 		return taskdao.selectDuedate(userId, upperBoundDate);
 	}
-
+	
 }

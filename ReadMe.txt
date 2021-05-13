@@ -17,11 +17,6 @@ The json based backend is currently deployed on the server for receiving post re
  /updateTask
  /deleteTask
  /viewTasks
- /completeTask
- /viewCompleted
- /duedateTask
- /viewDuedate
- /setRepeatableTask
 
 All the above endpoints persist data on rds in cases of record CRUD.
 
@@ -181,48 +176,6 @@ using saveOrUpdate() at the dao layer
 			"repeatable": modifiable_original_or_new_value
 		}
 
-
-11) Test /deleteTask endpoint?
-Post url: http://142.93.205.142:8090/OnItJson/deleteTask 
-POST
-Body-raw-json: we just need the taskId from the frontend
-	{
-		"formString": "9df7050c-c3e9-404e-9094-6096e390a8d2"
-	}
-
-12) Test /viewTasks endpoint?
-GET url: http://142.93.205.142:8090/OnItJson/viewTasks
-GET
-	If user has any tasks, this returns a json of all the tasks
-	If user doesn't have any task, this returns null
-
-
-13) Test /completeTask endpoint?
-Post url: http://142.93.205.142:8090/OnItJson/completeTask
-POST
-Body-raw-json: here, we expect to receive a task object from the frontend, we update a task that is already in the system
-using saveOrUpdate() at the dao layer. We note the current date/time and change the dateCompleted field of that task accordingly
-Any modifiable date is a string in the format "yyyy-mm-dd"
-		{
-			"id": unmodifiable_the_id_of_an_existing_task_to_be_updates,
-			"userId": unmodifiable_the_id_of_the_user_owning_this_Task,
-			"taskName": modifiable_original_or_new_value,
-			"notes": modifiable_original_or_new_value,
-			"dateCreated": unmodifiable
-			"dueDate": modifiable_original_or_new_value,
-			"dateCompleted": modifiable_original_or_new_value,
-			"reminder": modifiable_original_or_new_value,
-			"repeatable": modifiable_original_or_new_value
-		}
-
-
-14) Test /viewCompleted endpoint?
-GET url: http://142.93.205.142:8090/OnItJson/viewCompleted
-GET
-	If user has any completed tasks, this returns a json of only the completed tasks
-	If user doesn't have any completed tasks, this returns null
-
-
 15) Test /duedateTask endpoint?
 Post url: http://142.93.205.142:8090/OnItJson/duedateTask 
 POST
@@ -241,28 +194,16 @@ using saveOrUpdate() at the dao layer.
 			"repeatable": unchanged
 		}
 
-
-16) Test /viewDuedate endpoint?
-Post url: http://142.93.205.142:8090/OnItJson/viewDuedate 
+11) Test /deleteTask endpoint?
+Post url: http://142.93.205.142:8090/OnItJson/deleteTask 
 POST
-Body-raw-json: we just need the upperBoundDate to which we return all tasks with duedate less than or equal to
+Body-raw-json: we just need the taskId from the frontend
 	{
-		"formString": "2021-11-01"
+		"formString": "9df7050c-c3e9-404e-9094-6096e390a8d2"
 	}
 
-17) Test /setRepeatableTask endpoint?
-Post url: http://142.93.205.142:8090/OnItJson/setRepeatableTask 
-POST
-Body-raw-json: here, we expect to receive a task object from the frontend with the updated repeatable (false to true or vice versa)
-		{
-			"id": unmodifiable_the_id_of_an_existing_task_to_be_updates,
-			"userId": unmodifiable_the_id_of_the_user_owning_this_Task,
-			"taskName": unchanged,
-			"notes": unchanged,
-			"dateCreated": unmodifiable,
-			"dueDate": unchanged, 
-			"dateCompleted": unchanged,
-			"reminder": unchanged,
-			"repeatable": must_be_changed
-		}
-
+12) Test /viewTasks endpoint?
+GET url: http://142.93.205.142:8090/OnItJson/viewTasks
+GET
+	If user has any tasks, this returns a json of all the tasks
+	If user doesn't have any task, this returns null

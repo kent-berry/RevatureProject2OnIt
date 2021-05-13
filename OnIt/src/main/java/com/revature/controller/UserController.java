@@ -222,12 +222,28 @@ public class UserController  {
 	
 	@PostMapping(value = "/deleteTask")
 	public @ResponseBody boolean deleteTask(@RequestBody DtoString dtoString) { //dtoString is taskId from the frontend
+		return userservice.deleteTask(dtoString.getFormString());
+	}
+
+	@GetMapping(value = "/viewTasks")
+	public List<Task> viewTasks() { 
 		if(httpsession.getAttribute("loggedinUser") != null) {
-			return userservice.deleteTask(dtoString.getFormString());
+			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+			return userservice.viewTasks(loggedinUser.getId());
 		} else {
-			return false;
+			return null;
 		}
 		
+	}
+
+	@Override
+	public boolean completeTask(HttpServletRequest request) {
+		return userservice.completeTask(request.getParameter("taskId"));
+	}
+
+	@Override
+	public List<Task> viewCompleted(HttpServletRequest request) {
+		return userservice.viewCompleted();
 	}
 
 	@GetMapping(value = "/viewTasks")

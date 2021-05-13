@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.model.Task;
+import com.revature.model.User;
 
 @EnableTransactionManagement
 @ImportResource({"classpath*:beans-annotations.xml"})
@@ -52,6 +53,44 @@ public class TaskDao implements ITaskDao {
 			sessionFactory.getCurrentSession().delete(results.get(0));
 			return true;
 		}
+	}
+
+	@Transactional
+	@Override
+	public List<Task> selectTasks(String userId) {
+		// Find your tasks
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);
+		criteria.add(Restrictions.eq("userId", userId));
+		List<Task> results = criteria.list();
+		if(results.isEmpty()) {
+			return null;
+		} else {
+			return results;
+		}
+	}
+
+	@Override
+	public boolean updateCompleteTask(String taskId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Task> selectCompleted() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean updateLabelTask(String taskId, String labelId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Task> selectLabel(String labelId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Transactional
