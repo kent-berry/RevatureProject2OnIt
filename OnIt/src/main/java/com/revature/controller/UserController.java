@@ -24,7 +24,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.revature.dto.DtoInteger;
+import com.revature.dto.DtoLoginUser;
+import com.revature.dto.DtoPassword;
+import com.revature.dto.DtoRegisterUser;
+import com.revature.dto.DtoTask;
 import com.revature.model.*;
 import com.revature.service.*;
 
@@ -63,7 +67,8 @@ public class UserController implements IUserController {
 		
 		//Check if user is already registered by trying to login
 		if(userservice.login(dtoRegisterUser.getEmail(), hashedPass) == null) {
-			return userservice.register(dtoRegisterUser.getFirstname(), dtoRegisterUser.getLastname(), dtoRegisterUser.getEmail(), hashedPass);
+			User newUser = new User(dtoRegisterUser.getFirstname(), dtoRegisterUser.getLastname(), dtoRegisterUser.getEmail(), hashedPass);
+			return userservice.register(newUser);
 		} else {
 			System.out.println("This email is already registred.");
 			return null;

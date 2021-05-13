@@ -20,8 +20,8 @@ public class UserService implements IUserService {
 	private ITaskDao taskdao = new TaskDao();
 	
 	@Override
-	public Serializable register(String firstName, String lastName, String email, String password) {
-		return userdao.insert(firstName, lastName, email, password);
+	public Serializable register(User newUser) {
+		return userdao.insert(newUser);
 	}
 
 	@Override

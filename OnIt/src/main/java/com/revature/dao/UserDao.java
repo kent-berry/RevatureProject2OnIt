@@ -5,8 +5,6 @@ import com.revature.model.User;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
 
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
@@ -27,8 +25,7 @@ public class UserDao implements IUserDao {
 	
 	@Transactional
 	@Override
-	public Serializable insert(String firstName, String lastName, String email, String password) {
-		User newUser = new User(firstName, lastName, email, password);
+	public Serializable insert(User newUser) {
 		Serializable identifier = sessionFactory.getCurrentSession().save(newUser);
 		return identifier;
 	}

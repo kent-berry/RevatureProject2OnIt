@@ -9,7 +9,7 @@ import com.revature.model.*;
 public interface IUserService {
 	
 	// Authentication, deletion, download
-	Serializable register(String firstName, String lastName, String email, String password);
+	Serializable register(User newUser);
 	User login(String email, String password);
 
 	boolean unregister(String email, String password); //account deletion, requires providing password to delete

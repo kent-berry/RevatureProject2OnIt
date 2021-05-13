@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>here we are trying CI and CD</h2>
+<h2>Go a head and run tests on the hidden endpoints of this api!</h2>
 </body>
 </html>

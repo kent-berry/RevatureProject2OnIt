@@ -1,4 +1,4 @@
-package com.revature.model;
+package com.revature.dto;
 
 public class DtoPassword {
 	

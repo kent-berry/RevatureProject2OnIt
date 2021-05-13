@@ -6,7 +6,7 @@ import com.revature.model.User;
 public interface IUserDao {
 
 	// Authentication, deletion, download
-	Serializable insert(String firstName, String lastName, String email, String password);
+	Serializable insert(User newUser);
 	User select(String email, String password);
 	boolean delete(String email, String password); //account deletion, requires providing password to delete
 	
