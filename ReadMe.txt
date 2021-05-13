@@ -1,5 +1,8 @@
 This backend targets users, tasks tables on the rds using raw json body in the case of post requests
 
+Please make sure to modify the fields of any post request json body based on the functionality you are testing, you
+need access to the rds db using dbeaver in order to access ids and other info needed for the manual testing using postman
+
 The json based backend is currently deployed on the server for receiving post requests on the following endpoints:
  /checkActiveSession
  /register 
@@ -16,6 +19,9 @@ The json based backend is currently deployed on the server for receiving post re
  /viewTasks
  /completeTask
  /viewCompleted
+ /duedateTask
+ /viewDuedate
+ /setRepeatableTask
 
 All the above endpoints persist data on rds in cases of record CRUD.
 
@@ -215,3 +221,48 @@ GET url: http://142.93.205.142:8090/OnItJson/viewCompleted
 GET
 	If user has any completed tasks, this returns a json of only the completed tasks
 	If user doesn't have any completed tasks, this returns null
+
+
+15) Test /duedateTask endpoint?
+Post url: http://142.93.205.142:8090/OnItJson/duedateTask 
+POST
+Body-raw-json: here, we expect to receive a task object from the frontend with the updated dueDate, we update a task that is already in the system
+using saveOrUpdate() at the dao layer.
+
+                {
+			"id": unmodifiable_the_id_of_an_existing_task_to_be_updates,
+			"userId": unmodifiable_the_id_of_the_user_owning_this_Task,
+			"taskName": unchanged,
+			"notes": unchanged,
+			"dateCreated": unmodifiable,
+			"dueDate": must_be_changed,
+			"dateCompleted": unchanged,
+			"reminder": unchanged,
+			"repeatable": unchanged
+		}
+
+
+16) Test /viewDuedate endpoint?
+Post url: http://142.93.205.142:8090/OnItJson/viewDuedate 
+POST
+Body-raw-json: we just need the upperBoundDate to which we return all tasks with duedate less than or equal to
+	{
+		"formString": "2021-11-01"
+	}
+
+17) Test /setRepeatableTask endpoint?
+Post url: http://142.93.205.142:8090/OnItJson/setRepeatableTask 
+POST
+Body-raw-json: here, we expect to receive a task object from the frontend with the updated repeatable (false to true or vice versa)
+		{
+			"id": unmodifiable_the_id_of_an_existing_task_to_be_updates,
+			"userId": unmodifiable_the_id_of_the_user_owning_this_Task,
+			"taskName": unchanged,
+			"notes": unchanged,
+			"dateCreated": unmodifiable,
+			"dueDate": unchanged, 
+			"dateCompleted": unchanged,
+			"reminder": unchanged,
+			"repeatable": must_be_changed
+		}
+

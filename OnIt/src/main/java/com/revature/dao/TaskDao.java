@@ -9,13 +9,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.model.Task;
-import com.revature.model.User;
 
 @EnableTransactionManagement
 @ImportResource({"classpath:beans-annotations.xml"})
@@ -85,34 +83,19 @@ public class TaskDao implements ITaskDao {
 		}
 	}
 
+	@Transactional
 	@Override
-	public boolean updateLabelTask(String taskId, String labelId) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public List<Task> selectLabel(String labelId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean duedateTask(String taskId, LocalDate dueDate) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean selectDuedate(LocalDate dueDate) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean updateRepeatableTask(String taskId, boolean repeatable) {
-		// TODO Auto-generated method stub
-		return false;
+	public List<Task> selectDuedate(String userId, String upperBoundDate) {
+		// Find user tasks with duedate earlier or at upperBoundDate
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);
+		criteria.add(Restrictions.eq("userId", userId));
+		criteria.add(Restrictions.le("dueDate", LocalDate.parse(upperBoundDate)));
+		List<Task> results = criteria.list();
+		if(results.isEmpty()) {
+			return null;
+		} else {
+			return results;
+		}
 	}
 
 }

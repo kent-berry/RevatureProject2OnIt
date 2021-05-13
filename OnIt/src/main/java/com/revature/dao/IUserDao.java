@@ -1,4 +1,5 @@
 package com.revature.dao;
+
 import java.io.Serializable;
 
 import com.revature.model.User;

@@ -10,11 +10,9 @@ import java.security.spec.KeySpec;
 
 import java.util.Base64;
 import java.util.List;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -30,7 +28,7 @@ import com.revature.service.*;
 
 @Configuration
 @RestController
-public class UserController implements IUserController {
+public class UserController  {
 
 	//Method for Hashing password
 	protected String hashPass(String pass) throws NoSuchAlgorithmException, InvalidKeySpecException {
@@ -224,7 +222,12 @@ public class UserController implements IUserController {
 	
 	@PostMapping(value = "/deleteTask")
 	public @ResponseBody boolean deleteTask(@RequestBody DtoString dtoString) { //dtoString is taskId from the frontend
-		return userservice.deleteTask(dtoString.getFormString());
+		if(httpsession.getAttribute("loggedinUser") != null) {
+			return userservice.deleteTask(dtoString.getFormString());
+		} else {
+			return false;
+		}
+		
 	}
 
 	@GetMapping(value = "/viewTasks")
@@ -240,12 +243,16 @@ public class UserController implements IUserController {
 
 	@PostMapping(value = "/completeTask")
 	public @ResponseBody boolean completeTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {  
-		dtoUpdatedTask.setDateCompleted(LocalDate.now().toString());
-		return updateTask(dtoUpdatedTask);
+		if(httpsession.getAttribute("loggedinUser") != null) {
+			dtoUpdatedTask.setDateCompleted(LocalDate.now().toString());
+			return updateTask(dtoUpdatedTask);
+		} else {
+			return false;
+		}
 	}
 
 	@GetMapping(value = "/viewCompleted")
-	public List<Task> viewCompleted() {
+	public @ResponseBody List<Task> viewCompleted() {
 		if(httpsession.getAttribute("loggedinUser") != null) {
 			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
 			return userservice.viewCompleted(loggedinUser.getId());
@@ -255,34 +262,34 @@ public class UserController implements IUserController {
 	}
 
 	
-
-	@Override
-	public boolean duedateTask(HttpServletRequest request) {
-		return userservice.duedateTask(request.getParameter("taskId"), 
-				                       LocalDate.parse(request.getParameter("dueDate")));
+	@PostMapping(value = "/duedateTask")
+	public @ResponseBody boolean duedateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) { 
+		if(httpsession.getAttribute("loggedinUser") != null) {
+			return updateTask(dtoUpdatedTask);
+		} else {
+			return false;
+		}
 	}
 
-	@Override
-	public boolean viewDuedate(HttpServletRequest request) {
-		return userservice.viewDuedate(LocalDate.parse(request.getParameter("dueDate")));
+
+	@PostMapping(value = "/viewDuedate")
+	public @ResponseBody List<Task> viewDuedate(@RequestBody DtoString upperBoundDate) {
+		if(httpsession.getAttribute("loggedinUser") != null) {
+			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+			return userservice.viewDuedate(loggedinUser.getId(), upperBoundDate.getFormString());
+		} else {
+			return null;
+		}
 	}
 
-	@Override
-	public boolean setRepeatableTask(HttpServletRequest request) {
-		return userservice.SetRepeatableTask(request.getParameter("taskId"),
-				                             Boolean.parseBoolean(request.getParameter("repeatable")));
-	}
-
-	@Override
-	public Object viewProgress(HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Object viewPastProgressGraph(HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		return null;
+	@PostMapping(value = "/setRepeatableTask")
+	public @ResponseBody boolean setRepeatableTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
+		if(httpsession.getAttribute("loggedinUser") != null) {
+			return updateTask(dtoUpdatedTask);
+		} else {
+			return false;
+		}
+		
 	}
 
 }

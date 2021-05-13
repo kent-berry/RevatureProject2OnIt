@@ -2,9 +2,8 @@ package com.revature.service;
 
 import java.util.List;
 import java.io.Serializable;
-import java.time.LocalDate;
-import com.revature.model.*;
 
+import com.revature.model.*;
 
 public interface IUserService {
 	
@@ -33,21 +32,7 @@ public interface IUserService {
 	// Completing a task, filtering based of completion
 	List<Task> viewCompleted(String userId); //view completed
 	
-	
-	// Labelling, filtering based on label
-	boolean labelTask(String taskId, String labelId);
-	List<Task> viewLabel(String labelId);
-	
 	// Adding due date, filtering based on duedate
-	boolean duedateTask(String taskId, LocalDate dueDate);
-	boolean viewDuedate(LocalDate dueDate);
-			
-	// Assign repeatable/non repeatable
-	boolean SetRepeatableTask(String taskId, boolean repeatable); //true or false
+	List<Task> viewDuedate(String userId, String upperBoundDate);
 	
-	
-	Object viewProgress();
-	
-	//viewing graph
-	Object viewPastProgressGraph();
 }

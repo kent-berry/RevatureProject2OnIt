@@ -1,7 +1,5 @@
 package com.revature.dao;
 
-import com.revature.model.User;
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -14,6 +12,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ImportResource;
+
+import com.revature.model.User;
 
 @EnableTransactionManagement
 @ImportResource({"classpath:beans-annotations.xml"})

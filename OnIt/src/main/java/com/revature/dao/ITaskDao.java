@@ -1,7 +1,6 @@
 package com.revature.dao;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.List;
 
 import com.revature.model.Task;
@@ -16,16 +15,7 @@ public interface ITaskDao {
 	// Completing a task, filtering based of completion
 	List<Task> selectCompleted(String userId); //view completed
 	
-	// Labelling, filtering based on label
-	boolean updateLabelTask(String taskId, String labelId);
-	List<Task> selectLabel(String labelId);
-	
 	// Adding due date, filtering based on duedate
-	boolean duedateTask(String taskId, LocalDate dueDate);
-	boolean selectDuedate(LocalDate dueDate);
-	
-	
-	// Assign repeatable/non repeatable
-	boolean updateRepeatableTask(String taskId, boolean repeatable); //true or false
+	List<Task> selectDuedate(String userId, String upperBoundDate);
 	
 }

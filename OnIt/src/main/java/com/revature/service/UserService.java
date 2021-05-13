@@ -1,7 +1,6 @@
 package com.revature.service;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,42 +78,10 @@ public class UserService implements IUserService {
 		return taskdao.selectCompleted(userId);
 	}
 
-	@Override
-	public boolean labelTask(String taskId, String labelId) {
-		return taskdao.updateLabelTask(taskId, labelId);
-	}
 
 	@Override
-	public List<Task> viewLabel(String labelId) {
-		return taskdao.selectLabel(labelId);
+	public List<Task> viewDuedate(String userId, String upperBoundDate) {
+		return taskdao.selectDuedate(userId, upperBoundDate);
 	}
 
-	@Override
-	public boolean duedateTask(String taskId, LocalDate dueDate) {
-		return taskdao.duedateTask(taskId, dueDate);
-	}
-
-	@Override
-	public boolean viewDuedate(LocalDate dueDate) {
-		return taskdao.selectDuedate(dueDate);
-	}
-	
-	@Override
-	public boolean SetRepeatableTask(String taskId, boolean repeatable) {
-		return taskdao.updateRepeatableTask(taskId, repeatable);
-	}
-
-	
-	@Override
-	public Object viewProgress() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Object viewPastProgressGraph() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
 }
