@@ -16,11 +16,18 @@
 	
 	<aop:aspectj-autoproxy/>
 	
-   
+   	<!--  
 	  <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 	  	<property name="url" value="#{systemEnvironment['onitdb_url']}"></property>
 	  	<property name="username" value="#{systemEnvironment['onitdb_username']}"></property>
 	  	<property name="password" value="#{systemEnvironment['onitdb_password']}"></property>
+	  	<property name="driverClassName" value="org.postgresql.Driver"></property>
+	  </bean>
+	 -->
+	 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	  	<property name="url">${onitdb_url}</property>
+	  	<property name="username">${onitdb_username}</property>
+	  	<property name="password">${onitdb_password}</property>
 	  	<property name="driverClassName" value="org.postgresql.Driver"></property>
 	  </bean>
 
