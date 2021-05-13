@@ -236,36 +236,23 @@ public class UserController  {
 		
 	}
 
-	@Override
-	public boolean completeTask(HttpServletRequest request) {
-		return userservice.completeTask(request.getParameter("taskId"));
+	@PostMapping(value = "/completeTask")
+	public @ResponseBody boolean completeTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {  
+		dtoUpdatedTask.setDateCompleted(LocalDate.now().toString());
+		return updateTask(dtoUpdatedTask);
 	}
 
-	@Override
-	public List<Task> viewCompleted(HttpServletRequest request) {
-		return userservice.viewCompleted();
-	}
-
-	@GetMapping(value = "/viewTasks")
-	public List<Task> viewTasks() { 
+	@GetMapping(value = "/viewCompleted")
+	public List<Task> viewCompleted() {
 		if(httpsession.getAttribute("loggedinUser") != null) {
 			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
-			return userservice.viewTasks(loggedinUser.getId());
+			return userservice.viewCompleted(loggedinUser.getId());
 		} else {
 			return null;
 		}
-		
 	}
 
-	@PostMapping(value = "/completeTask")
-	public @ResponseBody boolean completeTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {  
-		if(httpsession.getAttribute("loggedinUser") != null) {
-			dtoUpdatedTask.setDateCompleted(LocalDate.now().toString());
-			return updateTask(dtoUpdatedTask);
-		} else {
-			return false;
-		}
-	}
+	
 
 	@GetMapping(value = "/viewCompleted")
 	public @ResponseBody List<Task> viewCompleted() {

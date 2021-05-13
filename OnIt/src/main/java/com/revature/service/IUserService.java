@@ -32,6 +32,11 @@ public interface IUserService {
 	// Completing a task, filtering based of completion
 	List<Task> viewCompleted(String userId); //view completed
 	
+	
+	// Labelling, filtering based on label
+	boolean labelTask(String taskId, String labelId);
+	List<Task> viewLabel(String labelId);
+	
 	// Adding due date, filtering based on duedate
 	List<Task> viewDuedate(String userId, String upperBoundDate);
 	

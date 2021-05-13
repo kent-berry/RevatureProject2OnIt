@@ -15,6 +15,10 @@ public interface ITaskDao {
 	// Completing a task, filtering based of completion
 	List<Task> selectCompleted(String userId); //view completed
 	
+	// Labelling, filtering based on label
+	boolean updateLabelTask(String taskId, String labelId);
+	List<Task> selectLabel(String labelId);
+	
 	// Adding due date, filtering based on duedate
 	List<Task> selectDuedate(String userId, String upperBoundDate);
 	

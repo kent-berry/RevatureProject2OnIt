@@ -29,13 +29,9 @@ public interface IUserController {
 	//List<Task> viewTasks ();
 	
 	// Completing a task, filtering based of completion
-	boolean completeTask(HttpServletRequest request);
-	List<Task> viewCompleted(HttpServletRequest request);
+	//boolean completeTask(DtoUpdatedTask dtoUpdatedTask); 
+	//List<Task> viewCompleted();
 	
-	
-	// Labelling, filtering based on label
-	boolean labelTask(HttpServletRequest request);
-	List<Task> viewLabel(HttpServletRequest request);
 	
 	// Adding due date, filtering based on duedate
 	boolean duedateTask(HttpServletRequest request);
