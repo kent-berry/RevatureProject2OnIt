@@ -10,6 +10,7 @@ import com.revature.model.*;
 public interface IUserController {
 
 	// Authentication, deletion, download
+	//User checkActiveSession();
 	//Serializable register(DtoRegisterUser dtoRegisterUser);
 	//User login(DtoLoginUser dtoLoginUser);
 	//Boolean logout();
