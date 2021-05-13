@@ -101,9 +101,7 @@ public class UserService implements IUserService {
 	}
 
 
-	public boolean setDailyGoals(int numDesired) {
-		return userdao.updateGoal(numDesired);
-	}
+	
 
 	
 	public Object viewProgress() {

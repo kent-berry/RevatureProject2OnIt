@@ -8,9 +8,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -65,13 +70,16 @@ public class UserDao {
 	public User update(User user) {
 		
 		System.out.println(user);
-		
-		User storedUser = select(user);
-		BeanUtils.copyProperties(user, storedUser);
-		sessionFactory.getCurrentSession().merge(storedUser);
-		User user2 = select(storedUser);
-		
-		return user2;
+		if(Validate(user))
+		{
+			User storedUser = select(user);
+			BeanUtils.copyProperties(user, storedUser);
+			sessionFactory.getCurrentSession().merge(storedUser);
+			User user2 = select(storedUser);
+			
+			return user2;
+		}
+		else return null;
 	}
 	@Transactional
 	public User select(User user) {
@@ -125,15 +133,24 @@ public class UserDao {
 	}
 
 	
-	public boolean updateEmailReminders(int reminderPeriod) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 	
-	public boolean updateGoal(int numDesired) {
-		// TODO Auto-generated method stub
-		return false;
+	private boolean Validate(User user)
+	{
+		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+		Validator validator = factory.getValidator();
+		
+		Set<ConstraintViolation<User>> constraintViolations = validator.validate(user);
+		if(constraintViolations.size() == 0)
+		{
+			
+			return true;
+		}
+		else {
+			return false;
+		}
+			
+		
+		
 	}
 	
 }

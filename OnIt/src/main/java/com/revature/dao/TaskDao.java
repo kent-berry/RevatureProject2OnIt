@@ -39,11 +39,7 @@ public class TaskDao implements ITaskDao {
 	@Transactional
 	public boolean insert(Task task) {  //EXAMPLE OF VALIDATION CONSTRAINTS BEFORE INSERTING INTO THE DATABASE, IF IT FAILS VALIDATION IT DOESNT SAVE AND RETURNS NULL TO THE FRONT END
 		
-		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-		Validator validator = factory.getValidator();
-		
-		Set<ConstraintViolation<Task>> constraintViolations = validator.validate(task);
-		if(constraintViolations.size() == 0)
+		if(Validate(task))
 		{
 			int id = (int) sessionFactory.getCurrentSession().save(task);
 			if(id != task.getID())
@@ -59,14 +55,20 @@ public class TaskDao implements ITaskDao {
 
 	@Transactional
 	public boolean update(Task task) {
-		sessionFactory.getCurrentSession().saveOrUpdate(task);
-		return true;
+		
+		if(Validate(task))
+		{
+			sessionFactory.getCurrentSession().saveOrUpdate(task);
+			return true;
+		}
+		else
+			return false;
 	}
 
 	@Transactional
 	public boolean delete(Task incomingTask) {
-		sessionFactory.getCurrentSession().delete(incomingTask);
 		
+		sessionFactory.getCurrentSession().delete(incomingTask);
 		if(get(incomingTask.getID()) == null)
 		{
 			return true;
@@ -102,6 +104,24 @@ public class TaskDao implements ITaskDao {
 	}
 
 
+	private boolean Validate(Task task)
+	{
+		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+		Validator validator = factory.getValidator();
+		
+		Set<ConstraintViolation<Task>> constraintViolations = validator.validate(task);
+		if(constraintViolations.size() == 0)
+		{
+			
+			return true;
+		}
+		else {
+			return false;
+		}
+			
+		
+		
+	}
 	
 
 }

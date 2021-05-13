@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
 import org.springframework.stereotype.Component;
@@ -26,14 +27,22 @@ public class User {
 	private int ID;
 	
 	@Column(nullable = false)
+	@Min(1)
+	@Max(200)
 	private String firstName;
 	
+	@Min(1)
+	@Max(200)
 	@Column(nullable = false)
 	private String lastName;
 	
+	@Min(1)
+	@Max(200)
 	@Column(nullable = false, unique = true)
 	private String email;
 	
+	@Min(1)
+	@Max(200)
 	@Column(nullable = false)
 	private String password;
 	

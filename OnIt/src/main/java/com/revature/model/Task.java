@@ -2,6 +2,7 @@ package com.revature.model;
 
 import java.sql.Timestamp;
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,10 +12,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-
+import javax.validation.constraints.Future;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -38,16 +41,19 @@ public class Task {
 	int userID;
 	
 	@Column(nullable = false)
+	@NotBlank
 	String taskName;
 	
 	String notes;
 	
+	
+	@Future
 	Timestamp dueDate;
 	
 	String labelName;
 	
 	@Column(nullable = false)
-	Timestamp dateCreated = new java.sql.Timestamp(Calendar.getInstance().getTime().getTime());
+	Timestamp dateCreated;
 	
 	Timestamp dateCompleted;
 	
@@ -57,6 +63,14 @@ public class Task {
 	@Column(nullable = false, columnDefinition = "boolean default false")
 	boolean repeatable;
 
+	@Min(-91)
+	@Max(91)
+	int lat;
+	
+	@Min(-181)
+	@Max(181)
+	int longi;
+	
 	
 	@Override
 	public String toString() {
@@ -132,7 +146,12 @@ public class Task {
 
 
 	public void setDateCreated(Timestamp dateCreated) {
-		this.dateCreated = dateCreated;
+		if(this.dateCreated == null)
+		{
+			Date date = new Date();
+			this.dateCreated = new Timestamp(date.getTime());
+		
+		}
 	}
 
 
