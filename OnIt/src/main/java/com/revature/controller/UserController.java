@@ -48,9 +48,12 @@ public class UserController  {
 	
 	
 	@GetMapping(value = "/checkActiveSession")
-	public  @ResponseBody String checkActiveSession() {
+	public  @ResponseBody User checkActiveSession() {
 		if(httpsession.getAttribute("id") != null) {
-			return (String) httpsession.getAttribute("id");
+			String id = (String) httpsession.getAttribute("id");
+			DtoString dtoString = new DtoString();
+			dtoString.setFormString(id);
+			return getUserById(dtoString);
 		} else {
 			return null;
 		}

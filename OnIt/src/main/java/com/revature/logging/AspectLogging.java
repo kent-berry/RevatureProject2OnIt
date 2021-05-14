@@ -24,7 +24,7 @@ public class AspectLogging {
   */
   @Before("selectAll()")
   public void beforeAdvice(){
-     //System.out.println("Going to setup student profile.");
+     System.out.println("Going to setup student profile.");
   }
 
   /** 
@@ -42,7 +42,7 @@ public class AspectLogging {
   */
   @AfterReturning(pointcut = "selectAll()", returning = "retVal")
   public void afterReturningAdvice(Object retVal){
-     //System.out.println("Returning:" + retVal.toString() );
+     System.out.println("Returning:" + retVal.toString() );
   }
 
   /**
@@ -51,6 +51,6 @@ public class AspectLogging {
   */
   @AfterThrowing(pointcut = "selectAll()", throwing = "ex")
   public void AfterThrowingAdvice(IllegalArgumentException ex){
-     //System.out.println("There has been an exception: " + ex.toString());   
+     System.out.println("There has been an exception: " + ex.toString());   
   }
 }
