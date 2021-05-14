@@ -29,8 +29,8 @@ public class Task {
 	
 	private String taskLabel_fk;
 	
-	private double latitude;
-	private double longitude;
+	private Double latitude;
+	private Double longitude;
 	
 	//Constructors
 	
