@@ -219,7 +219,7 @@ public class UserController implements IUserController {
 	}
 
 	@PostMapping(value = "/updateTask")
-	public @ResponseBody boolean updateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
+	public @ResponseBody Task updateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
 		// we receive an updated task from the frontend, it should have the id of the task
 		if(httpsession.getAttribute("loggedinUser") != null) {
 			//We convert from DtoUpdatedTask to Task
@@ -231,9 +231,14 @@ public class UserController implements IUserController {
 										LocalDate.parse(dtoUpdatedTask.getDateCreated()), dueDate, dateCompleted,
 										dtoUpdatedTask.getReminder(), dtoUpdatedTask.isRepeatable(),
 										dtoUpdatedTask.getTaskLabel_fk(), dtoUpdatedTask.getLatitude(), dtoUpdatedTask.getLongitude());
-			return userservice.updateTask(updatedTask);
+			boolean couldUpdate = userservice.updateTask(updatedTask);
+			if (couldUpdate) {
+				return updatedTask;
+			} else {
+				return null;
+			}
 		} else {
-			return false;
+			return null;
 		}
 	}
 	
@@ -254,7 +259,7 @@ public class UserController implements IUserController {
 	}
 
 	@PostMapping(value = "/completeTask")
-	public @ResponseBody boolean completeTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {  
+	public @ResponseBody Task completeTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {  
 		dtoUpdatedTask.setDateCompleted(LocalDate.now().toString());
 		return updateTask(dtoUpdatedTask);
 	}
@@ -275,11 +280,11 @@ public class UserController implements IUserController {
 
 	
 	@PostMapping(value = "/duedateTask")
-	public @ResponseBody boolean duedateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) { 
+	public @ResponseBody Task duedateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) { 
 		if(httpsession.getAttribute("loggedinUser") != null) {
 			return updateTask(dtoUpdatedTask);
 		} else {
-			return false;
+			return null;
 		}
 	}
 
@@ -295,11 +300,11 @@ public class UserController implements IUserController {
 	}
 
 	@PostMapping(value = "/setRepeatableTask")
-	public @ResponseBody boolean setRepeatableTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
+	public @ResponseBody Task setRepeatableTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
 		if(httpsession.getAttribute("loggedinUser") != null) {
 			return updateTask(dtoUpdatedTask);
 		} else {
-			return false;
+			return null;
 		}
 		
 	}
