@@ -1,0 +1,474 @@
+Logging Provider: org.jboss.logging.Log4jLoggerProvider
+Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+HHH000412: Hibernate ORM core version 5.4.30.Final
+HHH000206: hibernate.properties not found
+Building session factory using internal StandardServiceRegistryBuilder
+Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+Building session factory using provided StandardServiceRegistry
+Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+Adding type registration boolean -> org.hibernate.type.BooleanType@2aac9847
+Adding type registration boolean -> org.hibernate.type.BooleanType@2aac9847
+Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@2aac9847
+Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@709e104f
+Adding type registration true_false -> org.hibernate.type.TrueFalseType@3e5b2b2c
+Adding type registration yes_no -> org.hibernate.type.YesNoType@29d75d48
+Adding type registration byte -> org.hibernate.type.ByteType@4764c690
+Adding type registration byte -> org.hibernate.type.ByteType@4764c690
+Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@4764c690
+Adding type registration character -> org.hibernate.type.CharacterType@681c947a
+Adding type registration char -> org.hibernate.type.CharacterType@681c947a
+Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@681c947a
+Adding type registration short -> org.hibernate.type.ShortType@bd3a5e1
+Adding type registration short -> org.hibernate.type.ShortType@bd3a5e1
+Adding type registration java.lang.Short -> org.hibernate.type.ShortType@bd3a5e1
+Adding type registration integer -> org.hibernate.type.IntegerType@2b478db
+Adding type registration int -> org.hibernate.type.IntegerType@2b478db
+Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@2b478db
+Adding type registration long -> org.hibernate.type.LongType@616d9c7c
+Adding type registration long -> org.hibernate.type.LongType@616d9c7c
+Adding type registration java.lang.Long -> org.hibernate.type.LongType@616d9c7c
+Adding type registration float -> org.hibernate.type.FloatType@6800cdbb
+Adding type registration float -> org.hibernate.type.FloatType@6800cdbb
+Adding type registration java.lang.Float -> org.hibernate.type.FloatType@6800cdbb
+Adding type registration double -> org.hibernate.type.DoubleType@4dc814ab
+Adding type registration double -> org.hibernate.type.DoubleType@4dc814ab
+Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@4dc814ab
+Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@1159d275
+Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@1159d275
+Adding type registration big_integer -> org.hibernate.type.BigIntegerType@2bea5574
+Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@2bea5574
+Adding type registration string -> org.hibernate.type.StringType@2dcf34f4
+Adding type registration java.lang.String -> org.hibernate.type.StringType@2dcf34f4
+Adding type registration nstring -> org.hibernate.type.StringNVarcharType@1b88a8c5
+Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@19edce10
+Adding type registration url -> org.hibernate.type.UrlType@1db26a03
+Adding type registration java.net.URL -> org.hibernate.type.UrlType@1db26a03
+Adding type registration Duration -> org.hibernate.type.DurationType@1937451d
+Adding type registration java.time.Duration -> org.hibernate.type.DurationType@1937451d
+Adding type registration Instant -> org.hibernate.type.InstantType@4811e929
+Adding type registration java.time.Instant -> org.hibernate.type.InstantType@4811e929
+Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@28c1e05f
+Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@28c1e05f
+Adding type registration LocalDate -> org.hibernate.type.LocalDateType@3d68bb4d
+Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@3d68bb4d
+Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@715ac5ca
+Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@715ac5ca
+Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@2652e099
+Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@2652e099
+Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@284fd9fb
+Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@284fd9fb
+Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@37880976
+Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@37880976
+Adding type registration date -> org.hibernate.type.DateType@76cfdf
+Adding type registration java.sql.Date -> org.hibernate.type.DateType@76cfdf
+Adding type registration time -> org.hibernate.type.TimeType@90c67f6
+Adding type registration java.sql.Time -> org.hibernate.type.TimeType@90c67f6
+Adding type registration timestamp -> org.hibernate.type.TimestampType@aab12d1
+Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@aab12d1
+Adding type registration java.util.Date -> org.hibernate.type.TimestampType@aab12d1
+Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@157bae1f
+Adding type registration calendar -> org.hibernate.type.CalendarType@619dd452
+Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@619dd452
+Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@619dd452
+Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@501091be
+Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@eb7f78d
+Adding type registration locale -> org.hibernate.type.LocaleType@4d2d9400
+Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@4d2d9400
+Adding type registration currency -> org.hibernate.type.CurrencyType@347b78b9
+Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@347b78b9
+Adding type registration timezone -> org.hibernate.type.TimeZoneType@27214ba1
+Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@27214ba1
+Adding type registration class -> org.hibernate.type.ClassType@20f96ac8
+Adding type registration java.lang.Class -> org.hibernate.type.ClassType@20f96ac8
+Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@2b67536b
+Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@2b67536b
+Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@6ab4d00e
+Adding type registration binary -> org.hibernate.type.BinaryType@4031eaa6
+Adding type registration byte[] -> org.hibernate.type.BinaryType@4031eaa6
+Adding type registration [B -> org.hibernate.type.BinaryType@4031eaa6
+Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@6381225d
+Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@6381225d
+Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@6381225d
+Adding type registration row_version -> org.hibernate.type.RowVersionType@4120a642
+Adding type registration image -> org.hibernate.type.ImageType@3ee8b418
+Adding type registration characters -> org.hibernate.type.CharArrayType@3226abf6
+Adding type registration char[] -> org.hibernate.type.CharArrayType@3226abf6
+Adding type registration [C -> org.hibernate.type.CharArrayType@3226abf6
+Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@458fa64e
+Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@458fa64e
+Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@458fa64e
+Adding type registration text -> org.hibernate.type.TextType@216cf485
+Adding type registration ntext -> org.hibernate.type.NTextType@31f77388
+Adding type registration blob -> org.hibernate.type.BlobType@27f6dd84
+Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@27f6dd84
+Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@34d9a2db
+Adding type registration clob -> org.hibernate.type.ClobType@74173058
+Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@74173058
+Adding type registration nclob -> org.hibernate.type.NClobType@7c1da15f
+Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@7c1da15f
+Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@35749577
+Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@6b292cb3
+Adding type registration serializable -> org.hibernate.type.SerializableType@2b1c3f87
+Adding type registration object -> org.hibernate.type.ObjectType@61ff5cd8
+Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@61ff5cd8
+Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@469489f9
+Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@74ec9fda
+Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@7fe359ae
+Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@122017a2
+Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@70198f5e
+Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@609bccc8
+Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@5d0c75c
+Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@175f5d43
+Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+Database ->
+       name : PostgreSQL
+    version : 12.5
+      major : 12
+      minor : 5
+Driver ->
+       name : PostgreSQL JDBC Driver
+    version : 42.2.10
+      major : 42
+      minor : 2
+JDBC version : 4.2
+HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+JDBC driver metadata reported database stores quoted identifiers in neither upper, lower nor mixed case
+Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
+Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@646a218
+Adding type registration java.util.UUID -> org.hibernate.type.PostgresUUIDType@646a218
+HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@2b67536b
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@11c42978] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@46e5c311]
+Binding entity from annotated class: com.revature.model.Task
+Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+Import with entity name Task
+Bind entity com.revature.model.Task on table tasks
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(tasks), mappingColumn=id, insertable=true, updatable=true, unique=false}
+Not known whether passed class name [com.revature.model.Task] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.revature.model.Task
+MetadataSourceProcessor property id with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.Task:id]
+building SimpleValue for id
+Building property id
+#makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, assigned, , ...)
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(tasks), mappingColumn=dateCompleted, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property dateCompleted with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.Task:dateCompleted]
+building SimpleValue for dateCompleted
+Building property dateCompleted
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(tasks), mappingColumn=dateCreated, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property dateCreated with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.Task:dateCreated]
+building SimpleValue for dateCreated
+Building property dateCreated
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(tasks), mappingColumn=dueDate, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property dueDate with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.Task:dueDate]
+building SimpleValue for dueDate
+Building property dueDate
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(tasks), mappingColumn=latitude, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property latitude with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.Task:latitude]
+building SimpleValue for latitude
+Building property latitude
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(tasks), mappingColumn=longitude, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property longitude with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.Task:longitude]
+building SimpleValue for longitude
+Building property longitude
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(tasks), mappingColumn=notes, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property notes with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.Task:notes]
+building SimpleValue for notes
+Building property notes
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(tasks), mappingColumn=reminder, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property reminder with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.Task:reminder]
+building SimpleValue for reminder
+Building property reminder
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(tasks), mappingColumn=repeatable, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property repeatable with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.Task:repeatable]
+building SimpleValue for repeatable
+Building property repeatable
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(tasks), mappingColumn=taskLabel_fk, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property taskLabel_fk with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.Task:taskLabel_fk]
+building SimpleValue for taskLabel_fk
+Building property taskLabel_fk
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(tasks), mappingColumn=taskName, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property taskName with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.Task:taskName]
+building SimpleValue for taskName
+Building property taskName
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(tasks), mappingColumn=userId, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property userId with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.Task:userId]
+building SimpleValue for userId
+Building property userId
+Binding entity from annotated class: com.revature.model.TaskLabel
+Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+Import with entity name TaskLabel
+Bind entity com.revature.model.TaskLabel on table taskLabels
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(taskLabels), mappingColumn=taskLabel, insertable=true, updatable=true, unique=false}
+Not known whether passed class name [com.revature.model.TaskLabel] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.revature.model.TaskLabel
+MetadataSourceProcessor property taskLabel with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.TaskLabel:taskLabel]
+building SimpleValue for taskLabel
+Building property taskLabel
+#makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(taskLabel)]), taskLabel, assigned, , ...)
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(taskLabels), mappingColumn=taskLabelDescription, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property taskLabelDescription with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.TaskLabel:taskLabelDescription]
+building SimpleValue for taskLabelDescription
+Building property taskLabelDescription
+Binding entity from annotated class: com.revature.model.User
+Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+Import with entity name User
+Bind entity com.revature.model.User on table users
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=id, insertable=true, updatable=true, unique=false}
+Not known whether passed class name [com.revature.model.User] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.revature.model.User
+MetadataSourceProcessor property id with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.User:id]
+building SimpleValue for id
+Building property id
+#makeIdGenerator(org.hibernate.mapping.SimpleValue([org.hibernate.mapping.Column(id)]), id, assigned, , ...)
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=accountCreated, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property accountCreated with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.User:accountCreated]
+building SimpleValue for accountCreated
+Building property accountCreated
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=email, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property email with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.User:email]
+building SimpleValue for email
+Building property email
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=firstName, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property firstName with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.User:firstName]
+building SimpleValue for firstName
+Building property firstName
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=goal, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property goal with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.User:goal]
+building SimpleValue for goal
+Building property goal
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=lastName, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property lastName with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.User:lastName]
+building SimpleValue for lastName
+Building property lastName
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=password, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property password with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.User:password]
+building SimpleValue for password
+Building property password
+Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=receiveEmailReminders, insertable=true, updatable=true, unique=false}
+MetadataSourceProcessor property receiveEmailReminders with lazy=false
+Attempting to locate auto-apply AttributeConverter for property [com.revature.model.User:receiveEmailReminders]
+building SimpleValue for receiveEmailReminders
+Building property receiveEmailReminders
+Starting fillSimpleValue for id
+Starting fillSimpleValue for dateCompleted
+Starting fillSimpleValue for dateCreated
+Starting fillSimpleValue for dueDate
+Starting fillSimpleValue for latitude
+Starting fillSimpleValue for longitude
+Starting fillSimpleValue for notes
+Starting fillSimpleValue for reminder
+Starting fillSimpleValue for repeatable
+Starting fillSimpleValue for taskLabel_fk
+Starting fillSimpleValue for taskName
+Starting fillSimpleValue for userId
+Starting fillSimpleValue for taskLabel
+Starting fillSimpleValue for taskLabelDescription
+Starting fillSimpleValue for id
+Starting fillSimpleValue for accountCreated
+Starting fillSimpleValue for email
+Starting fillSimpleValue for firstName
+Starting fillSimpleValue for goal
+Starting fillSimpleValue for lastName
+Starting fillSimpleValue for password
+Starting fillSimpleValue for receiveEmailReminders
+Forcing column [id] to be non-null as it is part of the primary key for table [tasks]
+Forcing column [tasklabel] to be non-null as it is part of the primary key for table [tasklabels]
+Forcing column [id] to be non-null as it is part of the primary key for table [users]
+Building session factory
+SessionFactory name : null
+Automatic flush during beforeCompletion(): enabled
+Automatic session close at end of transaction: disabled
+Statistics: disabled
+Deleted entity synthetic identifier rollback: disabled
+Default entity-mode: pojo
+Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+Allow initialization of lazy state outside session : disabled
+Using BatchFetchStyle : LEGACY
+Default batch fetch size: -1
+Maximum outer join fetch depth: null
+Default null ordering: NONE
+Order SQL updates by primary key: disabled
+Order SQL inserts for batching: disabled
+multi-tenancy strategy : NONE
+JTA Track by Thread: enabled
+Query language substitutions: {}
+Named query checking : enabled
+Second-level cache: disabled
+Second-level query cache: disabled
+Second-level query cache factory: null
+Second-level cache region prefix: null
+Optimize second-level cache for minimal puts: disabled
+Structured second-level cache entries: disabled
+Second-level cache direct-reference entries: disabled
+Automatic eviction of collection cache: disabled
+JDBC batch size: 15
+JDBC batch updates for versioned data: enabled
+Scrollable result sets: enabled
+Wrap result sets: disabled
+JDBC3 getGeneratedKeys(): enabled
+JDBC result set fetch size: null
+Connection release mode: ON_CLOSE
+Generate SQL with comments: disabled
+JPA compliance - query : disabled
+JPA compliance - closed-handling : disabled
+JPA compliance - lists : disabled
+JPA compliance - transactions : disabled
+Session factory constructed with filter configurations : {}
+Instantiating session factory with properties: {hibernate.format_sql=true, java.specification.version=16, sun.cpu.isalist=amd64, hibernate.resource.beans.container=org.springframework.orm.hibernate5.SpringBeanContainer@5f9e4e06, hibernate.connection.handling_mode=DELAYED_ACQUISITION_AND_HOLD, sun.jnu.encoding=Cp1252, hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect, java.class.path=C:\JavaPrograms\Revature\apache-tomcat-8.5.61\bin\bootstrap.jar;C:\JavaPrograms\Revature\apache-tomcat-8.5.61\bin\tomcat-juli.jar, java.vm.vendor=Oracle Corporation, sun.arch.data.model=64, user.variant=, java.vendor.url=https://java.oracle.com/, catalina.useNaming=true, user.timezone=America/Chicago, java.vm.specification.version=16, os.name=Windows 10, sun.java.launcher=SUN_STANDARD, user.country=US, sun.boot.library.path=C:\Program Files\Java\jdk-16\bin, sun.java.command=org.apache.catalina.startup.Bootstrap start, jdk.debug=release, sun.cpu.endian=little, user.home=C:\Users\Jacob, user.language=en, java.specification.vendor=Oracle Corporation, java.naming.factory.url.pkgs=org.apache.naming, java.version.date=2021-03-16, java.home=C:\Program Files\Java\jdk-16, file.separator=\, java.vm.compressedOopsMode=Zero based, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, java.specification.name=Java Platform API Specification, package.access=sun.,org.apache.catalina.,org.apache.coyote.,org.apache.jasper.,org.apache.tomcat., package.definition=sun.,java.,org.apache.catalina.,org.apache.coyote.,org.apache.jasper.,org.apache.naming.,org.apache.tomcat., hibernate.hbm2ddl.auto=update, user.script=, server.loader=, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=16+36-2231, java.naming.factory.initial=org.apache.naming.java.javaURLContextFactory, user.name=Jacob, path.separator=;, common.loader="C:\JavaPrograms\Revature\.metadata\.plugins\org.eclipse.wst.server.core\tmp0/lib","C:\JavaPrograms\Revature\.metadata\.plugins\org.eclipse.wst.server.core\tmp0/lib/*.jar","C:\JavaPrograms\Revature\apache-tomcat-8.5.61/lib","C:\JavaPrograms\Revature\apache-tomcat-8.5.61/lib/*.jar", os.version=10.0, java.runtime.name=Java(TM) SE Runtime Environment, file.encoding=Cp1252, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, hibernate.show_sql=true, hibernate.classLoaders=[ParallelWebappClassLoader
+  context: OnIt
+  delegate: false
+----------> Parent Classloader:
+java.net.URLClassLoader@312b1dae
+], hibernate.current_session_context_class=org.springframework.orm.hibernate5.SpringSessionContext, java.vendor.url.bug=https://bugreport.java.com/bugreport/, java.io.tmpdir=C:\Users\Jacob\AppData\Local\Temp\, tomcat.util.scan.StandardJarScanFilter.jarsToScan=log4j-taglib*.jar,log4j-web*.jar,log4javascript*.jar,slf4j-taglib*.jar, catalina.home=C:\JavaPrograms\Revature\apache-tomcat-8.5.61, java.version=16, tomcat.util.scan.StandardJarScanFilter.jarsToSkip=annotations-api.jar,ant-junit*.jar,ant-launcher.jar,ant.jar,asm-*.jar,aspectj*.jar,bootstrap.jar,catalina-ant.jar,catalina-ha.jar,catalina-jmx-remote.jar,catalina-storeconfig.jar,catalina-tribes.jar,catalina-ws.jar,catalina.jar,cglib-*.jar,cobertura-*.jar,commons-beanutils*.jar,commons-codec*.jar,commons-collections*.jar,commons-daemon.jar,commons-dbcp*.jar,commons-digester*.jar,commons-fileupload*.jar,commons-httpclient*.jar,commons-io*.jar,commons-lang*.jar,commons-logging*.jar,commons-math*.jar,commons-pool*.jar,dom4j-*.jar,easymock-*.jar,ecj-*.jar,el-api.jar,geronimo-spec-jaxrpc*.jar,h2*.jar,hamcrest-*.jar,hibernate*.jar,httpclient*.jar,icu4j-*.jar,jasper-el.jar,jasper.jar,jaspic-api.jar,jaxb-*.jar,jaxen-*.jar,jdom-*.jar,jetty-*.jar,jmx-tools.jar,jmx.jar,jsp-api.jar,jstl.jar,jta*.jar,junit-*.jar,junit.jar,log4j*.jar,mail*.jar,objenesis-*.jar,oraclepki.jar,oro-*.jar,servlet-api-*.jar,servlet-api.jar,slf4j*.jar,taglibs-standard-spec-*.jar,tagsoup-*.jar,tomcat-api.jar,tomcat-coyote.jar,tomcat-dbcp.jar,tomcat-i18n-*.jar,tomcat-jdbc.jar,tomcat-jni.jar,tomcat-juli-adapters.jar,tomcat-juli.jar,tomcat-util-scan.jar,tomcat-util.jar,tomcat-websocket.jar,tools.jar,websocket-api.jar,wsdl4j*.jar,xercesImpl.jar,xml-apis.jar,xmlParserAPIs-*.jar,xmlParserAPIs.jar,xom-*.jar, user.dir=C:\Users\Jacob\Desktop, os.arch=amd64, java.vm.specification.name=Java Virtual Machine Specification, sun.os.patch.level=, catalina.base=C:\JavaPrograms\Revature\.metadata\.plugins\org.eclipse.wst.server.core\tmp0, shared.loader=, hibernate.boot.CfgXmlAccessService.key=org.hibernate.boot.cfgxml.spi.LoadedConfig@8477926, wtp.deploy=C:\JavaPrograms\Revature\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps, java.library.path=C:\Program Files\Java\jdk-16\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jdk-16/bin/server;C:/Program Files/Java/jdk-16/bin;C:\Python39\Scripts\;C:\Python39\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Jacob\AppData\Local\Microsoft\WindowsApps;C:\Program Files\dotnet\;C:\Program Files (x86)\Brackets\command;C:\ProgramData\chocolatey\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\Jacob\scoop\apps\ojdkbuild8-full\current\bin;C:\Users\Jacob\scoop\apps\maven\current\bin;C:\Users\Jacob\scoop\shims;C:\Users\Jacob\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Jacob\AppData\Local\Programs\Python\Python38-32\;C:\Users\Jacob\AppData\Local\Microsoft\WindowsApps;C:\Users\Jacob\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2019.3.1\bin;C:\Users\Jacob\AppData\Local\GitHubDesktop\bin;C:\Users\Jacob\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.3.3\bin;;C:\Users\Jacob\AppData\Roaming\npm;C:\Users\Jacob\Desktop;;., java.vendor=Oracle Corporation, java.vm.info=mixed mode, sharing, java.vm.version=16+36-2231, hibernate.bytecode.use_reflection_optimizer=false, sun.io.unicode.encoding=UnicodeLittle, hibernate.connection.datasource=org.springframework.jdbc.datasource.DriverManagerDataSource@3a08db22, tomcat.util.buf.StringCache.byte.enabled=true, java.class.version=60.0}
+HV000001: Hibernate Validator 5.2.4.Final
+Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+Trying to load META-INF/validation.xml for XML based Validator configuration.
+Trying to load META-INF/validation.xml via TCCL
+Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+No META-INF/validation.xml found. Using annotation based configuration only.
+Not known whether passed class name [com.revature.model.User] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.revature.model.User
+Not known whether passed class name [com.revature.model.TaskLabel] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.revature.model.TaskLabel
+Not known whether passed class name [com.revature.model.Task] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.revature.model.Task
+Skipping JACC integration as it was not enabled
+Instantiated session factory
+Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@11c42978] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@1980fdcf]
+Not known whether passed class name [com.revature.model.User] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.revature.model.User
+Not known whether passed class name [com.revature.model.TaskLabel] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.revature.model.TaskLabel
+Not known whether passed class name [com.revature.model.Task] is safe
+No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.revature.model.Task
+Static SQL for entity: com.revature.model.User
+ Version select: select id from users where id =?
+ Snapshot select: select user_.id, user_.accountCreated as accountc2_2_, user_.email as email3_2_, user_.firstName as firstnam4_2_, user_.goal as goal5_2_, user_.lastName as lastname6_2_, user_.password as password7_2_, user_.receiveEmailReminders as receivee8_2_ from users user_ where user_.id=?
+ Insert 0: insert into users (accountCreated, email, firstName, goal, lastName, password, receiveEmailReminders, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+ Update 0: update users set accountCreated=?, email=?, firstName=?, goal=?, lastName=?, password=?, receiveEmailReminders=? where id=?
+ Delete 0: delete from users where id=?
+Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@322fc124]
+Visiting attribute path : accountCreated
+Visiting attribute path : email
+Visiting attribute path : firstName
+Visiting attribute path : goal
+Visiting attribute path : lastName
+Visiting attribute path : password
+Visiting attribute path : receiveEmailReminders
+Building LoadPlan...
+processing queryspace <gen:0>
+LoadPlan(entity=com.revature.model.User)
+    - Returns
+       - EntityReturnImpl(entity=com.revature.model.User, querySpaceUid=<gen:0>, path=com.revature.model.User)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.revature.model.User)
+          - SQL table alias mapping - user0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_2_0_}
+
+Static select for entity com.revature.model.User [NONE]: select user0_.id as id1_2_0_, user0_.accountCreated as accountc2_2_0_, user0_.email as email3_2_0_, user0_.firstName as firstnam4_2_0_, user0_.goal as goal5_2_0_, user0_.lastName as lastname6_2_0_, user0_.password as password7_2_0_, user0_.receiveEmailReminders as receivee8_2_0_ from users user0_ where user0_.id=?
+Static SQL for entity: com.revature.model.TaskLabel
+ Version select: select taskLabel from taskLabels where taskLabel =?
+ Snapshot select: select tasklabel_.taskLabel, tasklabel_.taskLabelDescription as tasklabe2_0_ from taskLabels tasklabel_ where tasklabel_.taskLabel=?
+ Insert 0: insert into taskLabels (taskLabelDescription, taskLabel) values (?, ?)
+ Update 0: update taskLabels set taskLabelDescription=? where taskLabel=?
+ Delete 0: delete from taskLabels where taskLabel=?
+Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1330a15e]
+Visiting attribute path : taskLabelDescription
+Building LoadPlan...
+processing queryspace <gen:0>
+LoadPlan(entity=com.revature.model.TaskLabel)
+    - Returns
+       - EntityReturnImpl(entity=com.revature.model.TaskLabel, querySpaceUid=<gen:0>, path=com.revature.model.TaskLabel)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.revature.model.TaskLabel)
+          - SQL table alias mapping - tasklabel0_
+          - alias suffix - 0_
+          - suffixed key columns - {tasklabe1_0_0_}
+
+Static select for entity com.revature.model.TaskLabel [NONE]: select tasklabel0_.taskLabel as tasklabe1_0_0_, tasklabel0_.taskLabelDescription as tasklabe2_0_0_ from taskLabels tasklabel0_ where tasklabel0_.taskLabel=?
+Static SQL for entity: com.revature.model.Task
+ Version select: select id from tasks where id =?
+ Snapshot select: select task_.id, task_.dateCompleted as datecomp2_1_, task_.dateCreated as datecrea3_1_, task_.dueDate as duedate4_1_, task_.latitude as latitude5_1_, task_.longitude as longitud6_1_, task_.notes as notes7_1_, task_.reminder as reminder8_1_, task_.repeatable as repeatab9_1_, task_.taskLabel_fk as tasklab10_1_, task_.taskName as tasknam11_1_, task_.userId as userid12_1_ from tasks task_ where task_.id=?
+ Insert 0: insert into tasks (dateCompleted, dateCreated, dueDate, latitude, longitude, notes, reminder, repeatable, taskLabel_fk, taskName, userId, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+ Update 0: update tasks set dateCompleted=?, dateCreated=?, dueDate=?, latitude=?, longitude=?, notes=?, reminder=?, repeatable=?, taskLabel_fk=?, taskName=?, userId=? where id=?
+ Delete 0: delete from tasks where id=?
+Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6617e0e2]
+Visiting attribute path : dateCompleted
+Visiting attribute path : dateCreated
+Visiting attribute path : dueDate
+Visiting attribute path : latitude
+Visiting attribute path : longitude
+Visiting attribute path : notes
+Visiting attribute path : reminder
+Visiting attribute path : repeatable
+Visiting attribute path : taskLabel_fk
+Visiting attribute path : taskName
+Visiting attribute path : userId
+Building LoadPlan...
+processing queryspace <gen:0>
+LoadPlan(entity=com.revature.model.Task)
+    - Returns
+       - EntityReturnImpl(entity=com.revature.model.Task, querySpaceUid=<gen:0>, path=com.revature.model.Task)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.revature.model.Task)
+          - SQL table alias mapping - task0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+Static select for entity com.revature.model.Task [NONE]: select task0_.id as id1_1_0_, task0_.dateCompleted as datecomp2_1_0_, task0_.dateCreated as datecrea3_1_0_, task0_.dueDate as duedate4_1_0_, task0_.latitude as latitude5_1_0_, task0_.longitude as longitud6_1_0_, task0_.notes as notes7_1_0_, task0_.reminder as reminder8_1_0_, task0_.repeatable as repeatab9_1_0_, task0_.taskLabel_fk as tasklab10_1_0_, task0_.taskName as tasknam11_1_0_, task0_.userId as userid12_1_0_ from tasks task0_ where task0_.id=?
+No alter strings for table : taskLabels
+No alter strings for table : tasks
+No alter strings for table : users
+No JtaPlatform was specified, checking resolver
+No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Checking 0 named HQL queries
+Checking 0 named SQL queries
+Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@68c11048
+Registering SessionFactory: a74cc13e-711b-4f2c-b64e-6244f0d586a9 (<unnamed>)
+Not binding SessionFactory to JNDI, no JNDI name configured
+HHH000031: Closing
+Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@1ccb7fb3] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@1980fdcf]
+Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
+Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries
