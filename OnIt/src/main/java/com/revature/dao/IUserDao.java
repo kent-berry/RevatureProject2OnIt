@@ -1,6 +1,7 @@
 package com.revature.dao;
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.revature.model.User;
 
@@ -20,5 +21,6 @@ public interface IUserDao {
 	
 	//update all user info
 	boolean updateUserInfo(User updatedUser);
+	List<User> getAllUser();
 
 }

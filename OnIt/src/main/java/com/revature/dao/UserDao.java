@@ -73,5 +73,16 @@ public class UserDao implements IUserDao {
 		sessionFactory.getCurrentSession().saveOrUpdate(updatedUser);
 		return true;
 	}
+	
+	public List<User> getAllUser()
+	{
+		
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(User.class);
+		
+		criteria.add(Restrictions.isNotNull("id"));
+		
+		List<User> results = criteria.list();
+		return results;
+	}
 
 }

@@ -4,8 +4,10 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		 http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd"
 		>
 	<!-- This will turn on our annotations -->
@@ -16,21 +18,17 @@
 	
 	<aop:aspectj-autoproxy/>
 	
-   	  <!--  
-	  <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-	  	<property name="url" value="jdbc:postgresql://onit.csdlvyc8g6b3.us-west-2.rds.amazonaws.com/ers"></property>
-	  	<property name="username" value="postgres"></property>
-	  	<property name="password" value="password123"></property>
-	  	<property name="driverClassName" value="org.postgresql.Driver"></property>
-	  </bean>
-
-	 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-	  	<property name="url">${onitdb_url}</property>
-	  	<property name="username">${onitdb_username}</property>
-	  	<property name="password">${onitdb_password}</property>
-	  	<property name="driverClassName" value="org.postgresql.Driver"></property>
-	  </bean>
-	  -->
+	
+	
+	<task:scheduled-tasks scheduler="myScheduler">
+        <task:scheduled ref="EmailSender" method="EmailNotifications" fixed-delay="50000" />
+         <task:scheduled ref="EmailSender" method="EmailNotifications" cron="0 6 * * * *" />
+    </task:scheduled-tasks>
+ 
+    <task:scheduler id="myScheduler"/>
+	
+   	 
+	  
 	 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 	  	<property name="url" value ="jdbc:postgresql://onit.csdlvyc8g6b3.us-west-2.rds.amazonaws.com/ers"></property>
 	  	<property name="username" value="postgres"></property>
@@ -49,8 +47,8 @@
 	 		<props>
 	 			<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
 	 			<prop key="hibernate.hbm2ddl.auto">update</prop>
-	 			<prop key="hibernate.show_sql">true</prop>
-	 			<prop key="hibernate.format_sql">true</prop>
+	 			<prop key="hibernate.show_sql">false</prop>
+	 			<prop key="hibernate.format_sql">false</prop>
 	 		</props>
 	 	</property>
 	 </bean>
@@ -65,7 +63,24 @@
 	  -->
 	  <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 	  		<property name="sessionFactory" ref="sessionFactory"></property>
-	  		
-	  </bean>
+	 </bean>  
+	 
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">  
+  <property name="host" value="smtp.gmail.com" />  
+    <property name="username" value="emailformailchimp5@gmail.com" />  
+    <property name="password" value="Popcorn12345678!" />  
+    <property name="javaMailProperties">  
+       <props>  
+              <prop key="mail.smtp.auth">false</prop>  
+              <prop key="mail.smtp.socketFactory.port">465</prop>  
+              <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>  
+              <prop key="mail.smtp.port">465</prop>  
+        </props>  
+    </property>  
+</bean>  
+<bean id="Mailer" class="com.revature.emailer.Mailer">  
+    <property name="mailSender" ref="mailSender" />  
+</bean>  
+
 
 </beans>

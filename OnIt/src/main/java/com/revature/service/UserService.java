@@ -13,10 +13,10 @@ import com.revature.dao.*;
 public class UserService implements IUserService {
 
 	@Autowired
-	private IUserDao userdao = new UserDao();
+	private IUserDao userdao;
 	
 	@Autowired
-	private ITaskDao taskdao = new TaskDao();
+	private ITaskDao taskdao;
 	
 	@Override
 	public Serializable register(User newUser) {

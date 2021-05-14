@@ -55,7 +55,7 @@ public class UserController implements IUserController {
 	private HttpSession httpsession;
 	
 	@Autowired
-	private IUserService userservice = new UserService();
+	private IUserService userservice;
 	
 	
 	@GetMapping(value = "/checkActiveSession")
