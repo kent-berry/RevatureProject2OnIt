@@ -1,7 +1,5 @@
 package com.revature.controller;
 
-
-import java.io.Serializable;
 import java.time.LocalDate;
 
 import java.security.NoSuchAlgorithmException;
@@ -16,6 +14,7 @@ import javax.crypto.spec.PBEKeySpec;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,6 +26,7 @@ import com.revature.model.*;
 import com.revature.service.*;
 
 @Configuration
+@CrossOrigin(origins = {"http://onitp2.s3-website.us-east-2.amazonaws.com", "http://localhost:4200"}, allowCredentials = "true")
 @RestController
 public class UserController  {
 
