@@ -58,7 +58,7 @@ public class Task {
 
 
 	public Task(String userId, String taskName, String notes, LocalDate dueDate, int reminder,
-			boolean repeatable, String taskLabel, double latitude, double longitude) {
+			boolean repeatable, String taskLabel, Double latitude, Double longitude) {
 		super();
 		
 		this.id = UUID.randomUUID().toString();
@@ -95,7 +95,7 @@ public class Task {
 	}
 
 	public Task(String id, String userId, String taskName, String notes, LocalDate dateCreated, LocalDate dueDate,
-			LocalDate dateCompleted, int reminder, boolean repeatable, String taskLabel_fk, double latitude, double longitude) {
+			LocalDate dateCompleted, int reminder, boolean repeatable, String taskLabel_fk, Double latitude, Double longitude) {
 		super();
 		this.id = id;
 		this.userId = userId;
@@ -193,19 +193,19 @@ public class Task {
 		this.taskLabel_fk = taskLabel_fk;
 	}
 
-	public double getLatitude() {
+	public Double getLatitude() {
 		return latitude;
 	}
 
-	public void setLatitude(double latitude) {
+	public void setLatitude(Double latitude) {
 		this.latitude = latitude;
 	}
 
-	public double getLongitude() {
+	public Double getLongitude() {
 		return longitude;
 	}
 
-	public void setLongitude(double longitude) {
+	public void setLongitude(Double longitude) {
 		this.longitude = longitude;
 	}
 
