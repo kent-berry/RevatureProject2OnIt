@@ -21,7 +21,7 @@
 	
 	
 	<task:scheduled-tasks scheduler="myScheduler">
-        <task:scheduled ref="EmailSender" method="EmailNotifications" fixed-delay="50000" />
+       <!--   <task:scheduled ref="EmailSender" method="EmailNotifications" fixed-delay="50000" /> -->
          <task:scheduled ref="EmailSender" method="EmailNotifications" cron="0 6 * * * *" />
     </task:scheduled-tasks>
  
