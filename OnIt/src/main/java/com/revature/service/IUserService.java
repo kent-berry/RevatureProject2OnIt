@@ -10,7 +10,8 @@ public interface IUserService {
 	// Authentication, deletion, download
 	Serializable register(User newUser);
 	User login(String email, String password);
-
+	User getUserById(String id);
+	
 	boolean unregister(String email, String password); //account deletion, requires providing password to delete
 	String downloadMyData(String email, String password);
 	

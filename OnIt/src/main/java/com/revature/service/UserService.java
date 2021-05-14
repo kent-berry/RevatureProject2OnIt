@@ -29,6 +29,12 @@ public class UserService implements IUserService {
 	}
 
 	@Override
+	public User getUserById(String id) {
+		return userdao.select(id);
+	}
+
+	
+	@Override
 	public boolean unregister(String email, String password) {
 		return userdao.delete(email, password);
 	}
@@ -84,4 +90,5 @@ public class UserService implements IUserService {
 		return taskdao.selectDuedate(userId, upperBoundDate);
 	}
 
+	
 }

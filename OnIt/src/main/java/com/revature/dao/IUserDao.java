@@ -9,6 +9,7 @@ public interface IUserDao {
 	// Authentication, deletion, download
 	Serializable insert(User newUser);
 	User select(String email, String password);
+	User select(String id);
 	boolean delete(String email, String password); //account deletion, requires providing password to delete
 	
 	

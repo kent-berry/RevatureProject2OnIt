@@ -48,10 +48,10 @@ public class UserController  {
 	
 	
 	@GetMapping(value = "/checkActiveSession")
-	public  @ResponseBody User checkActiveSession() {
+	public  @ResponseBody String checkActiveSession() {
 		if(httpsession.getAttribute("loggedinUser") != null) {
 			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
-			return loggedinUser;
+			return loggedinUser.getId();
 		} else {
 			return null;
 		}
@@ -78,6 +78,16 @@ public class UserController  {
 		}
 	}
 
+	@PostMapping(value = "/getUserById")
+	public @ResponseBody User getUserById(@RequestBody DtoString dtoString) {
+		
+		User loggingUser = userservice.getUserById(dtoString.getFormString());
+		if (loggingUser != null) {
+			httpsession.setAttribute("loggedinUser", loggingUser);
+		}
+		return loggingUser;
+	}
+	
 	@PostMapping(value = "/login")
 	public @ResponseBody User login(@RequestBody DtoLoginUser dtoLoginUser) {
 		String hashedPass = "";

@@ -43,6 +43,17 @@ public class UserDao implements IUserDao {
 
 	@Transactional
 	@Override
+	public User select(String id) {
+		// Create CriteriaBuilder
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(User.class);
+		criteria.add(Restrictions.eq("id", id));
+		List<User> results = criteria.list();
+		return (results.isEmpty() ? null : results.get(0));
+	}
+
+	
+	@Transactional
+	@Override
 	public boolean delete(String email, String password) {
 		User user = select(email, password);
 		if(user != null) {
@@ -74,4 +85,5 @@ public class UserDao implements IUserDao {
 		return true;
 	}
 
+	
 }
