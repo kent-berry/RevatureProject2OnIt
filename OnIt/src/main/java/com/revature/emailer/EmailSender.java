@@ -57,7 +57,7 @@ public class EmailSender {
 						Period p = Period.between(now, t.getDueDate());
 						if(p.getDays() <= t.getReminder())
 						{
-					        mailer.sendMail("us",u.getEmail(),"Test from our app","Inside our email");
+					        mailer.sendMail("us","erdmannjacob0@gmail.com","Test from our app","Inside our email");
 						}
 					}
 					
