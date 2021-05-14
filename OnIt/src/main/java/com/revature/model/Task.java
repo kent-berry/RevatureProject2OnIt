@@ -27,6 +27,11 @@ public class Task {
 	private int reminder;
 	private boolean repeatable;
 	
+	private String taskLabel_fk;
+	
+	private Double latitude;
+	private Double longitude;
+	
 	//Constructors
 	
 	public Task() {
@@ -51,6 +56,28 @@ public class Task {
 		this.repeatable = repeatable;
 	}
 
+
+	public Task(String userId, String taskName, String notes, LocalDate dueDate, int reminder,
+			boolean repeatable, String taskLabel, Double latitude, Double longitude) {
+		super();
+		
+		this.id = UUID.randomUUID().toString();
+		
+		this.userId = userId;
+		this.taskName = taskName;
+		this.notes = notes;
+		
+		
+		this.dateCreated = LocalDate.now(); 
+		this.dueDate = dueDate;
+		
+		this.reminder = reminder;
+		this.repeatable = repeatable;
+		this.taskLabel_fk = taskLabel;
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
+
 	
 	
 	public Task(String id, String userId, String taskName, String notes, LocalDate dateCreated, LocalDate dueDate,
@@ -67,6 +94,23 @@ public class Task {
 		this.repeatable = repeatable;
 	}
 
+	public Task(String id, String userId, String taskName, String notes, LocalDate dateCreated, LocalDate dueDate,
+			LocalDate dateCompleted, int reminder, boolean repeatable, String taskLabel_fk, Double latitude, Double longitude) {
+		super();
+		this.id = id;
+		this.userId = userId;
+		this.taskName = taskName;
+		this.notes = notes;
+		this.dateCreated = dateCreated;
+		this.dueDate = dueDate;
+		this.dateCompleted = dateCompleted;
+		this.reminder = reminder;
+		this.repeatable = repeatable;
+		this.taskLabel_fk = taskLabel_fk;
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
+	
 	//Getters and setters
 	public String getId() {
 		return id;
@@ -138,6 +182,31 @@ public class Task {
 
 	public void setRepeatable(boolean repeatable) {
 		this.repeatable = repeatable;
+	}
+
+	
+	public String getTaskLabel_fk() {
+		return taskLabel_fk;
+	}
+
+	public void setTaskLabel_fk(String taskLabel_fk) {
+		this.taskLabel_fk = taskLabel_fk;
+	}
+
+	public Double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(Double latitude) {
+		this.latitude = latitude;
+	}
+
+	public Double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(Double longitude) {
+		this.longitude = longitude;
 	}
 
 	//toString

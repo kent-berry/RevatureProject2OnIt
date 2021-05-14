@@ -3921,3 +3921,1396 @@ java.lang.NullPointerException: Cannot invoke "org.springsource.ide.eclipse.comm
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+!SESSION 2021-05-14 13:36:23.842 -----------------------------------------------
+eclipse.buildId=4.10.0.202103111225
+java.version=15.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2021-05-14 13:36:30.862
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 13:36:30.862
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@65a03c19,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5f455d91,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 13:36:30.862
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@16c3e494,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4b682e71,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 13:36:30.862
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2f4c83f1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5a90ea5c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2021-05-14 13:36:31.966
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2021-05-14 13:36:31.966
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.eclipse.ui.navigator 2 0 2021-05-14 13:36:36.297
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2021-05-14 13:36:36.298
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-05-14 13:36:36.444
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\12092'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springsource.ide.eclipse.dashboard.ui 4 2 2021-05-14 13:36:47.929
+!MESSAGE Problems occurred when invoking code from plug-in: "org.springsource.ide.eclipse.dashboard.ui".
+!STACK 0
+java.lang.IllegalStateException: Job manager has been shut down.
+	at org.eclipse.core.internal.jobs.JobManager.schedule(JobManager.java:1242)
+	at org.eclipse.core.internal.jobs.InternalJob.schedule(InternalJob.java:385)
+	at org.eclipse.core.runtime.jobs.Job.schedule(Job.java:703)
+	at org.springsource.ide.eclipse.dashboard.internal.ui.feeds.FeedMonitor$4.done(FeedMonitor.java:126)
+	at org.eclipse.core.internal.jobs.JobListeners.doNotify(JobListeners.java:80)
+	at org.eclipse.core.internal.jobs.JobListeners.done(JobListeners.java:118)
+	at org.eclipse.core.internal.jobs.JobManager.endJob(JobManager.java:702)
+	at org.eclipse.core.internal.jobs.WorkerPool.endJob(WorkerPool.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:83)
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-05-14 13:36:47.930
+!MESSAGE An internal error occurred during: "Downloading RSS feeds".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.springsource.ide.eclipse.dashboard.internal.ui.IdeUiPlugin.getBundle()" because the return value of "org.springsource.ide.eclipse.dashboard.internal.ui.IdeUiPlugin.getDefault()" is null
+	at org.springsource.ide.eclipse.dashboard.internal.ui.util.IdeUiUtils.getVersion(IdeUiUtils.java:260)
+	at org.springsource.ide.eclipse.dashboard.internal.ui.editors.AggregateFeedJob.updateNotifications(AggregateFeedJob.java:231)
+	at org.springsource.ide.eclipse.dashboard.internal.ui.editors.AggregateFeedJob.run(AggregateFeedJob.java:179)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springsource.ide.eclipse.dashboard.ui 4 2 2021-05-14 13:36:47.952
+!MESSAGE Problems occurred when invoking code from plug-in: "org.springsource.ide.eclipse.dashboard.ui".
+!STACK 0
+java.lang.IllegalStateException: Job manager has been shut down.
+	at org.eclipse.core.internal.jobs.JobManager.schedule(JobManager.java:1242)
+	at org.eclipse.core.internal.jobs.InternalJob.schedule(InternalJob.java:385)
+	at org.eclipse.core.runtime.jobs.Job.schedule(Job.java:703)
+	at org.springsource.ide.eclipse.dashboard.internal.ui.feeds.FeedMonitor$5.done(FeedMonitor.java:153)
+	at org.eclipse.core.internal.jobs.JobListeners.doNotify(JobListeners.java:80)
+	at org.eclipse.core.internal.jobs.JobListeners.done(JobListeners.java:118)
+	at org.eclipse.core.internal.jobs.JobManager.endJob(JobManager.java:702)
+	at org.eclipse.core.internal.jobs.WorkerPool.endJob(WorkerPool.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:83)
+
+!ENTRY org.eclipse.core.jobs 4 2 2021-05-14 13:36:47.952
+!MESSAGE An internal error occurred during: "Downloading RSS feeds".
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.springsource.ide.eclipse.dashboard.internal.ui.IdeUiPlugin.getBundle()" because the return value of "org.springsource.ide.eclipse.dashboard.internal.ui.IdeUiPlugin.getDefault()" is null
+	at org.springsource.ide.eclipse.dashboard.internal.ui.util.IdeUiUtils.getVersion(IdeUiUtils.java:260)
+	at org.springsource.ide.eclipse.dashboard.internal.ui.editors.AggregateFeedJob.updateNotifications(AggregateFeedJob.java:231)
+	at org.springsource.ide.eclipse.dashboard.internal.ui.editors.AggregateFeedJob.run(AggregateFeedJob.java:179)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2021-05-14 13:37:19.644 -----------------------------------------------
+eclipse.buildId=4.10.0.202103111225
+java.version=15.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2021-05-14 13:37:28.006
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 13:37:28.006
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@236e6563,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@528070fe,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 13:37:28.006
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3df79197,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@53741683,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 13:37:28.006
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@36134f3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@52b7a3e1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2021-05-14 13:37:28.612
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2021-05-14 13:37:28.612
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.eclipse.ui.navigator 2 0 2021-05-14 13:37:32.573
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2021-05-14 13:37:32.574
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-05-14 13:37:32.610
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\12092'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:37:50.465
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:37:50.924
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:37:59.569
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:37:59.620
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:37:59.646
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 4 0 2021-05-14 13:39:07.275
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
+	at java.base/java.util.ImmutableCollections$MapN.<init>(ImmutableCollections.java:1019)
+	at java.base/java.util.Map.of(Map.java:1327)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.toLemMinXOptions(InitializationOptionsProvider.java:26)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:22)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:1)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLExtensionRegistry.getInitiatizationOptions(XMLExtensionRegistry.java:135)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLLanguageServer.getInitializationOptions(XMLLanguageServer.java:158)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$5(LanguageServerWrapper.java:352)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1146)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1769)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1756)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:39:15.337
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:39:15.340
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:39:19.552
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:39:19.555
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:39:28.448
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:39:28.769
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:39:29.008
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:39:29.013
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:39:29.025
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:39:59.912
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:40:00.154
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:40:01.708
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:40:01.740
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:40:01.749
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:40:01.754
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+!SESSION 2021-05-14 13:40:46.308 -----------------------------------------------
+eclipse.buildId=4.10.0.202103111225
+java.version=15.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2021-05-14 13:40:52.364
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 13:40:52.364
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4e0a5606,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@361a1e86,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 13:40:52.364
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@295e989,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@504216ff,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 13:40:52.364
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4ce4c097,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2aec09a3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2021-05-14 13:40:52.966
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2021-05-14 13:40:52.966
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.eclipse.ui.navigator 2 0 2021-05-14 13:40:56.893
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2021-05-14 13:40:56.958
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-05-14 13:40:56.976
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\12092'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 4 0 2021-05-14 13:41:32.317
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
+	at java.base/java.util.ImmutableCollections$MapN.<init>(ImmutableCollections.java:1019)
+	at java.base/java.util.Map.of(Map.java:1327)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.toLemMinXOptions(InitializationOptionsProvider.java:26)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:22)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:1)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLExtensionRegistry.getInitiatizationOptions(XMLExtensionRegistry.java:135)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLLanguageServer.getInitializationOptions(XMLLanguageServer.java:158)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$5(LanguageServerWrapper.java:352)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1146)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1769)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1756)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+!SESSION 2021-05-14 13:42:01.556 -----------------------------------------------
+eclipse.buildId=4.10.0.202103111225
+java.version=15.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2021-05-14 13:42:07.056
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 13:42:07.056
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@63236968,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4f6f7a86,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 13:42:07.056
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6ed78a5e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4e0a5606,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 13:42:07.056
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@361a1e86,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@295e989,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2021-05-14 13:42:07.661
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2021-05-14 13:42:07.662
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.eclipse.ui.navigator 2 0 2021-05-14 13:42:11.901
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2021-05-14 13:42:11.902
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-05-14 13:42:11.965
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\12092'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 4 0 2021-05-14 13:42:50.657
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at java.base/java.util.Objects.requireNonNull(Objects.java:208)
+	at java.base/java.util.ImmutableCollections$MapN.<init>(ImmutableCollections.java:1019)
+	at java.base/java.util.Map.of(Map.java:1327)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.toLemMinXOptions(InitializationOptionsProvider.java:26)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:22)
+	at org.eclipse.m2e.editor.lemminx.InitializationOptionsProvider.get(InitializationOptionsProvider.java:1)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLExtensionRegistry.getInitiatizationOptions(XMLExtensionRegistry.java:135)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLLanguageServer.getInitializationOptions(XMLLanguageServer.java:158)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$5(LanguageServerWrapper.java:352)
+	at java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1146)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1769)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1756)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1016)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1665)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1598)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+!SESSION 2021-05-14 13:43:41.183 -----------------------------------------------
+eclipse.buildId=4.10.0.202103111225
+java.version=15.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2021-05-14 13:43:47.265
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 13:43:47.265
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@52dfd7f5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5b5f48d5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 13:43:47.265
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@421c4c3e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@63236968,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 13:43:47.265
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4f6f7a86,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6ed78a5e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2021-05-14 13:43:47.971
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2021-05-14 13:43:47.971
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-05-14 13:43:52.672
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\12092'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui.navigator 2 0 2021-05-14 13:43:52.712
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2021-05-14 13:43:52.716
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 13:44:31.921
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 13:44:31.922
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@1c9ff678[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 13:44:31.925
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 13:44:31.953
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 13:44:35.016
+!MESSAGE Boot LS startup time from start to initialized: 3082ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 13:44:35.112
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.PLAIdhPlisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 13:44:35.116
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 13:44:35.119
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 13:44:35.121
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 13:44:35.121
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 13:44:35.128
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.PLAIdhPl => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 13:44:35.130
+!MESSAGE classpath=51 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 13:44:35.132
+!MESSAGE buffering callback sts4.classpath.PLAIdhPl OnIt false 51
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 13:44:35.133
+!MESSAGE executing callback sts4.classpath.PLAIdhPl 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 13:44:35.492
+!MESSAGE executing callback sts4.classpath.PLAIdhPl SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:56:29.327
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:56:29.652
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 13:56:29.662
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:09:43.726
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:09:43.731
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:10:25.552
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:10:25.555
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:11:27.672
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:11:27.675
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:43.033
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.PLAIdhPl
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:43.033
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.PLAIdhPl
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:43.034
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:43.035
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.PLAIdhPl => OK
+!SESSION 2021-05-14 14:11:45.014 -----------------------------------------------
+eclipse.buildId=4.10.0.202103111225
+java.version=15.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2021-05-14 14:11:50.800
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 14:11:50.800
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3f808ad9,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@37a74cf4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 14:11:50.800
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@40af3dd8,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@745c25ed,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-05-14 14:11:50.800
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4fb1bffd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@427c9a13,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2021-05-14 14:11:51.915
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2021-05-14 14:11:51.915
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:53.974
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:53.975
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@76969d46[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:53.978
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:54.057
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:57.102
+!MESSAGE Boot LS startup time from start to initialized: 3066ms
+
+!ENTRY org.eclipse.ui.navigator 2 0 2021-05-14 14:11:57.162
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.ui.navigator 2 0 2021-05-14 14:11:57.163
+!MESSAGE Can't find Navigator Content Descriptor with id: org.eclipse.jst.servlet.ui.EnhancedJavaRendering
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-05-14 14:11:57.212
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\12092'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:57.639
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.OsAeRnimisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:57.644
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:57.646
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:57.647
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:57.648
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.OsAeRnim => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:57.670
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:57.681
+!MESSAGE classpath=51 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:57.685
+!MESSAGE buffering callback sts4.classpath.OsAeRnim OnIt false 51
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:57.686
+!MESSAGE executing callback sts4.classpath.OsAeRnim 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:11:58.576
+!MESSAGE executing callback sts4.classpath.OsAeRnim SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:17:24.723
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:17:25.130
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:17:25.141
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:17:38.434
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:17:38.440
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:17:44.060
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.OsAeRnim
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:17:44.061
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.OsAeRnim
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:17:44.062
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:17:44.062
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.OsAeRnim => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:03.331
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:03.332
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@76969d46[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:03.333
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:19:03.448
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:19:03.450
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:05.120
+!MESSAGE Boot LS startup time from start to initialized: 1787ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:05.208
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.fDsQKaGSisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:05.209
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:05.209
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:05.210
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:05.210
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.fDsQKaGS => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:05.211
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:05.214
+!MESSAGE classpath=51 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:05.217
+!MESSAGE buffering callback sts4.classpath.fDsQKaGS OnIt false 51
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:05.217
+!MESSAGE executing callback sts4.classpath.fDsQKaGS 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:05.566
+!MESSAGE executing callback sts4.classpath.fDsQKaGS SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:19:14.744
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:19:14.747
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:19:19.053
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:19:19.056
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:20.666
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.fDsQKaGS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:20.666
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.fDsQKaGS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:20.667
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:19:20.668
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.fDsQKaGS => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:15.927
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:15.928
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@76969d46[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:15.929
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:17.817
+!MESSAGE Boot LS startup time from start to initialized: 1888ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:17.911
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.rqbPXoDbisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:17.912
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:17.912
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:17.913
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:17.913
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:17.914
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.rqbPXoDb => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:17.917
+!MESSAGE classpath=51 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:17.919
+!MESSAGE buffering callback sts4.classpath.rqbPXoDb OnIt false 51
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:17.920
+!MESSAGE executing callback sts4.classpath.rqbPXoDb 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:18.280
+!MESSAGE executing callback sts4.classpath.rqbPXoDb SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:20:22.391
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:20:22.394
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:24.976
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.rqbPXoDb
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:24.977
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.rqbPXoDb
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:24.978
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:24.978
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.rqbPXoDb => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:26.441
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:26.442
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@76969d46[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:26.442
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:28.564
+!MESSAGE Boot LS startup time from start to initialized: 2121ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:28.648
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.YAMmFMiYisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:28.649
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:28.650
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:28.651
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:28.651
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:28.653
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.YAMmFMiY => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:28.655
+!MESSAGE classpath=51 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:28.658
+!MESSAGE buffering callback sts4.classpath.YAMmFMiY OnIt false 51
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:28.659
+!MESSAGE executing callback sts4.classpath.YAMmFMiY 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:29.023
+!MESSAGE executing callback sts4.classpath.YAMmFMiY SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:20:48.349
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:20:48.353
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:49.326
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.YAMmFMiY
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:49.326
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.YAMmFMiY
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:49.328
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:49.330
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.YAMmFMiY => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:53.288
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:53.289
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@76969d46[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:53.289
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:55.581
+!MESSAGE Boot LS startup time from start to initialized: 2291ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:55.699
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.cPFxCiTmisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:55.700
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:55.701
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:55.702
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:55.702
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.cPFxCiTm => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:55.704
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:55.708
+!MESSAGE classpath=51 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:55.710
+!MESSAGE buffering callback sts4.classpath.cPFxCiTm OnIt false 51
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:55.711
+!MESSAGE executing callback sts4.classpath.cPFxCiTm 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:20:56.086
+!MESSAGE executing callback sts4.classpath.cPFxCiTm SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:21:57.381
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:21:57.627
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:21:57.994
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:21:58.864
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:21:58.867
+!MESSAGE classpath=51 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:21:58.870
+!MESSAGE buffering callback sts4.classpath.cPFxCiTm OnIt false 51
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:21:58.870
+!MESSAGE executing callback sts4.classpath.cPFxCiTm 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:21:58.911
+!MESSAGE executing callback sts4.classpath.cPFxCiTm SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:21:59.996
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:22:00.073
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:22:00.088
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:22:00.101
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:22:14.314
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.cPFxCiTm
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:22:14.315
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.cPFxCiTm
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:22:14.316
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:22:14.316
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.cPFxCiTm => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:26:37.030
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:26:37.030
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@76969d46[org.springframework.tooling.boot.ls:1.25.0.202103111026(id=555)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:26:37.031
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.eclipse.lsp4e 2 0 2021-05-14 14:26:38.760
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2086)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:26:38.768
+!MESSAGE Boot LS startup time from start to initialized: 1736ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:26:38.845
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.izgoCNrNisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:26:38.846
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:26:38.846
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:26:38.847
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:26:38.847
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.izgoCNrN => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:26:38.848
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:26:38.851
+!MESSAGE classpath=51 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:26:38.853
+!MESSAGE buffering callback sts4.classpath.izgoCNrN OnIt false 51
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:26:38.853
+!MESSAGE executing callback sts4.classpath.izgoCNrN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:26:39.153
+!MESSAGE executing callback sts4.classpath.izgoCNrN SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:27:45.709
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:27:45.713
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:29:42.566
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:29:42.569
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:30:26.912
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:30:26.915
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:31:11.166
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:31:11.169
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:45:09.794
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:45:09.797
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:45:29.324
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:45:29.327
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:46:12.642
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:46:12.645
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:46:13.720
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:46:13.724
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:46:14.795
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:46:14.798
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:47:28.215
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:47:28.218
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:48:55.792
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:48:55.795
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:49:01.563
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:49:01.566
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:54:06.897
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:54:06.899
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:56:39.755
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:56:39.758
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:56:58.502
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:56:58.771
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:56:59.238
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:56:59.245
+!MESSAGE classpath=51 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:56:59.247
+!MESSAGE buffering callback sts4.classpath.izgoCNrN OnIt false 51
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:56:59.247
+!MESSAGE executing callback sts4.classpath.izgoCNrN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 14:56:59.262
+!MESSAGE executing callback sts4.classpath.izgoCNrN SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:57:00.503
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:57:00.546
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:57:00.556
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 14:57:00.561
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:01:00.693
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:01:00.697
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:01:13.985
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:01:14.299
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 15:01:14.843
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 15:01:14.847
+!MESSAGE classpath=51 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 15:01:14.849
+!MESSAGE buffering callback sts4.classpath.izgoCNrN OnIt false 51
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 15:01:14.850
+!MESSAGE executing callback sts4.classpath.izgoCNrN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-05-14 15:01:14.877
+!MESSAGE executing callback sts4.classpath.izgoCNrN SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:01:15.635
+!MESSAGE The artifact org.hibernate:hibernate-validator:jar:6.0.10.Final has been relocated to org.hibernate.validator:hibernate-validator:jar:6.0.10.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:01:15.697
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:01:15.708
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:01:15.713
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:03:29.248
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:03:29.252
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:03:50.360
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:03:50.364
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:03:55.468
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:03:55.471
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.lsp4e 2 0 2021-05-14 15:04:46.825
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2086)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:04:56.689
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:04:56.692
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:05:00.004
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:05:00.007
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.lsp4e 2 0 2021-05-14 15:06:23.037
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2086)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:06:49.089
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:06:49.092
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:07:54.217
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:07:54.219
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:08:05.978
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:08:05.980
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:09:39.690
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-05-14 15:09:39.694
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!

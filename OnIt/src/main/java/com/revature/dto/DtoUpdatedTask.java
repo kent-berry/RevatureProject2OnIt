@@ -16,6 +16,10 @@ public class DtoUpdatedTask {
 	private int reminder;
 	private boolean repeatable;
 	
+	private String taskLabel_fk;
+	private double latitude;
+	private double longitude;
+	
 	public DtoUpdatedTask() {
 		super();
 	}
@@ -91,5 +95,29 @@ public class DtoUpdatedTask {
 	public void setRepeatable(boolean repeatable) {
 		this.repeatable = repeatable;
 	}
-	
+
+	public String getTaskLabel_fk() {
+		return taskLabel_fk;
+	}
+
+	public void setTaskLabel_fk(String taskLabel_fk) {
+		this.taskLabel_fk = taskLabel_fk;
+	}
+
+	public double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+
+	public double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+
 }

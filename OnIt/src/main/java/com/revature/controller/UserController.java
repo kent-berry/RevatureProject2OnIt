@@ -59,19 +59,20 @@ public class UserController  {
 	
 	
 	@PostMapping(value = "/register")
-	public  @ResponseBody Serializable register(@RequestBody DtoRegisterUser dtoRegisterUser) {
+	public  @ResponseBody User register(@RequestBody DtoRegisterUser dtoRegisterUser) {
 		String hashedPass = "";
 		try {
 			hashedPass = hashPass(dtoRegisterUser.getPassword());
 		} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
 			e.printStackTrace();
-			return false;
+			return null;
 		}
 		
 		//Check if user is already registered by trying to login
 		if(userservice.login(dtoRegisterUser.getEmail(), hashedPass) == null) {
 			User newUser = new User(dtoRegisterUser.getFirstname(), dtoRegisterUser.getLastname(), dtoRegisterUser.getEmail(), hashedPass);
-			return userservice.register(newUser);
+			userservice.register(newUser);
+			return newUser;
 		} else {
 			return null;
 		}
@@ -158,9 +159,7 @@ public class UserController  {
 
 	@PostMapping(value = "/updateUserInfo")
 	public @ResponseBody boolean updateUserInfo(@RequestBody DtoUpdatedUser dtoUpdatedUser) {
-		if(httpsession.getAttribute("loggedinUser") != null) {
-			//We convert from DtoUpdatedUser to User
-			
+		if(httpsession.getAttribute("loggedinUser") != null) {			
 			//First convert password into hashed password only is isPasswordChanging.equals("y")
 			if(dtoUpdatedUser.getIsPasswordChanging().equals("y")) {
 				String hashedPass = "";
@@ -191,32 +190,52 @@ public class UserController  {
 	
 	
 	@PostMapping(value = "/addTask")
-	public @ResponseBody Serializable createTask(@RequestBody DtoTask dtoTask) {
+	public @ResponseBody Task createTask(@RequestBody DtoTask dtoTask) {
 		// Create task out of the request, will use save() in dao
 		if(httpsession.getAttribute("loggedinUser") != null) {
 			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
-			Task newTask = new Task(loggedinUser.getId(), dtoTask.getTaskName(), dtoTask.getNotes(), LocalDate.parse(dtoTask.getDueDate()), dtoTask.getReminder(), dtoTask.isRepeatable());
-			return userservice.createTask(newTask);
+			Task newTask = new Task(loggedinUser.getId(), dtoTask.getTaskName(), dtoTask.getNotes(), LocalDate.parse(dtoTask.getDueDate()), 
+					dtoTask.getReminder(), dtoTask.isRepeatable(),
+					dtoTask.getTaskLabel(), dtoTask.getLatitude(), dtoTask.getLongitude());
+			
+					userservice.createTask(newTask);
+					
+					return newTask;
 		} else {
 			return null;
 		}
 	}
 
 	@PostMapping(value = "/updateTask")
-	public @ResponseBody boolean updateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
+	public @ResponseBody Task updateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
 		// we receive an updated task from the frontend, it should have the id of the task
 		if(httpsession.getAttribute("loggedinUser") != null) {
 			//We convert from DtoUpdatedTask to Task
-			LocalDate dueDate = dtoUpdatedTask.getDueDate().equals("") ? null : LocalDate.parse(dtoUpdatedTask.getDueDate());
-			LocalDate dateCompleted = dtoUpdatedTask.getDateCompleted().equals("") ? null : LocalDate.parse(dtoUpdatedTask.getDateCompleted());
+			System.out.println("dateCompleted: " + dtoUpdatedTask.getDateCompleted());
+			
+			LocalDate dueDate = null;
+			if(dtoUpdatedTask.getDueDate() != null) {
+				dueDate = LocalDate.parse(dtoUpdatedTask.getDueDate());
+			} 
+			
+			LocalDate dateCompleted = null;
+			if(dtoUpdatedTask.getDateCompleted() != null) {
+				dateCompleted = LocalDate.parse(dtoUpdatedTask.getDateCompleted());
+			}
 			
 			Task updatedTask = new Task(dtoUpdatedTask.getId(), dtoUpdatedTask.getUserId(),
 										dtoUpdatedTask.getTaskName(), dtoUpdatedTask.getNotes(),
 										LocalDate.parse(dtoUpdatedTask.getDateCreated()), dueDate, dateCompleted,
-										dtoUpdatedTask.getReminder(), dtoUpdatedTask.isRepeatable());
-			return userservice.updateTask(updatedTask);
+										dtoUpdatedTask.getReminder(), dtoUpdatedTask.isRepeatable(),
+										dtoUpdatedTask.getTaskLabel_fk(), dtoUpdatedTask.getLatitude(), dtoUpdatedTask.getLongitude());
+			boolean couldUpdate = userservice.updateTask(updatedTask);
+			if (couldUpdate) {
+				return updatedTask;
+			} else {
+				return null;
+			}
 		} else {
-			return false;
+			return null;
 		}
 	}
 	
@@ -242,12 +261,12 @@ public class UserController  {
 	}
 
 	@PostMapping(value = "/completeTask")
-	public @ResponseBody boolean completeTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {  
+	public @ResponseBody Task completeTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {  
 		if(httpsession.getAttribute("loggedinUser") != null) {
 			dtoUpdatedTask.setDateCompleted(LocalDate.now().toString());
 			return updateTask(dtoUpdatedTask);
 		} else {
-			return false;
+			return null;
 		}
 	}
 
@@ -263,11 +282,11 @@ public class UserController  {
 
 	
 	@PostMapping(value = "/duedateTask")
-	public @ResponseBody boolean duedateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) { 
+	public @ResponseBody Task duedateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) { 
 		if(httpsession.getAttribute("loggedinUser") != null) {
 			return updateTask(dtoUpdatedTask);
 		} else {
-			return false;
+			return null;
 		}
 	}
 
@@ -283,11 +302,11 @@ public class UserController  {
 	}
 
 	@PostMapping(value = "/setRepeatableTask")
-	public @ResponseBody boolean setRepeatableTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
+	public @ResponseBody Task setRepeatableTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
 		if(httpsession.getAttribute("loggedinUser") != null) {
 			return updateTask(dtoUpdatedTask);
 		} else {
-			return false;
+			return null;
 		}
 		
 	}

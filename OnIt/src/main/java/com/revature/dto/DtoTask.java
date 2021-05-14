@@ -8,6 +8,9 @@ public class DtoTask {
 	private String dueDate; //"2016-08-16"
 	private int reminder;
 	private boolean repeatable;
+	private String taskLabel;
+	private double latitude;
+	private double longitude;
 	
 	public DtoTask() {
 		super();
@@ -51,6 +54,32 @@ public class DtoTask {
 
 	public void setRepeatable(boolean repeatable) {
 		this.repeatable = repeatable;
+	}
+	
+	
+
+	public String getTaskLabel() {
+		return taskLabel;
+	}
+
+	public void setTaskLabel(String taskLabel) {
+		this.taskLabel = taskLabel;
+	}
+
+	public double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+
+	public double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
 	}
 
 	@Override
