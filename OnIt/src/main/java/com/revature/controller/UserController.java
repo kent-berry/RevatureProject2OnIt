@@ -202,12 +202,17 @@ public class UserController implements IUserController {
 	
 	
 	@PostMapping(value = "/addTask")
-	public @ResponseBody Serializable createTask(@RequestBody DtoTask dtoTask) {
+	public @ResponseBody Task createTask(@RequestBody DtoTask dtoTask) {
 		// Create task out of the request, will use save() in dao
 		if(httpsession.getAttribute("loggedinUser") != null) {
 			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
-			Task newTask = new Task(loggedinUser.getId(), dtoTask.getTaskName(), dtoTask.getNotes(), LocalDate.parse(dtoTask.getDueDate()), dtoTask.getReminder(), dtoTask.isRepeatable());
-			return userservice.createTask(newTask);
+			Task newTask = new Task(loggedinUser.getId(), dtoTask.getTaskName(), dtoTask.getNotes(), LocalDate.parse(dtoTask.getDueDate()), 
+					dtoTask.getReminder(), dtoTask.isRepeatable(),
+					dtoTask.getTaskLabel(), dtoTask.getLatitude(), dtoTask.getLongitude());
+			
+					userservice.createTask(newTask);
+					
+					return newTask;
 		} else {
 			return null;
 		}
@@ -224,7 +229,8 @@ public class UserController implements IUserController {
 			Task updatedTask = new Task(dtoUpdatedTask.getId(), dtoUpdatedTask.getUserId(),
 										dtoUpdatedTask.getTaskName(), dtoUpdatedTask.getNotes(),
 										LocalDate.parse(dtoUpdatedTask.getDateCreated()), dueDate, dateCompleted,
-										dtoUpdatedTask.getReminder(), dtoUpdatedTask.isRepeatable());
+										dtoUpdatedTask.getReminder(), dtoUpdatedTask.isRepeatable(),
+										dtoUpdatedTask.getTaskLabel_fk(), dtoUpdatedTask.getLatitude(), dtoUpdatedTask.getLongitude());
 			return userservice.updateTask(updatedTask);
 		} else {
 			return false;
