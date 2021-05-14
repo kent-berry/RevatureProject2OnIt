@@ -38,7 +38,7 @@ import com.revature.service.UserService;
 
 @Configuration
 @RestController
-@CrossOrigin(origins = {"http://localhost:4200"}, allowCredentials = "true")
+
 public class UserController implements IUserController {
 
 	//Method for Hashing password
