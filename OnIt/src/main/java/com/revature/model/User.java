@@ -1,6 +1,5 @@
 package com.revature.model;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -19,7 +18,7 @@ public class User {
 	private String lastName;
 	private String email;
 	private String password;
-	private Date accountCreated;
+	private LocalDate accountCreated;
 	private int receiveEmailReminders;  
 	private int goal;
 	
