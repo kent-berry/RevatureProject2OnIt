@@ -147,7 +147,7 @@ Body-raw-json:
 9) Test /addTask endpoint?
 Post url: http://142.93.205.142:8090/OnItJson/addTask 
 POST
-Body-raw-json: Please change the values for taskName, notes, reminder, repeatable
+Body-raw-json: Please change the values for taskName, notes, dueDate, reminder, repeatable
                   {
 		    "taskName":"visit friends in CA",
 		    "notes": "",
