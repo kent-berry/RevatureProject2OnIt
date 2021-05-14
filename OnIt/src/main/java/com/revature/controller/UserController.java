@@ -70,19 +70,20 @@ public class UserController implements IUserController {
 	
 	
 	@PostMapping(value = "/register")
-	public  @ResponseBody Serializable register(@RequestBody DtoRegisterUser dtoRegisterUser) {
+	public  @ResponseBody User register(@RequestBody DtoRegisterUser dtoRegisterUser) {
 		String hashedPass = "";
 		try {
 			hashedPass = hashPass(dtoRegisterUser.getPassword());
 		} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
 			e.printStackTrace();
-			return false;
+			return null;
 		}
 		
 		//Check if user is already registered by trying to login
 		if(userservice.login(dtoRegisterUser.getEmail(), hashedPass) == null) {
 			User newUser = new User(dtoRegisterUser.getFirstname(), dtoRegisterUser.getLastname(), dtoRegisterUser.getEmail(), hashedPass);
-			return userservice.register(newUser);
+			userservice.register(newUser);
+			return newUser;
 		} else {
 			return null;
 		}
