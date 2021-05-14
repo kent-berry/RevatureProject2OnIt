@@ -93,5 +93,11 @@ public class UserService implements IUserService {
 	public List<Task> viewDuedate(String userId, String upperBoundDate) {
 		return taskdao.selectDuedate(userId, upperBoundDate);
 	}
+
+	@Override
+	public List<Task> viewLabel(String labelId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

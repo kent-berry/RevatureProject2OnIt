@@ -253,15 +253,7 @@ public class UserController implements IUserController {
 		return updateTask(dtoUpdatedTask);
 	}
 
-	@GetMapping(value = "/viewCompleted")
-	public List<Task> viewCompleted() {
-		if(httpsession.getAttribute("loggedinUser") != null) {
-			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
-			return userservice.viewCompleted(loggedinUser.getId());
-		} else {
-			return null;
-		}
-	}
+	
 
 	
 
@@ -304,6 +296,41 @@ public class UserController implements IUserController {
 			return false;
 		}
 		
+	}
+
+
+	@Override
+	public boolean duedateTask(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean viewDuedate(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public boolean setRepeatableTask(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public Object viewProgress(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Object viewPastProgressGraph(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
