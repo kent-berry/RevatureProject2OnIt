@@ -96,8 +96,8 @@ public class UserDao implements IUserDao {
 	public boolean deleteSessionToken(String sessionToken) {
 		
 		try {
-			String sql = "UPDATE users SET sessionToken = (?) WHERE sessionToken = (?)";
-			Query q = sessionFactory.getCurrentSession().createNativeQuery(sql).setParameter(1, null).setParameter(2, sessionToken);
+			String sql = "UPDATE users SET sessiontoken = (?) WHERE sessiontoken = (?)";
+			Query q = sessionFactory.getCurrentSession().createNativeQuery(sql).setParameter(1, 0).setParameter(2, sessionToken);
 			q.executeUpdate();
 		} catch (HibernateException h) {
 			return false;
