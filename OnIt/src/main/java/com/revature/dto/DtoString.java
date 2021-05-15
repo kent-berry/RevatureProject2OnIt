@@ -1,5 +1,8 @@
 package com.revature.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class DtoString {
 	private String formString;
 
