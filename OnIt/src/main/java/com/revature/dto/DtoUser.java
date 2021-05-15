@@ -18,7 +18,7 @@ public class DtoUser {
 	private int receiveEmailReminders;  
 	private int goal;
 	
-	private String accountCreatedMonth;
+	private int accountCreatedMonth;
 	private int accountCreatedDay;
 	private int accountCreatedYear;
 	
@@ -102,12 +102,12 @@ public class DtoUser {
 	}
 
 
-	public String getAccountCreatedMonth() {
+	public int getAccountCreatedMonth() {
 		return accountCreatedMonth;
 	}
 
 
-	public void setAccountCreatedMonth(String accountCreatedMonth) {
+	public void setAccountCreatedMonth(int accountCreatedMonth) {
 		this.accountCreatedMonth = accountCreatedMonth;
 	}
 
