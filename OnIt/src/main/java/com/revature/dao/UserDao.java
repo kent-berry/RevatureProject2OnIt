@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.revature.model.Task;
+import com.revature.dto.DtoUser;
 import com.revature.model.User;
 
 @EnableTransactionManagement
@@ -93,17 +93,16 @@ public class UserDao implements IUserDao {
 
 	
 	@Transactional
-	public boolean deleteSessionToken(String sessionToken) {
+	public boolean deleteSessionToken(DtoUser dtoUser) {
 		
 		try {
-			String sql = "UPDATE users SET sessiontoken = (?) WHERE sessiontoken = (?)";
-			Query q = sessionFactory.getCurrentSession().createNativeQuery(sql).setParameter(1, 0).setParameter(2, sessionToken);
-			q.executeUpdate();
+			sessionFactory.getCurrentSession().update(dtoUser);
+			return true;
 		} catch (HibernateException h) {
-			return false;
+			
 		}
 		
-		return true;
+		return false;
 		
 	}
 	
@@ -120,6 +119,8 @@ public class UserDao implements IUserDao {
 		}
 		
 	}
+
+	
 
 	
 	

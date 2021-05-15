@@ -6,8 +6,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.revature.model.*;
-import com.revature.dao.*;
+import com.revature.dao.ITaskDao;
+import com.revature.dao.IUserDao;
+import com.revature.dao.TaskDao;
+import com.revature.dao.UserDao;
+import com.revature.dto.DtoUser;
+import com.revature.model.Task;
+import com.revature.model.User;
 
 @Service("UserService")
 public class UserService implements IUserService {
@@ -116,9 +121,9 @@ public class UserService implements IUserService {
 		return u;
 	}
 	
-	public boolean deleteSessionToken(String sessionToken) {
+	public boolean deleteSessionToken(DtoUser dtoUser) {
 		
-		userdao.deleteSessionToken(sessionToken);
+		userdao.deleteSessionToken(dtoUser);
 		return true;
 		
 	}

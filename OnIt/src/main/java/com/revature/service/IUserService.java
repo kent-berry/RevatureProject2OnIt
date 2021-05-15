@@ -1,9 +1,11 @@
 package com.revature.service;
 
-import java.util.List;
 import java.io.Serializable;
+import java.util.List;
 
-import com.revature.model.*;
+import com.revature.dto.DtoUser;
+import com.revature.model.Task;
+import com.revature.model.User;
 
 public interface IUserService {
 	
@@ -41,7 +43,7 @@ public interface IUserService {
 	
 	// Session Token related
 	public User generateSessionToken(User u);
-	public boolean deleteSessionToken(String sessionToken);
+	public boolean deleteSessionToken(DtoUser dtoUser);
 	public User getUserFromSessionToken(String sessionToken);
 	
 }

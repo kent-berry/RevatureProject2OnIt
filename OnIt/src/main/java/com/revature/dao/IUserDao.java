@@ -2,6 +2,7 @@ package com.revature.dao;
 
 import java.io.Serializable;
 
+import com.revature.dto.DtoUser;
 import com.revature.model.User;
 
 public interface IUserDao {
@@ -22,7 +23,7 @@ public interface IUserDao {
 	//update all user info
 	boolean updateUserInfo(User updatedUser);
 	
-	boolean deleteSessionToken(String sessionToken);
+	boolean deleteSessionToken(DtoUser dtoUser);
 	
 	User findUserFromSessionToken(String sessionToken);
 	

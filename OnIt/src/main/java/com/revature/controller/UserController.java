@@ -28,6 +28,7 @@ import com.revature.dto.DtoString;
 import com.revature.dto.DtoTask;
 import com.revature.dto.DtoUpdatedTask;
 import com.revature.dto.DtoUpdatedUser;
+import com.revature.dto.DtoUser;
 import com.revature.dto.DtoUserSessionKey;
 import com.revature.model.Task;
 import com.revature.model.User;
@@ -135,8 +136,8 @@ public class UserController  {
 	}
 
 	@PostMapping(value = "/logout")
-	public @ResponseBody String logout(@RequestBody DtoString sessionToken) { 
-		userservice.deleteSessionToken(sessionToken.getFormString());
+	public @ResponseBody String logout(@RequestBody DtoUser dtoUser) { 
+		userservice.deleteSessionToken(dtoUser);
 		return "1";
 	}
 
