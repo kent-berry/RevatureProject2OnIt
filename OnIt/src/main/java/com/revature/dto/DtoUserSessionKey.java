@@ -8,8 +8,9 @@ public class DtoUserSessionKey {
 	
 	
 	
-	public DtoUserSessionKey(String id, String email, String sessionKey) {
+	public DtoUserSessionKey(String id, String email, String sessionToken) {
 		super();
+		this.id = id;
 		this.email = email;
 		this.sessionToken = sessionToken;
 	}
