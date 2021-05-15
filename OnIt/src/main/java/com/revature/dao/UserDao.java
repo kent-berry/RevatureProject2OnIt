@@ -3,16 +3,18 @@ package com.revature.dao;
 import java.io.Serializable;
 import java.util.List;
 
-
 import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ImportResource;
 
+import com.revature.model.Task;
 import com.revature.model.User;
 
 @EnableTransactionManagement
@@ -81,9 +83,44 @@ public class UserDao implements IUserDao {
 	@Transactional
 	@Override
 	public boolean updateUserInfo(User updatedUser) {
-		sessionFactory.getCurrentSession().saveOrUpdate(updatedUser);
+		try {
+			sessionFactory.getCurrentSession().saveOrUpdate(updatedUser);
+		} catch (HibernateException h) {
+			return false;
+		}
 		return true;
 	}
 
+	
+	@Transactional
+	public User updateUserSessionToken(User u, String newValue) {
+		
+		try {
+			String sql = "UPDATE users SET sessionToken = (?) WHERE email = (?)";
+			Query q = sessionFactory.getCurrentSession().createNativeQuery(sql).setParameter(1, newValue).setParameter(2, u.getEmail());
+			q.executeUpdate();
+		} catch (HibernateException h) {
+			return u;
+		}
+		
+		return u;
+		
+	}
+	
+	@Transactional
+	public User findUserFromSessionToken(String sessionToken) {
+		
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(User.class);
+		criteria.add(Restrictions.eq("sessionToken", sessionToken));
+		List<User> results = criteria.list();
+		if(results.isEmpty()) {
+			return null;
+		} else {
+			return results.get(0);
+		}
+		
+	}
+
+	
 	
 }

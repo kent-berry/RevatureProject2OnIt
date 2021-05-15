@@ -36,4 +36,12 @@ public interface IUserService {
 	// Adding due date, filtering based on duedate
 	List<Task> viewDuedate(String userId, String upperBoundDate);
 	
+	
+	
+	
+	// Session Token related
+	public User generateSessionToken(User u);
+	public User deleteSessionToken(User u);
+	public User getUserFromSessionToken(String sessionToken);
+	
 }

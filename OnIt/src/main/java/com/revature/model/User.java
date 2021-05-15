@@ -22,6 +22,9 @@ public class User {
 	private int receiveEmailReminders;  
 	private int goal;
 	
+	String sessionToken;
+	
+	
 	//constructors
 	public User() {
 		super();
@@ -119,7 +122,17 @@ public class User {
 	public void setReceiveEmailReminders(int receiveEmailReminders) {
 		this.receiveEmailReminders = receiveEmailReminders;
 	}
+	
+	
 
+
+	public String getSessionToken() {
+		return sessionToken;
+	}
+
+	public void setSessionToken(String sessionToken) {
+		this.sessionToken = sessionToken;
+	}
 
 	@Override
 	public String toString() {

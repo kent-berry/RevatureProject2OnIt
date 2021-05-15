@@ -40,20 +40,19 @@ public class UserController  {
 		return enc.encodeToString(hash);
 	}
 		
-	@Autowired
-	private HttpSession httpsession;
+	
 	
 	@Autowired
 	private IUserService userservice = new UserService();
 	
 	
 	@GetMapping(value = "/checkActiveSession")
-	public  @ResponseBody User checkActiveSession() {
-		if(httpsession.getAttribute("id") != null) {
-			String id = (String) httpsession.getAttribute("id");
-			DtoString dtoString = new DtoString();
-			dtoString.setFormString(id);
-			return getUserById(dtoString);
+	public  @ResponseBody User checkActiveSession(@RequestBody String sessionToken) {
+		
+		User authorizedUser = userservice.getUserFromSessionToken(sessionToken);
+		
+		if(authorizedUser != null) {
+			return authorizedUser;
 		} else {
 			return null;
 		}
@@ -85,6 +84,12 @@ public class UserController  {
 		return loggingUser;
 	}
 	
+	
+	/*
+	 * Login --> If credentials match, generate a unique sessionToken for a User
+	 * 				return this User (which also contains the sessionToken)
+	 */
+	
 	@PostMapping(value = "/login")
 	public @ResponseBody User login(@RequestBody DtoLoginUser dtoLoginUser) {
 		String hashedPass = "";
@@ -98,23 +103,23 @@ public class UserController  {
 		
 		User loggingUser = userservice.login(dtoLoginUser.getEmail(), hashedPass);
 		if (loggingUser != null) {
-			httpsession.setAttribute("loggedinUser", loggingUser);
-			httpsession.setAttribute("id", loggingUser.getId());
+			User userWithSessionToken = userservice.generateSessionToken(loggingUser);
+			// This value will be null if after x attempts, a unique session token could not be generated
+			return userWithSessionToken;             
 		}
 		return loggingUser;
 	}
 
-	@GetMapping(value = "/logout")
-	public @ResponseBody boolean logout() { 
-		httpsession.setAttribute("loggedinUser", null);
-		httpsession.invalidate();
+	@PostMapping(value = "/logout")
+	public @ResponseBody boolean logout(@RequestBody User u) { 
+		userservice.deleteSessionToken(u);
 		return true;
 	}
 
 	@PostMapping(value = "/deleteAccount")
-	public boolean unregister(@RequestBody DtoPassword dtoPassword) {
-		if(httpsession.getAttribute("loggedinUser") != null) {
-			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+	public boolean unregister(@RequestBody DtoPassword dtoPassword, @RequestBody User u) {
+		if (u.getSessionToken() != null) {
+			User loggedinUser = u;
 			String hashedPass = "";
 			try {
 				hashedPass = hashPass(dtoPassword.getPassword());
@@ -133,9 +138,9 @@ public class UserController  {
 	}
 
 	@GetMapping(value = "/downloadMyData")
-	public @ResponseBody String downloadMyData() {
-		if(httpsession.getAttribute("loggedinUser") != null) {
-			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+	public @ResponseBody String downloadMyData(@RequestBody User u) {
+		if(u.getSessionToken() != null) {
+			User loggedinUser = u;
 			return userservice.downloadMyData(loggedinUser.getEmail(), loggedinUser.getPassword());
 		} else {
 			return "No user data can be retreived, make sure user is registered and loggedin"; 
@@ -144,9 +149,9 @@ public class UserController  {
 
 	
 	@PostMapping(value = "/updateEmailReminders")
-	public @ResponseBody boolean receiveEmailReminders(@RequestBody DtoInteger dtoInteger) {
-		if(httpsession.getAttribute("loggedinUser") != null) {
-			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+	public @ResponseBody boolean receiveEmailReminders(@RequestBody DtoInteger dtoInteger, @RequestBody User u) {
+		if(u.getSessionToken() != null) {
+			User loggedinUser = u;
 			loggedinUser.setReceiveEmailReminders(dtoInteger.getFormInteger());
 			return userservice.receiveEmailReminders(loggedinUser);
 		} else {
@@ -155,9 +160,9 @@ public class UserController  {
 	}
 	
 	@PostMapping(value = "/updateDailyGoals")
-	public @ResponseBody boolean setDailyGoals(@RequestBody DtoInteger dtoInteger) {
-		if(httpsession.getAttribute("loggedinUser") != null) {
-			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+	public @ResponseBody boolean setDailyGoals(@RequestBody DtoInteger dtoInteger, @RequestBody User u) {
+		if(u.getSessionToken() != null) {
+			User loggedinUser = u;
 			loggedinUser.setGoal(dtoInteger.getFormInteger());
 			return userservice.setDailyGoals(loggedinUser);
 		} else {
@@ -166,8 +171,8 @@ public class UserController  {
 	}
 
 	@PostMapping(value = "/updateUserInfo")
-	public @ResponseBody boolean updateUserInfo(@RequestBody DtoUpdatedUser dtoUpdatedUser) {
-		if(httpsession.getAttribute("loggedinUser") != null) {			
+	public @ResponseBody boolean updateUserInfo(@RequestBody DtoUpdatedUser dtoUpdatedUser, @RequestBody User u) {
+		if(u.getSessionToken() != null) {			
 			//First convert password into hashed password only is isPasswordChanging.equals("y")
 			if(dtoUpdatedUser.getIsPasswordChanging().equals("y")) {
 				String hashedPass = "";
@@ -198,10 +203,10 @@ public class UserController  {
 	
 	
 	@PostMapping(value = "/addTask")
-	public @ResponseBody Task createTask(@RequestBody DtoTask dtoTask) {
+	public @ResponseBody Task createTask(@RequestBody DtoTask dtoTask, @RequestBody User u) {
 		// Create task out of the request, will use save() in dao
-		if(httpsession.getAttribute("loggedinUser") != null) {
-			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+		if(u.getSessionToken() != null) {
+			User loggedinUser = u;
 			Task newTask = new Task(loggedinUser.getId(), dtoTask.getTaskName(), dtoTask.getNotes(), LocalDate.parse(dtoTask.getDueDate()), 
 					dtoTask.getReminder(), dtoTask.isRepeatable(),
 					dtoTask.getTaskLabel(), dtoTask.getLatitude(), dtoTask.getLongitude());
@@ -215,9 +220,9 @@ public class UserController  {
 	}
 
 	@PostMapping(value = "/updateTask")
-	public @ResponseBody Task updateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
+	public @ResponseBody Task updateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask, @RequestBody User u) {
 		// we receive an updated task from the frontend, it should have the id of the task
-		if(httpsession.getAttribute("loggedinUser") != null) {
+		if(u.getSessionToken() != null) {
 			//We convert from DtoUpdatedTask to Task
 			System.out.println("dateCompleted: " + dtoUpdatedTask.getDateCompleted());
 			
@@ -248,8 +253,8 @@ public class UserController  {
 	}
 	
 	@PostMapping(value = "/deleteTask")
-	public @ResponseBody boolean deleteTask(@RequestBody DtoString dtoString) { //dtoString is taskId from the frontend
-		if(httpsession.getAttribute("loggedinUser") != null) {
+	public @ResponseBody boolean deleteTask(@RequestBody DtoString dtoString, @RequestBody User u) { //dtoString is taskId from the frontend
+		if(u.getSessionToken() != null) {
 			return userservice.deleteTask(dtoString.getFormString());
 		} else {
 			return false;
@@ -258,9 +263,9 @@ public class UserController  {
 	}
 
 	@GetMapping(value = "/viewTasks")
-	public List<Task> viewTasks() { 
-		if(httpsession.getAttribute("loggedinUser") != null) {
-			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+	public List<Task> viewTasks(@RequestBody User u) { 
+		if(u.getSessionToken() != null) {
+			User loggedinUser = u;
 			return userservice.viewTasks(loggedinUser.getId());
 		} else {
 			return null;
@@ -269,19 +274,19 @@ public class UserController  {
 	}
 
 	@PostMapping(value = "/completeTask")
-	public @ResponseBody Task completeTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {  
-		if(httpsession.getAttribute("loggedinUser") != null) {
+	public @ResponseBody Task completeTask(@RequestBody DtoUpdatedTask dtoUpdatedTask, @RequestBody User u) {  
+		if(u.getSessionToken() != null) {
 			dtoUpdatedTask.setDateCompleted(LocalDate.now().toString());
-			return updateTask(dtoUpdatedTask);
+			return updateTask(dtoUpdatedTask, u);
 		} else {
 			return null;
 		}
 	}
 
 	@GetMapping(value = "/viewCompleted")
-	public @ResponseBody List<Task> viewCompleted() {
-		if(httpsession.getAttribute("loggedinUser") != null) {
-			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+	public @ResponseBody List<Task> viewCompleted(@RequestBody User u) {
+		if(u.getSessionToken() != null) {
+			User loggedinUser = u;
 			return userservice.viewCompleted(loggedinUser.getId());
 		} else {
 			return null;
@@ -290,9 +295,9 @@ public class UserController  {
 
 	
 	@PostMapping(value = "/duedateTask")
-	public @ResponseBody Task duedateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) { 
-		if(httpsession.getAttribute("loggedinUser") != null) {
-			return updateTask(dtoUpdatedTask);
+	public @ResponseBody Task duedateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask, @RequestBody User u) { 
+		if(u.getSessionToken() != null) {
+			return updateTask(dtoUpdatedTask, u);
 		} else {
 			return null;
 		}
@@ -300,9 +305,9 @@ public class UserController  {
 
 
 	@PostMapping(value = "/viewDuedate")
-	public @ResponseBody List<Task> viewDuedate(@RequestBody DtoString upperBoundDate) {
-		if(httpsession.getAttribute("loggedinUser") != null) {
-			User loggedinUser = (User) httpsession.getAttribute("loggedinUser");
+	public @ResponseBody List<Task> viewDuedate(@RequestBody DtoString upperBoundDate, @RequestBody User u) {
+		if(u.getSessionToken() != null) {
+			User loggedinUser = u;
 			return userservice.viewDuedate(loggedinUser.getId(), upperBoundDate.getFormString());
 		} else {
 			return null;
@@ -310,9 +315,9 @@ public class UserController  {
 	}
 
 	@PostMapping(value = "/setRepeatableTask")
-	public @ResponseBody Task setRepeatableTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
-		if(httpsession.getAttribute("loggedinUser") != null) {
-			return updateTask(dtoUpdatedTask);
+	public @ResponseBody Task setRepeatableTask(@RequestBody DtoUpdatedTask dtoUpdatedTask, @RequestBody User u) {
+		if(userservice.getUserFromSessionToken(u.getSessionToken()).getEmail()  .  equals(u.getEmail())) {
+			return updateTask(dtoUpdatedTask, u);
 		} else {
 			return null;
 		}

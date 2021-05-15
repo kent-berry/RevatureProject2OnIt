@@ -89,6 +89,47 @@ public class UserService implements IUserService {
 	public List<Task> viewDuedate(String userId, String upperBoundDate) {
 		return taskdao.selectDuedate(userId, upperBoundDate);
 	}
+	
+	
+	
+	public User generateSessionToken(User u) {
+		
+		boolean foundUniqueToken = false;
+		int maxTokenGenerationAttempts = 3;
+		int tokenGenerationAttempt = 0;
+		
+		while (!foundUniqueToken && tokenGenerationAttempt < maxTokenGenerationAttempts) {	
+			/*
+			 * Generate a unique token
+			 */
+			String token = Long.toString(Math.round(100000000 + Math.random() * 900000000));
+			u.setSessionToken(token);
+			foundUniqueToken = userdao.updateUserInfo(u);
+			maxTokenGenerationAttempts++;
+			
+		}
+		
+		if (!foundUniqueToken) {
+			u.setSessionToken(null);
+		}
+		
+		return u;
+	}
+	
+	public User deleteSessionToken(User u) {
+		
+		userdao.updateUserSessionToken(null, u.getEmail());
+		return u;
+		
+	}
+	
+	
+	public User getUserFromSessionToken(String sessionToken) {
+
+		User user = userdao.findUserFromSessionToken(sessionToken);
+		return user;
+		
+	}
 
 	
 }
