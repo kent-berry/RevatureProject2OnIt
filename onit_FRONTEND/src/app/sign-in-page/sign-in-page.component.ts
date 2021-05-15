@@ -5,6 +5,8 @@ import { User } from '../USER_RELATED_SERVICES/User';
 import { filter } from 'rxjs/operators';
 import { SAMPLEUSERSService } from '../USER_RELATED_SERVICES/sampleusers.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Task } from '../TASK_SERVICE/Task';
+import { HttpStuffService } from '../http-stuff.service';
 
 
 
@@ -20,11 +22,15 @@ export class SignInPageComponent implements OnInit {
   previousUrl: string;
   form: FormGroup;
 
+  loadingSymbolActive : boolean;
+
+
   constructor(
     private formbuilder: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
     private signedInUserService: SignedInUserService,
+    private httpStuffService: HttpStuffService,
     private sampleUsersService: SAMPLEUSERSService,
   ) { 
       
@@ -33,12 +39,59 @@ export class SignInPageComponent implements OnInit {
 
   submitLogin(): void {
 
-    const fromValue = this.form.value;
-    console.log(fromValue);
-    this.signedInUserService.signedInUsername = "bob23";
-    localStorage.setItem("signedInUsername","bob23");
-    localStorage.setItem("signedInPassword","pw");
-    this.router.navigate(['/tasks']);
+
+    this.loadingSymbolActive = true;
+
+    class Credentials {
+      email : string;
+      password : string;
+    }
+    var credentials : Credentials = this.form.value;
+
+    if (credentials.email == "" || credentials.password == "") {
+      console.log("Blank credentials");
+    }
+
+    console.log(credentials.email+", "+credentials.password);
+    
+
+    console.log("Sign in Page: submitLogin START!");
+
+    this.httpStuffService.logInRequest(credentials.email,credentials.password).subscribe(
+      response => {
+        console.log("SignInPage: submitLogIn() --> response received!");
+        if (!response) {
+
+          this.loadingSymbolActive = false;
+          // Could not validate login credentials
+          //    Do not navigate
+          //    Print a message
+
+        }
+        else {
+          
+          // User successfully logged in!
+
+          this.loadingSymbolActive = false;
+
+          console.log("submitLogin(): response != null, and it is " + response.email +" with session token = "+response.sessionToken);
+          
+          this.signedInUserService.user = response;
+          sessionStorage.setItem("session_token", this.signedInUserService.user.sessionToken);  // In the event of a browser refresh, this is important
+
+
+          
+            
+          this.router.navigate(['/tasks']);
+
+        }
+      }
+
+    );
+    
+
+    
+
 
 
    }
@@ -56,8 +109,8 @@ export class SignInPageComponent implements OnInit {
       this.previousUrl = event.url;
     });
       // If already signed in, redirect to User Home
-      console.log("SIGNINPAGE CONSTRUCTOR: this.signedInUserService.signedInUser = "+this.signedInUserService.signedInUsername);
-      if (this.signedInUserService.signedInUsername) {
+      
+      if (this.signedInUserService.user) {
         this.router.navigate(['/tasks']);
       }
       

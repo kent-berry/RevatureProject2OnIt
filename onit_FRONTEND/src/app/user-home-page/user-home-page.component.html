@@ -12,13 +12,25 @@
   <br>
   <br>
 
+  <div *ngIf="this.signedInUserService.tasks == null || this.signedInUserService.tasks.length == 0">
+    
+    <br>
+    <div class="emptyTaskListMessage">
+      You do not have any tasks. Click below to create one!
+    </div>
+    <br>
+    <br>    
+  </div>
+
+  
   <div style="display: flex; justify-content: center;">
     <button type="button" routerLink="/createtask" class="btn btn-secondary btn-lg" style="background-color: blueviolet;">Create Task</button>
   </div>
 <br>
 
   <!-- Main horizontal flex -->
-<div class="content" style="text-align: center;  display: flex; flex-direction:row; justify-content: center;">
+<div *ngIf="!(this.signedInUserService.tasks == null || this.signedInUserService.tasks.length == 0)" class="content" 
+style="text-align: center;  display: flex; flex-direction:row; justify-content: center;">
 
     <!-- COLUMN: Filter -->
     <div  style=" margin-right:10px; width:160px; text-align:left;"  >
@@ -40,25 +52,32 @@
     
 
     <!-- COLUMN: Task grid table + Page selector-->
-    <div style="width:800px; display:flex; flex-direction: column; background-color: aqua;">
+<div style="width:800px; display:flex; flex-direction: column;">
     <!-- Horizontal flex item 1-->
     <div fxLayoutGap="10px grid" fxLayout="row wrap" style="  display:flex; flex-direction:row; align-content:flex-start; background-color: aliceblue;">
            
             <!-- The card-->
             <div fxFlex="24%" *ngFor="let task of tasksFiltered" >
-                <mat-card class="mat-elevation-z4" style="background-image: url('../assets/images/notepad_bg_1.jpg');">
+
+                <mat-card class="mat-elevation-z4" style="background-image: url('../assets/images/notepad_bg_1.jpg'); height: 245px;">
                     
                     <!-- <img mat-card-image src="./../assets/images/completed_check_1.jpg" style="width:20%; height:20%;"> -->
-                    <mat-card-header style="margin-top: 2.10em;" class="condensedText">
-                        <mat-card-title (click)="selectTask(task)">Grocery store</mat-card-title>
+                    <mat-card-header style="margin-top: 1.20em; height:72px; " class="condensedText2">
+                        <mat-card-title style="font-size: 19px;" (click)="selectTask(task)">{{task.taskName}}</mat-card-title>
+                        
+                        <mat-card-title style="font-size: 11px; color:rgb(151, 151, 151)" (click)="selectTask(task)">Due {{task.dueDate.month}} {{task.dueDate.dayOfMonth}}, {{task.dueDate.year}}</mat-card-title>
+
+                        <div *ngIf="task.dateCompleted" style="font-size:  14px; color:green;">Completed {{task.dateCompleted.month}} {{task.dateCompleted.dayOfMonth}}, {{task.dateCompleted.year}}</div>
+                        <div *ngIf="!task.dateCompleted" style="font-size:  14px; color:rgb(109, 14, 233); font-weight:  450;">In progress</div>
+
                     </mat-card-header>
-                    <mat-card-content>
-                        <p class="condensedText" (click)="selectTask(task)">
-                        Get some food and drinks at the store tomorrow!
+                    <mat-card-content style="margin-top: 6px;  height: 68px;">
+                        <p class="condensedText3" (click)="selectTask(task)">
+                        {{task.notes}}
                         </p>
                     </mat-card-content>
                     <mat-card-actions>
-                        <button mat-button style="background-color: rgb(22, 175, 22); color:aliceblue">DONE</button>
+                        <button mat-button style="background-color: rgb(22, 175, 22); color:aliceblue;">DONE</button>
                     </mat-card-actions>
 
                 </mat-card>
@@ -68,7 +87,7 @@
     </div>
 
     <div >
-        <mat-paginator [length]="tasks.length"
+        <mat-paginator [length]="this.signedInUserService.tasks.length"
         [pageSize]="size"
         [pageIndex]="page"
         [pageSizeOptions]="[8, 12, 16]"

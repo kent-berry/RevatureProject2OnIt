@@ -3,7 +3,7 @@
       <div class="form-wrap">
         <h1>Sign Up</h1>
         <p>It's free and only takes a minute</p>
-        <form [formGroup]="form" (ngSubmit)="submitForm()">
+        <form [formGroup]="form" (ngSubmit)="registerButtonClicked()">
           <div class="form-group">
             <label for="first-name">First Name</label>
             <input required name="firstName" type="text" formControlName="firstName" id="first-name" />

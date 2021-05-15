@@ -1,29 +1,41 @@
+import { LocalDate } from "../DATES/LocalDate";
 
 export class Task {
 
-    private _id : number;
-    private _userId : number;
+    private _id : string;
+    private _userId : string;
     private _taskName : string;
-    private _Notes : string;
-    private _dueDate : Date;
-    private _label : string;
-    private _dateCreated : Date;
-    private _dateCompleted : Date;
+    private _notes : string;
+
+    private _dateCreated : LocalDate;
+    private _dueDate : LocalDate;
+    private _dateCompleted : LocalDate;
+
     private _reminder : number;
     private _repeatable : boolean;
 
-    constructor(id : number,  userId : number,  taskName : string,  Notes : string,  dueDate : Date,  label : string,  dateCreated : Date,  dateCompleted : Date,
-                reminder : number, repeatable : boolean) {
+    private _taskLabel_fk : string;
+
+    private _latitude: number;
+    private _longitude: number;
+    
+    
+    
+
+    constructor(id : string,  userId : string,  taskName : string,  Notes : string,  dueDate : LocalDate,  label : string,  dateCreated : LocalDate,  dateCompleted : LocalDate,
+                reminder : number, repeatable : boolean, latitude : number, longitude: number) {
                     this._id = id;
                     this._userId = userId;
                     this._taskName = taskName;
-                    this._Notes = Notes;
+                    this._notes = Notes;
                     this._dueDate = dueDate;
-                    this._label = label;
+                    this._taskLabel_fk = label;
                     this._dateCreated = dateCreated;
                     this._dateCompleted = dateCompleted;
                     this._reminder = reminder;
                     this._repeatable = repeatable;        
+                    this._latitude = latitude;
+                    this._longitude = longitude;
     }
 
     get id() {
@@ -35,14 +47,14 @@ export class Task {
     get taskName() {
         return this._taskName;
     }
-    get Notes() {
-        return this._Notes;
+    get notes() {
+        return this._notes;
     }
     get dueDate() {
         return this._dueDate;
     }
     get label() {
-        return this._label;
+        return this._taskLabel_fk;
     }
     get dateCreated() {
         return this._dateCreated;
@@ -57,28 +69,28 @@ export class Task {
         return this._repeatable;
     }
 
-    set id(id : number) {
+    set id(id : string) {
         this._id = id;;
     }
-    set userId(userId : number) {
+    set userId(userId : string) {
         this._userId = userId;
     }
     set taskName(taskName : string) {
         this._taskName = taskName;
     }
-    set Notes(Notes : string) {
-        this._Notes = Notes;
+    set notes(Notes : string) {
+        this._notes = Notes;
     }
-    set dueDate(dueDate : Date) {
+    set dueDate(dueDate : LocalDate) {
         this._dueDate = dueDate;
     }
     set label(label : string) {
-        this._label = label;
+        this._taskLabel_fk = label;
     }
-    set dateCreated(dateCreated : Date) {
+    set dateCreated(dateCreated : LocalDate) {
         this._dateCreated = dateCreated;
     }
-    set dateCompleted(dateCompleted : Date) {
+    set dateCompleted(dateCompleted : LocalDate) {
         this._dateCompleted = dateCompleted;
     }
     set reminder(reminder : number) {

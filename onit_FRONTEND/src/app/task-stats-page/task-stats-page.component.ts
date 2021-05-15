@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as CanvasJS from './canvasjs.min';
 import * as $ from 'jquery';
+import { HttpStuffService } from '../http-stuff.service';
 
 
 
@@ -15,7 +16,7 @@ export class TaskStatsPageComponent implements OnInit {
   pastNDays : number = 7;
 
 
-  constructor() { 
+  constructor(private httpStuffService: HttpStuffService) { 
 
   }
 
@@ -66,7 +67,18 @@ export class TaskStatsPageComponent implements OnInit {
   }
   ngOnInit(): void {
 
- 
+ /*
+    this.httpStuffService.checkSessionAsync().subscribe( resp => {
+      console.log("CHECK_SESSION_RESPONSE = "+resp);
+            if (resp == null) {
+              console.log("session does not exist");
+            }
+            else {
+              console.log("session exists");
+              console.log("resp = "+resp);
+            }
+          });
+*/
     this.renderChart();
 
 }

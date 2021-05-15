@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, NavigationEnd, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
 import { SignedInUserService } from '../USER_RELATED_SERVICES/signed-in-user.service';
+
+import { baseServerURL } from '../app.component';
+import { User } from '../USER_RELATED_SERVICES/User';
+import { HttpStuffService } from '../http-stuff.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,36 +15,65 @@ export class AuthorizationGuard implements CanActivate {
 
   constructor(
     private signedInUserService : SignedInUserService,
-    private router: Router
+    private router: Router,
+    private httpStuffService: HttpStuffService
   ) {
 
   }
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    
-      // Simple authorization check, less secure:
-      //  signedInUser != null --> AUTHORIZED
-      // where signedInUser is assigned when logging in with valid info., and cleared when logging out
+    state: RouterStateSnapshot
+    ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-      console.log("----> AUTHORIZATION GUARD: localStorage.getItem(signedInUsername) = "+sessionStorage.getItem("signedInUsername"));
-      console.log("----> AUTHORIZATION GUARD: localStorage.getItem(signedInUsername) = "+sessionStorage.getItem("signedInUsername"));
-      console.log(localStorage.getItem("signedInUsername"));
-      if (sessionStorage.getItem("signedInUsername")) {
-        // A user is currently signed in
-        console.log("   User currently signed in!");
-        return true;
-      } 
+      console.log("AUTH GUARD");
+      var authorized = false;
+      
+
+      if ( ! this.signedInUserService.user ) {
+// test
+        
+        if (sessionStorage.getItem("session_token")) {
+         
+          /*  If a user has a session_token, they are automatically signed in
+          */
+          authorized = true;
+
+          console.log("sessionKey  is not NOT NULL with value = "+sessionStorage.getItem("session_token"));
+          
+          this.httpStuffService.checkSessionAsync(sessionStorage.getItem("session_token").toString()).subscribe(
+            (resp) =>
+            {
+              console.log(" * * * * * * * * * * AUTH GUARD --> : response to checkSessionAsync: "+resp);
+              this.signedInUserService.user = resp;
+              console.log(" * * * * * * * * * * AUTH GUARD --> : signedInUser.user.sessionKey: "+resp.sessionToken);
+              if (this.signedInUserService.user != null)  {
+
+              }
+
+            }
+          );  
+
+        }
+        else {
+          console.log("session key is NULL")
+          console.log(" XXXXX User NOT authorized");
+        authorized = false;
+        }
+        
+    
+      }
       else {
-        this.router.navigate(['/home']);
-        return false;
+        
+   //     console.log("   User currently signed in!");
+        console.log(" XXXXX User IS authorized");
+        authorized = true;
+
       }
 
-
-      // More secure but less performant check
-      //  Send http request to check authorization, if http_response.authorized == true --> AUTHORIZED
-      
+      console.log("   returning "+authorized)
+      return authorized;
+    
   }
   
 }

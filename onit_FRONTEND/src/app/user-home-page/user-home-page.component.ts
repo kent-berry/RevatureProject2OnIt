@@ -1,6 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { Task } from '../TASK_SERVICE/Task';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd, NavigationStart } from '@angular/router';
+import { SignedInUserService } from '../USER_RELATED_SERVICES/signed-in-user.service';
+import { Subscription } from 'rxjs';
+import { HttpStuffService } from '../http-stuff.service';
+
+
+
 
 @Component({
   selector: 'app-user-home-page',
@@ -9,17 +15,10 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 })
 export class UserHomePageComponent implements OnInit {
 
-  tasks : Task[] = [ new Task(10, 4, "Do the dishes", "Dishes are wet", new Date(2018, 0O5, 0O5, 17, 23, 42, 11), "Chores",
-                           new Date(2018, 0O5, 0O5, 17, 23, 42, 11), new Date(2018, 0O5, 0O5, 17, 23, 42, 11), 2, true),
+  @Input()
+  tasks : Task[] = [];
 
-                    new Task(10, 4, "Do the dishes more often!", "Dishes are wet", new Date(2018, 0O5, 0O5, 17, 23, 42, 11), "Chores",
-                    new Date(2018, 0O5, 0O5, 17, 23, 42, 11), new Date(2018, 0O5, 0O5, 17, 23, 42, 11), 2, true),
-
-                    new Task(10, 4, "Do the dishes again!!", "Dishes are wet", new Date(2018, 0O5, 0O5, 17, 23, 42, 11), "Chores",
-                    new Date(2018, 0O5, 0O5, 17, 23, 42, 11), new Date(2018, 0O5, 0O5, 17, 23, 42, 11), 2, true)
-
-                    ];
-  tasksFiltered : any[] = [];
+  tasksFiltered : Task[] = [];
   page = 0;
   size = 12;
 
@@ -29,30 +28,64 @@ export class UserHomePageComponent implements OnInit {
 
   labels: string[] = ["Cooking", "School", "Work", "Exercise"];
 
+  subscription : Subscription;
+  
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
+    private _signedInUserService: SignedInUserService,
+    private httpStuffService: HttpStuffService
   ) {
 
+      
+    
    }
 
-  ngOnInit(): void {
-    this.getData({pageIndex: this.page, pageSize: this.size});
-
+   get signedInUserService() {
+    return this._signedInUserService;
   }
 
+  ngOnInit(): void {
 
+    // Now fetch user tasks
+    this.httpStuffService.requestUserTasks(this.signedInUserService.user).subscribe(
+      responseTasks => {
+        console.log("Get Task list response received!");
+        this.signedInUserService.tasks = responseTasks;
+        console.log("RESPONSE TASKS: "+responseTasks);
+        console.log("(TASK 0).taskName is : "+responseTasks[0].dueDate.year);
+      }
+    )  
+
+    // Subscribe to SignedInUserService tasksUpdated Event Emitter
+    this.signedInUserService.tasksUpdated$.subscribe(
+      action => {
+        if (action == "tasksUpdated") {
+          console.log("USER HOME: TASK UPDATE DETECTED");
+          this.tasks = this.signedInUserService.tasks;
+          this.getData({pageIndex: this.page, pageSize: this.size});
+
+        }
+      }
+    );
   
+  }
+
   getData(obj) {
     let index=0,
         startingIndex=obj.pageIndex * obj.pageSize,
         endingIndex=startingIndex + obj.pageSize;
 
-    this.tasksFiltered = this.tasks.filter(() => {
-      index++;
-      return (index > startingIndex && index <= endingIndex) ? true : false;
-    });
+      if (this.signedInUserService.tasks == null) {
+        this.tasksFiltered = [];
+      }
+      else {
+        this.tasksFiltered = this.signedInUserService.tasks.filter(() => {
+          index++;
+          return (index > startingIndex && index <= endingIndex) ? true : false;
+        });
+    }
   }
 
 
@@ -65,6 +98,11 @@ export class UserHomePageComponent implements OnInit {
 
 
 
+  }
+
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log("changes detected");
   }
 
 }

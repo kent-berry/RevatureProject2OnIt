@@ -13,7 +13,7 @@
             <input required name="password" type="password" formControlName="password" id="password" />
             <div class="alert alert-danger" *ngIf="form.get('password').touched && form.get('password').invalid"> password required</div>
           </div>
-          <button type="submit" class="btn" (click)="submitLogin()">Login</button>
+          <button type="submit" class="btn">Login</button>
         </form>
       </div>
       <footer>
