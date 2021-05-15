@@ -120,9 +120,9 @@ public class UserController  {
 	}
 
 	@PostMapping(value = "/logout")
-	public @ResponseBody boolean logout(@RequestBody User u) { 
-		userservice.deleteSessionToken(u);
-		return true;
+	public @ResponseBody String logout(@RequestBody User u) { 
+		//userservice.deleteSessionToken(u);
+		return "1";
 	}
 
 	@PostMapping(value = "/deleteAccount")
