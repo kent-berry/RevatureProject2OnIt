@@ -1,13 +1,11 @@
 package com.revature.dto;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class DtoUserSessionKey {
 
 	private String id;
 	private String email;
 	private String sessionToken;
+	
 	
 	
 	public DtoUserSessionKey(String id, String email, String sessionToken) {
