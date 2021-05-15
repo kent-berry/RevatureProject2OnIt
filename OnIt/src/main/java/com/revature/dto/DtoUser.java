@@ -14,9 +14,13 @@ public class DtoUser {
 	private String lastName;
 	private String email;
 	private String password;
-	private LocalDate accountCreated;
+	
 	private int receiveEmailReminders;  
 	private int goal;
+	
+	private String accountCreatedMonth;
+	private int accountCreatedDay;
+	private int accountCreatedYear;
 	
 	String sessionToken;
 	
@@ -68,14 +72,6 @@ public class DtoUser {
 		this.password = password;
 	}
 	
-	public LocalDate getAccountCreated() {
-		return accountCreated;
-	}
-
-
-	public void setAccountCreated(LocalDate accountCreated) {
-		this.accountCreated = accountCreated;
-	}
 
 	
 	public int getGoal() {
@@ -105,5 +101,36 @@ public class DtoUser {
 		this.sessionToken = sessionToken;
 	}
 
+
+	public String getAccountCreatedMonth() {
+		return accountCreatedMonth;
+	}
+
+
+	public void setAccountCreatedMonth(String accountCreatedMonth) {
+		this.accountCreatedMonth = accountCreatedMonth;
+	}
+
+
+	public int getAccountCreatedDay() {
+		return accountCreatedDay;
+	}
+
+
+	public void setAccountCreatedDay(int accountCreatedDay) {
+		this.accountCreatedDay = accountCreatedDay;
+	}
+
+
+	public int getAccountCreatedYear() {
+		return accountCreatedYear;
+	}
+
+
+	public void setAccountCreatedYear(int accountCreatedYear) {
+		this.accountCreatedYear = accountCreatedYear;
+	}
+
+	
 	
 }
