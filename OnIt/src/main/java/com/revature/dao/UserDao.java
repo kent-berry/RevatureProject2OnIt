@@ -93,10 +93,10 @@ public class UserDao implements IUserDao {
 
 	
 	@Transactional
-	public boolean deleteSessionToken(DtoUser dtoUser) {
+	public boolean deleteSessionToken(User user) {
 		
 		try {
-			sessionFactory.getCurrentSession().update(dtoUser);
+			sessionFactory.getCurrentSession().update(user);
 			return true;
 		} catch (HibernateException h) {
 			

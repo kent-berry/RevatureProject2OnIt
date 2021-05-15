@@ -121,9 +121,9 @@ public class UserService implements IUserService {
 		return u;
 	}
 	
-	public boolean deleteSessionToken(DtoUser dtoUser) {
+	public boolean deleteSessionToken(User user) {
 		
-		userdao.deleteSessionToken(dtoUser);
+		userdao.deleteSessionToken(user);
 		return true;
 		
 	}

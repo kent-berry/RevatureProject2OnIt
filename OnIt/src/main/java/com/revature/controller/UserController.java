@@ -143,14 +143,13 @@ public class UserController  {
 	@PostMapping(value = "/logout")
 	public User logout(@RequestBody DtoUser dtoUser) {
 		
-		User updatedUser = new User(dtoUser.getId(),
+		User user = new User(dtoUser.getId(),
 				dtoUser.getFirstName(), dtoUser.getLastName(), dtoUser.getEmail(), dtoUser.getPassword(),
 				LocalDate.of(dtoUser.getAccountCreatedYear(), dtoUser.getAccountCreatedMonth(), dtoUser.getAccountCreatedDay()),
 				dtoUser.getReceiveEmailReminders(), dtoUser.getGoal());
 				
-				//String id, String firstName, String lastName, String email, String password, LocalDate accountCreated,
-				//int receiveEmailReminders, int goal
-		//userservice.deleteSessionToken(user);
+				
+		userservice.deleteSessionToken(user);
 		return new User();
 		
 	}
