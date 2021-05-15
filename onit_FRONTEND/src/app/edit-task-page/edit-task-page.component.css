@@ -1,3 +1,6 @@
+/*Rows*/
+
+
 .create-textarea-row {
   display: flex;
   justify-content: center;
@@ -6,8 +9,30 @@
 
 .create-date-row {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
+
+.checkbox-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+.map-row {
+  display: flex;
+  justify-content: center;
+  margin: 1em 0 1.5em 0;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+}
+
+
+/*Fields*/
+
+
 
 .textarea-field {
   width: 600px;
@@ -16,8 +41,18 @@
 
 .date-field {
   width: 12em;
-  margin-top: 0.4em;
+  margin-right: 1.5em;
 }
+
+.select-field {
+  width: 12em;
+  margin-left: 2.2em;
+}
+
+
+/*Misc*/
+
+
 
 #create-textarea {
   background: #F8F3FA;
@@ -30,25 +65,23 @@
   display: inline-block;
 }
 
-.select-field {
-  width: 12em;
-}
-
 .select-mat {
   height: 0.8em;
 }
 
-.checkbox-row {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1em;
-}
-
-.button-row {
-  display: flex;
-  justify-content: center;
-}
-
 .update-button {
   margin-right: 3em;
+}
+
+agm-map {
+  height: 300px;
+  width: 350px;
+}
+
+h1 {
+  margin-top: 0.7em;
+  color: #5e35b1;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 500;
 }

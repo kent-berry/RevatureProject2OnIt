@@ -1,23 +1,32 @@
-  <body>
-    <div id="container">
-      <div class="form-wrap">
-        <h1>Login</h1>
-        <form [formGroup]="form" (ngSubmit)="submitLogin()">
-          <div class="form-group">
-            <label for="Username">Username (Email)</label>
-            <input required name="Username" type="text" formControlName="email" id="Username" />
-            <div class="alert alert-danger" *ngIf="form.get('email').touched && form.get('email').invalid"> Username required</div>
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input required name="password" type="password" formControlName="password" id="password" />
-            <div class="alert alert-danger" *ngIf="form.get('password').touched && form.get('password').invalid"> password required</div>
-          </div>
-          <button type="submit" class="btn">Login</button>
-        </form>
-      </div>
-      <footer>
-        <p>Don't have an account? <a routerLink="/register">Please register Here</a></p>
-      </footer>
-    </div>
-  </body>
+
+<div class="row">
+  <img src="../../assets/images/notebook.jpg">
+  <div class="col">
+    <h1>Welcome to OnIT</h1>
+    <form [formGroup]="form" (ngSubmit)="submitLogin()">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <h2>Sign-in</h2>
+        </tr>
+        <tr>
+          <td><mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput required>
+          </mat-form-field></td>
+        </tr>
+        <tr>
+          <td><mat-form-field>
+            <mat-label>Password</mat-label>
+            <input type="password" matInput required>
+          </mat-form-field></td>
+        </tr>
+        <tr>
+          <button mat-raised-button color="primary" (click)="submitLogin()">Login</button>
+        </tr>
+        <tr>
+          <p>Don't have an account? <a routerLink="/register">Please register Here</a></p>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

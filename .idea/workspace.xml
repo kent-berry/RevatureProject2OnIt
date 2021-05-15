@@ -2,7 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23afa45b-997f-4694-930d-40b222e05e06" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/OnIt.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/onit_FRONTEND/src/assets/images/notebook.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onit_FRONTEND/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/onit_FRONTEND/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onit_FRONTEND/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/onit_FRONTEND/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onit_FRONTEND/src/app/account-management-page/account-management-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/onit_FRONTEND/src/app/account-management-page/account-management-page.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onit_FRONTEND/src/app/account-management-page/account-management-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/onit_FRONTEND/src/app/account-management-page/account-management-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onit_FRONTEND/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/onit_FRONTEND/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onit_FRONTEND/src/app/create-task-page/create-task-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/onit_FRONTEND/src/app/create-task-page/create-task-page.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/onit_FRONTEND/src/app/create-task-page/create-task-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/onit_FRONTEND/src/app/create-task-page/create-task-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onit_FRONTEND/src/app/create-task-page/create-task-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/onit_FRONTEND/src/app/create-task-page/create-task-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onit_FRONTEND/src/app/edit-task-page/edit-task-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/onit_FRONTEND/src/app/edit-task-page/edit-task-page.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onit_FRONTEND/src/app/edit-task-page/edit-task-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/onit_FRONTEND/src/app/edit-task-page/edit-task-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onit_FRONTEND/src/app/edit-task-page/edit-task-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/onit_FRONTEND/src/app/edit-task-page/edit-task-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onit_FRONTEND/src/app/register-page/register-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/onit_FRONTEND/src/app/register-page/register-page.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onit_FRONTEND/src/app/register-page/register-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/onit_FRONTEND/src/app/register-page/register-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onit_FRONTEND/src/app/register-page/register-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/onit_FRONTEND/src/app/register-page/register-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onit_FRONTEND/src/app/sign-in-page/sign-in-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/onit_FRONTEND/src/app/sign-in-page/sign-in-page.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/onit_FRONTEND/src/app/sign-in-page/sign-in-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/onit_FRONTEND/src/app/sign-in-page/sign-in-page.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +48,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -37,22 +58,12 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2021.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Users\yayig\projects\P2\GoogleMaps\OnIt\onit_FRONTEND\node_modules\typescript\lib" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yayig\projects\P2\GoogleMaps\OnIt\onit_FRONTEND\src\assets\images" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -67,10 +78,25 @@
       <workItem from="1620344556230" duration="478000" />
       <workItem from="1620345054221" duration="177000" />
       <workItem from="1620345254383" duration="283000" />
+      <workItem from="1620870554458" duration="4667000" />
+      <workItem from="1620999041722" duration="17639000" />
+      <workItem from="1621086469018" duration="2205000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

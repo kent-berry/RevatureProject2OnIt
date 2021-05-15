@@ -60,7 +60,7 @@ export class RegisterPageComponent implements OnInit {
       password2:[""]
 
     })
-    
+
   }
 
 }
