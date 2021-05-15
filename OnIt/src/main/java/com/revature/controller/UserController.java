@@ -37,7 +37,7 @@ import com.revature.service.IUserService;
 import com.revature.service.UserService;
 
 @Configuration
-@CrossOrigin(origins = {"http://onitp2.s3-website.us-east-2.amazonaws.com", "http://localhost:4200", "http://localhost:4200/tasks"}, allowCredentials = "true")
+@CrossOrigin(origins = {"http://onitp2.s3-website.us-east-2.amazonaws.com", "http://localhost:4200"}, allowCredentials = "true")
 @RestController
 public class UserController  {
 
@@ -57,9 +57,8 @@ public class UserController  {
 	private IUserService userservice = new UserService();
 	
 	
-	//@GetMapping(value = "/checkActiveSession")
-	@RequestMapping(method=RequestMethod.GET, value="/checkActiveSession/{sessionToken}")
-	@ResponseStatus(code=HttpStatus.OK)
+	@GetMapping(value = "/checkActiveSession")
+	//@RequestMapping(method=RequestMethod.GET, value="/checkActiveSession/{sessionToken}")
 	public  @ResponseBody User checkActiveSession() {
 		
 		//User authorizedUser = userservice.getUserFromSessionToken(sessionToken);
