@@ -1,14 +1,12 @@
 package com.revature.controller;
 
-import java.time.LocalDate;
-
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
-
+import java.time.LocalDate;
 import java.util.Base64;
 import java.util.List;
-import javax.servlet.http.HttpSession;
+
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
@@ -16,14 +14,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.revature.dto.*;
-import com.revature.model.*;
-import com.revature.service.*;
+import com.revature.dto.DtoInteger;
+import com.revature.dto.DtoLoginUser;
+import com.revature.dto.DtoPassword;
+import com.revature.dto.DtoRegisterUser;
+import com.revature.dto.DtoString;
+import com.revature.dto.DtoTask;
+import com.revature.dto.DtoUpdatedTask;
+import com.revature.dto.DtoUpdatedUser;
+import com.revature.model.Task;
+import com.revature.model.User;
+import com.revature.service.IUserService;
+import com.revature.service.UserService;
 
 @Configuration
 @CrossOrigin(origins = {"http://onitp2.s3-website.us-east-2.amazonaws.com", "http://localhost:4200"}, allowCredentials = "true")
@@ -46,8 +56,9 @@ public class UserController  {
 	private IUserService userservice = new UserService();
 	
 	
-	@GetMapping(value = "/checkActiveSession")
-	public  @ResponseBody User checkActiveSession(@RequestBody String sessionToken) {
+	//@GetMapping(value = "/checkActiveSession")
+	@RequestMapping(method=RequestMethod.GET, value="/checkActiveSession/{sessionToken}")
+	public  @ResponseBody User checkActiveSession(@PathVariable("sessionToken") String sessionToken) {
 		
 		User authorizedUser = userservice.getUserFromSessionToken(sessionToken);
 		
