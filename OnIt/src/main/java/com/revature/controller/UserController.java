@@ -35,7 +35,8 @@ import com.revature.service.IUserService;
 import com.revature.service.UserService;
 
 @Configuration
-@CrossOrigin(origins = {"http://onitp2.s3-website.us-east-2.amazonaws.com", "http://localhost:4200"}, allowCredentials = "true")
+@CrossOrigin(origins = {"http://onitp2.s3-website.us-east-2.amazonaws.com", "http://localhost:4200",
+		"http://localhost:4200/tasks", "http://localhost:4200/taskstats", "http://localhost:4200/home"}, allowCredentials = "true")
 @RestController
 public class UserController  {
 
