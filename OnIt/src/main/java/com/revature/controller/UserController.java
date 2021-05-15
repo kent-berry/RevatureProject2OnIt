@@ -272,8 +272,8 @@ public class UserController  {
 		
 	}
 
-	@GetMapping(value = "/viewTasks")
-	public @ResponseBody String viewTasks() { 
+	@PostMapping(value = "/viewTasks")
+	public @ResponseBody String viewTasks(@RequestBody String aString) { 
 		/*if(u.getSessionToken() != null) {
 			DtoUserSessionKey loggedinUser = u;
 			//return userservice.viewTasks(loggedinUser.getId());
