@@ -28,6 +28,7 @@ import com.revature.dto.DtoString;
 import com.revature.dto.DtoTask;
 import com.revature.dto.DtoUpdatedTask;
 import com.revature.dto.DtoUpdatedUser;
+import com.revature.dto.DtoUserSessionKey;
 import com.revature.model.Task;
 import com.revature.model.User;
 import com.revature.service.IUserService;
@@ -272,9 +273,9 @@ public class UserController  {
 	}
 
 	@PostMapping(value = "/viewTasks")
-	public List<Task> viewTasks(@RequestBody User u) { 
+	public List<Task> viewTasks(@RequestBody DtoUserSessionKey u) { 
 		if(u.getSessionToken() != null) {
-			User loggedinUser = u;
+			DtoUserSessionKey loggedinUser = u;
 			return userservice.viewTasks(loggedinUser.getId());
 		} else {
 			return null;
