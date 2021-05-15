@@ -46,6 +46,11 @@ public class UserController  {
 	@Autowired
 	private IUserService userservice = new UserService();
 	
+	@PostMapping(value = "/getUserById")
+	private @ResponseBody User getUserById(@RequestBody DtoString dtoString) {
+		User loggingUser = userservice.getUserById(dtoString.getFormString());
+		return loggingUser;
+	}
 	
 	@GetMapping(value = "/checkActiveSession")
 	public  @ResponseBody User checkActiveSession() {
@@ -79,11 +84,6 @@ public class UserController  {
 		}
 	}
 
-	@PostMapping(value = "/getUserById")
-	public @ResponseBody User getUserById(@RequestBody DtoString dtoString) {
-		User loggingUser = userservice.getUserById(dtoString.getFormString());
-		return loggingUser;
-	}
 	
 	@PostMapping(value = "/login")
 	public @ResponseBody User login(@RequestBody DtoLoginUser dtoLoginUser) {
