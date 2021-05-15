@@ -136,8 +136,8 @@ public class UserController  {
 	}
 
 	@PostMapping(value = "/logout")
-	public User logout(@RequestBody DtoRegisterUser yeah) { 
-		//userservice.deleteSessionToken(dtoUser);
+	public User logout(@RequestBody DtoUser user) { 
+		userservice.deleteSessionToken(user);
 		return new User();
 		
 	}
