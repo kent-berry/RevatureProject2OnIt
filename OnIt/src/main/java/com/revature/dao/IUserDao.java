@@ -22,7 +22,7 @@ public interface IUserDao {
 	//update all user info
 	boolean updateUserInfo(User updatedUser);
 	
-	User updateUserSessionToken(User u, String newValue);
+	boolean deleteSessionToken(String sessionToken);
 	
 	User findUserFromSessionToken(String sessionToken);
 	

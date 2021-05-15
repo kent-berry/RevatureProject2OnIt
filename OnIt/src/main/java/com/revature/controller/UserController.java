@@ -116,12 +116,12 @@ public class UserController  {
 			// This value will be null if after x attempts, a unique session token could not be generated
 			return userWithSessionToken;             
 		}
-		return loggingUser;
+		return null;
 	}
 
 	@PostMapping(value = "/logout")
-	public @ResponseBody String logout(@RequestBody User u) { 
-		//userservice.deleteSessionToken(u);
+	public @ResponseBody String logout(@RequestBody String sessionToken) { 
+		userservice.deleteSessionToken(sessionToken);
 		return "1";
 	}
 

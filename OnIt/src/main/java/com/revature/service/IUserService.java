@@ -41,7 +41,7 @@ public interface IUserService {
 	
 	// Session Token related
 	public User generateSessionToken(User u);
-	public User deleteSessionToken(User u);
+	public boolean deleteSessionToken(String sessionToken);
 	public User getUserFromSessionToken(String sessionToken);
 	
 }

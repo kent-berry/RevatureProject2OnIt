@@ -93,17 +93,17 @@ public class UserDao implements IUserDao {
 
 	
 	@Transactional
-	public User updateUserSessionToken(User u, String newValue) {
+	public boolean deleteSessionToken(String sessionToken) {
 		
 		try {
-			String sql = "UPDATE users SET sessionToken = (?) WHERE email = (?)";
-			Query q = sessionFactory.getCurrentSession().createNativeQuery(sql).setParameter(1, newValue).setParameter(2, u.getEmail());
+			String sql = "UPDATE users SET sessionToken = (?) WHERE sessionToken = (?)";
+			Query q = sessionFactory.getCurrentSession().createNativeQuery(sql).setParameter(1, null).setParameter(2, sessionToken);
 			q.executeUpdate();
 		} catch (HibernateException h) {
-			return u;
+			return false;
 		}
 		
-		return u;
+		return true;
 		
 	}
 	

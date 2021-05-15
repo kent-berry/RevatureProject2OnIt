@@ -116,10 +116,10 @@ public class UserService implements IUserService {
 		return u;
 	}
 	
-	public User deleteSessionToken(User u) {
+	public boolean deleteSessionToken(String sessionToken) {
 		
-		userdao.updateUserSessionToken(null, u.getEmail());
-		return u;
+		userdao.deleteSessionToken(sessionToken);
+		return true;
 		
 	}
 	
