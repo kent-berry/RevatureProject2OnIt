@@ -145,8 +145,8 @@ public class UserController  {
 		
 		User updatedUser = new User(dtoUser.getId(),
 				dtoUser.getFirstName(), dtoUser.getLastName(), dtoUser.getEmail(), dtoUser.getPassword(),
-				//LocalDate.of(dtoUser.getAccountCreatedYear(), getMonthNumFromString(dtoUser.getAccountCreatedMonth()), dtoUser.getAccountCreatedDay()),
-				LocalDate.of(2024, 2, 15),
+				LocalDate.of(dtoUser.getAccountCreatedYear(), getMonthNumFromString(dtoUser.getAccountCreatedMonth()), dtoUser.getAccountCreatedDay()),
+				
 				dtoUser.getReceiveEmailReminders(), dtoUser.getGoal());
 				
 				//String id, String firstName, String lastName, String email, String password, LocalDate accountCreated,
