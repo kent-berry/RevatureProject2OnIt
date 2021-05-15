@@ -56,12 +56,12 @@ public class UserController  {
 	private IUserService userservice = new UserService();
 	
 	
-	//@GetMapping(value = "/checkActiveSession")
-	@RequestMapping(method=RequestMethod.GET, value="/checkActiveSession/{sessionToken}")
-	public  @ResponseBody User checkActiveSession(@PathVariable("sessionToken") String sessionToken) {
+	@GetMapping(value = "/checkActiveSession")
+	//@RequestMapping(method=RequestMethod.GET, value="/checkActiveSession/{sessionToken}")
+	public  @ResponseBody User checkActiveSession() {
 		
-		User authorizedUser = userservice.getUserFromSessionToken(sessionToken);
-		
+		//User authorizedUser = userservice.getUserFromSessionToken(sessionToken);
+		User authorizedUser = new User();
 		if(authorizedUser != null) {
 			return authorizedUser;
 		} else {
