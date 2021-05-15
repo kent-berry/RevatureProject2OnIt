@@ -120,6 +120,19 @@ public class UserController  {
 		}
 		return null;
 	}
+	
+	@PostMapping(value = "/viewTasks")
+	public @ResponseBody User viewTasks(@RequestBody DtoLoginUser dtoLoginUser) { 
+		/*if(u.getSessionToken() != null) {
+			DtoUserSessionKey loggedinUser = u;
+			return new User();
+			
+		} else {
+			//return null;
+			return null;
+		}*/
+		return new User();
+	}
 
 	@PostMapping(value = "/logout")
 	public @ResponseBody String logout(@RequestBody String sessionToken) { 
@@ -273,18 +286,7 @@ public class UserController  {
 		
 	}
 
-	@PostMapping(value = "/viewTasks")
-	public @ResponseBody User viewTasks(@RequestBody DtoUserSessionKey u) { 
-		if(u.getSessionToken() != null) {
-			DtoUserSessionKey loggedinUser = u;
-			return new User();
-			
-		} else {
-			//return null;
-			return null;
-		}
 	
-	}
 
 	@PostMapping(value = "/completeTask")
 	public @ResponseBody Task completeTask(@RequestBody DtoUpdatedTask dtoUpdatedTask, @RequestBody User u) {  
