@@ -271,7 +271,7 @@ public class UserController  {
 		
 	}
 
-	@GetMapping(value = "/viewTasks")
+	@PostMapping(value = "/viewTasks")
 	public List<Task> viewTasks(@RequestBody User u) { 
 		if(u.getSessionToken() != null) {
 			User loggedinUser = u;
