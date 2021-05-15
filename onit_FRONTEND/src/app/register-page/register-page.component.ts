@@ -19,10 +19,8 @@ export class RegisterPageComponent implements OnInit {
   }
 
     submitForm(): void {
-
       const fromValue = this.form.value;
       console.log(fromValue);
-  
      }
 
   ngOnInit(): void {
@@ -34,7 +32,7 @@ export class RegisterPageComponent implements OnInit {
       password2:[""]
 
     })
-    
+
   }
 
 }

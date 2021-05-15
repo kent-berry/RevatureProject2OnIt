@@ -1,6 +1,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
+<h1>Edit Task</h1>
 
 <div class="create-textarea-row">
   <mat-form-field class="textarea-field">
@@ -11,7 +12,7 @@
 <div class="create-date-row">
   <mat-form-field class="date-field">
     <mat-label>Due date</mat-label>
-    <input class="date-picker" matInput [matDatepicker]="picker">
+    <input class="date-picker" matInput [matDatepicker]="picker" [min]="minDate">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
@@ -26,6 +27,38 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
+</div>
+
+
+<div class="checkbox-row">
+  <mat-checkbox
+    [(ngModel)]="addLocation"
+    (click)="addingLocation()">
+    Add location
+  </mat-checkbox>
+</div>
+
+<div *ngIf="addLocation" class="map-row">
+  <agm-map
+    [latitude]="lat"
+    [longitude]="lng"
+    [zoom]="zoomLevel"
+    (mapClick)="moveMarker($event.coords.lat, $event.coords.lng)"
+
+  >
+    <agm-marker
+      [latitude]="marker.lat"
+      [longitude]="marker.lng"
+
+      [markerDraggable]="true"
+      (markerClick)="selectMarker($event)"
+      (drag)="dragMarker($event.coords.lat, $event.coords.lng)"
+    >
+    </agm-marker>
+  </agm-map>
+  <p *ngIf="selectedMarker">
+    Lat: {{ selectedMarker.lat }} Lng: {{ selectedMarker.lng }}
+  </p>
 </div>
 
 <div class="checkbox-row">
