@@ -30,6 +30,9 @@ public class User {
 		super();
 	}
 	
+	/*
+	 * This is the constructor used when REGISTERING a user
+	 */
 	public User(String firstName, String lastName, String email, String password) {
 		super();
 		
@@ -43,6 +46,9 @@ public class User {
 	}
 	
 	
+	/*
+	 * This is the constructor used when creating a Java version of a User object
+	 */
 	public User(String id, String firstName, String lastName, String email, String password, LocalDate accountCreated,
 			int receiveEmailReminders, int goal) {
 		super();

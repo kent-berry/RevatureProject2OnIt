@@ -3,9 +3,14 @@ package com.revature.controller;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Base64;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
@@ -136,7 +141,15 @@ public class UserController  {
 	}
 
 	@PostMapping(value = "/logout")
-	public User logout(@RequestBody DtoUser user) { 
+	public User logout(@RequestBody DtoUser dtoUser) {
+		
+		User updatedUser = new User(dtoUser.getId(),
+				dtoUser.getFirstName(), dtoUser.getLastName(), dtoUser.getEmail(), dtoUser.getPassword(),
+				LocalDate.of(dtoUser.getAccountCreatedYear(), getMonthNumFromString(dtoUser.getAccountCreatedMonth()), dtoUser.getAccountCreatedDay()),
+				dtoUser.getReceiveEmailReminders(), dtoUser.getGoal());
+				
+				//String id, String firstName, String lastName, String email, String password, LocalDate accountCreated,
+				//int receiveEmailReminders, int goal
 		//userservice.deleteSessionToken(user);
 		return new User();
 		
@@ -339,6 +352,30 @@ public class UserController  {
 			return null;
 		}
 		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	public int getMonthNumFromString(String monthString)  {
+		 Date date;
+		try {
+			date = new SimpleDateFormat("MMM", Locale.ENGLISH).parse(monthString);
+			Calendar cal = Calendar.getInstance();
+		    cal.setTime(date);
+		    int month = cal.get(Calendar.MONTH);
+		    return month + 1;
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+			return 1;
+			
+		}
+		    
 	}
 
 }
