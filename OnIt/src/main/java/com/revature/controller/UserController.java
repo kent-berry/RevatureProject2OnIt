@@ -122,7 +122,7 @@ public class UserController  {
 	}
 	
 	@PostMapping(value = "/viewTasks")
-	public @ResponseBody User viewTasks(@RequestBody DtoLoginUser dtoLoginUser) { 
+	public @ResponseBody User viewTasks(@RequestBody DtoUserSessionKey dtoKey) { 
 		/*if(u.getSessionToken() != null) {
 			DtoUserSessionKey loggedinUser = u;
 			return new User();
