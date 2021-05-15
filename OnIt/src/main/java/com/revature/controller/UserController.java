@@ -58,14 +58,13 @@ public class UserController  {
 	//@RequestMapping(method=RequestMethod.GET, value="/checkActiveSession/{sessionToken}")
 	public  @ResponseBody User checkActiveSession(@RequestParam String sessionToken) {
 		
-		//User authorizedUser = userservice.getUserFromSessionToken(sessionToken);
-		User authorizedUser = new User();
-		return authorizedUser;
-		/*if(authorizedUser != null) {
+		User authorizedUser = userservice.getUserFromSessionToken(sessionToken);
+		
+		if(authorizedUser != null) {
 			return authorizedUser;
 		} else {
 			return null;
-		}*/
+		}
 	}
 	
 	@PostMapping(value = "/register")
