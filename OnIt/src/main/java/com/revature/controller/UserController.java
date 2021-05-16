@@ -301,11 +301,15 @@ public class UserController  {
 	}
 	
 	@PostMapping(value = "/deleteTask")
-	public @ResponseBody boolean deleteTask(@RequestBody DtoUpdatedTask dtoTask) { //dtoString is taskId from the frontend
+	public @ResponseBody List<Task> deleteTask(@RequestBody DtoUpdatedTask dtoTask) { //dtoString is taskId from the frontend
 		if(dtoTask.getSessionToken() != null) {
-			return userservice.deleteTask(dtoTask.getId());
+			if (userservice.deleteTask(dtoTask.getId())) {
+				return userservice.viewTasks(dtoTask.getUserId());
+			} else {
+				return null;
+			}
 		} else {
-			return false;
+			return null;
 		}
 		
 	}
