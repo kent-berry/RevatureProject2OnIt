@@ -33,7 +33,7 @@ public interface IUserDao {
 	
 	
 	
-	public List<Task> selectTasksFromEmail(String userId);
+	public List<Task> selectTasksFromUserId(String userId);
 	
 
 }

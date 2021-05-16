@@ -45,11 +45,11 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public String downloadMyData(String email , String password) {
+	public String downloadMyData(String email , String password, String userId) {
 		String returnString = "";
 		returnString = returnString + userdao.select(email, password).toString() + "\n\nYour Tasks:\n\n";
 		
-		List<Task> userTasks = userdao.selectTasksFromEmail(email);
+		List<Task> userTasks = userdao.selectTasksFromUserId(userId);
 		
 		/*for (Task t: userTasks) {
 			returnString = returnString + t.toString() +"\n";

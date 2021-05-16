@@ -15,7 +15,7 @@ public interface IUserService {
 	User getUserById(String id);
 	
 	boolean unregister(String email, String password); //account deletion, requires providing password to delete
-	String downloadMyData(String email, String password);
+	String downloadMyData(String email, String password, String userId);
 	
 	// receiving email reminders
 	boolean receiveEmailReminders(User loggedinUser); 
