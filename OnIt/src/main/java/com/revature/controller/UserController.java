@@ -297,7 +297,10 @@ public class UserController  {
 				return null;
 			}
 		} else {
-			return new Task();
+			
+			Task retTask = new Task();
+			retTask.setId(dtoUpdatedTask.getSessionToken());
+			return retTask;
 			//return null;
 		}
 		
