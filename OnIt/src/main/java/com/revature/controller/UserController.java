@@ -299,7 +299,7 @@ public class UserController  {
 		} else {
 			
 			Task retTask = new Task();
-			retTask.setId(dtoUpdatedTask.getSessionToken());
+			retTask.setId("HI");
 			return retTask;
 			//return null;
 		}
