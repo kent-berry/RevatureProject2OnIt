@@ -41,6 +41,7 @@ public class User {
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
+		this.receiveEmailReminders = 1;
 		
 		this.accountCreated = LocalDate.now();
 	}

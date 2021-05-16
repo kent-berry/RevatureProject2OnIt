@@ -301,9 +301,9 @@ public class UserController  {
 	}
 	
 	@PostMapping(value = "/deleteTask")
-	public @ResponseBody boolean deleteTask(@RequestBody DtoString dtoString, @RequestBody User u) { //dtoString is taskId from the frontend
-		if(u.getSessionToken() != null) {
-			return userservice.deleteTask(dtoString.getFormString());
+	public @ResponseBody boolean deleteTask(@RequestBody DtoUpdatedTask dtoTask) { //dtoString is taskId from the frontend
+		if(dtoTask.getSessionToken() != null) {
+			return userservice.deleteTask(dtoTask.getId());
 		} else {
 			return false;
 		}
