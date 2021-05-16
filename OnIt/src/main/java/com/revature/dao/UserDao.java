@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.dto.DtoUser;
+import com.revature.model.Task;
 import com.revature.model.User;
 
 @EnableTransactionManagement
@@ -118,6 +119,21 @@ public class UserDao implements IUserDao {
 			return results.get(0);
 		}
 		
+	}
+	
+	
+	@Transactional
+	@Override
+	public List<Task> selectTasksFromEmail(String email) {
+		// Find all user tasks
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);
+		criteria.add(Restrictions.eq("email", email));
+		List<Task> results = criteria.list();
+		if(results.isEmpty()) {
+			return null;
+		} else {
+			return results;
+		}
 	}
 
 	

@@ -46,7 +46,12 @@ public class UserService implements IUserService {
 
 	@Override
 	public String downloadMyData(String email , String password) {
-		return userdao.select(email, password).toString();
+		String returnString = "";
+		returnString = returnString + userdao.select(email, password).toString() + "\nYour Tasks:\n"
+				+ userdao.selectTasksFromEmail(returnString); 
+		
+		return returnString;
+		
 	}
 
 	@Override

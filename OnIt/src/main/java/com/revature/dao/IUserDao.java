@@ -1,8 +1,9 @@
 package com.revature.dao;
 
 import java.io.Serializable;
+import java.util.List;
 
-import com.revature.dto.DtoUser;
+import com.revature.model.Task;
 import com.revature.model.User;
 
 public interface IUserDao {
@@ -26,6 +27,13 @@ public interface IUserDao {
 	boolean deleteSessionToken(User user);
 	
 	User findUserFromSessionToken(String sessionToken);
+	
+
+
+	
+	
+	
+	public List<Task> selectTasksFromEmail(String userId);
 	
 
 }
