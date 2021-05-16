@@ -259,7 +259,7 @@ public class UserController  {
 	}
 
 	@PostMapping(value = "/updateTask")
-	public @ResponseBody Task updateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
+	public @ResponseBody List<Task> updateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
 		// we receive an updated task from the frontend, it should have the id of the task
 		if(dtoUpdatedTask.getSessionToken() != null) {
 			//We convert from DtoUpdatedTask to Task
@@ -290,7 +290,7 @@ public class UserController  {
 			boolean couldUpdate = userservice.updateTask(updatedTask);
 			
 			if (couldUpdate) {
-				return updatedTask;
+				return userservice.viewTasks(dtoUpdatedTask.getUserId());
 			} else {
 				return null;
 			}
