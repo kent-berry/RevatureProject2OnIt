@@ -1,16 +1,28 @@
 package com.revature.dto;
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class DtoTask {
 	
 	private String taskName;
 	private String notes;
-	private String dueDate; //"2016-08-16"
+	
+	private int dueDateMonth;
+	private int dueDateDay;
+	private int dueDateYear;
+	
+	
+	
+	
 	private int reminder;
 	private boolean repeatable;
 	private String taskLabel;
 	private double latitude;
 	private double longitude;
+	
+	private String userId;
+	private String sessionToken;
 	
 	public DtoTask() {
 		super();
@@ -32,14 +44,7 @@ public class DtoTask {
 		this.notes = notes;
 	}
 
-	public String getDueDate() {
-		return dueDate;
-	}
 
-	public void setDueDate(String dueDate) {
-		this.dueDate = dueDate;
-	}
-	
 	public int getReminder() {
 		return reminder;
 	}
@@ -82,11 +87,59 @@ public class DtoTask {
 		this.longitude = longitude;
 	}
 
+	
+	
+	public int getDueDateMonth() {
+		return dueDateMonth;
+	}
+
+	public void setDueDateMonth(int dueDateMonth) {
+		this.dueDateMonth = dueDateMonth;
+	}
+
+	public int getDueDateDay() {
+		return dueDateDay;
+	}
+
+	public void setDueDateDay(int dueDateDay) {
+		this.dueDateDay = dueDateDay;
+	}
+
+	public int getDueDateYear() {
+		return dueDateYear;
+	}
+
+	public void setDueDateYear(int dueDateYear) {
+		this.dueDateYear = dueDateYear;
+	}
+
+	
+
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getSessionToken() {
+		return sessionToken;
+	}
+
+	public void setSessionToken(String sessionToken) {
+		this.sessionToken = sessionToken;
+	}
+
 	@Override
 	public String toString() {
-		return "DtoTask [taskName=" + taskName + ", notes=" + notes + ", dueDate=" + dueDate + ", reminder=" + reminder
-				+ ", repeatable=" + repeatable + "]";
+		return "DtoTask [taskName=" + taskName + ", notes=" + notes + ", dueDateMonth=" + dueDateMonth + ", dueDateDay="
+				+ dueDateDay + ", dueDateYear=" + dueDateYear + ", reminder=" + reminder + ", repeatable=" + repeatable
+				+ ", taskLabel=" + taskLabel + ", latitude=" + latitude + ", longitude=" + longitude + "]";
 	}
+
+	
 
 	
 }

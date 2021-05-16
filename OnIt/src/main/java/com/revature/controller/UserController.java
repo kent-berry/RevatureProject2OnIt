@@ -241,11 +241,12 @@ public class UserController  {
 	
 	
 	@PostMapping(value = "/addTask")
-	public @ResponseBody Task createTask(@RequestBody DtoTask dtoTask, @RequestBody User u) {
+	public @ResponseBody Task createTask(@RequestBody DtoTask dtoTask) {
 		// Create task out of the request, will use save() in dao
-		if(u.getSessionToken() != null) {
-			User loggedinUser = u;
-			Task newTask = new Task(loggedinUser.getId(), dtoTask.getTaskName(), dtoTask.getNotes(), LocalDate.parse(dtoTask.getDueDate()), 
+		if(dtoTask.getSessionToken() != null) {
+
+			Task newTask = new Task(dtoTask.getUserId(), dtoTask.getTaskName(), dtoTask.getNotes(), 
+					LocalDate.of(dtoTask.getDueDateYear(), dtoTask.getDueDateMonth(), dtoTask.getDueDateDay()), 
 					dtoTask.getReminder(), dtoTask.isRepeatable(),
 					dtoTask.getTaskLabel(), dtoTask.getLatitude(), dtoTask.getLongitude());
 			
@@ -262,21 +263,27 @@ public class UserController  {
 		// we receive an updated task from the frontend, it should have the id of the task
 		if(u.getSessionToken() != null) {
 			//We convert from DtoUpdatedTask to Task
-			System.out.println("dateCompleted: " + dtoUpdatedTask.getDateCompleted());
+			
+			
 			
 			LocalDate dueDate = null;
-			if(dtoUpdatedTask.getDueDate() != null) {
-				dueDate = LocalDate.parse(dtoUpdatedTask.getDueDate());
+			if(dtoUpdatedTask.getDueDateYear() != null) {
+				dueDate = LocalDate.of(dtoUpdatedTask.getDueDateYear(), dtoUpdatedTask.getDueDateMonth(), dtoUpdatedTask.getDueDateDay());
 			} 
 			
 			LocalDate dateCompleted = null;
-			if(dtoUpdatedTask.getDateCompleted() != null) {
-				dateCompleted = LocalDate.parse(dtoUpdatedTask.getDateCompleted());
+			if(dtoUpdatedTask.getCompletedYear() != null) {
+				dateCompleted = LocalDate.of(dtoUpdatedTask.getCompletedYear(), dtoUpdatedTask.getCompletedMonth(), dtoUpdatedTask.getCompletedDay());
 			}
+			
+			LocalDate dateCreated = null;
+			if(dtoUpdatedTask.getCreatedYear() != null) {
+				dateCreated = LocalDate.of(dtoUpdatedTask.getCreatedYear(), dtoUpdatedTask.getCreatedMonth(), dtoUpdatedTask.getCreatedDay());
+			} 
 			
 			Task updatedTask = new Task(dtoUpdatedTask.getId(), dtoUpdatedTask.getUserId(),
 										dtoUpdatedTask.getTaskName(), dtoUpdatedTask.getNotes(),
-										LocalDate.parse(dtoUpdatedTask.getDateCreated()), dueDate, dateCompleted,
+										dateCreated, dueDate, dateCompleted,
 										dtoUpdatedTask.getReminder(), dtoUpdatedTask.isRepeatable(),
 										dtoUpdatedTask.getTaskLabel_fk(), dtoUpdatedTask.getLatitude(), dtoUpdatedTask.getLongitude());
 			boolean couldUpdate = userservice.updateTask(updatedTask);
@@ -303,9 +310,14 @@ public class UserController  {
 	
 
 	@PostMapping(value = "/completeTask")
-	public @ResponseBody Task completeTask(@RequestBody DtoUpdatedTask dtoUpdatedTask, @RequestBody User u) {  
+	public @ResponseBody Task completeTask(@RequestBody DtoUpdatedTask dtoUpdatedTask, @RequestBody User u) {
+		
+		LocalDate nowTime = LocalDate.now();
+		
 		if(u.getSessionToken() != null) {
-			dtoUpdatedTask.setDateCompleted(LocalDate.now().toString());
+			dtoUpdatedTask.setCompletedYear(nowTime.getYear());
+			dtoUpdatedTask.setCompletedMonth(nowTime.getMonthValue());
+			dtoUpdatedTask.setCompletedDay(nowTime.getDayOfMonth());
 			return updateTask(dtoUpdatedTask, u);
 		} else {
 			return null;

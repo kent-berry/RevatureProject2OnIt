@@ -9,9 +9,17 @@ public class DtoUpdatedTask {
 	private String taskName;
 	private String notes;
 	
-	private String dateCreated;
-	private String dueDate;
-	private String dateCompleted;
+	private Integer dueDateMonth;
+	private Integer dueDateDay;
+	private Integer dueDateYear;
+	
+	private Integer createdMonth;
+	private Integer createdDay;
+	private Integer createdYear;
+	
+	private Integer completedMonth;
+	private Integer completedDay;
+	private Integer completedYear;
 	
 	private int reminder;
 	private boolean repeatable;
@@ -56,28 +64,77 @@ public class DtoUpdatedTask {
 		this.notes = notes;
 	}
 
-	public String getDateCreated() {
-		return dateCreated;
+
+	public Integer getDueDateMonth() {
+		return dueDateMonth;
 	}
 
-	public void setDateCreated(String dateCreated) {
-		this.dateCreated = dateCreated;
+	public void setDueDateMonth(Integer dueDateMonth) {
+		this.dueDateMonth = dueDateMonth;
 	}
 
-	public String getDueDate() {
-		return dueDate;
+	public Integer getDueDateDay() {
+		return dueDateDay;
 	}
 
-	public void setDueDate(String dueDate) {
-		this.dueDate = dueDate;
+	public void setDueDateDay(Integer dueDateDay) {
+		this.dueDateDay = dueDateDay;
 	}
 
-	public String getDateCompleted() {
-		return dateCompleted;
+	public Integer getDueDateYear() {
+		return dueDateYear;
 	}
 
-	public void setDateCompleted(String dateCompleted) {
-		this.dateCompleted = dateCompleted;
+	public void setDueDateYear(Integer dueDateYear) {
+		this.dueDateYear = dueDateYear;
+	}
+
+	public Integer getCreatedMonth() {
+		return createdMonth;
+	}
+
+	public void setCreatedMonth(Integer createdMonth) {
+		this.createdMonth = createdMonth;
+	}
+
+	public Integer getCreatedDay() {
+		return createdDay;
+	}
+
+	public void setCreatedDay(Integer createdDay) {
+		this.createdDay = createdDay;
+	}
+
+	public Integer getCreatedYear() {
+		return createdYear;
+	}
+
+	public void setCreatedYear(Integer createdYear) {
+		this.createdYear = createdYear;
+	}
+
+	public Integer getCompletedMonth() {
+		return completedMonth;
+	}
+
+	public void setCompletedMonth(Integer completedMonth) {
+		this.completedMonth = completedMonth;
+	}
+
+	public Integer getCompletedDay() {
+		return completedDay;
+	}
+
+	public void setCompletedDay(Integer completedDay) {
+		this.completedDay = completedDay;
+	}
+
+	public Integer getCompletedYear() {
+		return completedYear;
+	}
+
+	public void setCompletedYear(Integer completedYear) {
+		this.completedYear = completedYear;
 	}
 
 	public int getReminder() {
