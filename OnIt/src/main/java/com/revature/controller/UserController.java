@@ -291,12 +291,12 @@ public class UserController  {
 			
 			if (couldUpdate) {
 				return updatedTask;
-				
+				//return new Task();
 			} else {
-				return updatedTask;
+				return null;
 			}
 		} else {
-			return new Task();
+			return null;
 		}
 		
 	}

@@ -1,6 +1,8 @@
 package com.revature.dto;
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class DtoUpdatedTask {
 
 	private String id;
