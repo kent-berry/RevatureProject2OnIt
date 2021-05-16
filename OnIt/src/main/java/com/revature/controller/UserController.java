@@ -280,17 +280,18 @@ public class UserController  {
 			if(dtoUpdatedTask.getCreatedYear() != null) {
 				dateCreated = LocalDate.of(dtoUpdatedTask.getCreatedYear(), dtoUpdatedTask.getCreatedMonth(), dtoUpdatedTask.getCreatedDay());
 			} 
-		/*	
+			
 			Task updatedTask = new Task(dtoUpdatedTask.getId(), dtoUpdatedTask.getUserId(),
 										dtoUpdatedTask.getTaskName(), dtoUpdatedTask.getNotes(),
 										dateCreated, dueDate, dateCompleted,
 										dtoUpdatedTask.getReminder(), dtoUpdatedTask.isRepeatable(),
 										dtoUpdatedTask.getTaskLabel_fk(), dtoUpdatedTask.getLatitude(), dtoUpdatedTask.getLongitude());
-			boolean couldUpdate = userservice.updateTask(updatedTask);*/
-			boolean couldUpdate = true;
+			
+			boolean couldUpdate = userservice.updateTask(updatedTask);
+			
 			if (couldUpdate) {
-				//return updatedTask;
-				return new Task();
+				return updatedTask;
+				
 			} else {
 				return null;
 			}
