@@ -252,7 +252,7 @@ public class UserController  {
 			
 					userservice.createTask(newTask);
 					
-					return new Task();
+					return newTask;
 		} else {
 			return null;
 		}
