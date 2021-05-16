@@ -15,8 +15,8 @@ public class DtoTask {
 	private int reminder;
 	private boolean repeatable;
 	private String taskLabel;
-	private double latitude;
-	private double longitude;
+	private Double latitude;
+	private Double longitude;
 	
 	private String userId;
 	private String sessionToken;
