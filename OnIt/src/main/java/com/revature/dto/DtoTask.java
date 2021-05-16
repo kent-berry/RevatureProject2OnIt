@@ -12,9 +12,6 @@ public class DtoTask {
 	private int dueDateDay;
 	private int dueDateYear;
 	
-	
-	
-	
 	private int reminder;
 	private boolean repeatable;
 	private String taskLabel;
@@ -23,6 +20,7 @@ public class DtoTask {
 	
 	private String userId;
 	private String sessionToken;
+	
 	
 	public DtoTask() {
 		super();

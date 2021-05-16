@@ -245,14 +245,14 @@ public class UserController  {
 		// Create task out of the request, will use save() in dao
 		if(dtoTask.getSessionToken() != null) {
 
-			Task newTask = new Task(dtoTask.getUserId(), dtoTask.getTaskName(), dtoTask.getNotes(), 
+			/*Task newTask = new Task(dtoTask.getUserId(), dtoTask.getTaskName(), dtoTask.getNotes(), 
 					LocalDate.of(dtoTask.getDueDateYear(), dtoTask.getDueDateMonth(), dtoTask.getDueDateDay()), 
 					dtoTask.getReminder(), dtoTask.isRepeatable(),
 					dtoTask.getTaskLabel(), dtoTask.getLatitude(), dtoTask.getLongitude());
 			
-					userservice.createTask(newTask);
+					userservice.createTask(newTask);*/
 					
-					return newTask;
+					return new Task();
 		} else {
 			return null;
 		}
