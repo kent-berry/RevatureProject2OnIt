@@ -250,7 +250,7 @@ public class UserController  {
 					dtoTask.getReminder(), dtoTask.isRepeatable(),
 					dtoTask.getTaskLabel(), dtoTask.getLatitude(), dtoTask.getLongitude());
 			
-					//userservice.createTask(newTask);
+					userservice.createTask(newTask);
 					
 					return new Task();
 		} else {
