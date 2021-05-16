@@ -50,9 +50,10 @@ public class UserService implements IUserService {
 		returnString = returnString + userdao.select(email, password).toString() + "\n\nYour Tasks:\n\n";
 		
 		List<Task> userTasks = userdao.selectTasksFromEmail(email);
-		for (Task t: userTasks) {
+		
+		/*for (Task t: userTasks) {
 			returnString = returnString + t.toString() +"\n";
-		}
+		}*/
 				
 		
 
