@@ -49,10 +49,10 @@ public class UserService implements IUserService {
 		String returnString = "";
 		User user = userdao.select(email, password);
 		if (user == null) {
-			returnString = "User is null";
+			returnString = "User is null, email was "+email+" and password was "+password;
 		}
 		else {
-			returnString = "User is NOT null";
+			returnString = "User is NOT null, email was "+email+" and password was "+password;
 		}
 		
 	//	List<Task> tasks = taskdao.selectTasks(userId);
