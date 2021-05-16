@@ -293,7 +293,7 @@ public class UserController  {
 				return updatedTask;
 				
 			} else {
-				return null;
+				return updatedTask;
 			}
 		} else {
 			return null;
