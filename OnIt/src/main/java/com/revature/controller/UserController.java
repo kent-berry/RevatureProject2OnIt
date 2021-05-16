@@ -313,7 +313,7 @@ public class UserController  {
 	
 
 	@PostMapping(value = "/completeTask")
-	public @ResponseBody Task completeTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
+	public @ResponseBody List<Task> completeTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
 		
 		LocalDate nowTime = LocalDate.now();
 		
@@ -339,7 +339,7 @@ public class UserController  {
 
 	
 	@PostMapping(value = "/duedateTask")
-	public @ResponseBody Task duedateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) { 
+	public @ResponseBody List<Task> duedateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) { 
 		if(dtoUpdatedTask.getSessionToken() != null) {
 			return updateTask(dtoUpdatedTask);
 		} else {
@@ -359,7 +359,7 @@ public class UserController  {
 	}
 
 	@PostMapping(value = "/setRepeatableTask")
-	public @ResponseBody Task setRepeatableTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
+	public @ResponseBody List<Task> setRepeatableTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
 		if(userservice.getUserFromSessionToken(dtoUpdatedTask.getSessionToken()).getId()  .  equals(dtoUpdatedTask.getUserId())) {
 			return updateTask(dtoUpdatedTask);
 		} else {
