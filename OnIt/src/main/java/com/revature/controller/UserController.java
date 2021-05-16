@@ -265,7 +265,7 @@ public class UserController  {
 			//We convert from DtoUpdatedTask to Task
 			
 			
-		/*	
+		
 			LocalDate dueDate = null;
 			if(dtoUpdatedTask.getDueDateYear() != null) {
 				dueDate = LocalDate.of(dtoUpdatedTask.getDueDateYear(), dtoUpdatedTask.getDueDateMonth(), dtoUpdatedTask.getDueDateDay());
@@ -280,7 +280,7 @@ public class UserController  {
 			if(dtoUpdatedTask.getCreatedYear() != null) {
 				dateCreated = LocalDate.of(dtoUpdatedTask.getCreatedYear(), dtoUpdatedTask.getCreatedMonth(), dtoUpdatedTask.getCreatedDay());
 			} 
-			
+		/*	
 			Task updatedTask = new Task(dtoUpdatedTask.getId(), dtoUpdatedTask.getUserId(),
 										dtoUpdatedTask.getTaskName(), dtoUpdatedTask.getNotes(),
 										dateCreated, dueDate, dateCompleted,
