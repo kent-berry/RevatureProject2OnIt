@@ -184,7 +184,7 @@ public class UserController  {
 			
 			DtoString returnString = new DtoString();
 			returnString.setFormString(loggedinUser.getId());
-			return returnString;
+			return userData;
 			
 		} else {
 			
