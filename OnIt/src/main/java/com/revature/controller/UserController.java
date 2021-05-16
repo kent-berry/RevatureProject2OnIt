@@ -183,8 +183,8 @@ public class UserController  {
 			String userData = userservice.downloadMyData(loggedinUser.getId(), loggedinUser.getPassword(), loggedinUser.getId());
 			
 			DtoString returnString = new DtoString();
-			returnString.setFormString(loggedinUser.getId());
-			return userData;
+			returnString.setFormString(userData);
+			return returnString;
 			
 		} else {
 			
