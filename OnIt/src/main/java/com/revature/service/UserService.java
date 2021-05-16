@@ -47,7 +47,13 @@ public class UserService implements IUserService {
 	@Override
 	public String downloadMyData(String email , String password, String userId) {
 		String returnString = "";
-		returnString = userdao.select(email, password).toString();
+		User user = userdao.select(email, password);
+		if (user == null) {
+			returnString = "User is null";
+		}
+		else {
+			returnString = "User is NOT null";
+		}
 		
 	//	List<Task> tasks = taskdao.selectTasks(userId);
 	//	for (Task task: tasks) {
