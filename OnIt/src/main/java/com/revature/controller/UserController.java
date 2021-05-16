@@ -261,11 +261,11 @@ public class UserController  {
 	@PostMapping(value = "/updateTask")
 	public @ResponseBody Task updateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
 		// we receive an updated task from the frontend, it should have the id of the task
-		/*if(dtoUpdatedTask.getSessionToken() != null) {
+		if(dtoUpdatedTask.getSessionToken() != null) {
 			//We convert from DtoUpdatedTask to Task
 			
 			
-			
+		/*	
 			LocalDate dueDate = null;
 			if(dtoUpdatedTask.getDueDateYear() != null) {
 				dueDate = LocalDate.of(dtoUpdatedTask.getDueDateYear(), dtoUpdatedTask.getDueDateMonth(), dtoUpdatedTask.getDueDateDay());
@@ -286,16 +286,18 @@ public class UserController  {
 										dateCreated, dueDate, dateCompleted,
 										dtoUpdatedTask.getReminder(), dtoUpdatedTask.isRepeatable(),
 										dtoUpdatedTask.getTaskLabel_fk(), dtoUpdatedTask.getLatitude(), dtoUpdatedTask.getLongitude());
-			boolean couldUpdate = userservice.updateTask(updatedTask);
+			boolean couldUpdate = userservice.updateTask(updatedTask);*/
+			boolean couldUpdate = true;
 			if (couldUpdate) {
-				return updatedTask;
+				//return updatedTask;
+				return new Task();
 			} else {
 				return null;
 			}
 		} else {
 			return null;
-		}*/
-		return new Task();
+		}
+		
 	}
 	
 	@PostMapping(value = "/deleteTask")
