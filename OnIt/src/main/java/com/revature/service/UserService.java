@@ -48,11 +48,11 @@ public class UserService implements IUserService {
 	public String downloadMyData(String email , String password, String userId) {
 		String returnString = "";
 		User user = userdao.select(email, password);
-		returnString = user.toString() + "\n\\nnYour to do tasks:\n\n";
-	//	List<Task> tasks = taskdao.selectTasks(userId);
-	//	for (Task task: tasks) {
-	//		returnString = returnString + task.toString() +"\n";
-		//}
+		returnString = user.toString() + "\n\n\nYour to do tasks:\n\n";
+		List<Task> tasks = taskdao.selectTasks(userId);
+		for (Task task: tasks) {
+			returnString = returnString + task.toString() +"\n";
+		}
 
 		return returnString;
 		
