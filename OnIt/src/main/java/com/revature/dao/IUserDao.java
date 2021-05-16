@@ -27,13 +27,7 @@ public interface IUserDao {
 	boolean deleteSessionToken(User user);
 	
 	User findUserFromSessionToken(String sessionToken);
-	
 
-
-	
-	
-	
-	public List<Task> selectTasksFromUserId(String userId);
 	
 
 }

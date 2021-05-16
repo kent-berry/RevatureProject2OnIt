@@ -121,23 +121,6 @@ public class UserDao implements IUserDao {
 		
 	}
 	
-	
-	@Transactional
-	@Override
-	public List<Task> selectTasksFromUserId(String userId) {
-		// Find all user tasks
-		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Task.class);
-		criteria.add(Restrictions.eq("userId", userId));
-		List<Task> results = criteria.list();
-		if(results.isEmpty()) {
-			return null;
-		} else {
-			return results;
-		}
-	}
 
-	
-
-	
 	
 }

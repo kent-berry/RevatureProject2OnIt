@@ -178,16 +178,20 @@ public class UserController  {
 	@PostMapping(value = "/downloadMyData")
 	public @ResponseBody DtoString downloadMyData(@RequestBody DtoUser dtoUser) {
 		if(dtoUser.getSessionToken() != null) {
+			
 			DtoUser loggedinUser = dtoUser;
-			//String data = userservice.downloadMyData(loggedinUser.getId(), loggedinUser.getPassword(), loggedinUser.getId());
+			String userData = userservice.downloadMyData(loggedinUser.getId(), loggedinUser.getPassword(), dtoUser.getId());
+			
 			DtoString returnString = new DtoString();
-			returnString.setFormString(dtoUser.getId());
-			//returnString.setFormString(data);
+			returnString.setFormString(userData);
 			return returnString;
+			
 		} else {
+			
 			DtoString returnString = new DtoString();
 			returnString.setFormString("No user data can be retreived, make sure user is registered and loggedin");
-			return returnString; 
+			return returnString;
+			
 		}
 	}
 
