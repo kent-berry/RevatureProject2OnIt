@@ -259,9 +259,9 @@ public class UserController  {
 	}
 
 	@PostMapping(value = "/updateTask")
-	public @ResponseBody Task updateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask, @RequestBody User u) {
+	public @ResponseBody Task updateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
 		// we receive an updated task from the frontend, it should have the id of the task
-		if(u.getSessionToken() != null) {
+		/*if(dtoUpdatedTask.getSessionToken() != null) {
 			//We convert from DtoUpdatedTask to Task
 			
 			
@@ -294,7 +294,8 @@ public class UserController  {
 			}
 		} else {
 			return null;
-		}
+		}*/
+		return new Task();
 	}
 	
 	@PostMapping(value = "/deleteTask")
@@ -310,15 +311,15 @@ public class UserController  {
 	
 
 	@PostMapping(value = "/completeTask")
-	public @ResponseBody Task completeTask(@RequestBody DtoUpdatedTask dtoUpdatedTask, @RequestBody User u) {
+	public @ResponseBody Task completeTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
 		
 		LocalDate nowTime = LocalDate.now();
 		
-		if(u.getSessionToken() != null) {
+		if(dtoUpdatedTask.getSessionToken() != null) {
 			dtoUpdatedTask.setCompletedYear(nowTime.getYear());
 			dtoUpdatedTask.setCompletedMonth(nowTime.getMonthValue());
 			dtoUpdatedTask.setCompletedDay(nowTime.getDayOfMonth());
-			return updateTask(dtoUpdatedTask, u);
+			return updateTask(dtoUpdatedTask);
 		} else {
 			return null;
 		}
@@ -336,9 +337,9 @@ public class UserController  {
 
 	
 	@PostMapping(value = "/duedateTask")
-	public @ResponseBody Task duedateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask, @RequestBody User u) { 
-		if(u.getSessionToken() != null) {
-			return updateTask(dtoUpdatedTask, u);
+	public @ResponseBody Task duedateTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) { 
+		if(dtoUpdatedTask.getSessionToken() != null) {
+			return updateTask(dtoUpdatedTask);
 		} else {
 			return null;
 		}
@@ -356,9 +357,9 @@ public class UserController  {
 	}
 
 	@PostMapping(value = "/setRepeatableTask")
-	public @ResponseBody Task setRepeatableTask(@RequestBody DtoUpdatedTask dtoUpdatedTask, @RequestBody User u) {
-		if(userservice.getUserFromSessionToken(u.getSessionToken()).getEmail()  .  equals(u.getEmail())) {
-			return updateTask(dtoUpdatedTask, u);
+	public @ResponseBody Task setRepeatableTask(@RequestBody DtoUpdatedTask dtoUpdatedTask) {
+		if(userservice.getUserFromSessionToken(dtoUpdatedTask.getSessionToken()).getId()  .  equals(dtoUpdatedTask.getUserId())) {
+			return updateTask(dtoUpdatedTask);
 		} else {
 			return null;
 		}

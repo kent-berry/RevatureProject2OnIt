@@ -5,6 +5,7 @@ public class DtoUpdatedTask {
 
 	private String id;
 	private String userId;
+	private String sessionToken;
 	
 	private String taskName;
 	private String notes;
@@ -176,5 +177,15 @@ public class DtoUpdatedTask {
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
+
+	public String getSessionToken() {
+		return sessionToken;
+	}
+
+	public void setSessionToken(String sessionToken) {
+		this.sessionToken = sessionToken;
+	}
+	
+	
 
 }
