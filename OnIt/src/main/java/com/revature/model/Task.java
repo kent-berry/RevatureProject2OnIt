@@ -209,11 +209,14 @@ public class Task {
 		this.longitude = longitude;
 	}
 
-	//toString
 	@Override
 	public String toString() {
-		return "Task [taskName=" + taskName + ", notes=" + notes + ", dueDate=" + dueDate + ", dateCompleted="
-				+ dateCompleted + ", reminder=" + reminder + ", repeatable=" + repeatable + "]";
+		return "Task " + id + ": taskName=" + taskName + "\nDescription: " + notes
+				+ "\nCreated: " + dateCreated + ",   Due: " + dueDate + ",   Completed=" + dateCompleted
+				+ ", reminder=" + reminder + ", repeatable=" + repeatable + "\nLabel=" + taskLabel_fk
+				+ "\nLocation: latitude = " + latitude + ", longitude=" + longitude + "]";
 	}
+
+	
 		
 }
