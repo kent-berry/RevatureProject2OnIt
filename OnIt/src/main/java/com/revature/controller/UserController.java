@@ -290,18 +290,12 @@ public class UserController  {
 			boolean couldUpdate = userservice.updateTask(updatedTask);
 			
 			if (couldUpdate) {
-				//return updatedTask;
-				//return new Task();
-				return null;
+				return updatedTask;
 			} else {
 				return null;
 			}
 		} else {
-			
-			Task retTask = new Task();
-			retTask.setId("HI");
-			return retTask;
-			//return null;
+			return null;
 		}
 		
 	}
