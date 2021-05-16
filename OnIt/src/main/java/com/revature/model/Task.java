@@ -213,9 +213,9 @@ public class Task {
 	public String toString() {
 		return "Task name:  " + taskName + "\nDescription: " + notes
 				+ "\nCreated on: " + dateCreated + "\nDue on: " + dueDate + "\nCompleted on: " + dateCompleted
-				+ "\nGetting email reminders for this task =" + reminder + " days before it is due.\n"
-						+ "Weekly repeatable = " + repeatable + "\nCategory =" + taskLabel_fk
-				+ "\nLocation: latitude = " + latitude + ", longitude=" + longitude + "]";
+				+ "\nGetting email reminders for this task " + reminder + " days before it is due.\n"
+						+ "Weekly repeatable = " + repeatable + "\nCategory: " + taskLabel_fk
+				+ "\nLocation: latitude = " + latitude + ", longitude=" + longitude;
 	}
 
 	

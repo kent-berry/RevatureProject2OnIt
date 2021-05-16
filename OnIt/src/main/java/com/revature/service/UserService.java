@@ -51,7 +51,7 @@ public class UserService implements IUserService {
 		returnString = user.toString() + "\n\n\nYour to do tasks:\n\n";
 		List<Task> tasks = taskdao.selectTasks(userId);
 		for (Task task: tasks) {
-			returnString = returnString + task.toString() +"\n";
+			returnString = returnString + task.toString() +"\n\n";
 		}
 
 		return returnString;
