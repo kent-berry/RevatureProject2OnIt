@@ -179,9 +179,10 @@ public class UserController  {
 	public @ResponseBody DtoString downloadMyData(@RequestBody DtoUser dtoUser) {
 		if(dtoUser.getSessionToken() != null) {
 			DtoUser loggedinUser = dtoUser;
-			String data = userservice.downloadMyData(loggedinUser.getId(), loggedinUser.getPassword(), loggedinUser.getId());
+			//String data = userservice.downloadMyData(loggedinUser.getId(), loggedinUser.getPassword(), loggedinUser.getId());
 			DtoString returnString = new DtoString();
-			returnString.setFormString(data);
+			returnString.setFormString(dtoUser.getId());
+			//returnString.setFormString(data);
 			return returnString;
 		} else {
 			DtoString returnString = new DtoString();
