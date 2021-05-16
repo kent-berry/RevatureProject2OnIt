@@ -211,9 +211,10 @@ public class Task {
 
 	@Override
 	public String toString() {
-		return "Task " + id + ": taskName=" + taskName + "\nDescription: " + notes
-				+ "\nCreated: " + dateCreated + ",   Due: " + dueDate + ",   Completed=" + dateCompleted
-				+ ", reminder=" + reminder + ", repeatable=" + repeatable + "\nLabel=" + taskLabel_fk
+		return "Task name:  " + taskName + "\nDescription: " + notes
+				+ "\nCreated on: " + dateCreated + "\nDue on: " + dueDate + "\nCompleted on: " + dateCompleted
+				+ "\nGetting email reminders for this task =" + reminder + " days before it is due.\n"
+						+ "Weekly repeatable = " + repeatable + "\nCategory =" + taskLabel_fk
 				+ "\nLocation: latitude = " + latitude + ", longitude=" + longitude + "]";
 	}
 

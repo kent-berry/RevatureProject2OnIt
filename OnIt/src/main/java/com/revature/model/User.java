@@ -143,8 +143,9 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", accountCreated=" + accountCreated + ", receiveEmailReminders=" + receiveEmailReminders + ", goal="
-				+ goal + "]";
+		return "Showing data for user with email "+email+"\nName: " + firstName +" " + lastName + 
+				"Account created on " + accountCreated + "\nReceving email reminders for tasks " + receiveEmailReminders +"days before they're due."+
+				"\nYour daily goal for number of tasks completed is "
+				+ goal +".";
 	}
 }
