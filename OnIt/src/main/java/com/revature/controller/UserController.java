@@ -175,13 +175,18 @@ public class UserController  {
 		return false;
 	}
 
-	@GetMapping(value = "/downloadMyData")
-	public @ResponseBody String downloadMyData(@RequestBody User u) {
-		if(u.getSessionToken() != null) {
-			User loggedinUser = u;
-			return userservice.downloadMyData(loggedinUser.getEmail(), loggedinUser.getPassword());
+	@PostMapping(value = "/downloadMyData")
+	public @ResponseBody DtoString downloadMyData(@RequestBody DtoUser dtoUser) {
+		if(dtoUser.getSessionToken() != null) {
+			DtoUser loggedinUser = dtoUser;
+			String data = userservice.downloadMyData(loggedinUser.getEmail(), loggedinUser.getPassword());
+			DtoString returnString = new DtoString();
+			returnString.setFormString(data);
+			return returnString;
 		} else {
-			return "No user data can be retreived, make sure user is registered and loggedin"; 
+			DtoString returnString = new DtoString();
+			returnString.setFormString("No user data can be retreived, make sure user is registered and loggedin");
+			return returnString; 
 		}
 	}
 
