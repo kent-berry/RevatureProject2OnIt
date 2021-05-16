@@ -180,10 +180,10 @@ public class UserController  {
 		if(dtoUser.getSessionToken() != null) {
 			
 			DtoUser loggedinUser = dtoUser;
-			String userData = userservice.downloadMyData(loggedinUser.getId(), loggedinUser.getPassword(), loggedinUser.getId());
+			//String userData = userservice.downloadMyData(loggedinUser.getId(), loggedinUser.getPassword(), loggedinUser.getId());
 			
 			DtoString returnString = new DtoString();
-			returnString.setFormString(userData);
+			returnString.setFormString(loggedinUser.getId());
 			return returnString;
 			
 		} else {
