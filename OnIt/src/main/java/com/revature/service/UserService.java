@@ -48,13 +48,7 @@ public class UserService implements IUserService {
 	public String downloadMyData(String email , String password, String userId) {
 		String returnString = "";
 		User user = userdao.select(email, password);
-		if (user == null) {
-			returnString = "User is null, email was "+email+" and password was "+password;
-		}
-		else {
-			returnString = "User is NOT null, email was "+email+" and password was "+password;
-		}
-		
+		returnString = user.toString() + "\n\\nnYour to do tasks:\n\n";
 	//	List<Task> tasks = taskdao.selectTasks(userId);
 	//	for (Task task: tasks) {
 	//		returnString = returnString + task.toString() +"\n";
