@@ -120,6 +120,17 @@ public class UserDao implements IUserDao {
 		}
 		
 	}
+	@Transactional
+	public List<User> getAllUser()
+	{
+		
+		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(User.class);
+		
+		criteria.add(Restrictions.isNotNull("id"));
+		
+		List<User> results = criteria.list();
+		return results;
+	}
 	
 
 	

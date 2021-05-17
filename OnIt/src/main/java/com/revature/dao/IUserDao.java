@@ -27,6 +27,7 @@ public interface IUserDao {
 	boolean deleteSessionToken(User user);
 	
 	User findUserFromSessionToken(String sessionToken);
+	List<User> getAllUser();
 
 	
 
