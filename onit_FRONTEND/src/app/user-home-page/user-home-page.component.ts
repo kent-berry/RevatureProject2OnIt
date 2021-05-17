@@ -136,8 +136,30 @@ export class UserHomePageComponent implements OnInit {
 
     var now : Date = new Date();
 
-    var updatedTask : Task = new Task(task.id, this.signedInUserService.user.id, task.taskName, task.notes, task.dueDate, task.taskLabel_fk,
-      task.dateCreated, new LocalDate(now.getFullYear(), now.getMonth() + 1, null, null, null, now.getMonth() + 1, now.getDate(), null, null), task.reminder,
+    var newDue = new Date();
+    newDue.setDate(newDue.getDate() + 7);
+    console.log("NEW DUE IS "+newDue);
+
+    var newDueDate: LocalDate;
+    if (task.repeatable) {
+      console.log("NEW DUE MONTH IS "+newDue.getMonth())
+      newDueDate = new LocalDate(newDue.getFullYear(), newDue.getMonth() + 1, null, null, null, newDue.getMonth() + 1, newDue.getDate(),null,null);
+    }
+    else {
+      newDueDate = task.dueDate;
+    }
+    
+    var newDateCompleted: LocalDate;
+    if (task.repeatable) {
+      newDateCompleted = null;
+    }
+    else {
+      newDateCompleted = new LocalDate(now.getFullYear(), now.getMonth() + 1, null, null, null, now.getMonth() + 1, now.getDate(), null, null)
+    }
+
+
+    var updatedTask : Task = new Task(task.id, this.signedInUserService.user.id, task.taskName, task.notes, newDueDate, task.taskLabel_fk,
+      task.dateCreated, newDateCompleted, task.reminder,
       task.repeatable, task.latitude, task.longitude);
 
     this.httpStuffService.updateTaskRequest(updatedTask, this.signedInUserService.user).subscribe(
