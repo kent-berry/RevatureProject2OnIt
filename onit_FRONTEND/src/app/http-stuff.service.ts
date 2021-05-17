@@ -74,6 +74,21 @@ export class HttpStuffService {
     
    }
 
+
+
+   deleteAccount(email: string, password: string, sessionToken: string): Observable<User> {
+
+      var dtoUserPassword = {"email": email, "password": password, "sessionToken": sessionToken};
+
+         return this.http.post<User>(baseServerURL + "/deleteAccount", dtoUserPassword, this.httpOptionsJSON);
+
+
+
+
+   }
+
+
+
    // returns a new copy of all user tasks
    createTaskRequest(taskName: string, Notes: string, dueDate: LocalDate, label: string, reminder: number, repeatable: boolean,
                        latitude : number, longitude : number, u: User) : Observable<Task> {
@@ -90,8 +105,8 @@ export class HttpStuffService {
             "reminder": reminder, "repeatable": repeatable, "taskLabel": label, "latitude": latitude, "longitude": longitude,
             "userId":u.id, "sessionToken":u.sessionToken};
 
-            console.log("Here is taskDTO before http addTask request:");
-         printObj(taskDTO);
+            //console.log("Here is taskDTO before http addTask request:");
+         //printObj(taskDTO);
       
          return this.http.post<Task>(baseServerURL + "/addTask", taskDTO, this.httpOptionsJSON);
 
@@ -111,8 +126,8 @@ export class HttpStuffService {
       
       };
 
-      console.log("DELETING!!!!");
-      printObj(updatedTaskDTO)
+      //console.log("DELETING!!!!");
+      //printObj(updatedTaskDTO)
 
       return this.http.post<Task[]>(baseServerURL + "/deleteTask", updatedTaskDTO, this.httpOptionsJSON);
 
@@ -157,8 +172,8 @@ export class HttpStuffService {
       
       };
 
-      console.log("UPDATING!!!!");
-      printObj(updatedTaskDTO)
+      //console.log("UPDATING!!!!");
+      //printObj(updatedTaskDTO)
 
       return this.http.post<Task[]>(baseServerURL + "/updateTask", updatedTaskDTO, this.httpOptionsJSON);
 
@@ -193,8 +208,8 @@ requestDownloadData(u: User) : Observable<any> {
       , "receiveEmailReminders": u.receiveEmailReminders, "goal": u.goal,
    "accountCreatedMonth": getMonthFromString(u.accountCreated.month), "accountCreatedDay": u.accountCreated.dayOfMonth, "accountCreatedYear": u.accountCreated.year,
    "sessionToken": u.sessionToken};
-   console.log("                       PRINTING HTTP DOWNLOADDATA INPUT:")
-   printObj(userDTO);
+   //console.log("                       PRINTING HTTP DOWNLOADDATA INPUT:")
+   //printObj(userDTO);
 
       
       

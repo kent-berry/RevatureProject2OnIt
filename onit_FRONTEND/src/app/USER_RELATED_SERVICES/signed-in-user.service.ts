@@ -96,7 +96,7 @@ export class SignedInUserService {
   }
 
   clear() : void {
-    console.log("signedInUserService: CLEARING");
+  //  console.log("signedInUserService: CLEARING");
     this.user = null;
     this.tasks = null;
     sessionStorage.removeItem("session_token");
