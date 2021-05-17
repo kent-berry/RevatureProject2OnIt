@@ -156,19 +156,18 @@ public class UserController  {
 
 	@PostMapping(value = "/deleteAccount")
 	public @ResponseBody User unregister(@RequestBody DtoUserPasswordSessionKey dtoUserPasswordSessionKey) {
-		/*if (dtoUserPasswordSessionKey.getSessionToken() != null) {
+		if (dtoUserPasswordSessionKey.getSessionToken() != null) {
 			DtoUserPasswordSessionKey loggedinUser = dtoUserPasswordSessionKey;
 			
 			
 			
 			if (userservice.unregister(loggedinUser.getEmail(), loggedinUser.getPassword())) {
-				return true;
+				return new User();
 			}
 				
 			
 		}
-		return false;*/
-		return new User();
+		return null;
 	}
 
 	@PostMapping(value = "/downloadMyData")
