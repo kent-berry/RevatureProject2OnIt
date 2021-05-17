@@ -27,13 +27,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.dto.DtoInteger;
 import com.revature.dto.DtoLoginUser;
-import com.revature.dto.DtoPassword;
 import com.revature.dto.DtoRegisterUser;
 import com.revature.dto.DtoString;
 import com.revature.dto.DtoTask;
 import com.revature.dto.DtoUpdatedTask;
 import com.revature.dto.DtoUpdatedUser;
 import com.revature.dto.DtoUser;
+import com.revature.dto.DtoUserPasswordSessionKey;
 import com.revature.dto.DtoUserSessionKey;
 import com.revature.model.Task;
 import com.revature.model.User;
@@ -155,22 +155,17 @@ public class UserController  {
 	}
 
 	@PostMapping(value = "/deleteAccount")
-	public boolean unregister(@RequestBody DtoPassword dtoPassword, @RequestBody User u) {
-		if (u.getSessionToken() != null) {
-			User loggedinUser = u;
-			String hashedPass = "";
-			try {
-				hashedPass = hashPass(dtoPassword.getPassword());
-				if(hashedPass.equals(loggedinUser.getPassword())) {
-					return userservice.unregister(loggedinUser.getEmail(), hashedPass);
-				} else {
-					//js alert! telling the user that the provided password is not correct
-					return false;
-				}
-			} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
-				e.printStackTrace();
-				return false;
+	public @ResponseBody Boolean unregister(@RequestBody DtoUserPasswordSessionKey dtoUserPasswordSessionKey) {
+		if (dtoUserPasswordSessionKey.getSessionToken() != null) {
+			DtoUserPasswordSessionKey loggedinUser = dtoUserPasswordSessionKey;
+			
+			
+			
+			if (userservice.unregister(loggedinUser.getEmail(), loggedinUser.getPassword())) {
+				return true;
 			}
+				
+			
 		}
 		return false;
 	}
