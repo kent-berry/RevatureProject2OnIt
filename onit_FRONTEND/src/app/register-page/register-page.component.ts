@@ -13,6 +13,10 @@ export class RegisterPageComponent implements OnInit {
 
   form: FormGroup;
 
+  responseMessage;
+
+
+
   constructor(
     private formbuilder: FormBuilder,
     private router: Router,
@@ -28,20 +32,30 @@ export class RegisterPageComponent implements OnInit {
         email: string;
         password: string;
         password2: string;
-        
+        reminders: number;
       }
       
       var registrationInfo: RegistrationInfo = this.form.value;
-      console.log(registrationInfo.password2);
+      
+      if (registrationInfo.firstName == "" || registrationInfo.lastName == "" || registrationInfo.email == "" || registrationInfo.password == "") {
+        this.responseMessage = "Please do not leave any fields blank";
+        return;
+      }
+      else if ( ! registrationInfo.email.includes("@")) {
+        this.responseMessage = "Please enter a valid email address";
+        return;
+      }
+      //console.log(registrationInfo.password2);
 
       this.httpStuffService.registerRequest(registrationInfo.firstName, registrationInfo.lastName, registrationInfo.email, registrationInfo.password).subscribe(
           resp =>
           {
             if (resp == null) {
-              console.log("Register: Username is taken");
+              //console.log("Register: Username is taken");
+              this.responseMessage = "That email is already in use";
             }
             else {
-              console.log("Register SUCCESS!");
+              //console.log("Register SUCCESS!");
               this.router.navigate(['/home']);
             }
 
@@ -57,8 +71,8 @@ export class RegisterPageComponent implements OnInit {
       lastName:[""],
       email:[""],
       password:[""],
-      password2:[""]
-
+      password2:[""],
+      reminders:[""]
     })
 
   }

@@ -4,33 +4,41 @@
   <tr>
     <td><mat-form-field class="example-full-width">
       <mat-label>First name</mat-label>
-      <input matInput>
+      <input matInput [value]="this.signedInUserService.user.firstName">
     </mat-form-field></td>
   </tr>
   <tr>
     <td><mat-form-field class="example-full-width">
       <mat-label>Last Name</mat-label>
-      <input matInput>
+      <input matInput [value]="this.signedInUserService.user.lastName">
     </mat-form-field></td>
   </tr>
   <tr>
     <td><mat-form-field class="example-full-width">
       <mat-label>Email</mat-label>
-      <input matInput type="email">
+      <input matInput type="email" [value]="this.signedInUserService.user.email">
     </mat-form-field></td>
   </tr>
-  <tr>
+ <!-- <tr>
     <td><mat-form-field class="example-full-width">
       <mat-label>Password</mat-label>
-      <input matInput type="password">
+      <input matInput type="password" [value]="this.signedInUserService.user.password">
     </mat-form-field></td>
-  </tr>
+  </tr> -->
   <tr>
     <td><mat-form-field class="example-full-width">
       <mat-label>Days to be reminded before task</mat-label>
-      <input matInput type="number" min="1">
+      <input matInput type="number" min="1" [value]="this.signedInUserService.user.receiveEmailReminders">
     </mat-form-field></td>
   </tr>
+
+  <tr>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>Daily goal for number of completed tasks</mat-label>
+      <input matInput type="number" min="1" [value]="this.signedInUserService.user.receiveEmailReminders">
+    </mat-form-field></td>
+  </tr>
+
   <tr class="around">
     <button mat-raised-button color="primary">Update</button>
     <button mat-raised-button color="warn">Delete</button>

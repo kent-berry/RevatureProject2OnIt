@@ -5,7 +5,7 @@ import { HttpStuffService } from './http-stuff.service';
 import { SignedInUserService } from './USER_RELATED_SERVICES/signed-in-user.service';
 
 // EC2 version
-export let baseServerURL = "http://ec2-3-129-11-214.us-east-2.compute.amazonaws.com:9000/OnIt";
+//export let baseServerURL = "http://ec2-3-129-11-214.us-east-2.compute.amazonaws.com:9000/OnIt";
 
 // Digital Ocean Droplet version
 // export let baseServerURL = "http://142.93.205.142:8090/OnIt";
@@ -25,7 +25,7 @@ export class AppComponent {
   subscription: Subscription;
     
   constructor(
-    private signedInUserService : SignedInUserService, 
+    private _signedInUserService : SignedInUserService, 
     private router: Router,
     private httpStuffService: HttpStuffService
   ) 
@@ -33,6 +33,9 @@ export class AppComponent {
 
   }
 
+  get signedInUserService() {
+    return this._signedInUserService;
+  }
 
   getSignedInUser() {
     
@@ -43,15 +46,11 @@ export class AppComponent {
 
   signUserOut() {
 
-    console.log("   signUserOut --> user.email: "+this.signedInUserService.user.email);
-    console.log("   signUserOut --> user.sessToken: "+this.signedInUserService.user.sessionToken);
+    this.signedInUserService.tasksWereFetched = false;
+    
     this.httpStuffService.logOutRequest(this.signedInUserService.user).subscribe(
       response =>
       {
-        
-        console.log(" ");
-        console.log("LOG OUT: response received");
-        console.log(" ");
         
       }
     )
@@ -63,13 +62,12 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    console.log("AppComponent created!");
+    //console.log("AppComponent created!");
   }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
   
-
   
 }

@@ -1,28 +1,47 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
+      <div *ngIf="!this.signedInUserService.tasks && !this.signedInUserService.tasksWereFetched " style="position: fixed; top: 15%; left:50%;">
+    
+        <br>
+        <div class="mat-app-background">
+          <mat-spinner></mat-spinner>
+        </div>
+        
+        
+        <br>
+        <br>    
+      </div>
+    
 <h1>Create Task</h1>
+
+<div class="create-textarea-row" style="margin-top: 40px;">
+  <mat-form-field class="textarea-field" style="width:240px; height:50px;">
+    <textarea matInput name="notesBox"  id="create-textarea" rows="1" placeholder="Task name" [(ngModel)]="taskNameText" required style="font-size: 22px; text-align: center; font-weight: 490; margin-bottom: 8px;"></textarea>
+  </mat-form-field>
+</div>
 
 <div class="create-textarea-row">
   <mat-form-field class="textarea-field">
-    <textarea matInput id="create-textarea" rows="8" placeholder="Task description"></textarea>
+    <textarea matInput name="notesBox"  id="create-textarea" rows="8" placeholder="Task description" [(ngModel)]="taskNotesText" required style="font-size:16px; margin-left: 20px;"></textarea>
   </mat-form-field>
 </div>
 
 <div class="create-date-row">
   <mat-form-field class="date-field">
     <mat-label>Due date</mat-label>
-    <input class="date-picker" matInput [matDatepicker]="picker" [min]="minDate">
+    <input class="date-picker" matInput [matDatepicker]="picker" [min]="minDate" [(ngModel)]="dueDateSelected" required>
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
   <mat-icon>
     <span class="material-icons-outlined material-icons md-36">date_range</span>
   </mat-icon>
+
   <mat-form-field appearance="fill" class="select-field">
     <mat-label>Label</mat-label>
-    <mat-select class="select-mat">
-      <mat-option *ngFor="let label of labels" [value]="label.value">
+    <mat-select class="select-mat" [(value)]="labelSelected" required>
+      <mat-option *ngFor="let label of this.signedInUserService.labels" [value]="label.value" >
         {{label.viewValue}}
       </mat-option>
     </mat-select>
@@ -71,6 +90,27 @@
   </mat-checkbox>
 </div>
 
-<div class="create-button-row">
-  <button mat-raised-button color="primary" (click)="addingLocation()">Create!</button>
+<div class="checkbox-row">
+  <mat-checkbox
+    class="example-margin"
+    [(ngModel)]="repeatableChecked"
+    [(indeterminate)]="repeatableIndeterminate"
+    [labelPosition]="repeatableLabelPosition"
+    [disabled]="repeatableDisabled">
+    Repeat weekly
+  </mat-checkbox>
 </div>
+
+
+<div class="create-button-row">
+  <button mat-raised-button color="primary" (click)="createTaskClicked()">Create!</button>
+</div>
+
+<div *ngIf="this.missingInput" class="button-row" style="text-align: center;">
+  <div style="color: brown; margin-top: 5px;">Please make sure all required fields are filled in!</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>

@@ -53,7 +53,7 @@ export class Task {
     get dueDate() {
         return this._dueDate;
     }
-    get label() {
+    get taskLabel_fk() {
         return this._taskLabel_fk;
     }
     get dateCreated() {
@@ -84,8 +84,8 @@ export class Task {
     set dueDate(dueDate : LocalDate) {
         this._dueDate = dueDate;
     }
-    set label(label : string) {
-        this._taskLabel_fk = label;
+    set taskLabel_fk(taskLabel_fk : string) {
+        this._taskLabel_fk = taskLabel_fk;
     }
     set dateCreated(dateCreated : LocalDate) {
         this._dateCreated = dateCreated;
@@ -98,6 +98,20 @@ export class Task {
     }
     set repeatable(repeatable : boolean) {
         this._repeatable = repeatable;
+    }
+
+    get latitude() {
+        return this._latitude;
+    }
+    get longitude() {
+        return this._longitude;
+    }
+
+    set latitude(latitude : number) {
+        this._latitude = latitude;
+    }
+    set longitude(longitude : number) {
+        this._longitude = longitude;
     }
 
 }

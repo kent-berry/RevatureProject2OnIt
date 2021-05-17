@@ -10,7 +10,7 @@
 
 
 .content {
-    padding: 16px;
+    padding: 8px;
 }
 
 .content > mat-card {
@@ -24,7 +24,7 @@
 
 
 
-.content mat-card.mat-elevation-z4 mat-card-header mat-card-title{
+.content mat-card.mat-elevation-z4  mat-card-title{
     cursor: pointer;
 }
 
@@ -37,6 +37,16 @@
     display: flex;
     justify-content: left;
   } 
+
+
+  .condensedText1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
+
+  }
 
   .condensedText2 {
     overflow: hidden;

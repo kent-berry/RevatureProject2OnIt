@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'tasks', component: UserHomePageComponent, canActivate: [AuthorizationGuard] },
   { path: 'accountmanagement', component: AccountManagementPageComponent, canActivate: [AuthorizationGuard] },
   { path: 'createtask', component: CreateTaskPageComponent, canActivate: [AuthorizationGuard] },
-  { path: 'editviewtask/:taskId', component: EditTaskPageComponent, canActivate: [AuthorizationGuard] },
+  { path: 'editviewtask', component: EditTaskPageComponent, canActivate: [AuthorizationGuard] },
   { path: 'taskstats', component: TaskStatsPageComponent, canActivate: [AuthorizationGuard] }  
   
 ];

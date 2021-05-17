@@ -23,6 +23,10 @@ export class SignInPageComponent implements OnInit {
   form: FormGroup;
 
   loadingSymbolActive : boolean;
+  responseMessage;
+
+
+
 
 
   constructor(
@@ -33,7 +37,7 @@ export class SignInPageComponent implements OnInit {
     private httpStuffService: HttpStuffService,
     private sampleUsersService: SAMPLEUSERSService,
   ) { 
-      
+    this.signedInUserService.tasksWereFetched = false;
 
   }
 
@@ -49,39 +53,40 @@ export class SignInPageComponent implements OnInit {
     var credentials : Credentials = this.form.value;
 
     if (credentials.email == "" || credentials.password == "") {
-      console.log("Blank credentials");
+      this.responseMessage = "Must fill in both fields"
+      return;
     }
 
-    console.log(credentials.email+", "+credentials.password);
-    
-
-    console.log("Sign in Page: submitLogin START!");
 
     this.httpStuffService.logInRequest(credentials.email,credentials.password).subscribe(
       response => {
-        console.log("SignInPage: submitLogIn() --> response received!");
+
         if (!response) {
 
-          this.loadingSymbolActive = false;
-          // Could not validate login credentials
-          //    Do not navigate
-          //    Print a message
-
+          this.responseMessage = "User doesn't exist or wrong password"
+          
         }
         else {
           
           // User successfully logged in!
 
           this.loadingSymbolActive = false;
-
-          console.log("submitLogin(): response != null, and it is " + response.email +" with session token = "+response.sessionToken);
           
           this.signedInUserService.user = response;
           sessionStorage.setItem("session_token", this.signedInUserService.user.sessionToken);  // In the event of a browser refresh, this is important
 
-
           
-            
+          // Now fetch user tasks
+          this.httpStuffService.requestUserTasks(this.signedInUserService.user).subscribe(
+            responseTasks => {
+              //console.log("Get Task list response received!");
+              this.signedInUserService.tasks = responseTasks;
+              //console.log("RESPONSE TASKS: "+responseTasks);
+              this.signedInUserService.tasksWereFetched = true;
+              
+            }
+          );
+  
           this.router.navigate(['/tasks']);
 
         }
@@ -98,6 +103,7 @@ export class SignInPageComponent implements OnInit {
 
    ngOnInit(): void{
 
+    this.signedInUserService.tasksWereFetched = false;
     this.form= this.formbuilder.group({
       email:[""],
       password:[""]
@@ -105,7 +111,7 @@ export class SignInPageComponent implements OnInit {
     this.router.events
     .pipe(filter(event => event instanceof NavigationEnd))
     .subscribe((event: NavigationEnd) => {
-      console.log('prev:', event.url);
+      //console.log('prev:', event.url);
       this.previousUrl = event.url;
     });
       // If already signed in, redirect to User Home

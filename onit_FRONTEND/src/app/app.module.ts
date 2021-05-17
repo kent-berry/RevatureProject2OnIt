@@ -34,6 +34,7 @@ import { TaskStatsPageComponent } from './task-stats-page/task-stats-page.compon
 
 import { HttpClientModule } from '@angular/common/http';
 
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { HttpClientModule } from '@angular/common/http';
     AgmCoreModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAoqtB-f0GuSFXGcM7qK3DWhwp-6Jw_JWs'
-    })
+    }),
+    MatProgressSpinnerModule
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }

@@ -1,47 +1,47 @@
-<body>
-    <div id="container">
-      <div class="form-wrap">
-        <h1>Sign Up</h1>
-        <p>It's free and only takes a minute</p>
-        <form [formGroup]="form" (ngSubmit)="registerButtonClicked()">
-          <div class="form-group">
-            <label for="first-name">First Name</label>
-            <input required name="firstName" type="text" formControlName="firstName" id="first-name" />
-            <div class="alert alert-danger" *ngIf="form.get('firstName').touched && form.get('firstName').invalid"> First Name required</div>
-          </div>
-          <div class="form-group">
-            <label for="last-name">Last Name</label>
-            <input required name="lastName" type="text" formControlName="lastName" id="last-name" />
-            <div class="alert alert-danger" *ngIf="form.get('lastName').touched && form.get('lastName').invalid"> Last Name required</div>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input required name="email" type="email" formControlName="email" id="email" />
-            <div class="alert alert-danger" *ngIf="form.get('email').touched && form.get('email').invalid"> Email required</div>
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input required name="password" type="password" formControlName="password" id="password" />
-            <div class="alert alert-danger" *ngIf="form.get('password').touched && form.get('password').invalid"> Password required</div>
-          </div>
+<h1>Create an Account</h1>
+<form class="example-form" [formGroup]="form" (ngSubmit)="registerButtonClicked()">
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>First name</mat-label>
+        <input matInput name="firstName" formControlName="firstName" type="text" required>
+      </mat-form-field></td>
+    </tr>
+    <tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Last Name</mat-label>
+        <input matInput name="lastName" formControlName="lastName" type="text" required>
+      </mat-form-field></td>
+    </tr>
+    <tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput name="email" formControlName="email" type="email" required>
+      </mat-form-field></td>
+    </tr>
+    <tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput name="password" formControlName="password" type="password" required>
+      </mat-form-field></td>
+    </tr>
+    <tr class="around">
+      <button type="submit" mat-raised-button color="primary">Register</button>
+    </tr>
 
-          <!-- not able to macth the password everthing else  works. we can chose  to just aske the user to create a password without having to require them to confirm it
-          . am  still working  on it if i  figure it out  i  will add the  validation  later -->
-          <div class="form-group">
-            <label for="password2">Confirm Password</label>
-            <input required name="password2" type="password" formControlName="password2" id="password2" placeholder="Confirm your password" />
-            <div class="alert alert-danger" *ngIf="form.get('password2').touched && form.get('password2')!=form.get('password') && form.get('password2').invalid"> Confirm password</div>
-          </div>
-          <button type="submit" class="btn">Sign Up</button>
-          <p class="bottom-text">
-            By clicking the Sign Up button, you agree to our
-            <a href="#">Terms & Conditions</a> and
-            <a href="#">Privacy Policy</a>
-          </p>
-        </form>
-      </div>
-      <footer>
-        <p>Already have an account? <a routerLink="/home">Login Here</a></p>
-      </footer>
-    </div>
-  </body>
+    <tr *ngIf="responseMessage" class="around">
+      <div style="color: brown;">{{this.responseMessage}}</div>
+    </tr>
+
+    <tr>
+      <p class="bottom-text">
+        By clicking the Sign Up button, you agree to our
+        <a href="#">Terms & Conditions</a> and
+        <a href="#">Privacy Policy</a>
+      </p>
+    </tr>
+    <tr>
+      <p>Already have an account? <a routerLink="/home">Login Here</a></p>
+    </tr>
+  </table>
+</form>

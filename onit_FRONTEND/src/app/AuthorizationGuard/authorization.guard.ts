@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { SignedInUserService } from '../USER_RELATED_SERVICES/signed-in-user.service';
 
-import { baseServerURL } from '../app.component';
+import { baseServerURL } from '../http-stuff.service';
 import { User } from '../USER_RELATED_SERVICES/User';
 import { HttpStuffService } from '../http-stuff.service';
 
@@ -26,7 +26,7 @@ export class AuthorizationGuard implements CanActivate {
     state: RouterStateSnapshot
     ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-      console.log("AUTH GUARD");
+   //   console.log("AUTH GUARD");
       var authorized = false;
       
 
@@ -39,16 +39,32 @@ export class AuthorizationGuard implements CanActivate {
           */
           authorized = true;
 
-          console.log("sessionKey  is not NOT NULL with value = "+sessionStorage.getItem("session_token"));
+         // console.log("sessionKey  is not NOT NULL with value = "+sessionStorage.getItem("session_token"));
           
           this.httpStuffService.checkSessionAsync(sessionStorage.getItem("session_token").toString()).subscribe(
             (resp) =>
             {
-              console.log(" * * * * * * * * * * AUTH GUARD --> : response to checkSessionAsync: "+resp);
+           //   console.log(" * * * * * * * * * * AUTH GUARD --> : response to checkSessionAsync: "+resp);
               this.signedInUserService.user = resp;
-              console.log(" * * * * * * * * * * AUTH GUARD --> : signedInUser.user.sessionKey: "+resp.sessionToken);
+          //    console.log(" * * * * * * * * * * AUTH GUARD --> : signedInUser.user.sessionKey: "+resp.sessionToken);
               if (this.signedInUserService.user != null)  {
-
+                
+                  // Now fetch user tasks again, and resubscripe user home page to tasks list...
+                  this.httpStuffService.requestUserTasks(this.signedInUserService.user).subscribe(
+                    responseTasks => {
+                      //console.log("Get Task list response received!");
+                      this.signedInUserService.tasks = responseTasks;
+                      this.signedInUserService.tasks.forEach(
+                        task =>
+                        {
+                          //printObj(task);
+                        }
+                      )
+                      //console.log("RESPONSE TASKS: "+responseTasks);
+                      this.signedInUserService.tasksWereFetched = true;
+                      
+                    }
+                  );
               }
 
             }
@@ -56,8 +72,8 @@ export class AuthorizationGuard implements CanActivate {
 
         }
         else {
-          console.log("session key is NULL")
-          console.log(" XXXXX User NOT authorized");
+       //   console.log("session key is NULL")
+     //     console.log(" XXXXX User NOT authorized");
         authorized = false;
         }
         
@@ -66,14 +82,23 @@ export class AuthorizationGuard implements CanActivate {
       else {
         
    //     console.log("   User currently signed in!");
-        console.log(" XXXXX User IS authorized");
+  //      console.log(" TTTTTT User IS authorized");
         authorized = true;
 
       }
 
-      console.log("   returning "+authorized)
+   //   console.log("   returning "+authorized)
       return authorized;
     
   }
+
   
+
+  
+  
+}
+
+
+function printObj(obj) {
+  Object.keys(obj).forEach((prop)=> console.log(prop+":  "+obj[prop]));
 }

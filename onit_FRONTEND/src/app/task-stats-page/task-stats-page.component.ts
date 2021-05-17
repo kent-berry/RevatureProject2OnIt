@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import * as CanvasJS from './canvasjs.min';
 import * as $ from 'jquery';
 import { HttpStuffService } from '../http-stuff.service';
+import { SignedInUserService } from '../USER_RELATED_SERVICES/signed-in-user.service';
+import { Task } from '../TASK_SERVICE/Task';
 
 
 
@@ -13,21 +15,58 @@ import { HttpStuffService } from '../http-stuff.service';
 export class TaskStatsPageComponent implements OnInit {
 
   pastNDaysOptionsList : number[] = [7,14,21,28];
-  pastNDays : number = 7;
+  
+  nSelected = 7;
 
-
-  constructor(private httpStuffService: HttpStuffService) { 
+  constructor(private _httpStuffService: HttpStuffService,
+    private _signedInUserService: SignedInUserService) { 
 
   }
 
   renderChart() : void {
 
-    let dataPoints = [];
-    let y = 0;		
-    for ( var i = 0; i < this.pastNDays; i++ ) {		  
-      y += Math.round(2 + Math.random() * (0 - 2));	
-      dataPoints.push({ y: y});
+
+    /*
+      Generate task list for rendering
+    */
+
+
+
+    
+
+    var today = new Date();
+
+    var tasks: Task[] = this.signedInUserService.tasks;
+
+
+    // Initialize an array of size nSelected with each element set to 0 (for num tasks complete on each day)
+    var tasksPerDay : number[] = new Array<number>(this.nSelected).fill(0);
+    if (tasks) {
+    tasks.forEach(task =>
+      {
+        if (task.dateCompleted) {
+          var timeAgo = (new Date()).getTime() - new Date(task.dateCompleted.month+"/"+task.dateCompleted.dayOfMonth+"/"+task.dateCompleted.year).getTime();
+          var daysAgo = Math.floor(timeAgo / (1000 * 3600 * 24));
+
+          if (daysAgo < this.nSelected) {
+            tasksPerDay[daysAgo] = tasksPerDay[daysAgo] + 1;
+          }
+          
+        }
+      });
     }
+
+    
+
+
+
+
+    let daysAgoList = [];
+    for (var k = 0; k < this.nSelected; k++) {
+      daysAgoList.push({y : tasksPerDay[k]});
+    }
+    let y = tasksPerDay;		
+    
     let chart = new CanvasJS.Chart("chartContainer", {
       backgroundColor: "transparent",
       zoomEnabled: true,
@@ -42,7 +81,7 @@ export class TaskStatsPageComponent implements OnInit {
       data: [
       {
         type: "spline",                
-        dataPoints: dataPoints
+        dataPoints: daysAgoList
       }],
       axisY: {
         gridThickness: 0,
@@ -83,12 +122,51 @@ export class TaskStatsPageComponent implements OnInit {
 
 }
 updatePastNDays(newPastNDays : number) {
-  console.log("updatePastNDays called with arg = "+newPastNDays);
+ /* console.log("updatePastNDays called with arg = "+newPastNDays);
   var prevPastNDays  = this.pastNDays;
   this.pastNDays = newPastNDays;
   if (prevPastNDays != this.pastNDays) {
     this.renderChart();
   }
-}
+*/
+  this.renderChart();
 }
 
+
+
+downloadTaskData() {
+
+  this.httpStuffService.requestDownloadData(this.signedInUserService.user).subscribe(
+    data => {
+
+      //printObj(data);
+
+      
+      const blob = new Blob([data.formString], { type: 'text/csv'});
+      const url= window.URL.createObjectURL(blob);
+      window.open(url);
+    
+
+    }
+  )
+}
+
+
+get signedInUserService() {
+  return this._signedInUserService;
+}
+
+get httpStuffService() {
+  return this._httpStuffService;
+}
+
+
+
+
+}
+
+
+
+function printObj(obj) {
+  Object.keys(obj).forEach((prop)=> console.log(prop+":  "+obj[prop]));
+}

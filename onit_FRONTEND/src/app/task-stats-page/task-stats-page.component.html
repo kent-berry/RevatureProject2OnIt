@@ -1,14 +1,20 @@
 
 <br>
 <br>
+<div class="button-row" style="text-align: center;">
+    <button mat-raised-button color="primary"  style="height: 48px; width: 210px;" class="update-button" (click)="downloadTaskData()">Download task data</button>
+</div>
+
+<br>
+<br>
 <h1>Number of Daily Tasks Completed</h1>
 
 <div class="chartFilterPanel" style="background-color: rgb(234, 255, 255); text-align: center;">
     <span>Show productivity for the past </span>
     <mat-form-field appearance="fill" style=" width:110px; margin-top: 12px;">
         <mat-label>number of </mat-label>
-        <mat-select >
-        <mat-option *ngFor="let pastNDays of pastNDaysOptionsList" [value]="pastNDays" (click)="updatePastNDays(pastNDays)">
+        <mat-select class="select-mat" [(value)] = nSelected>
+        <mat-option *ngFor="let pastNDays of pastNDaysOptionsList" [value]="pastNDays" (click)="this.renderChart()">
             {{pastNDays}}
         </mat-option>
         </mat-select>
@@ -18,4 +24,7 @@
 
 
 <div id="chartContainer" style="height: 500px; width: 45%; margin-top: 8px; margin-left:auto;margin-right:auto; background-color: rgb(255, 255, 255);"></div>
+
+
+
 

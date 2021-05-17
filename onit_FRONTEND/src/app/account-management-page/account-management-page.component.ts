@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SignedInUserService } from '../USER_RELATED_SERVICES/signed-in-user.service';
 
 @Component({
   selector: 'app-account-management-page',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountManagementPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _signedInUserService: SignedInUserService
+  ) { 
+
+  }
 
   ngOnInit(): void {
+  }
+
+  get signedInUserService() {
+    return this._signedInUserService
   }
 
 }
