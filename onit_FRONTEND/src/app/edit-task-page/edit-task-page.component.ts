@@ -204,6 +204,8 @@ export class EditTaskPageComponent implements OnInit {
         repeatable = true;
       }
 
+      this.editingTask.repeatable = repeatable;
+
       this.editingTask.latitude = null;
       this.editingTask.longitude = null;
   
