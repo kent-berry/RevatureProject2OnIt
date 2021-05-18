@@ -1,0 +1,43 @@
+package com.revature.dto;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class DtoLoginUser {
+	
+	private String email;
+	private String password;
+	
+	
+	public DtoLoginUser() {
+		super();
+	}
+
+
+	public DtoLoginUser(String email, String password) {
+		super();
+		this.email = email;
+		this.password = password;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+}
