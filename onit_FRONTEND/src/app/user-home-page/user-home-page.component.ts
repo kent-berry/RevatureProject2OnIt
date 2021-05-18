@@ -138,11 +138,11 @@ export class UserHomePageComponent implements OnInit {
 
     var newDue = new Date();
     newDue.setDate(newDue.getDate() + 7);
-    console.log("NEW DUE IS "+newDue);
+    //console.log("NEW DUE IS "+newDue);
 
     var newDueDate: LocalDate;
     if (task.repeatable) {
-      console.log("NEW DUE MONTH IS "+newDue.getMonth())
+//      console.log("NEW DUE MONTH IS "+newDue.getMonth())
       newDueDate = new LocalDate(newDue.getFullYear(), newDue.getMonth() + 1, null, null, null, newDue.getMonth() + 1, newDue.getDate(),null,null);
     }
     else {
